@@ -1,577 +1,249 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-	<meta charset="utf-8">
-
-	<title>Alt tab Corp</title>
-
-	<meta name="description" content="Description">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-
-	<link rel="icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
-
-	<link rel="stylesheet" href="assets/css/bootstrap-grid.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<link rel="preload" href="assets/fonts/source-sans-pro-v21-latin/source-sans-pro-v21-latin-regular.woff2" as="font"
-		type="font/woff2" crossorigin>
-	<link rel="preload" href="assets/fonts/source-sans-pro-v21-latin/source-sans-pro-v21-latin-700.woff2" as="font"
-		type="font/woff2" crossorigin>
-	<link rel="preload" href="assets/fonts/montserrat-v25-latin/montserrat-v25-latin-700.woff2" as="font"
-		type="font/woff2" crossorigin>
-	<link rel="preload" href="assets/fonts/montserrat-v25-latin/montserrat-v25-latin-600.woff2" as="font"
-		type="font/woff2" crossorigin>
-
-	<link rel="preload" href="assets/fonts/material-icons/material-icons.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="assets/fonts/material-icons/material-icons-outlined.woff2" as="font" type="font/woff2"
-		crossorigin>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alt tab Corp - Tecnologia e Inovação">
+    <meta name="theme-color" content="#2C3E50">
+    
+    <title>Alt tab Corp</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Scripts -->
+    <script src="assets/js/main.js" defer></script>
 </head>
-
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">
+                    <img src="assets/images/logo.png" alt="Alt tab Corp" width="120" height="40">
+                </a>
+                
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/sobre">Quem Somos</a></li>
+                    <li><a href="/servicos">Serviços</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-	<main class="main">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tecnologia de Classe Mundial</h1>
+                <p>Transformando ideias em soluções inovadoras para o seu negócio</p>
+                <a href="/contato" class="btn btn-primary">Iniciar Projeto</a>
+            </div>
+        </div>
+    </section>
 
-		<div class="main-inner">
+    <!-- Serviços -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Nossas Vertentes</h2>
+            <p class="services-subtitle">Explore nossas áreas de atuação e descubra como podemos impulsionar seu negócio com soluções inovadoras em tecnologia</p>
+            
+            <div class="services-grid">
+                <div class="service-card consultoria fade-in">
+                    <div class="service-icon">
+                        <img src="assets/images/icons/consultoria.svg" alt="Consultoria TI">
+                    </div>
+                    <h3>Consultoria TI <span>Business</span></h3>
+                    <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Análise de Infraestrutura</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Otimização de Processos</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Segurança da Informação</span>
+                        </div>
+                    </div>
+                    <a href="pages/consultoria/index.html" class="service-cta">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card saas fade-in">
+                    <div class="service-icon">
+                        <img src="assets/images/icons/saas.svg" alt="Soluções SaaS">
+                    </div>
+                    <h3>Soluções SaaS <span>Tech</span></h3>
+                    <p>Desenvolva e implemente plataformas empresariais escaláveis e seguras com nossa expertise em SaaS.</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Desenvolvimento Personalizado</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Integração de Sistemas</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Suporte Contínuo</span>
+                        </div>
+                    </div>
+                    <a href="pages/saas/index.html" class="service-cta">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card esports fade-in">
+                    <div class="service-icon">
+                        <img src="assets/images/icons/esports.svg" alt="E-Sports">
+                    </div>
+                    <h3>E-Sports <span>Gaming</span></h3>
+                    <p>Entre no mundo dos esports com nossa equipe profissional e desenvolvimento de jogos inovadores.</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Time Profissional</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Desenvolvimento de Jogos</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Eventos e Torneios</span>
+                        </div>
+                    </div>
+                    <a href="pages/esports/index.html" class="service-cta">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card impressao3d fade-in">
+                    <div class="service-icon">
+                        <img src="assets/images/icons/3d.svg" alt="Impressão 3D">
+                    </div>
+                    <h3>Impressão 3D <span>Innovation</span></h3>
+                    <p>Materialize suas ideias com nossa tecnologia de impressão 3D de alta precisão e qualidade.</p>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Prototipagem Rápida</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Design Personalizado</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Produção em Escala</span>
+                        </div>
+                    </div>
+                    <a href="pages/impressao3d/index.html" class="service-cta">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Begin mobile main menu -->
-			<nav class="mmm">
-				<div class="mmm-content">
-					<ul class="mmm-list">
-						<li>
-							<a href="index.html">Home</a>
-						</li>
-						<li>
-							<a href="about-us.html">Quem somos</a>
-						</li>
-						<li>
-							<a href="services.html">Serviços & Soluções</a>
-						</li>
-						<li>
-							<a href="contacts.html">Contato</a>
-						</li>
-					</ul>
-				</div>
-			</nav><!-- End mobile main menu -->
-		</div>
-		<header class="header header-minimal">
-			<nav class="header-fixed">
-				<div class="container">
-					<div class="row flex-nowrap align-items-center justify-content-between">
-						<div class="col-auto header-fixed-col logo-wrapper">
-							<a href="index.html" class="logo" title="PathSoft">
-								<img src="assets/imagens/logo.png" width="115" height="36" alt="PathSoft">
+    <!-- Sobre Nós -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Quem Somos</h2>
+                    <p>A Alt tab Corp é uma empresa multidisciplinar de tecnologia focada em entregar soluções inovadoras e de alta qualidade para nossos clientes.</p>
+                    <ul class="about-features">
+                        <li>Experiência comprovada</li>
+                        <li>Equipe especializada</li>
+                        <li>Tecnologia de ponta</li>
+                        <li>Suporte dedicado</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="assets/images/about.jpg" alt="Sobre Alt tab Corp">
+                </div>
+            </div>
+        </div>
+    </section>
 
-							</a>
-						</div>
-						<div class="col-auto col-xl col-static header-fixed-col d-none d-xl-block">
-							<div class="row flex-nowrap align-items-center justify-content-end">
-								<div class="col header-fixed-col d-none d-xl-block col-static">
-									<!-- Begin main menu -->
-									<nav class="main-mnu">
-										<ul class="main-mnu-list">
-											<li>
-												<a href="index.html" data-title="Home">
-													<span>Home</span>
-												</a>
-											</li>
-											<li>
-												<a href="about-us.html" data-title="Quem somos">
-													<span>Quem somos</span>
-												</a>
-											</li>
-											<li>
-												<a href="services.html" data-title="Serviços & Soluções">
-													<span>Serviços & Soluções</span>
-												</a>
-											</li>
-											<li>
-												<a href="contacts.html" data-title="Contato">
-													<span>Contato</span>
-												</a>
-											</li>
-										</ul>
-									</nav><!-- End main menu -->
-								</div>
-							</div>
-						</div>
-						<div class="col-auto d-block d-xl-none header-fixed-col">
-							<div class="main-mnu-btn">
-								<span class="bar bar-1"></span>
-								<span class="bar bar-2"></span>
-								<span class="bar bar-3"></span>
-								<span class="bar bar-4"></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-		</header>
+    <!-- Contato -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contact-content">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-		<div class="section-bgc intro">
-			<div class="intro-item intro-item-type-1" style="background-image: url('assets/img/intro-img1.jpg');">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="intro-content" style="--margin-left: 4rem;">
-								<div class="section-heading shm-none">
-									<div class="section-subheading">EXCELÊNCIA E INOVAÇÃO</div>
-									<h1>Tecnologia de Classe Mundial</h1>
-									<p class="section-desc">A Alt tab é uma empresa multidisciplinar de tecnologia que atua em quatro verticais estratégicas: Consultoria e Manutenção de TI, Soluções SaaS Enterprise, E-Sports Profissional e Produtos 3D Premium. Nossa missão é entregar excelência e inovação em cada uma de nossas áreas de atuação.</p>
-								</div>
-								<div class="btn-group intro-btns">
-									<a target="_blank" href="https://wa.me/+5583993322427" class="btn btn-border btn-with-icon btn-small ripple">
-										<span>Iniciar Projeto</span>
-										<svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
-											<use xlink:href="assets/img/sprite.svg#arrow-right"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<section class="section">
-			<div class="container">
-				<div class="row">
-					<header class="col-12">
-						<div class="section-heading heading-center">
-							<div class="section-subheading">Nossas Verticais</div>
-							<h2>Áreas de Excelência</h2>
-						</div>
-					</header>
-					<div class="col-lg-3 col-md-6 col-12 item">
-						<a href="services.html#consultoria" class="iitem item-style iitem-hover">
-							<div class="iitem-icon">
-								<i class="material-icons material-icons-outlined md-48">psychology</i>
-							</div>
-							<div class="iitem-icon-bg">
-								<i class="material-icons material-icons-outlined">psychology</i>
-							</div>
-							<h3 class="iitem-heading item-heading-large">Consultoria e Manutenção de TI</h3>
-							<div class="iitem-desc">Serviços especializados de consultoria estratégica e manutenção preventiva para garantir a excelência operacional da sua infraestrutura tecnológica.</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-6 col-12 item">
-						<a href="services.html#desenvolvimento" class="iitem item-style iitem-hover">
-							<div class="iitem-icon">
-								<i class="material-icons material-icons-outlined md-48">cloud_done</i>
-							</div>
-							<div class="iitem-icon-bg">
-								<i class="material-icons material-icons-outlined">cloud_done</i>
-							</div>
-							<h3 class="iitem-heading item-heading-large">Soluções SaaS Enterprise</h3>
-							<div class="iitem-desc">Plataformas SaaS de classe empresarial com arquitetura escalável e segurança avançada para impulsionar sua transformação digital.</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-6 col-12 item">
-						<a href="services.html#games" class="iitem item-style iitem-hover">
-							<div class="iitem-icon">
-								<i class="material-icons material-icons-outlined md-48">sports_esports</i>
-							</div>
-							<div class="iitem-icon-bg">
-								<i class="material-icons material-icons-outlined">sports_esports</i>
-							</div>
-							<h3 class="iitem-heading item-heading-large">E-Sports Profissional</h3>
-							<div class="iitem-desc">Organização de elite em E-Sports com time profissional de alto rendimento e estúdio de desenvolvimento de jogos inovadores.</div>
-						</a>
-					</div>
-					<div class="col-lg-3 col-md-6 col-12 item">
-						<a href="services.html#impressao3d" class="iitem item-style iitem-hover">
-							<div class="iitem-icon">
-								<i class="material-icons material-icons-outlined md-48">category</i>
-							</div>
-							<div class="iitem-icon-bg">
-								<i class="material-icons material-icons-outlined">category</i>
-							</div>
-							<h3 class="iitem-heading item-heading-large">Produtos 3D Premium</h3>
-							<div class="iitem-desc">Coleção exclusiva de produtos desenvolvidos com tecnologia de impressão 3D avançada, oferecendo design proprietário e qualidade superior.</div>
-						</a>
-					</div>
-					<div class="section-footer col-12 section-footer-animate">
-						<div class="btn-group align-items-center justify-content-center">
-							<a href="services.html" class="btn btn-with-icon btn-w240 ripple">
-								<span>Conheça Nossos Serviços</span>
-								<svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
-									<use xlink:href="assets/img/sprite.svg#arrow-right"></use>
-								</svg>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="section section-bgc">
-			<div class="container">
-				<div class="row litems">
-					<header class="col-12">
-						<div class="section-heading heading-center">
-							<div class="section-subheading">Por que escolher a Alttab</div>
-							<h2>NOSSOS DIFERENCIAIS</h2>
-						</div>
-					</header>
-					<div class="col-lg-4 col-md-6 col-12 litem">
-						<div class="ini">
-							<div class="ini-count">01</div>
-							<div class="ini-info">
-								<h3 class="ini-heading item-heading-large">Experiência e<br> Expertise</h3>
-								<div class="ini-desc">
-									<p>Com anos de experiência no setor, nossa equipe possui o conhecimento e a perícia
-										necessários para entregar projetos de alta qualidade que atendam às suas
-										expectativas e objetivos.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-12 litem">
-						<div class="ini">
-							<div class="ini-count">02</div>
-							<div class="ini-info">
-								<h3 class="ini-heading item-heading-large">Atendimento ao <br>
-									Cliente Excepcional</h3>
-								<div class="ini-desc">
-									<p>Colocamos nossos clientes em primeiro lugar. Estamos comprometidos em oferecer um
-										serviço personalizado e um suporte dedicado ao longo de todo o processo de
-										desenvolvimento.
-
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-12 litem">
-						<div class="ini">
-							<div class="ini-count">03</div>
-							<div class="ini-info">
-								<h3 class="ini-heading item-heading-large">Inovação <br> Contínua</h3>
-								<div class="ini-desc">
-									<p>Estamos sempre atualizados com as últimas tendências e tecnologias do setor,
-										garantindo que seu website esteja sempre à frente da concorrência e pronto para
-										enfrentar os desafios do mercado digital.
-
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-12 litem">
-						<div class="ini">
-							<div class="ini-count">04</div>
-							<div class="ini-info">
-								<h3 class="ini-heading item-heading-large">Qualidade <br> Excepcional</h3>
-								<div class="ini-desc">
-									<p> Estamos comprometidos com a excelência em tudo o que fazemos. Desde o
-										desenvolvimento web até o suporte ao cliente, nossos serviços são caracterizados
-										pela mais alta qualidade.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-12 litem">
-						<div class="ini">
-							<div class="ini-count">05</div>
-							<div class="ini-info">
-								<h3 class="ini-heading item-heading-large">Abordagem <br>Personalizada</h3>
-								<div class="ini-desc">
-									<p>Reconhecemos que cada cliente e projeto é único, e é por isso que adotamos uma
-										abordagem personalizada para cada um de nossos clientes.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-12 litem">
-						<div class="ini">
-							<div class="ini-count">06</div>
-							<div class="ini-info">
-								<h3 class="ini-heading item-heading-large">Compromisso com a <br> Inovação </h3>
-								<div class="ini-desc">
-									<p>Estamos sempre à frente das últimas tendências e tecnologias do setor para
-										garantir que nossos clientes estejam na vanguarda do mundo digital.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- <section class="section section-without-padding-bottom">
-			<div class="container">
-				<div class="row items spincrement-container">
-					<div class="col-xl-3 col-md-6 col-12 item">
-						<div class="counter-min">
-							<div class="counter-min-block">
-								<div class="counter-min-ico">
-									<i class="material-icons material-icons-outlined md-36">history</i>
-								</div>
-								<div class="counter-min-numb spincrement" data-from="0" data-to="10">0</div>
-							</div>
-							<div class="counter-min-info">
-								<h4 class="counter-min-heading">Years Of Experience</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6 col-12 item">
-						<div class="counter-min">
-							<div class="counter-min-block">
-								<div class="counter-min-ico">
-									<i class="material-icons material-icons-outlined md-36">chat</i>
-								</div>
-								<div class="counter-min-numb spincrement" data-from="0" data-to="40">0</div>
-							</div>
-							<div class="counter-min-info">
-								<h4 class="counter-min-heading">Consultans</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6 col-12 item">
-						<div class="counter-min">
-							<div class="counter-min-block">
-								<div class="counter-min-ico">
-									<i class="material-icons material-icons-outlined md-36">assignment_ind</i>
-								</div>
-								<div class="counter-min-numb spincrement" data-from="0" data-to="160">0</div>
-							</div>
-							<div class="counter-min-info">
-								<h4 class="counter-min-heading">Employers</h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-md-6 col-12 item">
-						<div class="counter-min">
-							<div class="counter-min-block">
-								<div class="counter-min-ico">
-									<i class="material-icons material-icons-outlined md-36">phonelink_setup</i>
-								</div>
-								<div class="counter-min-numb"><span class="spincrement" data-from="0"
-										data-to="2">0</span>K</div>
-							</div>
-							<div class="counter-min-info">
-								<h4 class="counter-min-heading">Apps Developed</h4>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
-
-		<section class="section">
-			<div class="container">
-				<div class="row items">
-					<div class="col-12">
-						<div class="section-heading heading-center">
-							<div class="section-subheading">Portifólio</div>
-							<h2>Nossos Projetos</h2>
-							<p class="section-desc">Nossos clientes têm desrupturado indústrias, aberto novos mercados e
-								tornado inúmeras vidas melhores. Temos o privilégio de trabalhar com centenas de
-								empresas visionárias, incluindo muitas das principais marcas de hardware, software e
-								consumo do mundo.
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-6 item">
-						<!-- Begin brands item -->
-						<div class="brands-item item-style">
-							<a target="_blank" href="https://alttabcorp.github.io/Altta_E-sports/">
-								<img data-src="assets/img/brands/7.png" class="lazy" src="" alt="">
-
-							</a>
-						</div><!-- End brands item -->
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-6 item">
-						<!-- Begin brands item -->
-						<div class="brands-item item-style">
-							<!-- <img data-src="assets/img/brands/codelab.png" class="lazy"
-								src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-								alt=""> -->
-						</div><!-- End brands item -->
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-6 item">
-						<!-- Begin brands item -->
-						<div class="brands-item item-style">
-							<!-- <img data-src="assets/img/brands/earth.png" class="lazy"
-								src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-								alt=""> -->
-						</div><!-- End brands item -->
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-6 item">
-						<!-- Begin brands item -->
-						<div class="brands-item item-style">
-							<!-- <img data-src="assets/img/brands/hexa.png" class="lazy"
-								src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-								alt=""> -->
-						</div><!-- End brands item -->
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-6 item">
-						<!-- Begin brands item -->
-						<div class="brands-item item-style">
-							<!-- <img data-src="assets/img/brands/lightai.png" class="lazy"
-								src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-								alt=""> -->
-						</div><!-- End brands item -->
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-6 item">
-						<!-- Begin brands item -->
-						<div class="brands-item item-style">
-							<!-- <img data-src="assets/img/brands/nirastate.png" class="lazy"
-								src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-								alt=""> -->
-						</div><!-- End brands item -->
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-6 item">
-						<!-- Begin brands item -->
-						<div class="brands-item item-style">
-							<!-- <img data-src="assets/img/brands/treva.png" class="lazy"
-								src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-								alt=""> -->
-						</div><!-- End brands item -->
-					</div>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-6 item">
-						<!-- Begin brands item -->
-						<div class="brands-item item-style">
-							<!-- <img data-src="assets/img/brands/zootv.png" class="lazy"
-								src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
-								alt=""> -->
-						</div><!-- End brands item -->
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<section class="section section-bgc">
-			<div class=" container">
-				<div class="row">
-					<div class="col-12">
-						<div class="section-heading heading-center">
-							<h2>Perguntas Frequentes</h2>
-						</div>
-						<div class="accordion">
-							<div class="row gutters-default">
-								<div class="col-lg-6 col-12">
-									<ul class="accordion-list">
-										<li class="accordion-item section-bgc">
-											<div class="accordion-trigger">O que é a Alt tab e quais são suas áreas de atuação?</div>
-											<div class="accordion-content content">
-												<p>A Alt tab é uma empresa líder em tecnologia que atua em quatro verticais estratégicas: Consultoria e Manutenção de TI, oferecendo serviços especializados de gestão tecnológica; Soluções SaaS Enterprise, desenvolvendo plataformas corporativas inovadoras; E-Sports Profissional, com time de elite e desenvolvimento de jogos; e Produtos 3D Premium, criando coleções exclusivas com tecnologia avançada.</p>
-											</div>
-										</li>
-										<li class="accordion-item section-bgc">
-											<div class="accordion-trigger">Como a Alt tab garante a qualidade de seus serviços?</div>
-											<div class="accordion-content content">
-												<p>Mantemos os mais altos padrões de qualidade através de processos rigorosos, equipe altamente qualificada e uso de tecnologias de ponta. Nossa abordagem inclui monitoramento contínuo, feedback constante dos clientes e atualização permanente de nossas metodologias e ferramentas.</p>
-											</div>
-										</li>
-										<li class="accordion-item section-bgc">
-											<div class="accordion-trigger">Qual é a experiência da Alt tab no mercado?</div>
-											<div class="accordion-content content">
-												<p>Nossa equipe combina vasta experiência em tecnologia com profundo conhecimento em cada uma de nossas verticais. Temos um histórico comprovado de sucesso em projetos corporativos, desenvolvimento de software, E-Sports profissional e design de produtos inovadores.</p>
-											</div>
-										</li>
-									</ul>
-								</div>
-								<div class="col-lg-6 col-12">
-									<ul class="accordion-list">
-										<li class="accordion-item section-bgc">
-											<div class="accordion-trigger">Como iniciar um projeto com a Alt tab?</div>
-											<div class="accordion-content content">
-												<p>O processo começa com uma consultoria inicial onde analisamos suas necessidades específicas e objetivos. Nossa equipe especializada desenvolve então uma proposta personalizada, detalhando escopo, metodologia e cronograma para garantir o sucesso do seu projeto.</p>
-											</div>
-										</li>
-										<li class="accordion-item section-bgc">
-											<div class="accordion-trigger">Quais são os diferenciais da Alt tab?</div>
-											<div class="accordion-content content">
-												<p>Nossos principais diferenciais incluem expertise multidisciplinar, foco em inovação, equipe altamente qualificada e compromisso com a excelência. Oferecemos soluções personalizadas e suporte dedicado em todas as nossas áreas de atuação.</p>
-											</div>
-										</li>
-										<li class="accordion-item section-bgc">
-											<div class="accordion-trigger">A Alt tab atende empresas de todos os portes?</div>
-											<div class="accordion-content content">
-												<p>Sim, nossa estrutura nos permite atender desde startups até grandes corporações, sempre mantendo o mesmo nível de excelência e personalização. Adaptamos nossas soluções às necessidades específicas de cada cliente, independentemente do seu tamanho.</p>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		</div>
-		<!-- Begin footer -->
-		<footer class="footer footer-minimal">
-			<div class="footer-main">
-				<div class="container">
-					<div class="row items align-items-center">
-						<div class="col-lg-3 col-md-4 col-12 item">
-							<div class="widget-brand-info">
-								<div class="widget-brand-info-main">
-									<a href="index.html" class="logo" title="PathSoft">
-										<img data-src="assets/imagens/logo.png" class="lazy" width="133" height="36"
-											src="assets/imagens/logo.png" alt="Alttab" data-loaded="true"
-											style="opacity: 1;">
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md item">
-							<div class="footer-item">
-								<nav class="footer-nav">
-									<ul class="footer-mnu footer-mnu-line">
-										<li><a href="index.html" class="hover-link" data-title="Home"><span>Home</span></a></li>
-										<li><a href="about-us.html" class="hover-link" data-title="About us"><span>Quem somos</span></a></li>
-										<li><a href="services.html" class="hover-link"
-												data-title="Services"><span>Serviços & Soluções</span></a></li>
-										<li><a href="contacts.html" class="hover-link"
-												data-title="Contacts"><span>Contato</span></a></li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer-bottom">
-				<div class="container">
-					<div class="row justify-content-between items">
-						<div class="col-md-auto col-12 item">
-							<nav class="footer-links">
-								<ul>
-									<li><a href="#!">Terms and Conditions</a></li>
-									<li><a href="#!">Privacy Policy</a></li>
-								</ul>
-							</nav>
-						</div>
-						<div class="col-md-auto col-12 item">
-							<div class="copyright">© 2024 Alttab. All rights reserved.</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer><!-- End footer -->
-
-	</main><!-- End main -->
-
-	<script src="assets/libs/jquery/jquery.min.js"></script>
-	<script src="assets/libs/lozad/lozad.min.js"></script>
-	<script src="assets/libs/device/device.js"></script>
-	<script src="assets/libs/spincrement/jquery.spincrement.min.js"></script>
-	<script src="assets/libs/pristine/pristine.min.js"></script>
-	<script src="assets/js/custom.js"></script>
-	<script src="assets/js/forms.js"></script>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/images/logo-white.png" alt="Alt tab Corp" width="120" height="40">
+                    <p>Transformando o futuro através da tecnologia</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/sobre">Quem Somos</a></li>
+                        <li><a href="/servicos">Serviços</a></li>
+                        <li><a href="/contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>contato@alttabcorp.com.br</p>
+                    <p>+55 83 99332-2427</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Alt tab Corp. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 </body>
-
-</html>
+</html> 

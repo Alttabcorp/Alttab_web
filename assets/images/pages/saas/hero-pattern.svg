@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="800" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g opacity="0.4">
+        <!-- Círculos decorativos -->
+        <circle cx="120" cy="120" r="8" fill="white"/>
+        <circle cx="320" cy="240" r="6" fill="white"/>
+        <circle cx="520" cy="160" r="10" fill="white"/>
+        <circle cx="720" cy="320" r="8" fill="white"/>
+        <circle cx="920" cy="180" r="6" fill="white"/>
+        <circle cx="1120" cy="280" r="10" fill="white"/>
+        <circle cx="1320" cy="140" r="8" fill="white"/>
+        
+        <!-- Linhas conectoras -->
+        <path d="M120 120 L320 240" stroke="white" stroke-width="1" opacity="0.2"/>
+        <path d="M320 240 L520 160" stroke="white" stroke-width="1" opacity="0.2"/>
+        <path d="M520 160 L720 320" stroke="white" stroke-width="1" opacity="0.2"/>
+        <path d="M720 320 L920 180" stroke="white" stroke-width="1" opacity="0.2"/>
+        <path d="M920 180 L1120 280" stroke="white" stroke-width="1" opacity="0.2"/>
+        <path d="M1120 280 L1320 140" stroke="white" stroke-width="1" opacity="0.2"/>
+        
+        <!-- Padrão de pontos -->
+        <g opacity="0.15">
+            <circle cx="220" cy="180" r="2" fill="white"/>
+            <circle cx="420" cy="200" r="2" fill="white"/>
+            <circle cx="620" cy="240" r="2" fill="white"/>
+            <circle cx="820" cy="250" r="2" fill="white"/>
+            <circle cx="1020" cy="230" r="2" fill="white"/>
+            <circle cx="1220" cy="210" r="2" fill="white"/>
+        </g>
+        
+        <!-- Formas geométricas -->
+        <path d="M160 280 L200 320 L160 360 Z" fill="white" opacity="0.1"/>
+        <path d="M460 180 L500 220 L460 260 Z" fill="white" opacity="0.1"/>
+        <path d="M760 240 L800 280 L760 320 Z" fill="white" opacity="0.1"/>
+        <path d="M1060 200 L1100 240 L1060 280 Z" fill="white" opacity="0.1"/>
+        
+        <!-- Linhas onduladas -->
+        <path d="M0 400 Q 360 350, 720 400 T 1440 400" stroke="white" stroke-width="1" opacity="0.1" fill="none"/>
+        <path d="M0 600 Q 360 550, 720 600 T 1440 600" stroke="white" stroke-width="1" opacity="0.1" fill="none"/>
+    </g>
+</svg> 

@@ -1,0 +1,288 @@
+/* Página de SaaS */
+.page-saas {
+    --page-color: var(--color-saas);
+}
+
+/* Hero Section */
+.hero-saas {
+    position: relative;
+    background: linear-gradient(135deg, var(--page-color) 0%, rgba(var(--page-color-rgb), 0.8) 100%);
+    overflow: hidden;
+}
+
+.hero-saas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/pages/saas/hero-pattern.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+}
+
+.hero-saas .tag {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+.hero-saas h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.hero-saas p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* Benefits Section */
+.benefits-saas {
+    padding: 6rem 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.benefit-card {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-card .icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(var(--page-color-rgb), 0.1);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-dark);
+}
+
+.benefit-card p {
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Services Detail Section */
+.services-detail {
+    padding: 6rem 0;
+    background: var(--color-bg-light);
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.service-item:nth-child(even) {
+    direction: rtl;
+}
+
+.service-item:nth-child(even) .service-content {
+    direction: ltr;
+}
+
+.service-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-dark);
+}
+
+.service-content p {
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.service-features li::before {
+    content: '✓';
+    margin-right: 1rem;
+    color: var(--page-color);
+    font-weight: bold;
+}
+
+/* CTA Section */
+.cta-saas {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--page-color) 0%, rgba(var(--page-color-rgb), 0.8) 100%);
+    text-align: center;
+    color: white;
+}
+
+.cta-saas h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta-saas p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-saas .btn {
+    background: white;
+    color: var(--page-color);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.cta-saas .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Other Verticals Section */
+.other-verticals {
+    padding: 6rem 0;
+}
+
+.verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.vertical-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+}
+
+.vertical-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.vertical-card:hover img {
+    transform: scale(1.1);
+}
+
+.vertical-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: white;
+}
+
+.vertical-content .tag {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.vertical-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-saas h1 {
+        font-size: 3rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service-item {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-saas h1 {
+        font-size: 2.5rem;
+    }
+    
+    .service-item {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .service-item:nth-child(even) {
+        direction: ltr;
+    }
+    
+    .verticals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cta-saas h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-saas h1 {
+        font-size: 2rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .verticals-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-saas h2 {
+        font-size: 2rem;
+    }
+} 
