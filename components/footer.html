@@ -1,46 +1,100 @@
 <!-- Footer Component -->
 <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img src="assets/images/logo-white.png" alt="Alt tab Corp" width="120" height="40">
-                <p>Transformando o futuro através da tecnologia</p>
-            </div>
-            <div class="footer-links">
-                <h4>Links Rápidos</h4>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/sobre">Quem Somos</a></li>
-                    <li><a href="/servicos">Serviços</a></li>
-                    <li><a href="/contato">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contato</h4>
-                <p>contato@alttabcorp.com.br</p>
-                <p>+55 83 99332-2427</p>
-            </div>
-            <div class="footer-newsletter">
-                <h4>Receba Novidades</h4>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Seu e-mail">
-                    <button type="submit">Inscrever</button>
-                </form>
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <img src="assets/images/logo-white.png" alt="Alt tab Corp" width="120" height="40">
+                    <p class="brand-description">Transformando o futuro através da tecnologia e inovação</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/sobre">Quem Somos</a></li>
+                        <li><a href="/servicos">Serviços</a></li>
+                        <li><a href="/portfolio">Portfólio</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-services">
+                    <h4>Nossos Serviços</h4>
+                    <ul>
+                        <li><a href="/servicos/consultoria">Consultoria TI</a></li>
+                        <li><a href="/servicos/saas">Soluções SaaS</a></li>
+                        <li><a href="/servicos/esports">E-Sports</a></li>
+                        <li><a href="/servicos/impressao3d">Impressão 3D</a></li>
+                        <li><a href="/servicos/web">Desenvolvimento Web</a></li>
+                        <li><a href="/servicos/marketing">Marketing Digital</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Rua Example, 123<br>São Paulo - SP</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+55 83 99332-2427</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contato@alttabcorp.com.br</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h4>Receba Novidades</h4>
+                    <p>Inscreva-se para receber atualizações e novidades</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Seu e-mail" required>
+                            <button type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="footer-social">
-            <h4>Siga-nos</h4>
-            <div class="social-icons">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-instagram"></i>
-                </a>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <p class="copyright">&copy; 2024 Alt tab Corp. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="/privacidade">Política de Privacidade</a>
+                    <a href="/termos">Termos de Uso</a>
+                    <a href="/cookies">Política de Cookies</a>
+                </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Alt tab Corp. Todos os direitos reservados.</p>
         </div>
     </div>
 </footer> 
