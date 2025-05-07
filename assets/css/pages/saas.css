@@ -3,49 +3,141 @@
     --page-color: var(--color-saas);
 }
 
+/* Variáveis de Design */
+:root {
+    --gradient-primary: linear-gradient(135deg, #2C3E50, #3498db);
+    --gradient-hover: linear-gradient(135deg, #3498db, #2C3E50);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Hero Section */
-.hero-saas {
+.hero {
+    min-height: 100vh;
     position: relative;
-    background: linear-gradient(135deg, var(--page-color) 0%, rgba(var(--page-color-rgb), 0.8) 100%);
     overflow: hidden;
 }
 
-.hero-saas::before {
+.hero-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.gradient-overlay {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.8));
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botões Modernos */
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+    background: var(--gradient-primary);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-hover-slide {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.btn-hover-slide::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
-    background-image: url('../../images/pages/saas/hero-pattern.svg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.1;
+    background: var(--gradient-primary);
+    transition: all 0.3s ease;
+    z-index: -1;
 }
 
-.hero-saas .tag {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    color: white;
-    font-size: 0.9rem;
+.btn-hover-slide:hover::before {
+    left: 0;
+}
+
+/* Cards de Serviço */
+.service-card {
+    position: relative;
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s var(--animation-timing);
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-card);
+}
+
+.service-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
     margin-bottom: 1.5rem;
+}
+
+.service-icon {
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.badge {
     display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
 }
 
-.hero-saas h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: white;
+/* Animações */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
-.hero-saas p {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2rem;
-    max-width: 600px;
+.animate-float {
+    animation: float 6s ease-in-out infinite;
 }
 
 /* Benefits Section */

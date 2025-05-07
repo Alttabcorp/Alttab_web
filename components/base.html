@@ -20,13 +20,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/components/hero.css">
     <link rel="stylesheet" href="assets/css/components/cards.css">
     <link rel="stylesheet" href="assets/css/components/forms.css">
-    <link rel="stylesheet" href="assets/css/components.css">
     
     <!-- AOS Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -62,58 +60,7 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <div id="hero-placeholder"></div>
-
-        <!-- Services Section -->
-        <section class="services" id="services">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Nossos Serviços</span>
-                    <h2>Nossas Vertentes</h2>
-                    <p class="services-subtitle">Explore nossas áreas de atuação e descubra como podemos impulsionar seu negócio com soluções inovadoras em tecnologia</p>
-                </div>
-                
-                <div class="services-grid" id="services-placeholder">
-                    <!-- Service cards will be loaded here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2>Quem Somos</h2>
-                        <p>A Alt tab Corp é uma empresa multidisciplinar de tecnologia focada em entregar soluções inovadoras e de alta qualidade para nossos clientes.</p>
-                        <ul class="about-features">
-                            <li>Experiência comprovada</li>
-                            <li>Equipe especializada</li>
-                            <li>Tecnologia de ponta</li>
-                            <li>Suporte dedicado</li>
-                        </ul>
-                    </div>
-                    <div class="about-image">
-                        <img src="assets/images/about.jpg" alt="Sobre Alt tab Corp">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="section-badge">Contato</span>
-                    <h2>Entre em Contato</h2>
-                    <p class="section-subtitle">Estamos prontos para transformar suas ideias em realidade</p>
-                </div>
-                <div class="contact-content" id="contact-form-placeholder">
-                    <!-- Contact form will be loaded here -->
-                </div>
-            </div>
-        </section>
+        <!-- Page content will be inserted here -->
     </main>
 
     <!-- Footer -->
@@ -155,23 +102,8 @@
 
         // Load components when the page loads
         document.addEventListener('DOMContentLoaded', () => {
-            // Load main components
             loadComponent('header-placeholder', '/components/header.html');
-            loadComponent('hero-placeholder', '/components/hero.html');
             loadComponent('footer-placeholder', '/components/footer.html');
-            
-            // Load service cards
-            loadComponent('services-placeholder', '/components/services.html');
-            
-            // Load contact form
-            loadComponent('contact-form-placeholder', '/components/contact-form.html');
-            
-            // Initialize AOS
-            AOS.init({
-                duration: 1000,
-                once: true,
-                offset: 100
-            });
         });
     </script>
 </body>

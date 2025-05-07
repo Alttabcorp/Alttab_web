@@ -1,0 +1,126 @@
+/* Variáveis Globais */
+:root {
+    /* Cores */
+    --color-primary: #2C3E50;
+    --color-secondary: #3498db;
+    --color-accent: #e74c3c;
+    --color-success: #2ecc71;
+    --color-warning: #f1c40f;
+    --color-danger: #e74c3c;
+    --color-info: #3498db;
+
+    /* Tons de cinza */
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-text-lighter: #999999;
+    --color-border: #dddddd;
+    --color-background: #ffffff;
+    --color-background-light: #f8f9fa;
+    --color-background-dark: #343a40;
+
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, #2C3E50, #3498db);
+    --gradient-hover: linear-gradient(135deg, #3498db, #2C3E50);
+    --gradient-accent: linear-gradient(135deg, #e74c3c, #f39c12);
+
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
+
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+    --border-radius-full: 9999px;
+
+    /* Espaçamento */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* Tipografia */
+    --font-family-base: 'Montserrat', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    
+    /* Pesos da fonte */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Line Heights */
+    --line-height-tight: 1.25;
+    --line-height-base: 1.5;
+    --line-height-loose: 1.75;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+
+    /* Z-index */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal-backdrop: 1040;
+    --z-index-modal: 1050;
+    --z-index-popover: 1060;
+    --z-index-tooltip: 1070;
+
+    /* Container */
+    --container-padding: 1rem;
+    --container-max-width: 1200px;
+
+    /* Colors */
+    --primary-color: #2C3E50;
+    --accent-color: #3498DB;
+    --success-color: #2ECC71;
+    --text-color: #2C3E50;
+    --text-light: #7F8C8D;
+    --light-bg: #F8F9FA;
+    --card-bg: #FFFFFF;
+
+    /* Gradients */
+    --gradient-orange: linear-gradient(135deg, #FF9F43 0%, #FF7F50 100%);
+    --gradient-purple: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);
+    --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    --gradient-green: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+    /* Border Radius */
+    --border-radius-sm: 0.5rem;
+    --border-radius-md: 1rem;
+    --border-radius-lg: 1.5rem;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* Dark Mode - Para implementação futura */
+[data-theme="dark"] {
+    --color-text: #ffffff;
+    --color-text-light: #e0e0e0;
+    --color-text-lighter: #cccccc;
+    --color-background: #1a1a1a;
+    --color-background-light: #2d2d2d;
+    --color-background-dark: #000000;
+    --color-border: #404040;
+} 
