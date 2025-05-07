@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Alt tab Corp - Tecnologia e Inovação">
     <meta name="theme-color" content="#2C3E50">
-    
-    <title>Alt tab Corp</title>
-    
+
+	<title>Alt tab Corp</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/icons/favicon.ico">
     
@@ -22,12 +22,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/components/hero.css">
-    <link rel="stylesheet" href="assets/css/components/cards.css">
-    <link rel="stylesheet" href="assets/css/components/forms.css">
-    <link rel="stylesheet" href="assets/css/components/footer.css">
+	<link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/components/header.css">
+    <link rel="stylesheet" href="assets/css/components/hero.css">
+    <link rel="stylesheet" href="assets/css/components/services.css">
+    <link rel="stylesheet" href="assets/css/components/contact-form.css">
+    <link rel="stylesheet" href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/components/faq.css">
     
     <!-- AOS Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -36,8 +38,8 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="assets/js/modules/animations.js" type="module"></script>
-    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/faq.js" defer></script>
     
     <!-- Meta tags -->
     <meta property="og:title" content="Alt tab Corp - Tecnologia de Classe Mundial">
@@ -68,22 +70,22 @@
 
         <!-- Services Section -->
         <section class="services" id="services">
-            <div class="container">
+				<div class="container">
                 <div class="section-header">
                     <span class="section-badge">Nossos Serviços</span>
                     <h2>Nossas Vertentes</h2>
                     <p class="services-subtitle">Explore nossas áreas de atuação e descubra como podemos impulsionar seu negócio com soluções inovadoras em tecnologia</p>
-                </div>
-                
+		</div>
+
                 <div class="services-grid" id="services-placeholder">
                     <!-- Service cards will be loaded here -->
-                </div>
-            </div>
-        </section>
+				</div>
+			</div>
+		</section>
 
         <!-- About Section -->
         <section class="about" id="about">
-            <div class="container">
+			<div class="container">
                 <div class="about-content">
                     <div class="about-text">
                         <h2>Quem Somos</h2>
@@ -94,27 +96,29 @@
                             <li>Tecnologia de ponta</li>
                             <li>Suporte dedicado</li>
                         </ul>
-                    </div>
+						</div>
                     <div class="about-image">
                         <img src="assets/images/about.jpg" alt="Sobre Alt tab Corp">
-                    </div>
-                </div>
-            </div>
-        </section>
+					</div>
+				</div>
+			</div>
+		</section>
 
         <!-- Contact Section -->
         <section class="contact" id="contact">
-            <div class="container">
+			<div class="container">
                 <div class="section-header text-center">
                     <span class="section-badge">Contato</span>
                     <h2>Entre em Contato</h2>
                     <p class="section-subtitle">Estamos prontos para transformar suas ideias em realidade</p>
-                </div>
+								</div>
                 <div class="contact-content" id="contact-form-placeholder">
                     <!-- Contact form will be loaded here -->
-                </div>
-            </div>
-        </section>
+				</div>
+			</div>
+		</section>
+
+        <div id="faq-placeholder"></div>
     </main>
 
     <!-- Footer -->
@@ -129,9 +133,35 @@
                 const response = await fetch(componentPath);
                 const html = await response.text();
                 document.getElementById(elementId).innerHTML = html;
+                
+                // Initialize FAQ after loading the component
+                if (elementId === 'faq-placeholder') {
+                    initializeFAQ();
+                }
             } catch (error) {
                 console.error(`Error loading component ${componentPath}:`, error);
             }
+        }
+
+        // Initialize FAQ functionality
+        function initializeFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
         }
 
         // Load components when the page loads
@@ -147,13 +177,16 @@
             // Load contact form
             loadComponent('contact-form-placeholder', '/components/contact-form.html');
             
+            // Load FAQ
+            loadComponent('faq-placeholder', '/components/faq.html');
+            
             // Initialize AOS
             AOS.init({
-                duration: 1000,
+                duration: 800,
                 once: true,
                 offset: 100
             });
         });
     </script>
 </body>
-</html> 
+</html>
