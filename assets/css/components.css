@@ -86,45 +86,6 @@
     left: 0;
 }
 
-/* Cards */
-.service-card {
-    background: white;
-    border-radius: var(--border-radius-lg);
-    padding: 2rem;
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.service-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius-sm);
-    font-size: 0.8rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.service-badge.popular {
-    background: rgba(255, 193, 7, 0.1);
-    color: #ffc107;
-}
-
-.service-badge.new {
-    background: rgba(76, 175, 80, 0.1);
-    color: #4caf50;
-}
-
 /* Formulários */
 .input-wrapper {
     position: relative;
@@ -217,10 +178,6 @@
     .btn {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
-    }
-
-    .service-card {
-        padding: 1.5rem;
     }
 
     .input-wrapper input,
