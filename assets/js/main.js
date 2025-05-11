@@ -107,4 +107,25 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.service-card, .about-content, .contact-form').forEach(el => {
     observer.observe(el);
-}); 
+});
+
+function setActiveNavItem() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        // Remove trailing slash for comparison
+        const normalizedCurrentPath = currentPath.replace(/\/$/, '');
+        const normalizedLinkPath = linkPath.replace(/\/$/, '');
+        
+        // Check if the current path matches the link path
+        if (normalizedCurrentPath === normalizedLinkPath || 
+            (normalizedCurrentPath === '' && normalizedLinkPath === '/') ||
+            (normalizedCurrentPath.includes(normalizedLinkPath) && normalizedLinkPath !== '/')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+} 
