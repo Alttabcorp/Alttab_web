@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Privacidade - Alt tab Corp">
+    <meta name="theme-color" content="#2C3E50">
+    <title>Política de Privacidade - Alt tab Corp</title>
+    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/components/header.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/pages/privacidade.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <div id="header-placeholder"></div>
+    <main id="main-content" class="privacy-main">
+        <section class="privacy-section">
+            <div class="container">
+                <h1>Política de Privacidade</h1>
+                <p>Última atualização: 2024</p>
+                <h2>1. Introdução</h2>
+                <p>A Alt tab Corp valoriza a privacidade e a proteção dos dados pessoais de seus usuários. Esta Política de Privacidade explica como coletamos, usamos, armazenamos e protegemos suas informações ao utilizar nossos serviços e nosso site.</p>
+                <h2>2. Coleta de Informações</h2>
+                <p>Coletamos informações fornecidas diretamente por você, como nome, e-mail, telefone e outras informações inseridas em formulários de contato ou cadastro. Também coletamos dados automaticamente, como endereço IP, tipo de navegador, páginas acessadas e tempo de navegação, por meio de cookies e tecnologias similares.</p>
+                <h2>3. Uso das Informações</h2>
+                <ul>
+                    <li>Personalizar sua experiência em nosso site;</li>
+                    <li>Entrar em contato para responder dúvidas ou solicitações;</li>
+                    <li>Melhorar nossos produtos, serviços e atendimento;</li>
+                    <li>Enviar comunicações, novidades e ofertas, caso autorizado;</li>
+                    <li>Cumprir obrigações legais e regulatórias.</li>
+                </ul>
+                <h2>4. Compartilhamento de Dados</h2>
+                <p>Não vendemos ou compartilhamos seus dados pessoais com terceiros, exceto quando necessário para prestação de serviços, cumprimento de obrigações legais ou mediante seu consentimento.</p>
+                <h2>5. Segurança</h2>
+                <p>Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                <h2>6. Seus Direitos</h2>
+                <p>Você pode solicitar acesso, correção, atualização ou exclusão de seus dados pessoais a qualquer momento, bem como revogar consentimentos concedidos.</p>
+                <h2>7. Cookies</h2>
+                <p>Utilizamos cookies para melhorar a navegação e analisar o uso do site. Você pode gerenciar suas preferências de cookies nas configurações do seu navegador.</p>
+                <h2>8. Alterações nesta Política</h2>
+                <p>Esta política pode ser atualizada periodicamente. Recomendamos que você revise esta página regularmente para estar ciente de eventuais mudanças.</p>
+                <h2>9. Contato</h2>
+                <p>Em caso de dúvidas sobre esta Política de Privacidade ou sobre o tratamento de seus dados, entre em contato pelo e-mail: <br> <a href="mailto:alttabcorp@gmail.com">alttabcorp@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>
+        async function loadComponent(elementId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Erro ao carregar componente ${componentPath}:`, error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('header-placeholder', '/components/header.html');
+            loadComponent('footer-placeholder', '/components/footer.html');
+        });
+    </script>
+</body>
+</html> 
