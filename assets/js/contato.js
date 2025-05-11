@@ -1,11 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
-    const submitBtn = contactForm.querySelector('.submit-btn');
+    const submitBtn = contactForm.querySelector('.btn-primary');
+    const inputs = contactForm.querySelectorAll('input, textarea, select');
+
+    // Máscara para telefone
+    const phoneInput = document.getElementById('phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+                e.target.value = value;
+            }
+        });
+    }
 
     // Função para validar email
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    }
+
+    // Função para validar telefone
+    function isValidPhone(phone) {
+        const phoneRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
+        return phoneRegex.test(phone);
     }
 
     // Função para mostrar mensagem de erro
@@ -20,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         input.classList.add('error');
+        input.focus();
     }
 
     // Função para remover mensagem de erro
@@ -35,50 +56,93 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Adicionar listeners para validação em tempo real
-    const inputs = contactForm.querySelectorAll('input, textarea');
     inputs.forEach(input => {
         input.addEventListener('input', function() {
             removeError(this);
         });
+
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
     });
 
+    // Função para validar campo individual
+    function validateField(field) {
+        const value = field.value.trim();
+
+        switch (field.id) {
+            case 'name':
+                if (value.length < 3) {
+                    showError(field, 'O nome deve ter pelo menos 3 caracteres');
+                    return false;
+                }
+                break;
+
+            case 'email':
+                if (!isValidEmail(value)) {
+                    showError(field, 'Por favor, insira um email válido');
+                    return false;
+                }
+                break;
+
+            case 'phone':
+                if (value && !isValidPhone(value)) {
+                    showError(field, 'Por favor, insira um telefone válido');
+                    return false;
+                }
+                break;
+
+            case 'service':
+                if (!value) {
+                    showError(field, 'Por favor, selecione um serviço');
+                    return false;
+                }
+                break;
+
+            case 'message':
+                if (value.length < 10) {
+                    showError(field, 'A mensagem deve ter pelo menos 10 caracteres');
+                    return false;
+                }
+                break;
+
+            case 'privacy':
+                if (!field.checked) {
+                    showError(field, 'Você precisa concordar com a política de privacidade');
+                    return false;
+                }
+                break;
+        }
+
+        return true;
+    }
+
+    // Função para validar todo o formulário
+    function validateForm() {
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!validateField(input)) {
+                isValid = false;
+            }
+        });
+        return isValid;
+    }
+
+    // Manipular envio do formulário
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        let hasError = false;
 
-        // Validar campos
-        const name = document.getElementById('name');
-        const email = document.getElementById('email');
-        const subject = document.getElementById('subject');
-        const message = document.getElementById('message');
-
-        if (name.value.trim() === '') {
-            showError(name, 'Por favor, insira seu nome');
-            hasError = true;
-        }
-
-        if (!isValidEmail(email.value)) {
-            showError(email, 'Por favor, insira um email válido');
-            hasError = true;
-        }
-
-        if (subject.value.trim() === '') {
-            showError(subject, 'Por favor, insira um assunto');
-            hasError = true;
-        }
-
-        if (message.value.trim() === '') {
-            showError(message, 'Por favor, insira sua mensagem');
-            hasError = true;
-        }
-
-        if (hasError) {
+        if (!validateForm()) {
             return;
         }
 
         // Desabilitar botão durante o envio
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando...';
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = `
+            <span>Enviando...</span>
+            <i class="fas fa-spinner fa-spin"></i>
+        `;
 
         try {
             // Aqui você pode adicionar a lógica para enviar os dados para um servidor
@@ -86,16 +150,40 @@ document.addEventListener('DOMContentLoaded', function() {
             await new Promise(resolve => setTimeout(resolve, 1500));
 
             // Mostrar mensagem de sucesso
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <p>Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+            `;
+            contactForm.insertBefore(successMessage, contactForm.firstChild);
             
             // Limpar o formulário
             contactForm.reset();
+
+            // Remover mensagem de sucesso após 5 segundos
+            setTimeout(() => {
+                successMessage.remove();
+            }, 5000);
+
         } catch (error) {
-            alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+            // Mostrar mensagem de erro
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'error-message';
+            errorMessage.innerHTML = `
+                <i class="fas fa-exclamation-circle"></i>
+                <p>Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.</p>
+            `;
+            contactForm.insertBefore(errorMessage, contactForm.firstChild);
+
+            // Remover mensagem de erro após 5 segundos
+            setTimeout(() => {
+                errorMessage.remove();
+            }, 5000);
         } finally {
             // Reabilitar botão
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Enviar Mensagem';
+            submitBtn.innerHTML = originalText;
         }
     });
 }); 

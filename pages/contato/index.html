@@ -34,6 +34,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/contato.js" defer></script>
 </head>
 <body>
     <!-- Skip Link -->
@@ -63,19 +64,28 @@
         <section class="contact-section">
             <div class="container">
                 <div class="contact-grid">
+                    <!-- Informações de Contato -->
                     <div class="contact-info" data-aos="fade-right">
                         <h2>Informações de Contato</h2>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <p>contato@alttabcorp.com.br</p>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <p>+55 83 99332-2427</p>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <p>Rua Example, 123<br>São Paulo - SP</p>
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <i class="fas fa-envelope"></i>
+                                <h3>E-mail</h3>
+                                <p>contato@alttabcorp.com.br</p>
+                                <p>Resposta em até 24h</p>
+                            </div>
+                            <div class="info-card">
+                                <i class="fas fa-phone"></i>
+                                <h3>Telefone</h3>
+                                <p>+55 83 99332-2427</p>
+                                <p>Segunda a Sexta, 9h às 18h</p>
+                            </div>
+                            <div class="info-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h3>Endereço</h3>
+                                <p>Rua Example, 123</p>
+                                <p>São Paulo - SP</p>
+                            </div>
                         </div>
                         <div class="social-links">
                             <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -84,28 +94,87 @@
                             <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
+
+                    <!-- Formulário de Contato -->
                     <div class="contact-form" data-aos="fade-left">
-                        <h2>Envie uma Mensagem</h2>
+                        <h2>Envie sua mensagem</h2>
+                        <p class="form-description">Preencha o formulário abaixo e entraremos em contato em breve</p>
                         <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Nome</label>
-                                <input type="text" id="name" name="name" required>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="name">Nome</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-user"></i>
+                                        <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Telefone</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="tel" id="phone" name="phone" 
+                                               pattern="[0-9]{2}[0-9]{4,5}[0-9]{4}" 
+                                               placeholder="(00) 00000-0000">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service">Serviço de Interesse</label>
+                                    <div class="input-wrapper">
+                                        <i class="fas fa-briefcase"></i>
+                                        <select id="service" name="service" required>
+                                            <option value="">Selecione um serviço</option>
+                                            <option value="consultoria">Consultoria TI</option>
+                                            <option value="saas">Soluções SaaS</option>
+                                            <option value="esports">E-Sports</option>
+                                            <option value="3d">Impressão 3D</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Assunto</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
+                            <div class="form-group full-width">
                                 <label for="message">Mensagem</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-comment"></i>
+                                    <textarea id="message" name="message" required placeholder="Descreva seu projeto ou necessidade"></textarea>
+                                </div>
                             </div>
-                            <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                            <div class="form-footer">
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" id="privacy" required>
+                                    <label for="privacy">
+                                        Concordo com a <a href="/privacidade">Política de Privacidade</a>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-glow">
+                                    <span>Enviar Mensagem</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
                         </form>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa Section -->
+        <section class="map-section">
+            <div class="container">
+                <div class="map-container" data-aos="fade-up">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975774778!2d-46.6521903!3d-23.5636398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQ5LjEiUyA0NsKwMzknMDcuOSJX!5e0!3m2!1spt-BR!2sbr!4v1635789876543!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </section>
@@ -116,29 +185,26 @@
 
     <!-- Component Loader Script -->
     <script>
-        // Function to load components
-        async function loadComponent(elementId, componentPath) {
-            try {
-                const response = await fetch(componentPath);
-                const html = await response.text();
-                document.getElementById(elementId).innerHTML = html;
-            } catch (error) {
-                console.error(`Error loading component ${componentPath}:`, error);
-            }
-        }
-
-        // Load components when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load main components
-            loadComponent('header-placeholder', '/components/header.html');
-            loadComponent('footer-placeholder', '/components/footer.html');
-            
-            // Initialize AOS
+        // Carregar componentes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar AOS
             AOS.init({
                 duration: 800,
-                once: true,
-                offset: 100
+                once: true
             });
+
+            // Carregar header e footer
+            fetch('/components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+
+            fetch('/components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
         });
     </script>
 </body>
