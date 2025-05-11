@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sobre a Alt tab Corp - Nossa História e Valores">
+    <meta name="theme-color" content="#2C3E50">
+
+    <title>Sobre - Alt tab Corp</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/components/header.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/pages/sobre.css">
+    
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- About Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <h1 data-aos="fade-up">Nossa História</h1>
+                <p class="about-hero-text" data-aos="fade-up" data-aos-delay="100">
+                    Conheça a trajetória da Alt tab Corp e os valores que nos guiam
+                </p>
+            </div>
+        </section>
+
+        <!-- About Content Section -->
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text" data-aos="fade-right">
+                        <h2>Quem Somos</h2>
+                        <p>A Alt tab Corp é uma empresa multidisciplinar de tecnologia focada em entregar soluções inovadoras e de alta qualidade para nossos clientes. Nossa missão é transformar ideias em realidade através da tecnologia.</p>
+                        
+                        <h3>Nossa Missão</h3>
+                        <p>Impulsionar o sucesso dos nossos clientes através de soluções tecnológicas inovadoras e sustentáveis.</p>
+                        
+                        <h3>Nossa Visão</h3>
+                        <p>Ser referência em inovação e tecnologia, reconhecida pela excelência e impacto positivo no mercado.</p>
+                    </div>
+                    <div class="about-image" data-aos="fade-left">
+                        <img src="../../assets/images/about-team.jpg" alt="Equipe Alt tab Corp">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values">
+            <div class="container">
+                <h2 data-aos="fade-up">Nossos Valores</h2>
+                <div class="values-grid">
+                    <div class="value-card" data-aos="fade-up">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Inovação</h3>
+                        <p>Sempre buscando novas soluções e tecnologias para melhorar nossos serviços.</p>
+                    </div>
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Compromisso</h3>
+                        <p>Dedicação total ao sucesso dos nossos clientes e projetos.</p>
+                    </div>
+                    <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-users"></i>
+                        <h3>Colaboração</h3>
+                        <p>Trabalho em equipe e parceria para alcançar resultados extraordinários.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader Script -->
+    <script>
+        // Function to load components
+        async function loadComponent(elementId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading component ${componentPath}:`, error);
+            }
+        }
+
+        // Load components when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load main components
+            loadComponent('header-placeholder', '/components/header.html');
+            loadComponent('footer-placeholder', '/components/footer.html');
+            
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100
+            });
+        });
+    </script>
+</body>
+</html> 
