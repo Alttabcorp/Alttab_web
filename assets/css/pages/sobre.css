@@ -385,4 +385,252 @@
     .cta-content h2 {
         font-size: 2rem;
     }
+}
+
+/* Página Sobre - Alt tab Corp - Visual Atrativo */
+
+.about-main {
+    background: #f8fafc;
+    min-height: 100vh;
+    padding: 0 0 40px 0;
+}
+
+.about-hero {
+    background: linear-gradient(135deg, #2C3E50 0%, #4F8DFD 100%);
+    color: #fff;
+    padding: 80px 0 60px 0;
+    text-align: center;
+}
+.about-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.about-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+.about-hero .cta-button {
+    margin-bottom: 2.5rem;
+}
+.cta-button {
+    display: inline-block;
+    padding: 14px 36px;
+    background: #fff;
+    color: #2C3E50;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.cta-button:hover {
+    background: #4F8DFD;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.about-who {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.06);
+    max-width: 950px;
+    margin: -60px auto 40px auto;
+    padding: 40px 32px 32px 32px;
+}
+.about-who-grid {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.about-img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(44,62,80,0.10);
+}
+.about-who h2 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+}
+.about-who p {
+    color: #444;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.about-values {
+    margin: 40px 0;
+}
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 28px;
+}
+.value-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+    text-align: center;
+    padding: 32px 18px 24px 18px;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.value-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(44,62,80,0.13);
+}
+.value-card i {
+    font-size: 2.2rem;
+    color: #4F8DFD;
+    margin-bottom: 1rem;
+}
+.value-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2C3E50;
+    margin-bottom: 0.5rem;
+}
+.value-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.about-timeline {
+    margin: 40px 0 0 0;
+}
+.about-timeline h2 {
+    text-align: center;
+    color: #2C3E50;
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.about-timeline .timeline {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 18px;
+}
+.about-timeline .timeline-item {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 180px;
+    max-width: 220px;
+    height: 100%;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2C3E50 0%, #4F8DFD 100%);
+    z-index: 0;
+    transform: translateY(-50%);
+    border-radius: 2px;
+}
+.timeline-item {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+    padding: 24px 18px;
+    min-width: 180px;
+    max-width: 220px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.timeline-date {
+    display: inline-block;
+    background: #4F8DFD;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 4px 16px;
+    margin-bottom: 0.7rem;
+}
+.timeline-item h3 {
+    font-size: 1.08rem;
+    color: #2C3E50;
+    margin-bottom: 0.4rem;
+}
+.timeline-item p {
+    color: #555;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+.about-cta {
+    margin: 60px 0 0 0;
+    text-align: center;
+}
+.about-cta h2 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .about-who-grid {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .about-img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+    }
+    .timeline {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .timeline::before {
+        top: 0;
+        left: 50%;
+        right: auto;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #2C3E50 0%, #4F8DFD 100%);
+        transform: translateX(-50%);
+    }
+    .timeline-item {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-hero {
+        padding: 48px 0 32px 0;
+    }
+    .about-hero h1 {
+        font-size: 1.5rem;
+    }
+    .about-who {
+        padding: 18px 6px 12px 6px;
+    }
+    .about-section h2 {
+        font-size: 1.1rem;
+    }
+    .values-grid {
+        gap: 12px;
+    }
+    .timeline-item {
+        padding: 14px 6px;
+    }
+    .about-cta h2 {
+        font-size: 1.1rem;
+    }
 } 

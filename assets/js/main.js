@@ -107,7 +107,7 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.service-card, .about-content, .contact-form').forEach(el => {
     observer.observe(el);
-});
+}); 
 
 function setActiveNavItem() {
     const currentPath = window.location.pathname;
