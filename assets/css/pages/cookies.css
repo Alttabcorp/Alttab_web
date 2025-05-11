@@ -1,0 +1,76 @@
+/* Página de Política de Cookies - Alt tab Corp */
+
+.cookies-main {
+    background: #f8fafc;
+    min-height: 100vh;
+    padding: 60px 0 40px 0;
+}
+
+.cookies-section {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(44,62,80,0.06);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 32px 40px 32px;
+}
+
+.cookies-section h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color, #2C3E50);
+    margin-bottom: 1.5rem;
+}
+
+.cookies-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color, #2C3E50);
+    margin-top: 2.2rem;
+    margin-bottom: 0.7rem;
+}
+
+.cookies-section p,
+.cookies-section ul {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.1rem;
+}
+
+.cookies-section ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cookies-section li {
+    margin-bottom: 0.5rem;
+}
+
+.cookies-section a {
+    color: var(--primary-color, #2C3E50);
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.cookies-section a:hover {
+    color: var(--color-secondary, #007bff);
+    text-decoration: none;
+}
+
+.cookies-section .container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .cookies-section {
+        padding: 28px 10px 24px 10px;
+    }
+    .cookies-section h1 {
+        font-size: 1.5rem;
+    }
+    .cookies-section h2 {
+        font-size: 1.1rem;
+    }
+} 

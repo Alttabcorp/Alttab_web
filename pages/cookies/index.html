@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Cookies - Alt tab Corp">
+    <meta name="theme-color" content="#2C3E50">
+    <title>Política de Cookies - Alt tab Corp</title>
+    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/components/header.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/pages/cookies.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <div id="header-placeholder"></div>
+    <main id="main-content" class="cookies-main">
+        <section class="cookies-section">
+            <div class="container">
+                <h1>Política de Cookies</h1>
+                <p>Última atualização: 2024</p>
+                <h2>1. O que são Cookies?</h2>
+                <p>Cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você visita um site. Eles servem para garantir o funcionamento adequado do site, lembrar suas preferências e coletar informações para melhorar sua experiência.</p>
+                <h2>2. Como Utilizamos Cookies</h2>
+                <ul>
+                    <li>Cookies essenciais: necessários para o funcionamento do site;</li>
+                    <li>Cookies de desempenho: ajudam a entender como os visitantes interagem com o site;</li>
+                    <li>Cookies de funcionalidade: memorizam preferências e escolhas do usuário;</li>
+                    <li>Cookies de marketing: utilizados para fornecer conteúdo e anúncios relevantes.</li>
+                </ul>
+                <h2>3. Gerenciamento de Cookies</h2>
+                <p>Você pode gerenciar ou desabilitar cookies nas configurações do seu navegador. No entanto, a desativação de alguns cookies pode afetar a funcionalidade do site.</p>
+                <h2>4. Cookies de Terceiros</h2>
+                <p>Podemos utilizar cookies de parceiros e fornecedores externos para análise de dados e publicidade. Recomendamos que você consulte as políticas de privacidade desses terceiros.</p>
+                <h2>5. Alterações nesta Política</h2>
+                <p>Esta política pode ser atualizada periodicamente. Recomendamos que você revise esta página regularmente para estar ciente de eventuais mudanças.</p>
+                <h2>6. Contato</h2>
+                <p>Em caso de dúvidas sobre esta Política de Cookies, entre em contato pelo e-mail: <a href="mailto:contato@alttabcorp.com.br">contato@alttabcorp.com.br</a></p>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>
+        async function loadComponent(elementId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Erro ao carregar componente ${componentPath}:`, error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('header-placeholder', '/components/header.html');
+            loadComponent('footer-placeholder', '/components/footer.html');
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Termos de Uso - Alt tab Corp">
+    <meta name="theme-color" content="#2C3E50">
+    <title>Termos de Uso - Alt tab Corp</title>
+    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/variables.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components.css">
+    <link rel="stylesheet" href="../../assets/css/components/header.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/pages/termos.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <div id="header-placeholder"></div>
+    <main id="main-content" class="terms-main">
+        <section class="terms-section">
+            <div class="container">
+                <h1>Termos de Uso</h1>
+                <p>Última atualização: 2024</p>
+                <h2>1. Aceitação dos Termos</h2>
+                <p>Ao acessar e utilizar o site da Alt tab Corp, você concorda com estes Termos de Uso e com a nossa Política de Privacidade. Caso não concorde, por favor, não utilize nossos serviços.</p>
+                <h2>2. Uso do Site</h2>
+                <ul>
+                    <li>Você deve utilizar o site de forma ética, lícita e respeitosa;</li>
+                    <li>É proibido tentar acessar áreas restritas, violar sistemas ou disseminar conteúdo malicioso;</li>
+                    <li>O conteúdo do site é protegido por direitos autorais e não pode ser copiado ou distribuído sem autorização.</li>
+                </ul>
+                <h2>3. Propriedade Intelectual</h2>
+                <p>Todos os textos, imagens, marcas, logotipos e demais conteúdos são de propriedade da Alt tab Corp ou de seus parceiros, sendo protegidos pela legislação vigente.</p>
+                <h2>4. Limitação de Responsabilidade</h2>
+                <p>Nos esforçamos para manter as informações do site atualizadas e corretas, mas não garantimos a precisão, integridade ou disponibilidade dos conteúdos. Não nos responsabilizamos por danos decorrentes do uso do site.</p>
+                <h2>5. Links Externos</h2>
+                <p>Nosso site pode conter links para sites de terceiros. Não nos responsabilizamos pelo conteúdo, políticas ou práticas desses sites.</p>
+                <h2>6. Modificações dos Termos</h2>
+                <p>Reservamo-nos o direito de alterar estes Termos de Uso a qualquer momento. Recomendamos que você revise esta página periodicamente.</p>
+                <h2>7. Contato</h2>
+                <p>Em caso de dúvidas sobre estes Termos de Uso, entre em contato pelo e-mail: <a href="mailto:contato@alttabcorp.com.br">contato@alttabcorp.com.br</a></p>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>
+        async function loadComponent(elementId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(elementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Erro ao carregar componente ${componentPath}:`, error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('header-placeholder', '/components/header.html');
+            loadComponent('footer-placeholder', '/components/footer.html');
+        });
+    </script>
+</body>
+</html> 
