@@ -55,12 +55,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">
-        Pular para o conteúdo principal
-    </a>
-
-    <!-- Header -->
+        <!-- Header -->
     <div id="header-placeholder"></div>
 
     <!-- Main Content -->
@@ -153,18 +148,18 @@
         // Load components when the page loads
         document.addEventListener('DOMContentLoaded', () => {
             // Load main components
-            loadComponent('header-placeholder', '/components/header.html');
-            loadComponent('hero-placeholder', '/components/hero.html');
-            loadComponent('footer-placeholder', '/components/footer.html');
+            loadComponent('header-placeholder', './components/header.html');
+            loadComponent('hero-placeholder', './components/hero.html');
+            loadComponent('footer-placeholder', './components/footer.html');
             
             // Load service cards
-            loadComponent('services-placeholder', '/components/services.html');
+            loadComponent('services-placeholder', './components/services.html');
             
             // Load contact form
-            loadComponent('contact-form-placeholder', '/components/contact-form.html');
+            loadComponent('contact-form-placeholder', './components/contact-form.html');
             
             // Load FAQ
-            loadComponent('faq-placeholder', '/components/faq.html');
+            loadComponent('faq-placeholder', './components/faq.html');
             
             // Initialize AOS
             AOS.init({
