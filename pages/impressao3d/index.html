@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Impressão 3D profissional para protótipos, peças e projetos personalizados - Alt tab Corp">
-    <title>Impressão 3D - Alt tab Corp</title>
+    <meta name="description" content="Produtos exclusivos em impressão 3D - Peças personalizadas, protótipos e projetos especiais - Alt tab Corp">
+    <title>Produtos em Impressão 3D - Alt tab Corp</title>
     
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,95 +15,118 @@
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="/" class="logo">
-                    <img src="../../assets/images/logo.png" alt="Alt tab Corp" width="120" height="40">
-                </a>
-                
-                <button class="menu-toggle" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                
-                <ul class="nav-menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/pages/consultoria">Consultoria TI</a></li>
-                    <li><a href="/pages/esports">E-Sports</a></li>
-                    <li><a href="/pages/impressao3d" class="active">Impressão 3D</a></li>
-                    <li><a href="/pages/saas">SaaS</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Header Component -->
+    <div id="header"></div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Impressão 3D Profissional</h1>
-                <p>Transforme suas ideias em realidade com prototipagem rápida, peças sob medida e projetos personalizados em alta precisão.</p>
-                <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+                <h1>Produtos Exclusivos em Impressão 3D</h1>
+                <p>Transforme suas ideias em produtos únicos com nossa tecnologia de impressão 3D de alta qualidade.</p>
+                <div class="hero-buttons">
+                    <a href="#produtos" class="btn btn-primary">Ver Produtos</a>
+                    <a href="#contato" class="btn btn-secondary">Solicitar Orçamento</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços Impressão 3D -->
-    <section class="section services" id="servicos">
+    <!-- Produtos em Destaque -->
+    <section class="section products" id="produtos">
         <div class="container">
-            <h2 class="section-title">Nossos Serviços de Impressão 3D</h2>
-            <p class="section-subtitle">Soluções completas para prototipagem, produção de peças e projetos especiais</p>
+            <h2 class="section-title">Nossos Produtos em Destaque</h2>
+            <p class="section-subtitle">Conheça alguns dos nossos produtos mais populares em impressão 3D</p>
             
-            <div class="grid grid-3">
-                <div class="service-card card fade-in">
-                    <div class="service-icon">
-                        <img src="../../assets/images/icons/3d/prototipo.svg" alt="Protótipos Rápidos">
+            <!-- Swiper -->
+            <div class="swiper productSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product-card card">
+                            <div class="product-image">
+                                <img src="../../assets/images/3d/produto1.jpg" alt="Suporte para Smartphone">
+                            </div>
+                            <div class="product-info">
+                                <h3>Suporte para Smartphone</h3>
+                                <p>Suporte ergonômico e ajustável para seu smartphone, perfeito para videoconferências.</p>
+                                <span class="product-price">R$ 89,90</span>
+                                <a href="#contato" class="btn btn-outline">Solicitar</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Protótipos Rápidos</h3>
-                    <p>Desenvolvimento ágil de protótipos para validação de ideias e projetos.</p>
-                </div>
-                
-                <div class="service-card card fade-in">
-                    <div class="service-icon">
-                        <img src="../../assets/images/icons/3d/peca.svg" alt="Peças Sob Medida">
+                    
+                    <div class="swiper-slide">
+                        <div class="product-card card">
+                            <div class="product-image">
+                                <img src="../../assets/images/3d/produto2.jpg" alt="Organizador de Mesa">
+                            </div>
+                            <div class="product-info">
+                                <h3>Organizador de Mesa</h3>
+                                <p>Organizador modular para sua mesa, com compartimentos personalizáveis.</p>
+                                <span class="product-price">R$ 129,90</span>
+                                <a href="#contato" class="btn btn-outline">Solicitar</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Peças Sob Medida</h3>
-                    <p>Produção de peças personalizadas para reposição, engenharia ou design.</p>
-                </div>
-                
-                <div class="service-card card fade-in">
-                    <div class="service-icon">
-                        <img src="../../assets/images/icons/3d/projeto.svg" alt="Projetos Especiais">
+
+                     <div class="swiper-slide">
+                        <div class="product-card card">
+                            <div class="product-image">
+                                <img src="../../assets/images/3d/produto2.jpg" alt="Organizador de Mesa">
+                            </div>
+                            <div class="product-info">
+                                <h3>Organizador de Mesa</h3>
+                                <p>Organizador modular para sua mesa, com compartimentos personalizáveis.</p>
+                                <span class="product-price">R$ 129,90</span>
+                                <a href="#contato" class="btn btn-outline">Solicitar</a>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Projetos Especiais</h3>
-                    <p>Execução de projetos exclusivos, maquetes, brindes e soluções criativas.</p>
+                    
+                    <div class="swiper-slide">
+                        <div class="product-card card">
+                            <div class="product-image">
+                                <img src="../../assets/images/3d/produto3.jpg" alt="Suporte para Headset">
+                            </div>
+                            <div class="product-info">
+                                <h3>Suporte para Headset</h3>
+                                <p>Suporte elegante e durável para seu headset, com design minimalista.</p>
+                                <span class="product-price">R$ 69,90</span>
+                                <a href="#contato" class="btn btn-outline">Solicitar</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </div>
     </section>
 
-    <!-- Diferenciais Impressão 3D -->
-    <section class="section features" id="diferenciais">
+    <!-- Personalização -->
+    <section class="section customization" id="personalizacao">
         <div class="container">
-            <h2 class="section-title">Por que escolher nossa Impressão 3D?</h2>
             <div class="grid grid-2">
-                <div class="features-content fade-in">
-                    <ul class="features-list">
-                        <li>Alta precisão e acabamento profissional</li>
-                        <li>Diversos materiais e cores</li>
-                        <li>Entrega rápida e prazos flexíveis</li>
-                        <li>Equipe especializada em modelagem 3D</li>
-                        <li>Atendimento personalizado para cada projeto</li>
-                        <li>Suporte do conceito à entrega final</li>
+                <div class="customization-content fade-in">
+                    <h2 class="section-title">Personalize seu Produto</h2>
+                    <p>Oferecemos personalização completa dos nossos produtos:</p>
+                    <ul class="customization-list">
+                        <li>Escolha entre diversos materiais</li>
+                        <li>Selecione a cor que preferir</li>
+                        <li>Adicione seu logo ou design personalizado</li>
+                        <li>Ajuste as dimensões conforme sua necessidade</li>
                     </ul>
+                    <a href="#contato" class="btn btn-primary">Solicitar Personalização</a>
                 </div>
-                <div class="features-image fade-in">
-                    <img src="../../assets/images/3d/3d-printer.jpg" alt="Impressora 3D em ação">
+                <div class="customization-image fade-in">
+                    <img src="../../assets/images/3d/customization.jpg" alt="Personalização de produtos">
                 </div>
             </div>
         </div>
@@ -112,7 +135,7 @@
     <!-- CTA Contato -->
     <section class="section contact" id="contato">
         <div class="container">
-            <h2 class="section-title">Solicite um Orçamento</h2>
+            <h2 class="section-title">Solicite seu Produto</h2>
             <div class="contact-content">
                 <form class="contact-form card fade-in" id="contactForm">
                     <div class="form-group">
@@ -124,12 +147,18 @@
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="projeto">Sobre o Projeto</label>
-                        <input type="text" id="projeto" name="projeto" placeholder="Breve descrição do que deseja imprimir" required>
+                        <label for="product">Produto de Interesse</label>
+                        <select id="product" name="product" required>
+                            <option value="">Selecione um produto</option>
+                            <option value="suporte-smartphone">Suporte para Smartphone</option>
+                            <option value="organizador">Organizador de Mesa</option>
+                            <option value="suporte-headset">Suporte para Headset</option>
+                            <option value="personalizado">Produto Personalizado</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="message">Mensagem</label>
-                        <textarea id="message" name="message" required placeholder="Detalhe seu projeto, quantidade, material desejado, etc"></textarea>
+                        <label for="message">Detalhes do Pedido</label>
+                        <textarea id="message" name="message" required placeholder="Descreva suas necessidades, personalizações desejadas, quantidade, etc"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
                 </form>
@@ -137,35 +166,57 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="../../assets/images/logo-white.png" alt="Alt tab Corp">
-                    <p>Transformando ideias em realidade com tecnologia 3D</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Links Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#diferenciais">Diferenciais</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contato</h4>
-                    <p>contato@alttabcorp.com.br</p>
-                    <p>+55 83 99332-2427</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Alt tab Corp. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Component -->
+    <div id="footer"></div>
 
     <!-- Scripts -->
     <script src="../../assets/js/main.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicialização do Swiper
+        const swiper = new Swiper('.productSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Carregar componentes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carregar Header
+            fetch('/components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                });
+
+            // Carregar Footer
+            fetch('/components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                    // Forçar Font Awesome a reprocessar ícones dinâmicos
+                    if (window.FontAwesome && window.FontAwesome.dom && window.FontAwesome.dom.i2svg) {
+                        window.FontAwesome.dom.i2svg();
+                    }
+                });
+        });
+    </script>
 </body>
 </html> 
