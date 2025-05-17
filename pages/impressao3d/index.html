@@ -166,6 +166,40 @@
         </div>
     </section>
 
+    <!-- Nossos Serviços -->
+    <section class="other-verticals">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <p class="section-subtitle">Conheça nossas áreas de atuação e descubra como podemos transformar seu negócio com tecnologia, inovação e criatividade.</p>
+            <div class="verticals-grid">
+                <a href="/pages/consultoria" class="vertical-card consultoria fade-in">
+                    <div class="vertical-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3><strong>Consultoria TI</strong></h3>
+                    <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
+                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="/pages/servicos/web" class="vertical-card desenvolvimento web destaque fade-in">
+                    <div class="vertical-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3><strong>Desenvolvimento Web</strong></h3>
+                    <p>Crie presença digital impactante com websites modernos, responsivos e otimizados para resultados.</p>
+                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="/pages/esports" class="vertical-card esports fade-in">
+                    <div class="vertical-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3><strong>E-Sports</strong></h3>
+                    <p>Entre no mundo dos esports com nossa equipe profissional e inovação em jogos.</p>
+                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer"></div>
 
@@ -216,6 +250,22 @@
                         window.FontAwesome.dom.i2svg();
                     }
                 });
+
+            // Efeito de destaque dinâmico nos cards de serviços
+            const cards = document.querySelectorAll('.vertical-card');
+            const devCard = document.querySelector('.vertical-card.desenvolvimento');
+            if (devCard) devCard.classList.add('destaque');
+
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    cards.forEach(c => c.classList.remove('destaque'));
+                    this.classList.add('destaque');
+                });
+                card.addEventListener('mouseleave', function() {
+                    cards.forEach(c => c.classList.remove('destaque'));
+                    if (devCard) devCard.classList.add('destaque');
+                });
+            });
         });
     </script>
 </body>
