@@ -129,3 +129,16 @@ function setActiveNavItem() {
         }
     });
 } 
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Dropdown Serviços no mobile
+  const navDropdown = document.querySelector('.nav-dropdown');
+  if (navDropdown) {
+    navDropdown.addEventListener('click', function(e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        navDropdown.classList.toggle('open');
+      }
+    });
+  }
+}); 
