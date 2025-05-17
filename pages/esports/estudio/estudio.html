@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Estúdio de Jogos da Alt Tab - Desenvolvimento de jogos originais">
     <title>Estúdio de Jogos - Alt Tab</title>
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- AOS CSS -->
@@ -69,7 +69,7 @@
             
             <div class="jogos-grid">
                 <div class="jogo-card">
-                    <img src="/assets/images/jogos/towerdefense.jpg" alt="Tower Defense">
+                    <img src="../../../assets/images/jogos/towerdefense.jpg" alt="Tower Defense">
                     <h3>Tower Defense</h3>
                     <span class="jogo-status em-dev">Em desenvolvimento</span>
                     <p>Defenda sua base em um jogo de estratégia com torres e inimigos desafiadores.</p>
@@ -80,7 +80,7 @@
                     <a href="#" class="btn btn-secondary">Saiba mais</a>
                 </div>
                 <div class="jogo-card">
-                    <img src="/assets/images/jogos/puzzle.jpg" alt="Puzzle Mobile">
+                    <img src="../../../assets/images/jogos/puzzle.jpg" alt="Puzzle Mobile">
                     <h3>Puzzle Mobile</h3>
                     <span class="jogo-status em-breve">Em breve</span>
                     <p>Desafie sua mente com puzzles inovadores e jogabilidade viciante.</p>
@@ -130,7 +130,7 @@
             <div class="cta-content">
                 <h2>Pronto para criar seu próprio jogo?</h2>
                 <p>Entre em contato com nosso estúdio e descubra como podemos transformar suas ideias em jogos incríveis.</p>
-                <a href="/pages/contato" class="cta-button">Fale com o Estúdio</a>
+                <a href="../../../pages/contato" class="cta-button">Fale com o Estúdio</a>
             </div>
         </div>
     </section>
@@ -147,12 +147,12 @@
                 });
 
                 // Carregar Header
-                const headerResponse = await fetch('/components/header.html');
+                const headerResponse = await fetch('../../../components/header.html');
                 const headerData = await headerResponse.text();
                 document.getElementById('header-placeholder').innerHTML = headerData;
 
                 // Carregar Footer
-                const footerResponse = await fetch('/components/footer.html');
+                const footerResponse = await fetch('../../../components/footer.html');
                 const footerData = await footerResponse.text();
                 document.getElementById('footer').innerHTML = footerData;
                 
