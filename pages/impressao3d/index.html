@@ -110,6 +110,19 @@
         </div>
     </section>
 
+    <!-- Como Funciona -->
+    <section class="section how-it-works" id="como-funciona">
+        <div class="container">
+            <h2 class="section-title">Como Funciona</h2>
+            <div class="how-steps">
+                <div class="how-step"><span class="how-icon">1</span><p>Você envia sua ideia ou projeto.</p></div>
+                <div class="how-step"><span class="how-icon">2</span><p>Fazemos a modelagem 3D e orçamento.</p></div>
+                <div class="how-step"><span class="how-icon">3</span><p>Após aprovação, realizamos a impressão.</p></div>
+                <div class="how-step"><span class="how-icon">4</span><p>Enviamos o produto para você, em todo o Brasil.</p></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Personalização -->
     <section class="section customization" id="personalizacao">
         <div class="container">
@@ -129,6 +142,65 @@
                     <img src="../../assets/images/3d/customization.jpg" alt="Personalização de produtos">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Projetos Realizados -->
+    <section class="section gallery" id="galeria">
+        <div class="container">
+            <h2 class="section-title">Galeria de Projetos Realizados</h2>
+            <p class="section-subtitle">Veja alguns exemplos reais de peças impressas para nossos clientes.</p>
+            <div class="gallery-grid">
+                <img src="../../assets/images/3d/galeria1.jpg" alt="Projeto 3D 1">
+                <img src="../../assets/images/3d/galeria2.jpg" alt="Projeto 3D 2">
+                <img src="../../assets/images/3d/galeria3.jpg" alt="Projeto 3D 3">
+                <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 4">
+                <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 5">
+                <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Quais materiais vocês utilizam na impressão 3D?</button>
+                    <div class="faq-answer">Trabalhamos com PLA, ABS, PETG e outros materiais sob consulta.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Posso personalizar o tamanho e a cor do produto?</button>
+                    <div class="faq-answer">Sim! Oferecemos personalização completa de dimensões, cores e até gravação de logotipo.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Qual o prazo médio para produção?</button>
+                    <div class="faq-answer">O prazo varia conforme o projeto, mas geralmente entre 3 e 10 dias úteis.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Vocês entregam para todo o Brasil?</button>
+                    <div class="faq-answer">Sim, enviamos para todo o território nacional.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download de Catálogo -->
+    <section class="section catalog-download" id="catalogo">
+        <div class="container">
+            <h2 class="section-title">Baixe Nosso Catálogo</h2>
+            <p class="section-subtitle">Confira todos os produtos, especificações e diferenciais em nosso catálogo completo.</p>
+            <a href="../../assets/catalogo-impressao3d.pdf" class="btn btn-primary" download>Download do Catálogo PDF</a>
+        </div>
+    </section>
+
+    <!-- Parcerias -->
+    <section class="section partnerships" id="parcerias">
+        <div class="container">
+            <h2 class="section-title">Parcerias e B2B</h2>
+            <p class="section-subtitle">Tem uma empresa, agência ou projeto especial? Entre em contato para condições exclusivas e soluções sob medida.</p>
+            <a href="#contato" class="btn btn-secondary">Quero ser parceiro</a>
         </div>
     </section>
 
@@ -250,6 +322,14 @@
                         window.FontAwesome.dom.i2svg();
                     }
                 });
+
+            // FAQ toggle
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const item = btn.closest('.faq-item');
+                    item.classList.toggle('open');
+                });
+            });
         });
     </script>
 </body>
