@@ -1,0 +1,297 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f8f9ff;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* HERO INDEX E-SPORTS */
+.hero-games {
+    background: linear-gradient(135deg, #2b1055 0%, #7597de 100%);
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-games::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 150vw;
+    height: 150vw;
+    background: radial-gradient(circle, rgba(123, 97, 255, 0.2) 0%, transparent 70%);
+    opacity: 0.25;
+    transform: translateX(-50%) scale(1.2);
+    z-index: 0;
+    pointer-events: none;
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translateX(-50%) scale(1.2); }
+    50% { transform: translateX(-50%) scale(1.4); }
+}
+
+.hero-content {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 30px rgba(123, 97, 255, 0.4);
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #7b61ff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleFade 1s ease-out;
+}
+
+@keyframes titleFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #e5e7eb;
+    opacity: 0.96;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: subtitleFade 1s ease-out 0.3s both;
+}
+
+@keyframes subtitleFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* CARDS DE NAVEGAÇÃO */
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    max-width: 1200px;
+}
+
+.nav-card {
+    background: rgba(43, 16, 85, 0.8);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(123, 97, 255, 0.3);
+    border-color: #7b61ff;
+    background: rgba(43, 16, 85, 0.95);
+}
+
+.nav-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #7b61ff 0%, #00d4ff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 30px rgba(123, 97, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-card:hover .nav-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(123, 97, 255, 0.4);
+}
+
+.nav-icon i {
+    font-size: 2.5rem;
+    color: #fff;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.nav-card h2 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-card p {
+    margin-bottom: 1.5rem;
+    color: #b8c2e8;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.nav-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    text-align: left;
+    width: 100%;
+}
+
+.nav-features li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #a5b4fc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-features li:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.nav-features i {
+    color: #7b61ff;
+    font-size: 1.1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #7b61ff 0%, #00d4ff 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(123, 97, 255, 0.3);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(123, 97, 255, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .nav-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .nav-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .nav-card {
+        padding: 1.5rem;
+    }
+    
+    .nav-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .nav-icon i {
+        font-size: 2rem;
+    }
+    
+    .nav-card h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-card h2 {
+        font-size: 1.4rem;
+    }
+    
+    .nav-card p {
+        font-size: 1rem;
+    }
+    
+    .nav-features li {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
