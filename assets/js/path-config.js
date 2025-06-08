@@ -24,6 +24,7 @@
     // Ajusta todos os links
     adjustPaths('a', 'href');
 
-    // Exponha o base para uso em outros scripts se quiser
+    // Exponha o base e a função para uso em outros scripts
     window.siteBasePath = base;
+    window.adjustPaths = adjustPaths;
 })(); 
