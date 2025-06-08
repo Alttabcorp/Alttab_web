@@ -1,4 +1,3 @@
-// path-config.js
 (function() {
     // Detecta o caminho base do site (ex: /Alttab_web/ ou /)
     const pathParts = window.location.pathname.split('/');
