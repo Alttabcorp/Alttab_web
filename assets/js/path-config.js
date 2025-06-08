@@ -1,22 +1,30 @@
-// Configuração de caminhos baseada no ambiente
-const BASE_PATH = {
-    getPath: function() {
-        // Verifica se está rodando no GitHub Pages
-        if (window.location.hostname === 'alttabcorp.github.io') {
-            return '/Alttab_web';
-        }
-        // Local
-        return '';
+// path-config.js
+(function() {
+    // Detecta o caminho base do site (ex: /Alttab_web/ ou /)
+    const pathParts = window.location.pathname.split('/');
+    let base = '/';
+    if (window.location.hostname.includes('github.io') && pathParts[1]) {
+        base = '/' + pathParts[1] + '/';
     }
-};
 
-// Função para ajustar links
-function adjustLinks() {
-    const basePath = BASE_PATH.getPath();
-    document.querySelectorAll('a[href^="/Alttab_web/"]').forEach(link => {
-        link.href = link.href.replace('/Alttab_web/', basePath + '/');
-    });
-}
+    // Função para ajustar src e href de elementos
+    function adjustPaths(selector, attr) {
+        document.querySelectorAll(selector).forEach(el => {
+            if (el.hasAttribute(attr)) {
+                let value = el.getAttribute(attr);
+                if (!/^https?:\/\//.test(value) && !value.startsWith('//')) {
+                    value = value.replace(/^\//, '');
+                    el.setAttribute(attr, base + value);
+                }
+            }
+        });
+    }
 
-// Executa quando o DOM estiver carregado
-document.addEventListener('DOMContentLoaded', adjustLinks); 
+    // Ajusta todas as imagens
+    adjustPaths('img', 'src');
+    // Ajusta todos os links
+    adjustPaths('a', 'href');
+
+    // Exponha o base para uso em outros scripts se quiser
+    window.siteBasePath = base;
+})(); 
