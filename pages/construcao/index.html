@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Produtos exclusivos em impressão 3D - Peças personalizadas, protótipos e projetos especiais - Alt tab Corp">
+    <title>Produtos em Impressão 3D - Alt tab Corp</title>
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+
+     <!-- Header Component -->
+     <div id="header"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 data-aos="fade-up" data-aos-delay="100">Em Construção</h1>
+                    <p data-aos="fade-up" data-aos-delay="200">
+                        Estamos trabalhando para trazer algo incrível para você!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Construction Section -->
+        <section class="construction">
+            <div class="container">
+                <div class="construction-content">
+                    <div class="construction-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="construction-features">
+                        <div class="feature">
+                            <i class="fas fa-cog"></i>
+                            <span>Desenvolvimento em Andamento</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Design em Finalização</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-rocket"></i>
+                            <span>Lançamento em Breve</span>
+                        </div>
+                    </div>
+                    <div class="construction-cta">
+                        <a href="/" class="btn btn-primary">
+                            <i class="fas fa-home"></i>
+                            Voltar para Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Precisa de ajuda?</h2>
+                    <p>Entre em contato conosco e descubra como podemos ajudar seu negócio a alcançar novos patamares.
+                    </p>
+                    <a href="/pages/contato" class="cta-button">Fale Conosco <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+     <!-- Scripts -->
+     <script src="../../assets/js/path-config.js"></script>
+     <script src="../../assets/js/main.js"></script>
+     <!-- Swiper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <script>
+         // Carregar componentes
+         document.addEventListener('DOMContentLoaded', async function() {
+             try {
+                 // Inicializar AOS
+                 AOS.init({
+                     duration: 800,
+                     once: true,
+                     mirror: false
+                 });
+ 
+                 // Carregar Header
+                 const headerResponse = await fetch('../../components/header.html');
+                 const headerData = await headerResponse.text();
+                 document.getElementById('header').innerHTML = headerData;
+ 
+                 // Carregar Footer
+                 const footerResponse = await fetch('../../components/footer.html');
+                 const footerData = await footerResponse.text();
+                 document.getElementById('footer').innerHTML = footerData;
+ 
+                 // Forçar Font Awesome a reprocessar ícones dinâmicos
+                 if (window.FontAwesome && window.FontAwesome.dom && window.FontAwesome.dom.i2svg) {
+                     window.FontAwesome.dom.i2svg();
+                 }
+ 
+                 // Inicializar Swiper
+                 const swiper = new Swiper('.productSwiper', {
+                     slidesPerView: 1,
+                     spaceBetween: 30,
+                     loop: true,
+                     pagination: {
+                         el: '.swiper-pagination',
+                         clickable: true,
+                     },
+                     navigation: {
+                         nextEl: '.swiper-button-next',
+                         prevEl: '.swiper-button-prev',
+                     },
+                     breakpoints: {
+                         640: {
+                             slidesPerView: 2,
+                         },
+                         1024: {
+                             slidesPerView: 3,
+                         },
+                     },
+                 });
+ 
+                 // FAQ toggle
+                 document.querySelectorAll('.faq-question').forEach(btn => {
+                     btn.addEventListener('click', function() {
+                         const item = btn.closest('.faq-item');
+                         item.classList.toggle('open');
+                     });
+                 });
+ 
+                 // Animação fade-in
+                 const observer = new IntersectionObserver((entries) => {
+                     entries.forEach(entry => {
+                         if (entry.isIntersecting) {
+                             entry.target.classList.add('animate');
+                         }
+                     });
+                 }, {
+                     threshold: 0.1
+                 });
+ 
+                 document.querySelectorAll('.fade-in').forEach(element => {
+                     observer.observe(element);
+                 });
+ 
+             } catch (error) {
+                 console.error('Erro ao carregar componentes:', error);
+             }
+         });
+     </script>
+</body>
+
+</html>
