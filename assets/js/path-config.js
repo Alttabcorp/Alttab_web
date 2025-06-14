@@ -1,9 +1,14 @@
 (function() {
     // Detecta o caminho base do site (ex: /Alttab_web/ ou /)
-    const pathParts = window.location.pathname.split('/');
+    const pathParts = window.location.pathname.split('/').filter(part => part !== '');
     let base = '/';
-    if (window.location.hostname.includes('github.io') && pathParts[1]) {
-        base = '/' + pathParts[1] + '/';
+    
+    // Verifica se está rodando no GitHub Pages (incluindo subdomínios personalizados)
+    const isGitHubPages = window.location.hostname.endsWith('.github.io') || 
+                          window.location.hostname === 'github.io';
+    
+    if (isGitHubPages && pathParts.length > 0 && pathParts[0] === 'Alttab_web') {
+        base = '/' + pathParts[0] + '/';
     }
 
     // Função para ajustar src e href de elementos
@@ -27,4 +32,4 @@
     // Exponha o base e a função para uso em outros scripts
     window.siteBasePath = base;
     window.adjustPaths = adjustPaths;
-})(); 
+})();
