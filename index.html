@@ -9,7 +9,7 @@
 	<title>Alt tab Corp</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./assets/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon.ico">
     
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,42 +20,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/variables.css">
-    <link rel="stylesheet" href="./assets/css/reset.css">
-	<link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/components.css">
-    <link rel="stylesheet" href="./assets/css/components/header.css">
-    <link rel="stylesheet" href="./assets/css/components/hero.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/components/header.css">
+    <link rel="stylesheet" href="assets/css/components/hero.css">
     <!-- <link rel="stylesheet" href="./assets/css/components/services.css"> -->
     <!-- <link rel="stylesheet" href="./assets/css/pages/servicos.css"> -->
     <!-- <link rel="stylesheet" href="./assets/css/components/contact-form.css"> -->
-    <link rel="stylesheet" href="./assets/css/components/footer.css">
-    <link rel="stylesheet" href="./assets/css/components/faq.css">
+    <link rel="stylesheet" href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/components/faq.css">
     
     <!-- AOS Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/faq.js" defer></script>
-    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
     <!-- Meta tags -->
     <meta property="og:title" content="Alt tab Corp - Tecnologia de Classe Mundial">
     <meta property="og:description" content="Transformando ideias em soluções inovadoras para o seu negócio">
-    <meta property="og:image" content="./assets/images/og-image.jpg">
+    <meta property="og:image" content="assets/images/og-image.jpg">
     
     <!-- Preload -->
-    <link rel="preload" href="./assets/images/backgrounds/intro-img1.jpg" as="image">
+    <link rel="preload" href="assets/images/backgrounds/intro-img1.jpg" as="image" type="image/jpeg">
    <!-- <link rel="preload" href="./assets/fonts/montserrat-v25-latin-700.woff2" as="font" crossorigin> -->
-    
-    <!-- PWA Support -->
-    <link rel="manifest" href="./manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="./assets/js/path-config.js"></script>
-
 </head>
 <body>
         <!-- Header -->
@@ -109,14 +101,29 @@
     <div id="footer-placeholder"></div>
 
    
+    <!-- Scripts -->
+    <script src="assets/js/path-config.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
     <!-- Component Loader Script -->
     <script>
         // Function to load components
         async function loadComponent(elementId, componentPath) {
+            const element = document.getElementById(elementId);
+            if (!element) {
+                console.warn(`Element with id ${elementId} not found`);
+                return;
+            }
+
             try {
                 const response = await fetch(componentPath);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const html = await response.text();
-                document.getElementById(elementId).innerHTML = html;
+                element.innerHTML = html;
                 
                 // Initialize FAQ after loading the component
                 if (elementId === 'faq-placeholder') {
@@ -151,18 +158,15 @@
         // Load components when the page loads
         document.addEventListener('DOMContentLoaded', () => {
             // Load main components
-            loadComponent('header-placeholder', './components/header.html');
-            loadComponent('hero-placeholder', './components/hero.html');
-            loadComponent('footer-placeholder', './components/footer.html');
+            loadComponent('header-placeholder', 'components/header.html');
+            loadComponent('hero-placeholder', 'components/hero.html');
+            loadComponent('footer-placeholder', 'components/footer.html');
             
             // Load service cards
-            loadComponent('services-placeholder', './components/services.html');
-            
-            // Load contact form
-            loadComponent('contact-form-placeholder', './components/contact-form.html');
+            loadComponent('services-placeholder', 'components/services.html');
             
             // Load FAQ
-            loadComponent('faq-placeholder', './components/faq.html');
+            loadComponent('faq-placeholder', 'components/faq.html');
             
             // Initialize AOS
             AOS.init({
@@ -172,5 +176,9 @@
             });
         });
     </script>
+
+    <!-- Local Scripts -->
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/faq.js" defer></script>
 </body>
 </html>
