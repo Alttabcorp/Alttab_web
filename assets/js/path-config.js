@@ -20,17 +20,22 @@
                     return;
                 }
 
-                // Se o valor começa com /, mantém como está
+                // Se o valor começa com /, adiciona o base
                 if (value.startsWith('/')) {
                     el.setAttribute(attr, base + value.substring(1));
                     return;
                 }
 
+                // Para caminhos relativos, calcula o caminho correto
+                const currentPath = window.location.pathname;
+                const currentDir = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+                const relativeBase = isGitHubPages ? '/Alttab_web' : '';
+                
                 // Remove ./ ou ../ do início
                 value = value.replace(/^\.\.?\//, '');
                 
-                // Adiciona o base
-                el.setAttribute(attr, base + value);
+                // Adiciona o base correto
+                el.setAttribute(attr, relativeBase + currentDir + value);
             }
         });
     }
@@ -63,4 +68,5 @@
     // Log para debug
     console.log('Base path:', base);
     console.log('Is GitHub Pages:', isGitHubPages);
+    console.log('Current path:', window.location.pathname);
 })();
