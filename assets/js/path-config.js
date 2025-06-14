@@ -23,18 +23,23 @@
                     return;
                 }
 
-                // Se o valor começa com /, adiciona o base
-                if (value.startsWith('/')) {
-                    // Remove a barra inicial
-                    value = value.substring(1);
-                    // Adiciona o base
-                    el.setAttribute(attr, base + value);
+                // Se o valor já contém o base path, não ajusta
+                if (value.startsWith(base)) {
                     return;
                 }
 
-                // Para caminhos relativos
+                // Se o valor começa com /, remove a barra inicial
+                if (value.startsWith('/')) {
+                    value = value.substring(1);
+                }
+
+                // Remove ./ ou ../ do início
                 value = value.replace(/^\.\.?\//, '');
-                el.setAttribute(attr, base + value);
+
+                // Adiciona o base apenas se não estiver vazio
+                if (value) {
+                    el.setAttribute(attr, base + value);
+                }
             }
         });
     }
@@ -79,4 +84,5 @@
     // Log para debug
     console.log('Base path:', base);
     console.log('Is GitHub Pages:', isGitHubPages);
+    console.log('Current path:', window.location.pathname);
 })();
