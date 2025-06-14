@@ -33,3 +33,5 @@
     window.siteBasePath = base;
     window.adjustPaths = adjustPaths;
 })();
+
+console.log(window.siteBasePath); // Exibe o caminho base atual
