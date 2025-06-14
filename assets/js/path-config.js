@@ -1,37 +1,66 @@
 (function() {
-    // Detecta o caminho base do site (ex: /Alttab_web/ ou /)
-    const pathParts = window.location.pathname.split('/').filter(part => part !== '');
+    // Detecta o ambiente (GitHub Pages ou local)
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    
+    // Define o base path
     let base = '/';
-    
-    // Verifica se está rodando no GitHub Pages (incluindo subdomínios personalizados)
-    const isGitHubPages = window.location.hostname.endsWith('.github.io') || 
-                          window.location.hostname === 'github.io';
-    
-    if (isGitHubPages && pathParts.length > 0 && pathParts[0] === 'Alttab_web') {
-        base = '/' + pathParts[0] + '/';
+    if (isGitHubPages) {
+        // Para GitHub Pages: https://alttabcorp.github.io/Alttab_web/
+        base = '/Alttab_web/';
     }
 
-    // Função para ajustar src e href de elementos
+    // Função para ajustar caminhos
     function adjustPaths(selector, attr) {
         document.querySelectorAll(selector).forEach(el => {
             if (el.hasAttribute(attr)) {
                 let value = el.getAttribute(attr);
-                if (!/^https?:\/\//.test(value) && !value.startsWith('//')) {
-                    value = value.replace(/^\//, '');
-                    el.setAttribute(attr, base + value);
+                
+                // Ignora URLs absolutas e protocolos
+                if (/^https?:\/\//.test(value) || value.startsWith('//')) {
+                    return;
                 }
+
+                // Se o valor começa com /, mantém como está
+                if (value.startsWith('/')) {
+                    el.setAttribute(attr, base + value.substring(1));
+                    return;
+                }
+
+                // Remove ./ ou ../ do início
+                value = value.replace(/^\.\.?\//, '');
+                
+                // Adiciona o base
+                el.setAttribute(attr, base + value);
             }
         });
     }
 
-    // Ajusta todas as imagens
-    adjustPaths('img', 'src');
-    // Ajusta todos os links
-    adjustPaths('a', 'href');
+    // Função para ajustar caminhos após carregamento dinâmico
+    function adjustDynamicPaths() {
+        adjustPaths('img', 'src');
+        adjustPaths('a', 'href');
+        adjustPaths('link[rel="stylesheet"]', 'href');
+        adjustPaths('script', 'src');
+    }
 
-    // Exponha o base e a função para uso em outros scripts
+    // Ajusta caminhos iniciais
+    adjustDynamicPaths();
+
+    // Observa mudanças no DOM para ajustar novos elementos
+    const observer = new MutationObserver(function(mutations) {
+        adjustDynamicPaths();
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    // Exponha o base e as funções para uso em outros scripts
     window.siteBasePath = base;
-    window.adjustPaths = adjustPaths;
-})();
+    window.adjustPaths = adjustDynamicPaths;
 
-console.log(window.siteBasePath); // Exibe o caminho base atual
+    // Log para debug
+    console.log('Base path:', base);
+    console.log('Is GitHub Pages:', isGitHubPages);
+})();
