@@ -4,21 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Produtos exclusivos em impressão 3D - Peças personalizadas, protótipos e projetos especiais - Alt tab Corp">
+    <meta name="description"
+        content="Produtos exclusivos em impressão 3D - Peças personalizadas, protótipos e projetos especiais - Alt tab Corp">
     <title>Produtos em Impressão 3D - Alt tab Corp</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/images/icons/favicon.ico">
-    
+
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/components/header.css">
+    <link rel="stylesheet" href="/assets/css/components/footer.css">
+    <link rel="stylesheet" href="/assets/css/components/faq.css">
+    <link rel="stylesheet" href="/assets/css/components/hero.css">
+    <link rel="stylesheet" href="/pages/construcao/style.css">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Font Awesome -->
@@ -27,12 +32,17 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Scripts -->
+    <script src="/assets/js/path-config.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body>
 
-     <!-- Header Component -->
-     <div id="header"></div>
+    <!-- Header Component -->
+    <div id="header"></div>
 
     <!-- Main Content -->
     <main id="main-content">
@@ -95,88 +105,83 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-     <!-- Scripts -->
-     <script src="../../assets/js/path-config.js"></script>
-     <script src="../../assets/js/main.js"></script>
-     <!-- Swiper JS -->
-     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-     <script>
-         // Carregar componentes
-         document.addEventListener('DOMContentLoaded', async function() {
-             try {
-                 // Inicializar AOS
-                 AOS.init({
-                     duration: 800,
-                     once: true,
-                     mirror: false
-                 });
- 
-                 // Carregar Header
-                 const headerResponse = await fetch('../../components/header.html');
-                 const headerData = await headerResponse.text();
-                 document.getElementById('header').innerHTML = headerData;
- 
-                 // Carregar Footer
-                 const footerResponse = await fetch('../../components/footer.html');
-                 const footerData = await footerResponse.text();
-                 document.getElementById('footer').innerHTML = footerData;
- 
-                 // Forçar Font Awesome a reprocessar ícones dinâmicos
-                 if (window.FontAwesome && window.FontAwesome.dom && window.FontAwesome.dom.i2svg) {
-                     window.FontAwesome.dom.i2svg();
-                 }
- 
-                 // Inicializar Swiper
-                 const swiper = new Swiper('.productSwiper', {
-                     slidesPerView: 1,
-                     spaceBetween: 30,
-                     loop: true,
-                     pagination: {
-                         el: '.swiper-pagination',
-                         clickable: true,
-                     },
-                     navigation: {
-                         nextEl: '.swiper-button-next',
-                         prevEl: '.swiper-button-prev',
-                     },
-                     breakpoints: {
-                         640: {
-                             slidesPerView: 2,
-                         },
-                         1024: {
-                             slidesPerView: 3,
-                         },
-                     },
-                 });
- 
-                 // FAQ toggle
-                 document.querySelectorAll('.faq-question').forEach(btn => {
-                     btn.addEventListener('click', function() {
-                         const item = btn.closest('.faq-item');
-                         item.classList.toggle('open');
-                     });
-                 });
- 
-                 // Animação fade-in
-                 const observer = new IntersectionObserver((entries) => {
-                     entries.forEach(entry => {
-                         if (entry.isIntersecting) {
-                             entry.target.classList.add('animate');
-                         }
-                     });
-                 }, {
-                     threshold: 0.1
-                 });
- 
-                 document.querySelectorAll('.fade-in').forEach(element => {
-                     observer.observe(element);
-                 });
- 
-             } catch (error) {
-                 console.error('Erro ao carregar componentes:', error);
-             }
-         });
-     </script>
+    <script>
+        // Carregar componentes
+        document.addEventListener('DOMContentLoaded', async function () {
+            try {
+                // Inicializar AOS
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    mirror: false
+                });
+
+                // Carregar Header
+                const headerResponse = await fetch('../../components/header.html');
+                const headerData = await headerResponse.text();
+                document.getElementById('header').innerHTML = headerData;
+
+                // Carregar Footer
+                const footerResponse = await fetch('../../components/footer.html');
+                const footerData = await footerResponse.text();
+                document.getElementById('footer').innerHTML = footerData;
+
+                // Forçar Font Awesome a reprocessar ícones dinâmicos
+                if (window.FontAwesome && window.FontAwesome.dom && window.FontAwesome.dom.i2svg) {
+                    window.FontAwesome.dom.i2svg();
+                }
+
+                // Inicializar Swiper
+                const swiper = new Swiper('.productSwiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    },
+                });
+
+                // FAQ toggle
+                document.querySelectorAll('.faq-question').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const item = btn.closest('.faq-item');
+                        item.classList.toggle('open');
+                    });
+                });
+
+                // Animação fade-in
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                document.querySelectorAll('.fade-in').forEach(element => {
+                    observer.observe(element);
+                });
+
+            } catch (error) {
+                console.error('Erro ao carregar componentes:', error);
+            }
+        });
+    </script>
 </body>
 
 </html>
