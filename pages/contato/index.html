@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <!-- Scripts -->
+    <script src="../../assets/js/path-config.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/contato.js" defer></script>
@@ -202,13 +203,13 @@
             });
 
             // Carregar header e footer
-            fetch('../../components/header.html')
+            fetch('components/header.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('header-placeholder').innerHTML = data;
                 });
 
-            fetch('../../components/footer.html')
+            fetch('components/footer.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('footer-placeholder').innerHTML = data;
