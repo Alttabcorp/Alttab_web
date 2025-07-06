@@ -1,60 +1,98 @@
 /* Página de Política de Cookies - Alt tab Corp */
 
 .cookies-main {
-    background: #f8fafc;
+    background: var(--background-color);
     min-height: 100vh;
-    padding: 40px 0 40px 0;
+    padding: 120px 0 60px 0;
 }
 
 .cookies-section {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(44,62,80,0.06);
+    background: var(--legal-bg);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
     max-width: 800px;
     margin: 0 auto;
     padding: 48px 32px 40px 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cookies-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--gradient-secondary);
 }
 
 .cookies-section h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--primary-color, #2C3E50);
-    margin-bottom: 1.5rem;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--legal-heading);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    display: inline-block;
+}
+
+.cookies-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: var(--border-radius-full);
 }
 
 .cookies-section h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--primary-color, #2C3E50);
-    margin-top: 2.2rem;
-    margin-bottom: 0.7rem;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--legal-heading);
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
 }
 
 .cookies-section p,
 .cookies-section ul {
-    color: #444;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 1.1rem;
+    color: var(--legal-text);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-lg);
 }
 
 .cookies-section ul {
-    padding-left: 1.2rem;
-    margin-bottom: 1.5rem;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
 }
 
 .cookies-section li {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+}
+
+.cookies-section li::before {
+    content: '';
+    position: absolute;
+    left: -18px;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--border-radius-full);
+    background-color: var(--secondary);
 }
 
 .cookies-section a {
-    color: var(--primary-color, #2C3E50);
+    color: var(--link-color);
     text-decoration: underline;
-    word-break: break-all;
+    transition: var(--transition-normal);
+    font-weight: var(--font-weight-medium);
 }
 
 .cookies-section a:hover {
-    color: var(--color-secondary, #007bff);
+    color: var(--link-hover-color);
     text-decoration: none;
 }
 
@@ -63,14 +101,36 @@
     margin: 0 auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .cookies-main {
+        padding: 100px 0 40px 0;
+    }
+    
     .cookies-section {
-        padding: 28px 10px 24px 10px;
+        padding: 32px 24px 32px 24px;
+        margin: 0 16px;
     }
+    
     .cookies-section h1 {
-        font-size: 1.5rem;
+        font-size: var(--font-size-2xl);
     }
+    
     .cookies-section h2 {
-        font-size: 1.1rem;
+        font-size: var(--font-size-md);
+        margin-top: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .cookies-section {
+        padding: 24px 16px 24px 16px;
+    }
+    
+    .cookies-section h1 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .cookies-section h2 {
+        font-size: var(--font-size-base);
     }
 } 

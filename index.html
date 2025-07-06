@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="assets/css/components/forms.css">
     <link rel="stylesheet" href="assets/css/components/section.css">
     <link rel="stylesheet" href="assets/css/components/faq.css">
+    <link rel="stylesheet" href="assets/css/components/cookie-banner.css">
     
     <!-- CSS Principal -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -504,9 +505,23 @@
         </a>
     </footer>
 
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <h3 class="cookie-title">Este site utiliza cookies</h3>
+            <p class="cookie-text">Utilizamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego do site. Ao continuar navegando, você concorda com nossa <a href="pages/cookies/" class="cookie-link">Política de Cookies</a>.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Aceitar</button>
+            <button class="cookie-btn cookie-btn-settings" id="cookieSettings">Configurações</button>
+        </div>
+    </div>
+    
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/cookie-banner.js"></script>
     <script>
         // Inicializar partículas
         document.addEventListener('DOMContentLoaded', function() {
