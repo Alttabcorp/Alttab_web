@@ -1,6 +1,6 @@
 /**
  * Estilos de Botões
- * Sistema de botões para o site Alt tab Corp
+ * Sistema de botões para o site Alt tab Corp - Design moderno e elegante
  */
 
 /* Botão Base */
@@ -8,9 +8,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 1.75rem;
     font-family: var(--font-primary);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     line-height: 1.5;
     text-align: center;
@@ -18,162 +18,317 @@
     vertical-align: middle;
     cursor: pointer;
     user-select: none;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: var(--border-radius-md);
     transition: all var(--transition-normal);
     white-space: nowrap;
     min-width: 120px;
+    letter-spacing: 0.02em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 /* Variantes de Botões */
 .btn-primary {
-    background-color: var(--primary);
-    color: var(--light);
-    border-color: var(--primary);
-}
-
-.btn-primary:hover, .btn-primary:focus {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-    color: var(--light);
-    text-decoration: none;
-}
-
-.btn-secondary {
     background-color: var(--secondary);
     color: var(--light);
     border-color: var(--secondary);
+    box-shadow: var(--shadow-sm);
 }
 
-.btn-secondary:hover, .btn-secondary:focus {
+.btn-primary:hover, .btn-primary:focus {
     background-color: var(--secondary-dark);
     border-color: var(--secondary-dark);
     color: var(--light);
-    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
+.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    color: var(--light);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: var(--light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--light);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-accent:hover, .btn-accent:focus {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: var(--light);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-accent:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Botões Outline */
 .btn-outline {
     background-color: transparent;
-    color: var(--primary);
-    border-color: var(--primary);
+    color: var(--secondary);
+    border-color: var(--secondary);
 }
 
 .btn-outline:hover, .btn-outline:focus {
-    background-color: var(--primary);
-    color: var(--light);
-    text-decoration: none;
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+    transform: translateY(-3px);
 }
 
-.btn-light {
-    background-color: var(--light);
-    color: var(--primary);
+.btn-outline:active {
+    transform: translateY(-1px);
+}
+
+.btn-outline-light {
+    background-color: transparent;
+    color: var(--light);
     border-color: var(--light);
 }
 
-.btn-light:hover, .btn-light:focus {
-    background-color: var(--gray-100);
-    border-color: var(--gray-100);
-    color: var(--primary);
-    text-decoration: none;
+.btn-outline-light:hover, .btn-outline-light:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    border-color: var(--light);
+    transform: translateY(-3px);
 }
 
-.btn-dark {
-    background-color: var(--dark);
-    color: var(--light);
-    border-color: var(--dark);
+.btn-outline-light:active {
+    transform: translateY(-1px);
 }
 
-.btn-dark:hover, .btn-dark:focus {
-    background-color: var(--gray-800);
-    border-color: var(--gray-800);
-    color: var(--light);
+/* Botões de Texto */
+.btn-text {
+    background-color: transparent;
+    color: var(--secondary);
+    border: none;
+    padding: 0.5rem 1rem;
     text-decoration: none;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.btn-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: width var(--transition-normal);
+}
+
+.btn-text:hover::after, .btn-text:focus::after {
+    width: 100%;
+}
+
+.btn-text:hover, .btn-text:focus {
+    color: var(--secondary-dark);
 }
 
 /* Tamanhos de Botões */
 .btn-sm {
     padding: 0.5rem 1rem;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     min-width: 100px;
 }
 
 .btn-lg {
     padding: 1rem 2rem;
-    font-size: var(--font-size-lg);
-    min-width: 150px;
+    font-size: var(--font-size-md);
+    min-width: 160px;
 }
 
-/* Botão com ícone */
+/* Botão com Ícone */
 .btn i {
-    margin-right: 0.5rem;
-}
-
-.btn-icon-right i {
-    margin-right: 0;
     margin-left: 0.5rem;
+    font-size: 1rem;
+    transition: transform var(--transition-normal);
 }
 
-/* Botão de largura total */
-.btn-block {
-    display: block;
-    width: 100%;
+.btn:hover i {
+    transform: translateX(3px);
 }
 
-/* Estados de Botão */
+.btn-icon-left i {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+.btn-icon-left:hover i {
+    transform: translateX(-3px);
+}
+
+/* Botão Circular */
+.btn-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: unset;
+}
+
+.btn-circle i {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.btn-circle:hover i {
+    transform: none;
+}
+
+.btn-circle.btn-sm {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-circle.btn-lg {
+    width: 60px;
+    height: 60px;
+}
+
+/* Botão com Efeito Ripple */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: ripple 1s;
+    opacity: 0;
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+/* Botão Desabilitado */
 .btn:disabled, .btn.disabled {
     opacity: 0.65;
     pointer-events: none;
+    cursor: not-allowed;
 }
 
-/* Botão com efeito de carregamento */
+/* Botão de Voltar ao Topo */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-fixed);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-lg);
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary-dark);
+    transform: translateY(-5px);
+}
+
+.back-to-top i {
+    font-size: 1.25rem;
+}
+
+/* Botão de Loading */
 .btn-loading {
     position: relative;
     color: transparent !important;
 }
 
 .btn-loading::after {
-    content: "";
+    content: '';
     position: absolute;
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid var(--light);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    border-top-color: transparent;
-    animation: btn-spinner 0.6s linear infinite;
+    border-top-color: var(--light);
+    animation: spin 0.8s linear infinite;
 }
 
-@keyframes btn-spinner {
+@keyframes spin {
     to {
         transform: rotate(360deg);
     }
 }
 
-/* Grupo de Botões */
-.btn-group {
-    display: inline-flex;
-    position: relative;
-}
-
-.btn-group .btn {
-    position: relative;
-    flex: 1 1 auto;
-}
-
-.btn-group .btn:not(:first-child) {
-    margin-left: -1px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.btn-group .btn:not(:last-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
     .btn {
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1.5rem;
+        font-size: var(--font-size-xs);
+    }
+    
+    .btn-lg {
+        padding: 0.875rem 1.75rem;
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn-sm {
+        padding: 0.5rem 0.875rem;
+        font-size: var(--font-size-xs);
     }
 }
 
@@ -218,4 +373,139 @@
 
 .btn-hover-slide:hover::before {
     left: 0;
+}
+
+/* Floating Contact Button */
+.floating-contact {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: var(--z-fixed);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.floating-contact-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius-full);
+    background: var(--gradient-secondary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    font-size: var(--font-size-xl);
+    border: none;
+    outline: none;
+}
+
+.floating-contact-btn:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.floating-contact-menu {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background-color: var(--light);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-md);
+    width: 280px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.floating-contact-menu.active {
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: all;
+    padding: var(--spacing-lg);
+}
+
+.floating-contact-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.floating-contact-close {
+    cursor: pointer;
+    font-size: var(--font-size-md);
+    color: var(--gray-600);
+    transition: var(--transition-normal);
+}
+
+.floating-contact-close:hover {
+    color: var(--primary);
+}
+
+.floating-contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.floating-contact-option {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    color: var(--gray-800);
+    transition: var(--transition-normal);
+}
+
+.floating-contact-option:hover {
+    background-color: var(--gray-100);
+}
+
+.floating-contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-full);
+    background-color: var(--primary-light);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-md);
+}
+
+.floating-contact-info {
+    flex: 1;
+}
+
+.floating-contact-label {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 2px;
+}
+
+.floating-contact-value {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+}
+
+@media (max-width: 768px) {
+    .floating-contact {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .floating-contact-menu {
+        width: 260px;
+        right: 0;
+    }
 } 
