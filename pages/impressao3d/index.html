@@ -4,337 +4,417 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Produtos exclusivos em impressão 3D - Peças personalizadas, protótipos e projetos especiais - Alt tab Corp">
+    <meta name="theme-color" content="#2C3E50">
+    
     <title>Produtos em Impressão 3D - Alt tab Corp</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
     
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="../../assets/css/base/variables.css">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/grid.css">
+    <link rel="stylesheet" href="../../assets/css/components/header.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/components/buttons.css">
+    <link rel="stylesheet" href="../../assets/css/components/cards.css">
+    <link rel="stylesheet" href="../../assets/css/pages/impressao3d.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Produtos em Impressão 3D - Alt tab Corp">
+    <meta property="og:description" content="Transforme suas ideias em produtos únicos com nossa tecnologia de impressão 3D de alta qualidade">
+    <meta property="og:image" content="../../assets/images/og-image.jpg">
 </head>
-<body>
-    <!-- Header Component -->
-    <div id="header"></div>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
+<body class="page-impressao3d">
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <div class="hero-content">
-                <h1 data-aos="fade-up" data-aos-delay="100">Produtos Exclusivos em Impressão 3D</h1>
-                <p data-aos="fade-up" data-aos-delay="200">Transforme suas ideias em produtos únicos com nossa tecnologia de impressão 3D de alta qualidade.</p>
-            </div>
+            <nav class="nav">
+                <a href="../../" class="logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../../" class="nav-link">Início</a></li>
+                    <li><a href="../sobre/" class="nav-link">Sobre</a></li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="../servicos/" class="nav-link active">Serviços <span class="dropdown-arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../consultoria/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="../web/" class="dropdown-link">Desenvolvimento Web</a></li>
+                            <li><a href="../impressao3d/" class="dropdown-link active">Impressão 3D</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="nav-item nav-dropdown">
+                                <a href="../esports/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="../contato/" class="nav-link">Contato</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <!-- Produtos em Destaque -->
-    <section class="section products" id="produtos">
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Produtos Exclusivos em Impressão 3D</h1>
+                    <p>Transforme suas ideias em produtos únicos com nossa tecnologia de impressão 3D de alta qualidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Produtos em Destaque -->
+        <section class="section products" id="produtos">
+            <div class="container">
+                <h2 class="section-title">Nossos Produtos em Destaque</h2>
+                <p class="section-subtitle">Conheça alguns dos nossos produtos mais populares em impressão 3D</p>
+                
+                <!-- Swiper -->
+                <div class="swiper productSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="product-card card">
+                                <div class="product-image">
+                                    <img src="../../assets/images/3d/produto1.jpg" alt="Suporte para Smartphone">
+                                </div>
+                                <div class="product-info">
+                                    <h3>Suporte para Smartphone</h3>
+                                    <p>Suporte ergonômico e ajustável para seu smartphone, perfeito para videoconferências.</p>
+                                    <span class="product-price">R$ 89,90</span>
+                                    <a href="#contato" class="btn btn-outline">Solicitar</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="product-card card">
+                                <div class="product-image">
+                                    <img src="../../assets/images/3d/produto2.jpg" alt="Organizador de Mesa">
+                                </div>
+                                <div class="product-info">
+                                    <h3>Organizador de Mesa</h3>
+                                    <p>Organizador modular para sua mesa, com compartimentos personalizáveis.</p>
+                                    <span class="product-price">R$ 129,90</span>
+                                    <a href="#contato" class="btn btn-outline">Solicitar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="swiper-slide">
+                            <div class="product-card card">
+                                <div class="product-image">
+                                    <img src="../../assets/images/3d/produto2.jpg" alt="Organizador de Mesa">
+                                </div>
+                                <div class="product-info">
+                                    <h3>Organizador de Mesa</h3>
+                                    <p>Organizador modular para sua mesa, com compartimentos personalizáveis.</p>
+                                    <span class="product-price">R$ 129,90</span>
+                                    <a href="#contato" class="btn btn-outline">Solicitar</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="product-card card">
+                                <div class="product-image">
+                                    <img src="../../assets/images/3d/produto3.jpg" alt="Suporte para Headset">
+                                </div>
+                                <div class="product-info">
+                                    <h3>Suporte para Headset</h3>
+                                    <p>Suporte elegante e durável para seu headset, com design minimalista.</p>
+                                    <span class="product-price">R$ 69,90</span>
+                                    <a href="#contato" class="btn btn-outline">Solicitar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Funciona -->
+        <section class="section how-it-works" id="como-funciona">
+            <div class="container">
+                <h2 class="section-title">Como Funciona</h2>
+                <div class="how-steps">
+                    <div class="how-step"><span class="how-icon">1</span><p>Você envia sua ideia ou projeto.</p></div>
+                    <div class="how-step"><span class="how-icon">2</span><p>Fazemos a modelagem 3D e orçamento.</p></div>
+                    <div class="how-step"><span class="how-icon">3</span><p>Após aprovação, realizamos a impressão.</p></div>
+                    <div class="how-step"><span class="how-icon">4</span><p>Enviamos o produto para você, em todo o Brasil.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalização -->
+        <section class="section customization" id="personalizacao">
+            <div class="container">
+                <div class="grid grid-2">
+                    <div class="customization-content">
+                        <h2 class="section-title">Personalize seu Produto</h2>
+                        <p>Oferecemos personalização completa dos nossos produtos:</p>
+                        <ul class="customization-list">
+                            <li>Escolha entre diversos materiais</li>
+                            <li>Selecione a cor que preferir</li>
+                            <li>Adicione seu logo ou design personalizado</li>
+                            <li>Ajuste as dimensões conforme sua necessidade</li>
+                        </ul>
+                        <a href="#contato" class="btn btn-primary">Solicitar Personalização</a>
+                    </div>
+                    <div class="customization-image">
+                        <img src="../../assets/images/3d/customization.jpg" alt="Personalização de produtos">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria de Projetos Realizados -->
+        <section class="section gallery" id="galeria">
+            <div class="container">
+                <h2 class="section-title">Galeria de Projetos Realizados</h2>
+                <p class="section-subtitle">Veja alguns exemplos reais de peças impressas para nossos clientes.</p>
+                <div class="gallery-grid">
+                    <img src="../../assets/images/3d/galeria1.jpg" alt="Projeto 3D 1">
+                    <img src="../../assets/images/3d/galeria2.jpg" alt="Projeto 3D 2">
+                    <img src="../../assets/images/3d/galeria3.jpg" alt="Projeto 3D 3">
+                    <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 4">
+                    <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 5">
+                    <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 6">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq" id="faq">
+            <div class="container">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">Quais materiais vocês utilizam na impressão 3D?</button>
+                        <div class="faq-answer">Trabalhamos com PLA, ABS, PETG e outros materiais sob consulta.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Posso personalizar o tamanho e a cor do produto?</button>
+                        <div class="faq-answer">Sim! Oferecemos personalização completa de dimensões, cores e até gravação de logotipo.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Qual o prazo médio para produção?</button>
+                        <div class="faq-answer">O prazo varia conforme o projeto, mas geralmente entre 3 e 10 dias úteis.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Vocês entregam para todo o Brasil?</button>
+                        <div class="faq-answer">Sim, enviamos para todo o território nacional.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download de Catálogo -->
+        <section class="section catalog-download" id="catalogo">
+            <div class="container">
+                <h2 class="section-title">Baixe Nosso Catálogo</h2>
+                <p class="section-subtitle">Confira todos os produtos, especificações e diferenciais em nosso catálogo completo.</p>
+                <a href="../../assets/catalogo-impressao3d.pdf" class="btn btn-primary" download>Download do Catálogo PDF</a>
+            </div>
+        </section>
+
+        <!-- Parcerias -->
+        <section class="section partnerships" id="parcerias">
+            <div class="container">
+                <h2 class="section-title">Parcerias e B2B</h2>
+                <p class="section-subtitle">Tem uma empresa, agência ou projeto especial? Entre em contato para condições exclusivas e soluções sob medida.</p>
+                <a href="../contato/" class="btn btn-secondary">Quero ser parceiro</a>
+            </div>
+        </section>
+
+       <!-- CTA Section -->
+       <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Pronto para materializar suas ideias?</h2>
+                    <p>Entre em contato conosco e descubra como a impressão 3D pode revolucionar seus projetos e protótipos.</p>
+                    <a href="../contato/" class="cta-button">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossos Serviços -->
+        <section class="other-verticals">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <p class="section-subtitle">Conheça nossas áreas de atuação e descubra como podemos transformar seu negócio com tecnologia, inovação e criatividade.</p>
+                <div class="verticals-grid">
+                    <a href="../consultoria/" class="vertical-card consultoria">
+                        <div class="vertical-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3><strong>Consultoria TI</strong></h3>
+                        <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
+                        <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="../web/" class="vertical-card desenvolvimento web">
+                        <div class="vertical-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3><strong>Desenvolvimento Web</strong></h3>
+                        <p>Crie presença digital impactante com websites modernos, responsivos e otimizados para resultados.</p>
+                        <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="../esports/" class="vertical-card esports">
+                        <div class="vertical-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3><strong>E-Sports</strong></h3>
+                        <p>Entre no mundo dos esports com nossa equipe profissional e inovação em jogos.</p>
+                        <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <h2 class="section-title">Nossos Produtos em Destaque</h2>
-            <p class="section-subtitle">Conheça alguns dos nossos produtos mais populares em impressão 3D</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                    <p>Transformando ideias em soluções tecnológicas</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../../">Início</a></li>
+                            <li><a href="../sobre/">Sobre</a></li>
+                            <li><a href="../servicos/">Serviços</a></li>
+                            <li><a href="../contato/">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="../web/">Desenvolvimento Web</a></li>
+                            <li><a href="../consultoria/">Consultoria em TI</a></li>
+                            <li><a href="../impressao3d/" class="active">Impressão 3D</a></li>
+                            <li><a href="../esports/">E-Sports</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="../termos/">Termos de Uso</a></li>
+                            <li><a href="../privacidade/">Política de Privacidade</a></li>
+                            <li><a href="../cookies/">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@alttabcorp.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
             
-            <!-- Swiper -->
-            <div class="swiper productSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="product-card card">
-                            <div class="product-image">
-                                <img src="../../assets/images/3d/produto1.jpg" alt="Suporte para Smartphone">
-                            </div>
-                            <div class="product-info">
-                                <h3>Suporte para Smartphone</h3>
-                                <p>Suporte ergonômico e ajustável para seu smartphone, perfeito para videoconferências.</p>
-                                <span class="product-price">R$ 89,90</span>
-                                <a href="#contato" class="btn btn-outline">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="product-card card">
-                            <div class="product-image">
-                                <img src="../../assets/images/3d/produto2.jpg" alt="Organizador de Mesa">
-                            </div>
-                            <div class="product-info">
-                                <h3>Organizador de Mesa</h3>
-                                <p>Organizador modular para sua mesa, com compartimentos personalizáveis.</p>
-                                <span class="product-price">R$ 129,90</span>
-                                <a href="#contato" class="btn btn-outline">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-
-                     <div class="swiper-slide">
-                        <div class="product-card card">
-                            <div class="product-image">
-                                <img src="../../assets/images/3d/produto2.jpg" alt="Organizador de Mesa">
-                            </div>
-                            <div class="product-info">
-                                <h3>Organizador de Mesa</h3>
-                                <p>Organizador modular para sua mesa, com compartimentos personalizáveis.</p>
-                                <span class="product-price">R$ 129,90</span>
-                                <a href="#contato" class="btn btn-outline">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="swiper-slide">
-                        <div class="product-card card">
-                            <div class="product-image">
-                                <img src="../../assets/images/3d/produto3.jpg" alt="Suporte para Headset">
-                            </div>
-                            <div class="product-info">
-                                <h3>Suporte para Headset</h3>
-                                <p>Suporte elegante e durável para seu headset, com design minimalista.</p>
-                                <span class="product-price">R$ 69,90</span>
-                                <a href="#contato" class="btn btn-outline">Solicitar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
             </div>
         </div>
-    </section>
-
-    <!-- Como Funciona -->
-    <section class="section how-it-works" id="como-funciona">
-        <div class="container">
-            <h2 class="section-title">Como Funciona</h2>
-            <div class="how-steps">
-                <div class="how-step"><span class="how-icon">1</span><p>Você envia sua ideia ou projeto.</p></div>
-                <div class="how-step"><span class="how-icon">2</span><p>Fazemos a modelagem 3D e orçamento.</p></div>
-                <div class="how-step"><span class="how-icon">3</span><p>Após aprovação, realizamos a impressão.</p></div>
-                <div class="how-step"><span class="how-icon">4</span><p>Enviamos o produto para você, em todo o Brasil.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Personalização -->
-    <section class="section customization" id="personalizacao">
-        <div class="container">
-            <div class="grid grid-2">
-                <div class="customization-content fade-in">
-                    <h2 class="section-title">Personalize seu Produto</h2>
-                    <p>Oferecemos personalização completa dos nossos produtos:</p>
-                    <ul class="customization-list">
-                        <li>Escolha entre diversos materiais</li>
-                        <li>Selecione a cor que preferir</li>
-                        <li>Adicione seu logo ou design personalizado</li>
-                        <li>Ajuste as dimensões conforme sua necessidade</li>
-                    </ul>
-                    <a href="#contato" class="btn btn-primary">Solicitar Personalização</a>
-                </div>
-                <div class="customization-image fade-in">
-                    <img src="../../assets/images/3d/customization.jpg" alt="Personalização de produtos">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galeria de Projetos Realizados -->
-    <section class="section gallery" id="galeria">
-        <div class="container">
-            <h2 class="section-title">Galeria de Projetos Realizados</h2>
-            <p class="section-subtitle">Veja alguns exemplos reais de peças impressas para nossos clientes.</p>
-            <div class="gallery-grid">
-                <img src="../../assets/images/3d/galeria1.jpg" alt="Projeto 3D 1">
-                <img src="../../assets/images/3d/galeria2.jpg" alt="Projeto 3D 2">
-                <img src="../../assets/images/3d/galeria3.jpg" alt="Projeto 3D 3">
-                <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 4">
-                <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 5">
-                <img src="../../assets/images/3d/galeria4.jpg" alt="Projeto 3D 6">
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section faq" id="faq">
-        <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">Quais materiais vocês utilizam na impressão 3D?</button>
-                    <div class="faq-answer">Trabalhamos com PLA, ABS, PETG e outros materiais sob consulta.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Posso personalizar o tamanho e a cor do produto?</button>
-                    <div class="faq-answer">Sim! Oferecemos personalização completa de dimensões, cores e até gravação de logotipo.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Qual o prazo médio para produção?</button>
-                    <div class="faq-answer">O prazo varia conforme o projeto, mas geralmente entre 3 e 10 dias úteis.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Vocês entregam para todo o Brasil?</button>
-                    <div class="faq-answer">Sim, enviamos para todo o território nacional.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download de Catálogo -->
-    <section class="section catalog-download" id="catalogo">
-        <div class="container">
-            <h2 class="section-title">Baixe Nosso Catálogo</h2>
-            <p class="section-subtitle">Confira todos os produtos, especificações e diferenciais em nosso catálogo completo.</p>
-            <a href="../../assets/catalogo-impressao3d.pdf" class="btn btn-primary" download>Download do Catálogo PDF</a>
-        </div>
-    </section>
-
-    <!-- Parcerias -->
-    <section class="section partnerships" id="parcerias">
-        <div class="container">
-            <h2 class="section-title">Parcerias e B2B</h2>
-            <p class="section-subtitle">Tem uma empresa, agência ou projeto especial? Entre em contato para condições exclusivas e soluções sob medida.</p>
-            <a href="/../../pages/contato/" class="btn btn-secondary">Quero ser parceiro</a>
-        </div>
-    </section>
-
-   <!-- CTA Section -->
-   <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Pronto para materializar suas ideias?</h2>
-                <p>Entre em contato conosco e descubra como a impressão 3D pode revolucionar seus projetos e protótipos.</p>
-                <a href="/../../pages/contato/" class="cta-button">Solicitar Orçamento</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nossos Serviços -->
-    <section class="other-verticals">
-        <div class="container">
-            <h2>Nossos Serviços</h2>
-            <p class="section-subtitle">Conheça nossas áreas de atuação e descubra como podemos transformar seu negócio com tecnologia, inovação e criatividade.</p>
-            <div class="verticals-grid">
-                <a href="/../../pages/construcao/" class="vertical-card consultoria fade-in" data-vertente="consultoria">
-                    <div class="vertical-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3><strong>Consultoria TI</strong></h3>
-                    <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
-                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="/../../pages/construcao/" class="vertical-card desenvolvimento web fade-in" data-vertente="web">
-                    <div class="vertical-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3><strong>Desenvolvimento Web</strong></h3>
-                    <p>Crie presença digital impactante com websites modernos, responsivos e otimizados para resultados.</p>
-                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="/../../pages/construcao/" class="vertical-card esports fade-in" data-vertente="esports">
-                    <div class="vertical-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3><strong>E-Sports</strong></h3>
-                    <p>Entre no mundo dos esports com nossa equipe profissional e inovação em jogos.</p>
-                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Component -->
-    <div id="footer"></div>
+    </footer>
 
     <!-- Scripts -->
-    <script src="../../assets/js/path-config.js"></script>
-    <script src="../../assets/js/main.js"></script>
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Carregar componentes
-        document.addEventListener('DOMContentLoaded', async function() {
-            try {
-                // Inicializar AOS
-                AOS.init({
-                    duration: 800,
-                    once: true,
-                    mirror: false
+        // Script mínimo para funcionalidade do menu mobile e outros recursos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuBtn && navMenu) {
+                menuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    menuBtn.classList.toggle('active');
                 });
-
-                // Carregar Header
-                const headerResponse = await fetch('../../components/header.html');
-                const headerData = await headerResponse.text();
-                document.getElementById('header').innerHTML = headerData;
-
-                // Carregar Footer
-                const footerResponse = await fetch('../../components/footer.html');
-                const footerData = await footerResponse.text();
-                document.getElementById('footer').innerHTML = footerData;
-
-                // Forçar Font Awesome a reprocessar ícones dinâmicos
-                if (window.FontAwesome && window.FontAwesome.dom && window.FontAwesome.dom.i2svg) {
-                    window.FontAwesome.dom.i2svg();
-                }
-
-                // Inicializar Swiper
-                const swiper = new Swiper('.productSwiper', {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                    loop: true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev',
-                    },
-                    breakpoints: {
-                        640: {
-                            slidesPerView: 2,
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                        },
-                    },
-                });
-
-                // FAQ toggle
-                document.querySelectorAll('.faq-question').forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        const item = btn.closest('.faq-item');
-                        item.classList.toggle('open');
-                    });
-                });
-
-                // Animação fade-in
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animate');
-                        }
-                    });
-                }, {
-                    threshold: 0.1
-                });
-
-                document.querySelectorAll('.fade-in').forEach(element => {
-                    observer.observe(element);
-                });
-
-            } catch (error) {
-                console.error('Erro ao carregar componentes:', error);
             }
+
+            // Inicializar Swiper
+            const swiper = new Swiper('.productSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+
+            // FAQ toggle
+            document.querySelectorAll('.faq-question').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const item = btn.closest('.faq-item');
+                    item.classList.toggle('open');
+                });
+            });
         });
     </script>
 </body>

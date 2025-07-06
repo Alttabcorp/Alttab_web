@@ -1,0 +1,259 @@
+/* Estilos específicos para a página de E-Sports */
+
+/* Hero Section */
+.hero-games {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/images/backgrounds/esports-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 150px 0 100px;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 0; /* Remover margin negativa */
+}
+
+.hero-games h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-games p {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease 0.2s;
+    animation-fill-mode: both;
+}
+
+/* Cards de Navegação */
+.navegacao {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.nav-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.nav-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.nav-icon i {
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+.nav-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.nav-card p {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.nav-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    text-align: left;
+}
+
+.nav-features li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-features li i {
+    color: var(--color-primary);
+}
+
+.nav-card .btn {
+    margin-top: auto;
+}
+
+/* CTA Section */
+.cta-section {
+    background-image: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #fff;
+    color: var(--color-primary);
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Outros Serviços */
+.other-verticals {
+    padding: 80px 0;
+}
+
+.verticals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.vertical-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.vertical-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.vertical-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.vertical-icon i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.vertical-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.vertical-card p {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.vertical-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.vertical-card:hover .vertical-link {
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-games {
+        padding: 120px 0 80px;
+    }
+
+    .hero-games h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-games h1 {
+        font-size: 2rem;
+    }
+
+    .hero-games p {
+        font-size: 1.1rem;
+    }
+
+    .nav-card {
+        padding: 20px;
+    }
+
+    .cta-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .cta-content p {
+        font-size: 1.1rem;
+    }
+} 

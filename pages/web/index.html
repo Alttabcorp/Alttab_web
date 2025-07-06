@@ -5,252 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Tags -->
-    <meta name="description" content="Alt tab Corp - Tecnologia e inovação em Consultoria TI, SaaS, E-Sports e Impressão 3D">
-    <meta name="keywords" content="consultoria ti, saas, esports, impressão 3d, tecnologia">
+    <meta name="description" content="Alt tab Corp - Desenvolvimento Web - Sites e Aplicações Web">
+    <meta name="keywords" content="desenvolvimento web, sites, aplicações web, tecnologia">
     <meta name="author" content="Alt tab Corp">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Alt tab Corp - Tecnologia de Classe Mundial">
-    <meta property="og:description" content="Transformando ideias em soluções inovadoras para o seu negócio">
-    <meta property="og:image" content="https://alttabcorp.com.br/assets/images/og-image.jpg">
-    <meta property="og:url" content="https://alttabcorp.com.br">
+    <meta property="og:title" content="Desenvolvimento Web - Alt tab Corp">
+    <meta property="og:description" content="Criamos sites e aplicações web modernas, responsivas e otimizadas para SEO">
+    <meta property="og:image" content="../../assets/images/og-image.jpg">
     
     <!-- Theme -->
     <meta name="theme-color" content="#2C3E50">
-    <title>Alt tab Corp - Tecnologia de Classe Mundial</title>
+    <title>Desenvolvimento Web - Alt tab Corp</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
     
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="../../assets/fonts/montserrat-v25-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="../../assets/images/hero-bg.jpg" as="image">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../assets/css/variables.css">
-    <link rel="stylesheet" href="../../assets/css/components.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    
-    <!-- Fonts -->
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="../../assets/js/path-config.js"></script>
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="../../assets/css/base/variables.css">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/grid.css">
+    <link rel="stylesheet" href="../../assets/css/components/header.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/components/buttons.css">
+    <link rel="stylesheet" href="../../assets/css/components/cards.css">
+    <link rel="stylesheet" href="../../assets/css/pages/web.css">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 </head>
-<body>
+<body class="page-web">
     <!-- Header -->
-    <header class="header" role="banner">
+    <header class="header">
         <div class="container">
-            <nav class="nav" role="navigation" aria-label="Menu principal">
-                <a href="../../" class="logo" aria-label="Alt tab Corp - Página Inicial">
-                    <img src="../../assets/images/logo.png" alt="Alt tab Corp" width="120" height="40">
+            <nav class="nav">
+                <a href="../../" class="logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
                 </a>
-                
-                <button class="menu-toggle" 
-                        aria-expanded="false"
-                        aria-controls="nav-menu"
-                        aria-label="Abrir menu">
-                    <span class="sr-only">Menu</span>
-                    <span class="hamburger"></span>
-                </button>
-                
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="../../" class="active" aria-current="page">Home</a></li>
-                    <li>
-                        <a href="/pages/sobre/" class="nav-link">
-                            Quem Somos
-                            <span class="nav-description">Nossa História</span>
-                        </a>
+                <ul class="nav-menu">
+                    <li><a href="../../" class="nav-link">Início</a></li>
+                    <li><a href="../sobre/" class="nav-link">Sobre</a></li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="../servicos/" class="nav-link active">Serviços <span class="dropdown-arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../consultoria/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="../web/" class="dropdown-link active">Desenvolvimento Web</a></li>
+                            <li><a href="../impressao3d/" class="dropdown-link">Impressão 3D</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="nav-item nav-dropdown">
+                                <a href="../esports/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <a href="/pages/servicos/" class="nav-link">
-                            Serviços
-                            <span class="nav-description">Nossas Soluções</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/pages/contato/" class="nav-link">
-                            Contato
-                            <span class="nav-description">Fale Conosco</span>
-                        </a>
-                    </li>
+                    <li><a href="../contato/" class="nav-link">Contato</a></li>
                 </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
     </header>
 
-    <!-- Page Content -->
-    <main class="contact-page">
-    <!-- Hero Section -->
-        <section class="hero" role="banner">
-            <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="container">
-            <div class="hero-content">
-                    <div class="hero-text animate-up">
-                        <span class="hero-tag">Inovação & Tecnologia</span>
-                        <h1 class="hero-title">
-                            Tecnologia de 
-                            <span class="typed-text" aria-label="texto animado"></span>
-                            <span class="cursor" aria-hidden="true">&nbsp;</span>
-                        </h1>
-                        <p class="hero-description">Transformando ideias em soluções inovadoras</p>
-                    </div>
-                    <div class="hero-cta animate-up-delay">
-                        <a href="#contact" class="btn btn-primary">
-                            <span>Iniciar Projeto</span>
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                        <a href="#services" class="btn btn-outline">
-                            <span>Conheça Nossos Serviços</span>
-                        </a>
-                    </div>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Desenvolvimento Web</h1>
+                    <p>Criamos sites e aplicações web modernas, responsivas e otimizadas para SEO</p>
                 </div>
-                    </div>
-            <div class="hero-scroll-indicator" aria-hidden="true">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-                <div class="arrows">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-            </div>
-        </div>
-    </section>
-
-        <!-- Informações de Contato -->
-        <section class="contact-info">
-        <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Telefone</h3>
-                        <p>+55 83 99332-2427</p>
-                    </div>
-                    <!-- Mais informações... -->
-                    </div>
             </div>
         </section>
 
-        <!-- Formulário de Contato -->
-        <section class="contact-form-section">
-            <!-- Seu formulário atual... -->
-    </section>
+        <!-- Serviços Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Nossos Serviços</span>
+                    <h2>Soluções Web Completas</h2>
+                    <p>Desenvolvemos soluções web personalizadas para atender às necessidades específicas do seu negócio</p>
+                </div>
 
-        <!-- Mapa -->
-        <section class="map-section">
-            <div id="map"></div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Sites Institucionais</h3>
+                        <p>Sites profissionais que representam sua marca e comunicam sua mensagem com eficiência.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3>E-commerce</h3>
+                        <p>Lojas virtuais completas com gestão de produtos, pagamentos e logística integrados.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Aplicações Web</h3>
+                        <p>Sistemas web personalizados para automatizar processos e aumentar a produtividade.</p>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO</h3>
+                        <p>Otimização para mecanismos de busca para melhorar o posicionamento do seu site.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Pronto para transformar sua presença digital?</h2>
+                    <p>Entre em contato conosco e descubra como podemos ajudar seu negócio a crescer online.</p>
+                    <a href="../contato/" class="cta-button">Solicitar Orçamento</a>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="../../" aria-label="Alt tab Corp - Página Inicial">
-                        <img src="../../assets/images/logo-white.png" alt="Alt tab Corp" width="120" height="40">
-                    </a>
-                    <p>Transformando o futuro através da tecnologia</p>
+                <div class="footer-logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                    <p>Transformando ideias em soluções tecnológicas</p>
                 </div>
                 
-                <div class="footer-sections">
-                <div class="footer-section">
-                        <h4>Links Rápidos</h4>
-                        <ul class="footer-links">
-                            <li><a href="../../">Home</a></li>
-                            <li><a href="/pages/sobre/">Quem Somos</a></li>
-                            <li><a href="/pages/servicos/">Serviços</a></li>
-                            <li><a href="/pages/contato/">Contato</a></li>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../../">Início</a></li>
+                            <li><a href="../sobre/">Sobre</a></li>
+                            <li><a href="../servicos/">Serviços</a></li>
+                            <li><a href="../contato/">Contato</a></li>
                         </ul>
                     </div>
                     
-                    <div class="footer-section">
-                        <h4>Serviços</h4>
-                        <ul class="footer-links">
-                            <li><a href="/pages/construcao/">Consultoria TI</a></li>
-                            <li><a href="/pages/construcao/">Soluções SaaS</a></li>
-                            <li><a href="/pages/construcao/">E-Sports</a></li>
-                            <li><a href="/pages/impressao3d/">Impressão 3D</a></li>
+                    <div class="footer-links-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="../web/" class="active">Desenvolvimento Web</a></li>
+                            <li><a href="../consultoria/">Consultoria em TI</a></li>
+                            <li><a href="../impressao3d/">Impressão 3D</a></li>
+                            <li><a href="../esports/">E-Sports</a></li>
                         </ul>
-                </div>
-                
-                <div class="footer-section">
-                        <h4>Contato</h4>
-                        <address class="footer-contact">
-                            <p>
-                                <i class="fas fa-envelope" aria-hidden="true"></i>
-                                <a href="mailto:contato@alttabcorp.com.br">contato@alttabcorp.com.br</a>
-                            </p>
-                            <p>
-                                <i class="fas fa-phone" aria-hidden="true"></i>
-                                <a href="tel:+5583993322427">+55 83 99332-2427</a>
-                            </p>
-                        </address>
-                        </div>
+                    </div>
                     
-                    <div class="footer-section">
-                        <h4>Newsletter</h4>
-                        <form class="newsletter-form" action="/api/newsletter" method="POST">
-                            <div class="form-group">
-                                <label for="newsletter-email" class="sr-only">E-mail</label>
-                                <input type="email" 
-                                       id="newsletter-email" 
-                                       name="email" 
-                                       placeholder="Seu e-mail"
-                                       required>
-                        </div>
-                            <button type="submit" class="btn btn-primary">Inscrever</button>
-                        </form>
+                    <div class="footer-links-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="../termos/">Termos de Uso</a></li>
+                            <li><a href="../privacidade/">Política de Privacidade</a></li>
+                            <li><a href="../cookies/">Política de Cookies</a></li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="footer-bottom">
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@alttabcorp.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    
                     <div class="social-links">
-                        <a href="https://linkedin.com/company/alttabcorp" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://instagram.com/alttabcorp" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                            <i class="fab fa-instagram" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://github.com/alttabcorp" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                     </div>
-                    <p class="copyright">&copy; 2024 Alt tab Corp. Todos os direitos reservados.</p>
                 </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/components/navigation.js"></script>
-    <script src="../../assets/js/components/animations.js"></script>
-    <script src="../../assets/js/components/forms.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Inicializar componentes
-        Navigation.init();
-        Animations.init();
-        Forms.init();
-        
-        // Typed.js para o hero
-        new Typed('.typed-text', {
-            strings: ['Classe Mundial', 'Excelência', 'Inovação'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true
+        // Script mínimo para funcionalidade do menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuBtn && navMenu) {
+                menuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    menuBtn.classList.toggle('active');
+                });
+            }
         });
-    });
     </script>
 </body>
 </html> 

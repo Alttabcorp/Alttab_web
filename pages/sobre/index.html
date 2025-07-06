@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sobre a Alt tab Corp - Nossa História e Valores">
+    <meta name="description" content="Conheça a Alt tab Corp - Empresa de tecnologia e inovação">
     <meta name="theme-color" content="#2C3E50">
 
-    <title>Sobre - Alt tab Corp</title>
+    <title>Sobre Nós - Alt tab Corp</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
@@ -19,149 +19,315 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/variables.css">
-    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/components.css">
+    
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="../../assets/css/base/variables.css">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/grid.css">
     <link rel="stylesheet" href="../../assets/css/components/header.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/components/buttons.css">
+    <link rel="stylesheet" href="../../assets/css/components/cards.css">
     <link rel="stylesheet" href="../../assets/css/pages/sobre.css">
     
-    <!-- AOS Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
-    <!-- Scripts -->
-    <script src="../../assets/js/path-config.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="../../assets/js/main.js"></script>
-</head>
-<body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">
-        Pular para o conteúdo principal
-    </a>
+    <!-- PWA Support -->
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sobre Nós - Alt tab Corp">
+    <meta property="og:description" content="Conheça a Alt tab Corp - Empresa de tecnologia e inovação">
+    <meta property="og:image" content="../../assets/images/og-image.jpg">
+</head>
+<body class="page-sobre">
     <!-- Header -->
-    <div id="header-placeholder"></div>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../../" class="logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../../" class="nav-link">Início</a></li>
+                    <li><a href="../sobre/" class="nav-link active">Sobre</a></li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="../servicos/" class="nav-link">Serviços <span class="dropdown-arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../construcao/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="../construcao/" class="dropdown-link">Desenvolvimento Web</a></li>
+                            <li><a href="../impressao3d/" class="dropdown-link">Impressão 3D</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="nav-item nav-dropdown">
+                                <a href="../construcao/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="../contato/" class="nav-link">Contato</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
     <!-- Main Content -->
-    <main id="main-content" class="about-main">
-        <!-- Hero Section -->
-        <section class="about-hero">
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
             <div class="container">
-                <h1>Sobre a Alt tab Corp</h1>
-                <p>Transformando o futuro através da tecnologia e inovação.</p>
-                <a href="/Alttab_web/contato" class="cta-button">Fale com a gente</a>
+                <h1 class="page-title">Sobre Nós</h1>
+                <p class="page-subtitle">
+                    Conheça nossa história, missão e valores
+                </p>
             </div>
         </section>
 
-        <!-- Quem Somos -->
-        <section class="about-who">
-            <div class="container about-who-grid">
-                <img src="../../assets/images/about.jpg" alt="Equipe Alt tab Corp" class="about-img">
-                <div>
-                    <h2>Quem Somos</h2>
-                    <p>A Alt tab Corp é uma empresa multidisciplinar de tecnologia focada em entregar soluções inovadoras e de alta qualidade para nossos clientes.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Valores -->
-        <section class="about-values">
-            <div class="container values-grid">
-                <div class="value-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Inovação</h3>
-                    <p>Buscamos sempre novas soluções e tecnologias.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Compromisso</h3>
-                    <p>Foco total no sucesso dos nossos clientes.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Colaboração</h3>
-                    <p>Trabalho em equipe para resultados excepcionais.</p>
-                </div>
-                <div class="value-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Excelência</h3>
-                    <p>Qualidade e melhoria contínua em tudo que fazemos.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Timeline -->
-        <section class="about-timeline">
+        <!-- About Section -->
+        <section class="about-section">
             <div class="container">
-                <h2>Nossa Jornada</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="timeline-date">2020</span>
-                        <h3>Fundação</h3>
-                        <p>Nasce a Alt tab Corp com o objetivo de revolucionar o mercado de tecnologia.</p>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="about-image">
+                            <img src="../../assets/images/about-image.jpg" alt="Alt tab Corp Team">
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2021</span>
-                        <h3>Expansão</h3>
-                        <p>Ampliamos nossa equipe e começamos a atender clientes em todo o Brasil.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2022</span>
-                        <h3>Inovação</h3>
-                        <p>Lançamento de novas soluções e parcerias estratégicas no mercado.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2023</span>
-                        <h3>Reconhecimento</h3>
-                        <p>Premiações e reconhecimento por nossa excelência em inovação.</p>
+                    <div class="col-md-6">
+                        <div class="about-content">
+                            <h2>Nossa História</h2>
+                            <p>
+                                A Alt tab Corp nasceu da paixão por tecnologia e inovação. Fundada em 2022, 
+                                nossa empresa tem como objetivo transformar ideias em soluções tecnológicas 
+                                que impactam positivamente o mercado e a sociedade.
+                            </p>
+                            <p>
+                                Ao longo dos anos, construímos uma equipe multidisciplinar de profissionais 
+                                talentosos e dedicados, comprometidos com a excelência e a entrega de 
+                                resultados excepcionais para nossos clientes.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section">
+        <!-- Mission & Values -->
+        <section class="mission-values">
             <div class="container">
-                <div class="cta-content">
-                    <h2>Pronto para transformar seu negócio?</h2>
-                    <p>Entre em contato conosco e descubra como podemos ajudar sua empresa a alcançar novos patamares.</p>
-                    <a href="/Alttab_web/contato" class="cta-button">Fale Conosco <i class="fas fa-arrow-right"></i></a>
+                <div class="section-header text-center">
+                    <h2>Missão, Visão e Valores</h2>
+                    <p>Os princípios que guiam nosso trabalho todos os dias</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Missão</h3>
+                            <p>
+                                Desenvolver soluções tecnológicas inovadoras que transformem 
+                                negócios e melhorem a vida das pessoas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Visão</h3>
+                            <p>
+                                Ser reconhecida como referência em inovação tecnológica, 
+                                criando soluções que impactem positivamente o futuro.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="value-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3>Valores</h3>
+                            <ul>
+                                <li>Inovação constante</li>
+                                <li>Excelência técnica</li>
+                                <li>Ética e transparência</li>
+                                <li>Foco no cliente</li>
+                                <li>Trabalho em equipe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Nossa Equipe</h2>
+                    <p>Conheça os profissionais por trás da Alt tab Corp</p>
+                </div>
+
+                <div class="row">
+                    <!-- Team Member 1 -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="../../assets/images/equipe/team-member1.jpg" alt="Nome do Membro">
+                            </div>
+                            <div class="team-info">
+                                <h3>Nome do Membro</h3>
+                                <p class="position">Cargo</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="../../assets/images/equipe/team-member2.jpg" alt="Nome do Membro">
+                            </div>
+                            <div class="team-info">
+                                <h3>Nome do Membro</h3>
+                                <p class="position">Cargo</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="../../assets/images/equipe/team-member3.jpg" alt="Nome do Membro">
+                            </div>
+                            <div class="team-info">
+                                <h3>Nome do Membro</h3>
+                                <p class="position">Cargo</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="col-md-4 col-lg-3">
+                        <div class="team-card">
+                            <div class="team-image">
+                                <img src="../../assets/images/equipe/team-member4.jpg" alt="Nome do Membro">
+                            </div>
+                            <div class="team-info">
+                                <h3>Nome do Membro</h3>
+                                <p class="position">Cargo</p>
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Component Loader Script -->
-    <script>
-        // Function to load components
-        async function loadComponent(elementId, componentPath) {
-            try {
-                const response = await fetch(componentPath);
-                const html = await response.text();
-                document.getElementById(elementId).innerHTML = html;
-            } catch (error) {
-                console.error(`Erro ao carregar componente ${componentPath}:`, error);
-            }
-        }
-
-        // Load components when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load main components
-            loadComponent('header-placeholder', '../../components/header.html');
-            loadComponent('footer-placeholder', '../../components/footer.html');
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                    <p>Transformando ideias em soluções tecnológicas</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../../">Início</a></li>
+                            <li><a href="../sobre/">Sobre</a></li>
+                            <li><a href="../servicos/">Serviços</a></li>
+                            <li><a href="../contato/">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="../web/">Desenvolvimento Web</a></li>
+                            <li><a href="../consultoria/">Consultoria em TI</a></li>
+                            <li><a href="../impressao3d/">Impressão 3D</a></li>
+                            <li><a href="../esports/">E-Sports</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="../termos/">Termos de Uso</a></li>
+                            <li><a href="../privacidade/">Política de Privacidade</a></li>
+                            <li><a href="../cookies/">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@alttabcorp.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
             
-            // Initialize AOS
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
-            });
+            <div class="footer-bottom">
+                <p>&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script mínimo para funcionalidade do menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuBtn && navMenu) {
+                menuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    menuBtn.classList.toggle('active');
+                });
+            }
         });
     </script>
 </body>

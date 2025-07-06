@@ -3,134 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jogos e E-sports da Alt Tab - Desenvolvimento de jogos e competições">
-    <title>Jogos & E-sports - Alt Tab</title>
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
-
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="../../assets/js/path-config.js"></script>
-</head>
-<body>
-    <div id="header-placeholder"></div>
-
-    <!-- Hero Section -->
-    <section class="hero-games">
-        <div class="container">
-            <div class="hero-content">
-                <h1 data-aos="fade-up" data-aos-delay="100">Jogos & E-sports</h1>
-                <p data-aos="fade-up" data-aos-delay="200">Desenvolvimento de jogos originais e competições de alto nível</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Cards de Navegação -->
-    <section class="section navegacao">
-        <div class="container">
-            <div class="nav-grid">
-                <a href="./estudio/" class="nav-card">
-                    <div class="nav-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h2>Estúdio de Jogos</h2>
-                    <p>Conheça nossos jogos originais, tecnologias e oportunidades de carreira</p>
-                    <ul class="nav-features">
-                        <li><i class="fas fa-check"></i> Jogos em desenvolvimento</li>
-                        <li><i class="fas fa-check"></i> Tecnologias utilizadas</li>
-                        <li><i class="fas fa-check"></i> Vagas disponíveis</li>
-                    </ul>
-                    <span class="btn btn-primary">Explorar Estúdio</span>
-                </a>
-
-                <a href="./time" class="nav-card">
-                    <div class="nav-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h2>Time E-sports</h2>
-                    <p>Acompanhe nosso time competitivo, campeonatos e lives</p>
-                    <ul class="nav-features">
-                        <li><i class="fas fa-check"></i> Time de League of Legends</li>
-                        <li><i class="fas fa-check"></i> Próximos campeonatos</li>
-                        <li><i class="fas fa-check"></i> Lives e streaming</li>
-                    </ul>
-                    <span class="btn btn-secondary">Ver Time</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Pronto para entrar no mundo dos games?</h2>
-                <p>Entre em contato conosco e descubra como podemos transformar suas ideias em jogos incríveis ou ajudar você a entrar no cenário competitivo.</p>
-                <a href="/../../pages/contato/" class="cta-button">Fale com nossa Equipe</a>
-            </div>
-        </div>
-    </section>
+    <meta name="description" content="Jogos e E-sports da Alt Tab Corp - Desenvolvimento de jogos e competições">
+    <meta name="theme-color" content="#2C3E50">
     
+    <title>Jogos & E-sports - Alt tab Corp</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
+    
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="../../assets/css/base/variables.css">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/grid.css">
+    <link rel="stylesheet" href="../../assets/css/components/header.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/components/buttons.css">
+    <link rel="stylesheet" href="../../assets/css/components/cards.css">
+    <link rel="stylesheet" href="../../assets/css/pages/esports.css">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
-    <!-- Nossos Serviços -->
-    <section class="other-verticals">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jogos & E-sports - Alt tab Corp">
+    <meta property="og:description" content="Desenvolvimento de jogos originais e competições de alto nível">
+    <meta property="og:image" content="../../assets/images/og-image.jpg">
+</head>
+<body class="page-esports">
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <h2>Nossos Serviços</h2>
-            <p class="section-subtitle">Conheça nossas áreas de atuação e descubra como podemos transformar seu negócio com tecnologia, inovação e criatividade.</p>
-            <div class="verticals-grid">
-                <a href="/Alttab_web/consultoria" class="vertical-card consultoria fade-in" data-vertente="consultoria">
-                    <div class="vertical-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3><strong>Consultoria TI</strong></h3>
-                    <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
-                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+            <nav class="nav">
+                <a href="../../" class="logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
                 </a>
-                <a href="/Alttab_web/web" class="vertical-card desenvolvimento web fade-in" data-vertente="web">
-                    <div class="vertical-icon">
-                        <i class="fas fa-laptop-code"></i>
+                <ul class="nav-menu">
+                    <li><a href="../../" class="nav-link">Início</a></li>
+                    <li><a href="../sobre/" class="nav-link">Sobre</a></li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="../servicos/" class="nav-link active">Serviços <span class="dropdown-arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../consultoria/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="../web/" class="dropdown-link">Desenvolvimento Web</a></li>
+                            <li><a href="../impressao3d/" class="dropdown-link">Impressão 3D</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="nav-item nav-dropdown">
+                                <a href="../esports/" class="nav-link active">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="../contato/" class="nav-link">Contato</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-games">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Jogos & E-sports</h1>
+                    <p>Desenvolvimento de jogos originais e competições de alto nível</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards de Navegação -->
+        <section class="section navegacao">
+            <div class="container">
+                <div class="nav-grid">
+                    <a href="../construcao/" class="nav-card">
+                        <div class="nav-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h2>Estúdio de Jogos</h2>
+                        <p>Conheça nossos jogos originais, tecnologias e oportunidades de carreira</p>
+                        <ul class="nav-features">
+                            <li><i class="fas fa-check"></i> Jogos em desenvolvimento</li>
+                            <li><i class="fas fa-check"></i> Tecnologias utilizadas</li>
+                            <li><i class="fas fa-check"></i> Vagas disponíveis</li>
+                        </ul>
+                        <span class="btn btn-primary">Explorar Estúdio</span>
+                    </a>
+
+                    <a href="../construcao/" class="nav-card">
+                        <div class="nav-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h2>Time E-sports</h2>
+                        <p>Acompanhe nosso time competitivo, campeonatos e lives</p>
+                        <ul class="nav-features">
+                            <li><i class="fas fa-check"></i> Time de League of Legends</li>
+                            <li><i class="fas fa-check"></i> Próximos campeonatos</li>
+                            <li><i class="fas fa-check"></i> Lives e streaming</li>
+                        </ul>
+                        <span class="btn btn-secondary">Ver Time</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Pronto para entrar no mundo dos games?</h2>
+                    <p>Entre em contato conosco e descubra como podemos transformar suas ideias em jogos incríveis ou ajudar você a entrar no cenário competitivo.</p>
+                    <a href="../contato/" class="cta-button">Fale com nossa Equipe</a>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Nossos Serviços -->
+        <section class="other-verticals">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <p class="section-subtitle">Conheça nossas áreas de atuação e descubra como podemos transformar seu negócio com tecnologia, inovação e criatividade.</p>
+                <div class="verticals-grid">
+                    <a href="../consultoria/" class="vertical-card consultoria">
+                        <div class="vertical-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3><strong>Consultoria TI</strong></h3>
+                        <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
+                        <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="../web/" class="vertical-card desenvolvimento web">
+                        <div class="vertical-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3><strong>Desenvolvimento Web</strong></h3>
+                        <p>Crie presença digital impactante com websites modernos, responsivos e otimizados para resultados.</p>
+                        <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="../impressao3d/" class="vertical-card impressao3d">
+                        <div class="vertical-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3><strong>Impressão 3D</strong></h3>
+                        <p>Materialize suas ideias com tecnologia de impressão 3D de alta precisão e qualidade.</p>
+                        <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                    <p>Transformando ideias em soluções tecnológicas</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../../">Início</a></li>
+                            <li><a href="../sobre/">Sobre</a></li>
+                            <li><a href="../servicos/">Serviços</a></li>
+                            <li><a href="../contato/">Contato</a></li>
+                        </ul>
                     </div>
-                    <h3><strong>Desenvolvimento Web</strong></h3>
-                    <p>Crie presença digital impactante com websites modernos, responsivos e otimizados para resultados.</p>
-                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                </a>
-                <a href="/Alttab_web/esports" class="vertical-card esports fade-in" data-vertente="esports">
-                    <div class="vertical-icon">
-                        <i class="fas fa-cube"></i>
+                    
+                    <div class="footer-links-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="../web/">Desenvolvimento Web</a></li>
+                            <li><a href="../consultoria/">Consultoria em TI</a></li>
+                            <li><a href="../impressao3d/">Impressão 3D</a></li>
+                            <li><a href="../esports/" class="active">E-Sports</a></li>
+                        </ul>
                     </div>
-                    <h3><strong>impressao 3D</strong></h3>
-                    <p>Materialize suas ideias com tecnologia de impressão 3D de alta precisão e qualidade.</p>
-                    <span class="vertical-link">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                </a>
+                    
+                    <div class="footer-links-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="../termos/">Termos de Uso</a></li>
+                            <li><a href="../privacidade/">Política de Privacidade</a></li>
+                            <li><a href="../cookies/">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@alttabcorp.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
-    <div id="footer"></div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Script mínimo para funcionalidade do menu mobile
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('components/header.html')
-                .then(r => r.text())
-                .then(data => { document.getElementById('header-placeholder').innerHTML = data; });
-            fetch('components/footer.html')
-                .then(r => r.text())
-                .then(data => {
-                    document.getElementById('footer').innerHTML = data;
-                    if (window.FontAwesome && window.FontAwesome.dom && window.FontAwesome.dom.i2svg) {
-                        window.FontAwesome.dom.i2svg();
-                    }
-                });
+            // Menu Mobile
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
             
-            // Inicializa AOS
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
-            });
+            if (menuBtn && navMenu) {
+                menuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    menuBtn.classList.toggle('active');
+                });
+            }
         });
     </script>
 </body>

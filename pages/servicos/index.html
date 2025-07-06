@@ -19,27 +19,67 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/variables.css">
-    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <!-- CSS Principal -->
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/components.css">
+    
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="../../assets/css/base/variables.css">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/grid.css">
     <link rel="stylesheet" href="../../assets/css/components/header.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/components/buttons.css">
+    <link rel="stylesheet" href="../../assets/css/components/cards.css">
     <link rel="stylesheet" href="../../assets/css/pages/servicos.css">
     
-    <!-- AOS Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
-    <!-- Scripts -->
-    <script src="../../assets/js/path-config.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="../../assets/js/main.js"></script>
-</head>
-<body>
+    <!-- PWA Support -->
+    <link rel="manifest" href="../../manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Serviços - Alt tab Corp">
+    <meta property="og:description" content="Conheça os serviços oferecidos pela Alt tab Corp">
+    <meta property="og:image" content="../../assets/images/og-image.jpg">
+</head>
+<body class="page-servicos">
     <!-- Header -->
-    <div id="header-placeholder"></div>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../../" class="logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../../" class="nav-link">Início</a></li>
+                    <li><a href="../sobre/" class="nav-link">Sobre</a></li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="../servicos/" class="nav-link active">Serviços <span class="dropdown-arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../construcao/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="../construcao/" class="dropdown-link">Desenvolvimento Web</a></li>
+                            <li><a href="../impressao3d/" class="dropdown-link">Impressão 3D</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="nav-item nav-dropdown">
+                                <a href="../construcao/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="../contato/" class="nav-link">Contato</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <main id="main-content">
@@ -47,8 +87,8 @@
         <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1 data-aos="fade-up" data-aos-delay="100">Soluções Tecnológicas Completas</h1>
-                    <p data-aos="fade-up" data-aos-delay="200">
+                    <h1>Soluções Tecnológicas Completas</h1>
+                    <p>
                         Transforme seu negócio com nossas soluções inovadoras em tecnologia
                     </p>
                 </div>
@@ -58,7 +98,7 @@
         <!-- Main Services Section -->
         <section class="main-services">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
+                <div class="section-header">
                     <span class="section-badge">Nossas Vertentes</span>
                     <h2>Áreas de <span>Atuação</span></h2>
                     <p class="section-description">
@@ -67,7 +107,7 @@
                 </div>
                 <div class="services-grid">
                     <!-- Consultoria TI -->
-                    <div class="service-card" data-aos="fade-up">
+                    <div class="service-card">
                         <div class="service-icon">
                             <div class="icon-wrapper">
                                 <i class="fas fa-network-wired"></i>
@@ -75,13 +115,13 @@
                         </div>
                         <h3>Consultoria TI</h3>
                         <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
-                        <a href="/Alttab_web/consultoria" class="service-cta">
+                        <a href="../consultoria/" class="service-cta">
                             Saiba mais <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
 
                     <!-- Desenvolvimento Web -->
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
                         <div class="service-icon">
                             <div class="icon-wrapper">
                                 <i class="fas fa-laptop-code"></i>
@@ -89,13 +129,13 @@
                         </div>
                         <h3>Desenvolvimento Web</h3>
                         <p>Crie presença digital impactante com websites modernos, responsivos e otimizados para resultados.</p>
-                        <a href="/Alttab_web/web" class="service-cta">
+                        <a href="../web/" class="service-cta">
                             Saiba mais <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
 
                     <!-- E-Sports -->
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
                         <div class="service-icon">
                             <div class="icon-wrapper">
                                 <i class="fas fa-gamepad"></i>
@@ -103,13 +143,13 @@
                         </div>
                         <h3>E-Sports</h3>
                         <p>Entre no mundo dos esports com nossa equipe profissional e inovação em jogos.</p>
-                        <a href="/Alttab_web/esports" class="service-cta">
+                        <a href="../esports/" class="service-cta">
                             Saiba mais <i class="fas fa-arrow-right"></i>
                         </a>
-                    </div>header-placeholder
+                    </div>
 
                     <!-- Impressão 3D -->
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
                         <div class="service-icon">
                             <div class="icon-wrapper">
                                 <i class="fas fa-cube"></i>
@@ -117,7 +157,7 @@
                         </div>
                         <h3>Impressão 3D</h3>
                         <p>Materialize suas ideias com tecnologia de impressão 3D de alta precisão e qualidade.</p>
-                        <a href="/pages/impressao3d" class="service-cta">
+                        <a href="../impressao3d/" class="service-cta">
                             Saiba mais <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -128,7 +168,7 @@
         <!-- Process Section -->
         <section class="process-section">
             <div class="container">
-                <div class="section-header" data-aos="fade-up">
+                <div class="section-header">
                     <span class="section-badge">Como Trabalhamos</span>
                     <h2>Nosso Processo</h2>
                     <p class="section-description">
@@ -136,22 +176,22 @@
                     </p>
                 </div>
                 <div class="process-grid">
-                    <div class="process-step" data-aos="fade-up">
+                    <div class="process-step">
                         <div class="step-number">1</div>
                         <h3>Análise</h3>
                         <p>Compreendemos suas necessidades e objetivos para criar a melhor estratégia.</p>
                     </div>
-                    <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="process-step">
                         <div class="step-number">2</div>
                         <h3>Planejamento</h3>
                         <p>Desenvolvemos um plano detalhado e personalizado para seu projeto.</p>
                     </div>
-                    <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="process-step">
                         <div class="step-number">3</div>
                         <h3>Execução</h3>
                         <p>Implementamos as soluções com tecnologia de ponta e metodologias ágeis.</p>
                     </div>
-                    <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="process-step">
                         <div class="step-number">4</div>
                         <h3>Suporte</h3>
                         <p>Oferecemos suporte contínuo e acompanhamento para garantir o sucesso.</p>
@@ -166,40 +206,86 @@
                 <div class="cta-content">
                     <h2>Pronto para transformar seu negócio?</h2>
                     <p>Entre em contato conosco e descubra como podemos ajudar sua empresa a alcançar novos patamares.</p>
-                    <a href="/Alttab_web/contato" class="cta-button">Fale Conosco</a>
+                    <a href="../contato/" class="cta-button">Fale Conosco</a>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Initialize AOS -->
-    <script>
-        // Function to load components
-        async function loadComponent(elementId, componentPath) {
-            try {
-                const response = await fetch(componentPath);
-                const html = await response.text();
-                document.getElementById(elementId).innerHTML = html;
-            } catch (error) {
-                console.error(`Error loading component ${componentPath}:`, error);
-            }
-        }
-
-        // Load components when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load main components
-            loadComponent('header-placeholder', '../../components/header.html');
-            loadComponent('footer-placeholder', '../../components/footer.html');
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                    <p>Transformando ideias em soluções tecnológicas</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="../../">Início</a></li>
+                            <li><a href="../sobre/">Sobre</a></li>
+                            <li><a href="../servicos/" class="active">Serviços</a></li>
+                            <li><a href="../contato/">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="../web/">Desenvolvimento Web</a></li>
+                            <li><a href="../consultoria/">Consultoria em TI</a></li>
+                            <li><a href="../impressao3d/">Impressão 3D</a></li>
+                            <li><a href="../esports/">E-Sports</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="../termos/">Termos de Uso</a></li>
+                            <li><a href="../privacidade/">Política de Privacidade</a></li>
+                            <li><a href="../cookies/">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@alttabcorp.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
             
-            // Initialize AOS
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
-            });
+            <div class="footer-bottom">
+                <p>&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script mínimo para funcionalidade do menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuBtn && navMenu) {
+                menuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    menuBtn.classList.toggle('active');
+                });
+            }
         });
     </script>
 </body>

@@ -1,0 +1,137 @@
+/**
+ * Reset CSS
+ * Normaliza o estilo entre navegadores e fornece uma base consistente
+ */
+
+/* Box sizing para todos os elementos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Configurações de documento e corpo */
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    color: var(--gray-800);
+    background-color: var(--light);
+    margin: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+
+/* Elementos de bloco */
+article, aside, figcaption, figure, footer, header, 
+hgroup, main, nav, section {
+    display: block;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    color: var(--gray-900);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Listas */
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+ol ol, ul ul, ol ul, ul ol {
+    margin-bottom: 0;
+}
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    background-color: transparent;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Imagens e mídia */
+img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* Formulários e botões */
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button, input {
+    overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, 
+[type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+/* Tabelas */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Acessibilidade */
+[hidden] {
+    display: none !important;
+}
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+    outline: 0 !important;
+}
+
+/* Remover animações para pessoas que preferem reduzir movimento */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+} 

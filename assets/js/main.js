@@ -1,11 +1,16 @@
+/**
+ * Script principal do site
+ * Contém apenas a funcionalidade do menu mobile
+ */
+
 document.addEventListener('DOMContentLoaded', function() {
     // Menu Mobile
-    const menuToggle = document.querySelector('.menu-toggle');
+    const menuToggle = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');
     const header = document.querySelector('.header');
 
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
+        menuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             menuToggle.classList.toggle('active');
         });
@@ -14,139 +19,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Fechar menu ao clicar em um link
     if (navMenu) {
         navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
+            link.addEventListener('click', function(e) {
+                // Não fechar o menu se for um dropdown
+                const isDropdownToggle = link.parentNode.classList.contains('nav-dropdown');
+                if (isDropdownToggle && window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = link.parentNode;
+                    dropdown.classList.toggle('open');
+                } else {
+                    // Para links normais, fechar o menu
+                    navMenu.classList.remove('active');
+                    if (menuToggle) {
+                        menuToggle.classList.remove('active');
+                    }
+                }
             });
         });
     }
 
-    // Scroll suave para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
+    // Dropdown Serviços no mobile - melhorado para todos os dropdowns
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+    if (navDropdowns.length > 0) {
+        navDropdowns.forEach(dropdown => {
+            const dropdownLink = dropdown.querySelector('a');
+            if (dropdownLink) {
+                dropdownLink.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('open');
+                    }
                 });
-            }
-        });
-    });
-
-    // Header Scroll
-    if (header) {
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 100) {
-                header.classList.add('header-scrolled');
-                
-                if (currentScroll > lastScroll) {
-                    header.classList.add('header-hidden');
-                } else {
-                    header.classList.remove('header-hidden');
-                }
-            } else {
-                header.classList.remove('header-scrolled');
-                header.classList.remove('header-hidden');
-            }
-            
-            lastScroll = currentScroll;
-        });
-    }
-
-    // Form Submit
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            try {
-                console.log('Dados do formulário:', data);
-                contactForm.reset();
-                alert('Mensagem enviada com sucesso!');
-            } catch (error) {
-                console.error('Erro ao enviar mensagem:', error);
-                alert('Erro ao enviar mensagem. Tente novamente.');
-            }
-        });
-    }
-
-    // Animação de Scroll
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.fade-in');
-        
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('animate');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', animateOnScroll);
-
-    // Animação ao rolar
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.service-card, .about-content, .contact-form').forEach(el => {
-        observer.observe(el);
-    });
-
-    // Set Active Nav Item
-    setActiveNavItem();
-
-    // Dropdown Serviços no mobile
-    const navDropdown = document.querySelector('.nav-dropdown');
-    if (navDropdown) {
-        navDropdown.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                navDropdown.classList.toggle('open');
             }
         });
     }
 });
-
-// Função setActiveNavItem movida para fora do DOMContentLoaded
-function setActiveNavItem() {
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        const normalizedCurrentPath = currentPath.replace(/\/$/, '');
-        const normalizedLinkPath = linkPath.replace(/\/$/, '');
-        
-        if (normalizedCurrentPath === normalizedLinkPath || 
-            (normalizedCurrentPath === '' && normalizedLinkPath === '/') ||
-            (normalizedCurrentPath.includes(normalizedLinkPath) && normalizedLinkPath !== '/')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-} 

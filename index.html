@@ -6,7 +6,7 @@
     <meta name="description" content="Alt tab Corp - Tecnologia e Inovação">
     <meta name="theme-color" content="#2C3E50">
 
-	<title>Alt tab Corp</title>
+    <title>Alt tab Corp</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/icons/favicon.ico">
@@ -19,60 +19,151 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/variables.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/components.css">
-    <link rel="stylesheet" href="assets/css/components/header.css">
-    <link rel="stylesheet" href="assets/css/components/hero.css">
-    <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link rel="stylesheet" href="assets/css/components/faq.css">
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- AOS Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="assets/css/base/variables.css">
+    <link rel="stylesheet" href="assets/css/base/reset.css">
+    <link rel="stylesheet" href="assets/css/base/typography.css">
+    <link rel="stylesheet" href="assets/css/layout/grid.css">
+    <link rel="stylesheet" href="assets/css/components/header.css">
+    <link rel="stylesheet" href="assets/css/components/footer.css">
+    <link rel="stylesheet" href="assets/css/components/buttons.css">
+    <link rel="stylesheet" href="assets/css/components/cards.css">
+    <link rel="stylesheet" href="assets/css/components/hero.css">
+    <link rel="stylesheet" href="assets/css/components/faq.css">
     
     <!-- PWA Support -->
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
 
-    <!-- Meta tags -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Alt tab Corp - Tecnologia de Classe Mundial">
     <meta property="og:description" content="Transformando ideias em soluções inovadoras para o seu negócio">
     <meta property="og:image" content="assets/images/og-image.jpg">
     
     <!-- Preload -->
     <link rel="preload" href="assets/images/backgrounds/intro-img1.jpg" as="image" type="image/jpeg" fetchpriority="high">
-    <script src="assets/js/path-config.js"></script>
 </head>
-<body>
-        <!-- Header -->
-    <div id="header-placeholder"></div>
+<body class="page-home">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="./" class="logo">
+                    <img src="assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="./" class="nav-link active">Início</a></li>
+                    <li><a href="pages/sobre/" class="nav-link">Sobre</a></li>
+                    <li class="nav-item nav-dropdown">
+                        <a href="pages/servicos/" class="nav-link">Serviços <span class="dropdown-arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pages/construcao/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="pages/construcao/" class="dropdown-link">Desenvolvimento Web</a></li>
+                            <li><a href="pages/impressao3d/" class="dropdown-link">Impressão 3D</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="nav-item nav-dropdown">
+                                <a href="pages/construcao/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="pages/construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="pages/construcao/" class="dropdown-link">Time E-sports</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="pages/contato/" class="nav-link">Contato</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <div id="hero-placeholder"></div>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="container">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            Soluções Tecnológicas Inovadoras
+                        </h1>
+                        <p class="hero-subtitle">
+                            Transformando ideias em soluções tecnológicas inovadoras para impulsionar o seu negócio
+                        </p>
+                        <div class="hero-cta">
+                            <a href="pages/servicos/" class="btn btn-primary">Nossos Serviços</a>
+                            <a href="pages/contato/" class="btn btn-outline">Fale Conosco</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
 
         <!-- Services Section -->
         <section class="services" id="services">
-				<div class="container">
+            <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Nossos Serviços</span>
                     <h2>Nossas Vertentes</h2>
                     <p class="services-subtitle">Explore nossas áreas de atuação e descubra como podemos impulsionar seu negócio com soluções inovadoras em tecnologia</p>
-		</div>
+                </div>
 
-                <div class="services-grid" id="services-placeholder">
-                    <!-- Service cards will be loaded here -->
-				</div>
-			</div>
-		</section>
+                <div class="services-grid">
+                    <!-- Serviço 1 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Criamos sites e aplicações web modernas, responsivas e otimizadas para SEO.</p>
+                        <a href="pages/web/" class="btn btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <!-- Serviço 2 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Consultoria em TI</h3>
+                        <p>Oferecemos consultoria especializada para otimizar seus processos tecnológicos.</p>
+                        <a href="pages/consultoria/" class="btn btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <!-- Serviço 3 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h3>Impressão 3D</h3>
+                        <p>Transformamos suas ideias em objetos reais com nossa tecnologia de impressão 3D.</p>
+                        <a href="pages/impressao3d/" class="btn btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <!-- Serviço 4 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>E-Sports</h3>
+                        <p>Desenvolvimento de jogos e gerenciamento de times profissionais de e-sports.</p>
+                        <a href="pages/esports/" class="btn btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- About Section -->
         <section class="about" id="about">
-			<div class="container">
+            <div class="container">
                 <div class="about-content">
                     <div class="about-text">
                         <h2>Quem Somos</h2>
@@ -83,99 +174,166 @@
                             <li>Tecnologia de ponta</li>
                             <li>Suporte dedicado</li>
                         </ul>
-						</div>
+                    </div>
                     <div class="about-image">
-                        <img src="" alt="Sobre Alt tab Corp">
-					</div>
-				</div>
-			</div>
-		</section>
+                        <img src="assets/images/about-image.jpg" alt="Sobre Alt tab Corp">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div id="faq-placeholder"></div>
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">FAQ</span>
+                    <h2>Perguntas Frequentes</h2>
+                    <p>Respostas para as dúvidas mais comuns sobre nossos serviços</p>
+                </div>
+
+                <div class="faq-container">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Como funciona o processo de desenvolvimento de um projeto?</h3>
+                            <span class="faq-icon"></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Nosso processo de desenvolvimento segue metodologias ágeis, com fases bem definidas: levantamento de requisitos, planejamento, design, desenvolvimento, testes e implementação. Mantemos o cliente informado e envolvido em cada etapa.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Qual o prazo médio para desenvolvimento de um site?</h3>
+                            <span class="faq-icon"></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>O prazo varia conforme a complexidade do projeto. Um site institucional simples pode levar de 2 a 4 semanas, enquanto projetos mais complexos com funcionalidades personalizadas podem levar de 8 a 12 semanas.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Vocês oferecem suporte após a conclusão do projeto?</h3>
+                            <span class="faq-icon"></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim, oferecemos planos de suporte e manutenção para todos os nossos projetos. Garantimos que seu site ou aplicação permaneça atualizado, seguro e funcionando perfeitamente.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Como funciona o serviço de impressão 3D?</h3>
+                            <span class="faq-icon"></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Você pode nos enviar um modelo 3D pronto ou podemos criar um modelo baseado em suas especificações. Após a aprovação do design, realizamos a impressão com materiais de alta qualidade e entregamos o produto final.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-   
-    <!-- Scripts -->
-    <script src="assets/js/path-config.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-    <!-- Component Loader Script -->
-    <script>
-        // Function to load components
-        async function loadComponent(elementId, componentPath) {
-            const element = document.getElementById(elementId);
-            if (!element) {
-                console.warn(`Element with id ${elementId} not found`);
-                return;
-            }
-
-            try {
-                const response = await fetch(componentPath);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const html = await response.text();
-                element.innerHTML = html;
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                    <p>Transformando ideias em soluções tecnológicas</p>
+                </div>
                 
-                // Initialize FAQ after loading the component
-                if (elementId === 'faq-placeholder') {
-                    initializeFAQ();
-                }
-            } catch (error) {
-                console.error(`Error loading component ${componentPath}:`, error);
-            }
-        }
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Navegação</h3>
+                        <ul>
+                            <li><a href="./">Início</a></li>
+                            <li><a href="pages/sobre/">Sobre</a></li>
+                            <li><a href="pages/servicos/">Serviços</a></li>
+                            <li><a href="pages/contato/">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Serviços</h3>
+                        <ul>
+                            <li><a href="pages/web/">Desenvolvimento Web</a></li>
+                            <li><a href="pages/consultoria/">Consultoria em TI</a></li>
+                            <li><a href="pages/impressao3d/">Impressão 3D</a></li>
+                            <li><a href="pages/esports/">E-Sports</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-links-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="pages/termos/">Termos de Uso</a></li>
+                            <li><a href="pages/privacidade/">Política de Privacidade</a></li>
+                            <li><a href="pages/cookies/">Política de Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-envelope"></i> contato@alttabcorp.com.br</p>
+                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-        // Initialize FAQ functionality
-        function initializeFAQ() {
+    <script>
+        // Script mínimo para funcionalidade do menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuBtn && navMenu) {
+                menuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    menuBtn.classList.toggle('active');
+                });
+            }
+            
+            // FAQ Toggle
             const faqItems = document.querySelectorAll('.faq-item');
             
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 
                 question.addEventListener('click', () => {
-                    // Close all other items
+                    // Fecha outros itens
                     faqItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
                         }
                     });
-
-                    // Toggle current item
+                    
+                    // Alterna o item atual
                     item.classList.toggle('active');
                 });
             });
-        }
-
-        // Load components when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load main components
-            loadComponent('header-placeholder', 'components/header.html');
-            loadComponent('hero-placeholder', 'components/hero.html');
-            loadComponent('footer-placeholder', 'components/footer.html');
-            
-            // Load service cards
-            loadComponent('services-placeholder', 'components/services.html');
-            
-            // Load FAQ
-            loadComponent('faq-placeholder', 'components/faq.html');
-            
-            // Initialize AOS
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100
-            });
         });
     </script>
-
-    <!-- Local Scripts -->
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/faq.js" defer></script>
 </body>
 </html>
