@@ -6,6 +6,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM carregado, inicializando scripts...');
     
+    // Inicializa todas as animações
+    if (window.animations && typeof window.animations.init === 'function') {
+        window.animations.init();
+    }
+    
     // ======== Menu Mobile ========
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('.nav-menu');

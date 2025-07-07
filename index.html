@@ -156,7 +156,7 @@
             </div>
             <div class="container">
                 <div class="section-header animate-on-scroll" data-animation="fade-in-up">
-                    <span class="section-badge">O que fazemos</span>
+                    <span class="section-badge light">O que fazemos</span>
                     <h2>Nossos <span class="gradient-text">Serviços</span></h2>
                     <p>Oferecemos soluções completas em tecnologia para impulsionar seu negócio</p>
                 </div>
@@ -214,7 +214,7 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-content animate-on-scroll">
-                        <span class="section-badge">Quem somos</span>
+                        <span class="section-badge light">Quem somos</span>
                         <h2>Sobre a Alt tab Corp</h2>
                         <p class="about-description">
                             Somos uma empresa de tecnologia focada em oferecer soluções inovadoras que transformam negócios e melhoram a vida das pessoas. Com uma equipe multidisciplinar de especialistas, estamos prontos para enfrentar os desafios mais complexos.
@@ -415,7 +415,7 @@
         <section class="faq-section section-light">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <span class="section-badge">Dúvidas</span>
+                    <span class="section-badge light">Dúvidas</span>
                     <h2>Perguntas Frequentes</h2>
                     <p>Respostas para as dúvidas mais comuns sobre nossos serviços</p>
                 </div>
@@ -427,7 +427,7 @@
                             <h3>Quanto tempo leva para desenvolver um site?</h3>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </div>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="transition: all 0.3s ease-out;">
                             <p>O tempo de desenvolvimento varia de acordo com a complexidade do projeto. Um site institucional simples pode levar de 2 a 4 semanas, enquanto projetos mais complexos como e-commerces ou plataformas personalizadas podem levar de 2 a 6 meses.</p>
                         </div>
                     </div>
@@ -438,7 +438,7 @@
                             <h3>Como funciona o processo de consultoria em TI?</h3>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </div>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="transition: all 0.3s ease-out;">
                             <p>Nosso processo de consultoria começa com uma análise detalhada da sua infraestrutura atual, identificação de pontos de melhoria, elaboração de um plano de ação e implementação das soluções recomendadas. Oferecemos acompanhamento contínuo para garantir resultados efetivos.</p>
                         </div>
                     </div>
@@ -449,7 +449,7 @@
                             <h3>Quais materiais são utilizados na impressão 3D?</h3>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </div>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="transition: all 0.3s ease-out;">
                             <p>Trabalhamos com diversos materiais como PLA, ABS, PETG, TPU (flexível), Nylon, e resinas para impressão SLA. A escolha do material depende da finalidade do objeto, requisitos mecânicos, térmicos e estéticos do projeto.</p>
                         </div>
                     </div>
@@ -460,7 +460,7 @@
                             <h3>Vocês oferecem suporte após a entrega do projeto?</h3>
                             <span class="faq-icon"><i class="fas fa-plus"></i></span>
                         </div>
-                        <div class="faq-answer">
+                        <div class="faq-answer" style="transition: all 0.3s ease-out;">
                             <p>Sim, oferecemos diferentes planos de suporte e manutenção para todos os nossos serviços. Nosso objetivo é garantir que sua solução continue funcionando perfeitamente e se adaptando às suas necessidades em constante evolução.</p>
                         </div>
                     </div>
@@ -635,7 +635,34 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/cookie-banner.js"></script>
-    <script src="assets/js/faq.js"></script>
+    <script src="assets/js/faq-fix.js"></script>
     <script src="assets/js/site-check.js"></script>
+    
+    <!-- Script para inicializar o FAQ imediatamente -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Função para inicializar manualmente o primeiro item do FAQ
+            setTimeout(function() {
+                const faqItems = document.querySelectorAll('.faq-item');
+                if (faqItems.length > 0) {
+                    const firstItem = faqItems[0];
+                    firstItem.classList.add('active');
+                    
+                    const answer = firstItem.querySelector('.faq-answer');
+                    if (answer) {
+                        answer.style.maxHeight = '500px';
+                        answer.style.opacity = '1';
+                        answer.style.visibility = 'visible';
+                        answer.style.padding = '1.5rem';
+                    }
+                    
+                    const icon = firstItem.querySelector('.faq-icon i');
+                    if (icon) {
+                        icon.className = 'fas fa-minus';
+                    }
+                }
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

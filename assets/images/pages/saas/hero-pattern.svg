@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1440" height="800" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g opacity="0.4">
-        <!-- Círculos decorativos -->
-        <circle cx="120" cy="120" r="8" fill="white"/>
-        <circle cx="320" cy="240" r="6" fill="white"/>
-        <circle cx="520" cy="160" r="10" fill="white"/>
-        <circle cx="720" cy="320" r="8" fill="white"/>
-        <circle cx="920" cy="180" r="6" fill="white"/>
-        <circle cx="1120" cy="280" r="10" fill="white"/>
-        <circle cx="1320" cy="140" r="8" fill="white"/>
-        
-        <!-- Linhas conectoras -->
-        <path d="M120 120 L320 240" stroke="white" stroke-width="1" opacity="0.2"/>
-        <path d="M320 240 L520 160" stroke="white" stroke-width="1" opacity="0.2"/>
-        <path d="M520 160 L720 320" stroke="white" stroke-width="1" opacity="0.2"/>
-        <path d="M720 320 L920 180" stroke="white" stroke-width="1" opacity="0.2"/>
-        <path d="M920 180 L1120 280" stroke="white" stroke-width="1" opacity="0.2"/>
-        <path d="M1120 280 L1320 140" stroke="white" stroke-width="1" opacity="0.2"/>
-        
-        <!-- Padrão de pontos -->
-        <g opacity="0.15">
-            <circle cx="220" cy="180" r="2" fill="white"/>
-            <circle cx="420" cy="200" r="2" fill="white"/>
-            <circle cx="620" cy="240" r="2" fill="white"/>
-            <circle cx="820" cy="250" r="2" fill="white"/>
-            <circle cx="1020" cy="230" r="2" fill="white"/>
-            <circle cx="1220" cy="210" r="2" fill="white"/>
-        </g>
-        
-        <!-- Formas geométricas -->
-        <path d="M160 280 L200 320 L160 360 Z" fill="white" opacity="0.1"/>
-        <path d="M460 180 L500 220 L460 260 Z" fill="white" opacity="0.1"/>
-        <path d="M760 240 L800 280 L760 320 Z" fill="white" opacity="0.1"/>
-        <path d="M1060 200 L1100 240 L1060 280 Z" fill="white" opacity="0.1"/>
-        
-        <!-- Linhas onduladas -->
-        <path d="M0 400 Q 360 350, 720 400 T 1440 400" stroke="white" stroke-width="1" opacity="0.1" fill="none"/>
-        <path d="M0 600 Q 360 550, 720 600 T 1440 600" stroke="white" stroke-width="1" opacity="0.1" fill="none"/>
-    </g>
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="smallGrid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#2563EB" stroke-width="0.5" stroke-opacity="0.1"/>
+    </pattern>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="50" height="50" fill="url(#smallGrid)"/>
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#2563EB" stroke-width="1" stroke-opacity="0.2"/>
+    </pattern>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2238" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.05"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#fade)"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  
+  <!-- Formas geométricas decorativas -->
+  <circle cx="10%" cy="20%" r="30" fill="#2563EB" fill-opacity="0.1" filter="url(#glow)"/>
+  <circle cx="85%" cy="50%" r="50" fill="#0EA5E9" fill-opacity="0.1" filter="url(#glow)"/>
+  <circle cx="30%" cy="80%" r="40" fill="#10B981" fill-opacity="0.1" filter="url(#glow)"/>
+  
+  <path d="M 50,100 Q 150,50 250,150 T 450,100" stroke="#2563EB" stroke-width="2" fill="none" stroke-opacity="0.15"/>
+  <path d="M 200,50 Q 300,150 400,50 T 600,100" stroke="#0EA5E9" stroke-width="2" fill="none" stroke-opacity="0.15"/>
+  
+  <!-- Linhas de conexão -->
+  <line x1="10%" y1="20%" x2="30%" y2="80%" stroke="#2563EB" stroke-width="1" stroke-opacity="0.1"/>
+  <line x1="30%" y1="80%" x2="85%" y2="50%" stroke="#0EA5E9" stroke-width="1" stroke-opacity="0.1"/>
+  <line x1="85%" y1="50%" x2="10%" y2="20%" stroke="#10B981" stroke-width="1" stroke-opacity="0.1"/>
+  
+  <!-- Pontos de destaque -->
+  <circle cx="10%" cy="20%" r="3" fill="#2563EB" fill-opacity="0.5"/>
+  <circle cx="30%" cy="80%" r="3" fill="#0EA5E9" fill-opacity="0.5"/>
+  <circle cx="85%" cy="50%" r="3" fill="#10B981" fill-opacity="0.5"/>
 </svg> 
