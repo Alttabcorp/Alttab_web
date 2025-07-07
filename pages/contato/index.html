@@ -464,6 +464,83 @@
             }
         });
     </script>
+    
+    <!-- Script para garantir que o FAQ seja visível -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Inicializando script de correção do FAQ');
+            
+            // Aplicar força bruta após tudo carregar
+            setTimeout(function() {
+                var faqItems = document.querySelectorAll('.faq-item');
+                console.log('Encontrados ' + faqItems.length + ' itens de FAQ para corrigir');
+                
+                if (faqItems.length > 0) {
+                    // Forçar abertura do primeiro item
+                    faqItems[0].classList.add('active');
+                    
+                    var firstAnswer = faqItems[0].querySelector('.faq-answer');
+                    if (firstAnswer) {
+                        console.log('Forçando exibição da primeira resposta');
+                        firstAnswer.style.maxHeight = '1000px';
+                        firstAnswer.style.opacity = '1';
+                        firstAnswer.style.visibility = 'visible';
+                        firstAnswer.style.display = 'block';
+                        firstAnswer.style.padding = '1.5rem';
+                    }
+                    
+                    var firstIcon = faqItems[0].querySelector('.faq-icon i');
+                    if (firstIcon) {
+                        firstIcon.className = 'fas fa-chevron-up';
+                    }
+                    
+                    // Adicionar evento de clique forçado
+                    faqItems.forEach(function(item) {
+                        var question = item.querySelector('.faq-question');
+                        if (question) {
+                            question.addEventListener('click', function() {
+                                console.log('Clique detectado em pergunta do FAQ');
+                                
+                                var isActive = item.classList.contains('active');
+                                
+                                // Fechar todos
+                                faqItems.forEach(function(otherItem) {
+                                    otherItem.classList.remove('active');
+                                    var otherAnswer = otherItem.querySelector('.faq-answer');
+                                    if (otherAnswer) {
+                                        otherAnswer.style.maxHeight = '0';
+                                        otherAnswer.style.opacity = '0';
+                                        otherAnswer.style.visibility = 'hidden';
+                                        otherAnswer.style.display = 'none';
+                                    }
+                                    var otherIcon = otherItem.querySelector('.faq-icon i');
+                                    if (otherIcon) {
+                                        otherIcon.className = 'fas fa-chevron-down';
+                                    }
+                                });
+                                
+                                // Se não estava ativo, abrir este
+                                if (!isActive) {
+                                    item.classList.add('active');
+                                    var answer = item.querySelector('.faq-answer');
+                                    if (answer) {
+                                        answer.style.maxHeight = '1000px';
+                                        answer.style.opacity = '1';
+                                        answer.style.visibility = 'visible';
+                                        answer.style.display = 'block';
+                                        answer.style.padding = '1.5rem';
+                                    }
+                                    var icon = item.querySelector('.faq-icon i');
+                                    if (icon) {
+                                        icon.className = 'fas fa-chevron-up';
+                                    }
+                                }
+                            });
+                        }
+                    });
+                }
+            }, 1500);
+        });
+    </script>
 </body>
-</html> 
 </html> 

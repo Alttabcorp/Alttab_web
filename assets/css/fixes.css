@@ -305,6 +305,7 @@
     transition: all 0.3s ease-out !important;
     padding: 0 1.5rem !important;
     visibility: hidden !important;
+    display: none !important;
 }
 
 .faq-item.active .faq-answer {
@@ -312,11 +313,33 @@
     opacity: 1 !important;
     padding: 1.5rem !important;
     visibility: visible !important;
+    display: block !important;
 }
 
 /* Correção para o ícone do FAQ */
-.faq-item.active .faq-icon i {
+.faq-item .faq-icon i {
+    transition: transform 0.3s ease !important;
+}
+
+.faq-item.active .faq-icon i.fa-plus {
     transform: rotate(45deg) !important;
+}
+
+.faq-item.active .faq-icon i.fa-chevron-down {
+    transform: rotate(180deg) !important;
+}
+
+/* Correção para o estilo hover do FAQ */
+.faq-question {
+    cursor: pointer !important;
+}
+
+.faq-question:hover {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+.faq-item.active .faq-question {
+    background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* ===== FIM DO FAQ FIX ===== */ 

@@ -420,47 +420,47 @@
                     <p>Respostas para as dúvidas mais comuns sobre nossos serviços</p>
                 </div>
                 
-                <div class="faq-container animate-on-scroll">
+                <div class="faq-container">
                     <!-- FAQ Item 1 -->
-                    <div class="faq-item">
+                    <div class="faq-item animate-on-scroll">
                         <div class="faq-question">
                             <h3>Quanto tempo leva para desenvolver um site?</h3>
-                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
-                        <div class="faq-answer" style="transition: all 0.3s ease-out;">
+                        <div class="faq-answer">
                             <p>O tempo de desenvolvimento varia de acordo com a complexidade do projeto. Um site institucional simples pode levar de 2 a 4 semanas, enquanto projetos mais complexos como e-commerces ou plataformas personalizadas podem levar de 2 a 6 meses.</p>
                         </div>
                     </div>
                     
                     <!-- FAQ Item 2 -->
-                    <div class="faq-item">
+                    <div class="faq-item animate-on-scroll">
                         <div class="faq-question">
                             <h3>Como funciona o processo de consultoria em TI?</h3>
-                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
-                        <div class="faq-answer" style="transition: all 0.3s ease-out;">
+                        <div class="faq-answer">
                             <p>Nosso processo de consultoria começa com uma análise detalhada da sua infraestrutura atual, identificação de pontos de melhoria, elaboração de um plano de ação e implementação das soluções recomendadas. Oferecemos acompanhamento contínuo para garantir resultados efetivos.</p>
                         </div>
                     </div>
                     
                     <!-- FAQ Item 3 -->
-                    <div class="faq-item">
+                    <div class="faq-item animate-on-scroll">
                         <div class="faq-question">
                             <h3>Quais materiais são utilizados na impressão 3D?</h3>
-                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
-                        <div class="faq-answer" style="transition: all 0.3s ease-out;">
+                        <div class="faq-answer">
                             <p>Trabalhamos com diversos materiais como PLA, ABS, PETG, TPU (flexível), Nylon, e resinas para impressão SLA. A escolha do material depende da finalidade do objeto, requisitos mecânicos, térmicos e estéticos do projeto.</p>
                         </div>
                     </div>
                     
                     <!-- FAQ Item 4 -->
-                    <div class="faq-item">
+                    <div class="faq-item animate-on-scroll">
                         <div class="faq-question">
                             <h3>Vocês oferecem suporte após a entrega do projeto?</h3>
-                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
-                        <div class="faq-answer" style="transition: all 0.3s ease-out;">
+                        <div class="faq-answer">
                             <p>Sim, oferecemos diferentes planos de suporte e manutenção para todos os nossos serviços. Nosso objetivo é garantir que sua solução continue funcionando perfeitamente e se adaptando às suas necessidades em constante evolução.</p>
                         </div>
                     </div>
@@ -638,30 +638,84 @@
     <script src="assets/js/faq-fix.js"></script>
     <script src="assets/js/site-check.js"></script>
     
-    <!-- Script para inicializar o FAQ imediatamente -->
+    <!-- Script para garantir que o FAQ seja visível -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Função para inicializar manualmente o primeiro item do FAQ
+            console.log('Inicializando script de correção do FAQ');
+            
+            // Aplicar força bruta após tudo carregar
             setTimeout(function() {
-                const faqItems = document.querySelectorAll('.faq-item');
+                var faqItems = document.querySelectorAll('.faq-item');
+                console.log('Encontrados ' + faqItems.length + ' itens de FAQ para corrigir');
+                
                 if (faqItems.length > 0) {
-                    const firstItem = faqItems[0];
-                    firstItem.classList.add('active');
+                    // Forçar abertura do primeiro item
+                    faqItems[0].classList.add('active');
                     
-                    const answer = firstItem.querySelector('.faq-answer');
-                    if (answer) {
-                        answer.style.maxHeight = '500px';
-                        answer.style.opacity = '1';
-                        answer.style.visibility = 'visible';
-                        answer.style.padding = '1.5rem';
+                    var firstAnswer = faqItems[0].querySelector('.faq-answer');
+                    if (firstAnswer) {
+                        console.log('Forçando exibição da primeira resposta');
+                        firstAnswer.style.maxHeight = '1000px';
+                        firstAnswer.style.opacity = '1';
+                        firstAnswer.style.visibility = 'visible';
+                        firstAnswer.style.display = 'block';
+                        firstAnswer.style.padding = '1.5rem';
+                        
+                        // Mostrar altura real da resposta
+                        console.log('Altura da resposta: ' + firstAnswer.scrollHeight + 'px');
                     }
                     
-                    const icon = firstItem.querySelector('.faq-icon i');
-                    if (icon) {
-                        icon.className = 'fas fa-minus';
+                    var firstIcon = faqItems[0].querySelector('.faq-icon i');
+                    if (firstIcon) {
+                        firstIcon.className = 'fas fa-chevron-up';
                     }
+                    
+                    // Adicionar evento de clique forçado
+                    faqItems.forEach(function(item) {
+                        var question = item.querySelector('.faq-question');
+                        if (question) {
+                            question.addEventListener('click', function() {
+                                console.log('Clique detectado em pergunta do FAQ');
+                                
+                                var isActive = item.classList.contains('active');
+                                
+                                // Fechar todos
+                                faqItems.forEach(function(otherItem) {
+                                    otherItem.classList.remove('active');
+                                    var otherAnswer = otherItem.querySelector('.faq-answer');
+                                    if (otherAnswer) {
+                                        otherAnswer.style.maxHeight = '0';
+                                        otherAnswer.style.opacity = '0';
+                                        otherAnswer.style.visibility = 'hidden';
+                                        otherAnswer.style.display = 'none';
+                                    }
+                                    var otherIcon = otherItem.querySelector('.faq-icon i');
+                                    if (otherIcon) {
+                                        otherIcon.className = 'fas fa-chevron-down';
+                                    }
+                                });
+                                
+                                // Se não estava ativo, abrir este
+                                if (!isActive) {
+                                    item.classList.add('active');
+                                    var answer = item.querySelector('.faq-answer');
+                                    if (answer) {
+                                        answer.style.maxHeight = '1000px';
+                                        answer.style.opacity = '1';
+                                        answer.style.visibility = 'visible';
+                                        answer.style.display = 'block';
+                                        answer.style.padding = '1.5rem';
+                                    }
+                                    var icon = item.querySelector('.faq-icon i');
+                                    if (icon) {
+                                        icon.className = 'fas fa-chevron-up';
+                                    }
+                                }
+                            });
+                        }
+                    });
                 }
-            }, 1000);
+            }, 1500);
         });
     </script>
 </body>
