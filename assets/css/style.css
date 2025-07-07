@@ -650,3 +650,228 @@ textarea.form-control {
 [data-theme="dark"] img {
     filter: brightness(0.9);
 }
+
+/* Tema Escuro */
+[data-theme="dark"] {
+    /* Ajustes para o header */
+    --header-bg: rgba(15, 23, 42, 0.95);
+    
+    /* Ajustes para cards e seções */
+    --card-background: var(--gray-800);
+    --card-border: var(--gray-700);
+    --section-light-bg: var(--gray-800);
+    --section-gray-bg: var(--gray-900);
+    
+    /* Ajustes para texto */
+    --text-color: var(--gray-100);
+    --text-secondary: var(--gray-300);
+    
+    /* Ajustes para elementos interativos */
+    --btn-text-hover-color: var(--secondary-light);
+}
+
+[data-theme="dark"] .service-card:hover::before {
+    opacity: 0.1;
+}
+
+[data-theme="dark"] .btn-primary {
+    background: var(--secondary);
+    color: white;
+}
+
+[data-theme="dark"] .btn-secondary {
+    background: var(--primary-light);
+    color: white;
+}
+
+[data-theme="dark"] .btn-outline-light {
+    border-color: var(--gray-300);
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .btn-outline-light:hover {
+    background-color: var(--gray-300);
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .section-light {
+    background-color: var(--gray-800);
+}
+
+[data-theme="dark"] .section-gray {
+    background-color: var(--gray-900);
+}
+
+[data-theme="dark"] .section-dark {
+    background-color: var(--dark);
+}
+
+[data-theme="dark"] .section-badge {
+    background-color: var(--primary-light);
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .floating-contact-menu {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .floating-contact-option {
+    background-color: var(--gray-900);
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .floating-contact-option:hover {
+    background-color: var(--gray-800);
+}
+
+[data-theme="dark"] .floating-contact-value {
+    color: var(--gray-400);
+}
+
+/* Melhorias para links no tema escuro */
+[data-theme="dark"] a:not(.btn):not(.nav-link):not(.footer-link):not(.dropdown-link) {
+    color: var(--secondary-light);
+}
+
+[data-theme="dark"] a:not(.btn):not(.nav-link):not(.footer-link):not(.dropdown-link):hover {
+    color: var(--secondary);
+}
+
+/* Melhorias para o footer no tema escuro */
+[data-theme="dark"] .footer {
+    background-color: var(--dark);
+}
+
+[data-theme="dark"] .footer-link {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .footer-link:hover {
+    color: var(--gray-300);
+}
+
+/* Melhorias para os formulários no tema escuro */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background-color: var(--gray-900);
+    border-color: var(--gray-700);
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: var(--gray-500);
+}
+
+/* Melhorias para o FAQ no tema escuro */
+[data-theme="dark"] .faq-question {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .faq-question:hover {
+    background-color: var(--gray-700);
+}
+
+[data-theme="dark"] .faq-item.active .faq-question {
+    background-color: var(--primary-light);
+}
+
+[data-theme="dark"] .faq-answer {
+    background-color: var(--gray-900);
+    border-color: var(--gray-700);
+}
+
+/* Melhorias para o cookie banner no tema escuro */
+[data-theme="dark"] .cookie-banner {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .cookie-btn-settings {
+    border-color: var(--gray-600);
+}
+
+/* Melhorias para o hero no tema escuro */
+[data-theme="dark"] .hero {
+    background-color: var(--dark);
+}
+
+[data-theme="dark"] .hero-particles {
+    opacity: 0.7;
+}
+
+/* Ajustes para imagens e ícones no tema escuro */
+[data-theme="dark"] img {
+    filter: brightness(0.9);
+}
+
+[data-theme="dark"] .service-icon,
+[data-theme="dark"] .feature-icon,
+[data-theme="dark"] .stat-icon {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeitos de hover para cards no tema escuro */
+[data-theme="dark"] .hover-lift:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeitos de ripple para botões no tema escuro */
+[data-theme="dark"] .btn-ripple:after {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 10.01%);
+}
+
+/* Ajustes para o botão flutuante de contato no tema escuro */
+[data-theme="dark"] .floating-contact-btn {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .floating-contact-btn:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajustes para o botão de voltar ao topo no tema escuro */
+[data-theme="dark"] .back-to-top {
+    background-color: var(--gray-800);
+    color: var(--gray-300);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .back-to-top:hover {
+    background-color: var(--gray-700);
+}
+
+/* Ajustes para o dropdown no tema escuro */
+[data-theme="dark"] .dropdown-menu {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .dropdown-link:hover {
+    background-color: var(--gray-700);
+}
+
+[data-theme="dark"] .dropdown-divider {
+    background-color: var(--gray-700);
+}
+
+/* Ajustes para o mobile menu no tema escuro */
+@media (max-width: 768px) {
+    [data-theme="dark"] .nav-menu {
+        background-color: var(--gray-900);
+    }
+    
+    [data-theme="dark"] .dropdown-menu {
+        background-color: var(--gray-800);
+    }
+}

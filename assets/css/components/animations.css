@@ -1,6 +1,9 @@
-/* Animations Component */
+/**
+ * Animações CSS
+ * Efeitos visuais para melhorar a experiência do usuário
+ */
 
-/* Fade In */
+/* Animações de Entrada */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -10,80 +13,51 @@
     }
 }
 
-/* Fade In Up */
-@keyframes fadeInUp {
+@keyframes slideInUp {
     from {
-        opacity: 0;
         transform: translateY(30px);
+        opacity: 0;
     }
     to {
-        opacity: 1;
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* Fade In Down */
-@keyframes fadeInDown {
+@keyframes slideInLeft {
     from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Fade In Left */
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
         transform: translateX(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Fade In Right */
-@keyframes fadeInRight {
-    from {
         opacity: 0;
-        transform: translateX(30px);
     }
     to {
-        opacity: 1;
         transform: translateX(0);
+        opacity: 1;
     }
 }
 
-/* Scale In */
+@keyframes slideInRight {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 @keyframes scaleIn {
     from {
-        opacity: 0;
         transform: scale(0.9);
+        opacity: 0;
     }
     to {
-        opacity: 1;
         transform: scale(1);
+        opacity: 1;
     }
 }
 
-/* Bounce */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Pulse */
+/* Animações de Ênfase */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -96,7 +70,18 @@
     }
 }
 
-/* Shake */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 @keyframes shake {
     0%, 100% {
         transform: translateX(0);
@@ -109,13 +94,233 @@
     }
 }
 
-/* Rotate */
 @keyframes rotate {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+/* Animações para Botões e Links */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Classes de Animação */
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.animate-float {
+    animation: float 3s infinite ease-in-out;
+}
+
+.animate-shake {
+    animation: shake 0.8s ease-in-out;
+}
+
+.animate-rotate {
+    animation: rotate 2s linear infinite;
+}
+
+/* Animações para Scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+}
+
+.fade-up {
+    transform: translateY(30px);
+}
+
+.fade-up.visible {
+    transform: translateY(0);
+}
+
+.fade-left {
+    transform: translateX(-30px);
+}
+
+.fade-left.visible {
+    transform: translateX(0);
+}
+
+.fade-right {
+    transform: translateX(30px);
+}
+
+.fade-right.visible {
+    transform: translateX(0);
+}
+
+.scale-in {
+    transform: scale(0.9);
+}
+
+.scale-in.visible {
+    transform: scale(1);
+}
+
+/* Efeito de Hover para Cards */
+.hover-lift {
+    transition: var(--hover-transition);
+}
+
+.hover-lift:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Efeito de Hover para Ícones */
+.hover-rotate {
+    transition: var(--hover-transition);
+}
+
+.hover-rotate:hover {
+    transform: var(--icon-hover-rotate);
+    color: var(--secondary);
+}
+
+/* Efeito de Ripple para Botões */
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 1s;
+}
+
+.btn-ripple:active:after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
+}
+
+/* Animações para Carregamento */
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--secondary);
+    animation: spinner 0.8s linear infinite;
+}
+
+[data-theme="dark"] .loading-spinner {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--secondary-light);
+}
+
+/* Efeito de Revelação de Texto */
+.reveal-text {
+    position: relative;
+    color: transparent;
+    animation: reveal 1.5s ease forwards;
+}
+
+@keyframes reveal {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: var(--text-color);
+    }
+}
+
+.reveal-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary);
+    transform-origin: left;
+    animation: revealTextAfter 1.5s ease forwards;
+}
+
+@keyframes revealTextAfter {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+/* Efeito de Gradiente Animado */
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--accent-secondary));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 
@@ -140,24 +345,8 @@
     animation: fadeInRight 1s ease forwards;
 }
 
-.animate-scale-in {
-    animation: scaleIn 1s ease forwards;
-}
-
 .animate-bounce {
     animation: bounce 2s ease infinite;
-}
-
-.animate-pulse {
-    animation: pulse 2s ease infinite;
-}
-
-.animate-shake {
-    animation: shake 0.5s ease;
-}
-
-.animate-rotate {
-    animation: rotate 2s linear infinite;
 }
 
 /* Animation Delays */

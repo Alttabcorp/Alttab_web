@@ -19,34 +19,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Gerenciar dropdowns no menu
     dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('.nav-link');
+        const link = dropdown.querySelector('.nav-link, .dropdown-link');
         
         // No mobile, prevenir navegação ao clicar em links com dropdown
         if (link) {
             link.addEventListener('click', function(e) {
                 if (window.innerWidth <= 992) {
-                    e.preventDefault();
-                    const subMenu = this.nextElementSibling;
-                    if (subMenu) {
-                        subMenu.style.maxHeight = subMenu.style.maxHeight ? null : subMenu.scrollHeight + 'px';
-                        dropdown.classList.toggle('active');
+                    const hasSubmenu = this.parentElement.querySelector('.dropdown-menu');
+                    if (hasSubmenu) {
+                        e.preventDefault();
+                        // Fechar outros dropdowns do mesmo nível
+                        const siblings = Array.from(this.parentElement.parentElement.children);
+                        siblings.forEach(sibling => {
+                            if (sibling !== this.parentElement && sibling.classList.contains('nav-dropdown')) {
+                                sibling.classList.remove('open');
+                                const siblingMenu = sibling.querySelector('.dropdown-menu');
+                                if (siblingMenu) {
+                                    siblingMenu.style.display = 'none';
+                                }
+                            }
+                        });
+                        
+                        // Alternar este dropdown
+                        this.parentElement.classList.toggle('open');
+                        hasSubmenu.style.display = this.parentElement.classList.contains('open') ? 'flex' : 'none';
                     }
                 }
             });
         }
-        
-        // Dropdown no hover para desktop
-        dropdown.addEventListener('mouseenter', function() {
-            if (window.innerWidth > 992) {
-                this.classList.add('active');
-            }
-        });
-        
-        dropdown.addEventListener('mouseleave', function() {
-            if (window.innerWidth > 992) {
-                this.classList.remove('active');
-            }
-        });
     });
     
     // Fechar menu ao clicar fora
@@ -54,6 +54,19 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navMenu && navMenu.classList.contains('active') && !e.target.closest('.nav') && !e.target.closest('.mobile-menu-btn')) {
             navMenu.classList.remove('active');
             menuBtn.classList.remove('active');
+        }
+        
+        // Fechar dropdowns ao clicar fora (mobile)
+        if (window.innerWidth <= 992) {
+            if (!e.target.closest('.nav-dropdown')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('open');
+                    const dropdownMenu = dropdown.querySelector('.dropdown-menu');
+                    if (dropdownMenu) {
+                        dropdownMenu.style.display = 'none';
+                    }
+                });
+            }
         }
     });
     
@@ -69,11 +82,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Fechar todos os itens
             faqItems.forEach(faqItem => {
                 faqItem.classList.remove('active');
+                const icon = faqItem.querySelector('.faq-icon i');
+                if (icon) {
+                    icon.className = 'fas fa-plus';
+                }
             });
             
             // Se não estava ativo, abrir este item
             if (!isActive) {
                 item.classList.add('active');
+                const icon = item.querySelector('.faq-icon i');
+                if (icon) {
+                    icon.className = 'fas fa-minus';
+                }
             }
         });
     });
@@ -94,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Esconder/mostrar header ao rolar
         if (scrollTop > 150) {
-            if (scrollTop > lastScrollTop) {
+            if (scrollTop > lastScrollTop && scrollTop > 300) {
                 header.classList.add('header-hidden');
             } else {
                 header.classList.remove('header-hidden');
@@ -115,12 +136,24 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (elementTop < windowHeight - 100 && elementBottom > 0) {
                 element.classList.add('animated');
+                
+                // Adicionar atraso para elementos em sequência
+                if (element.parentElement) {
+                    const siblings = Array.from(element.parentElement.children);
+                    if (siblings.length > 1) {
+                        siblings.forEach((sibling, index) => {
+                            if (sibling.classList.contains('animate-on-scroll')) {
+                                sibling.style.transitionDelay = `${index * 0.1}s`;
+                            }
+                        });
+                    }
+                }
             }
         });
     };
     
     // Executar uma vez ao carregar a página
-    animateOnScroll();
+    setTimeout(animateOnScroll, 100);
     
     // Executar ao rolar a página
     window.addEventListener('scroll', animateOnScroll);
@@ -153,6 +186,44 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Validação do formulário
+            let isValid = true;
+            const requiredFields = contactForm.querySelectorAll('[required]');
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('error');
+                } else {
+                    field.classList.remove('error');
+                }
+                
+                // Validação de email
+                if (field.type === 'email') {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        isValid = false;
+                        field.classList.add('error');
+                    }
+                }
+            });
+            
+            if (!isValid) {
+                // Mostrar mensagem de erro
+                let errorMessage = document.querySelector('.form-message.error');
+                if (!errorMessage) {
+                    errorMessage = document.createElement('div');
+                    errorMessage.className = 'form-message error';
+                    errorMessage.innerHTML = '<i class="fas fa-exclamation-circle"></i> Por favor, preencha todos os campos corretamente.';
+                    contactForm.parentNode.insertBefore(errorMessage, contactForm.nextSibling);
+                    
+                    setTimeout(() => {
+                        errorMessage.remove();
+                    }, 5000);
+                }
+                return;
+            }
+            
             // Simular envio do formulário
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;
@@ -183,13 +254,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 5000);
             }, 1500);
         });
+        
+        // Remover classe de erro quando o usuário começa a digitar
+        contactForm.querySelectorAll('input, textarea').forEach(field => {
+            field.addEventListener('input', function() {
+                this.classList.remove('error');
+            });
+        });
     }
     
     // ======== Efeitos de Hover nos Botões ========
     const rippleButtons = document.querySelectorAll('.btn-ripple');
     
     rippleButtons.forEach(button => {
-        button.addEventListener('mouseenter', function(e) {
+        button.addEventListener('click', function(e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -241,6 +319,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (floatingContactBtn && floatingContactMenu) {
         floatingContactBtn.addEventListener('click', function() {
             floatingContactMenu.classList.toggle('active');
+            
+            // Adicionar efeito de pulso quando fechado
+            if (!floatingContactMenu.classList.contains('active')) {
+                floatingContactBtn.classList.add('pulse');
+                setTimeout(() => {
+                    floatingContactBtn.classList.remove('pulse');
+                }, 1000);
+            }
         });
         
         if (floatingContactClose) {
@@ -259,54 +345,70 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // ======== Testimonial Carousel ========
+    // Adicionar efeito de pulso inicial após alguns segundos
+    setTimeout(() => {
+        if (floatingContactBtn) {
+            floatingContactBtn.classList.add('pulse');
+            setTimeout(() => {
+                floatingContactBtn.classList.remove('pulse');
+            }, 1000);
+        }
+    }, 3000);
+    
+    // ======== Carrossel de Depoimentos ========
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
     const prevTestimonial = document.getElementById('prevTestimonial');
     const nextTestimonial = document.getElementById('nextTestimonial');
-    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
     const testimonialIndicators = document.querySelectorAll('.carousel-indicator');
+    
     let currentSlide = 0;
     
     function showTestimonialSlide(index) {
+        // Validar índice
+        if (index < 0) index = testimonialSlides.length - 1;
+        if (index >= testimonialSlides.length) index = 0;
+        
+        // Atualizar slide atual
+        currentSlide = index;
+        
         // Esconder todos os slides
         testimonialSlides.forEach(slide => {
             slide.classList.remove('active');
         });
         
-        // Desativar todos os indicadores
-        testimonialIndicators.forEach(indicator => {
-            indicator.classList.remove('active');
-        });
-        
         // Mostrar slide atual
-        testimonialSlides[index].classList.add('active');
+        testimonialSlides[currentSlide].classList.add('active');
         
-        // Ativar indicador atual
-        if (testimonialIndicators[index]) {
-            testimonialIndicators[index].classList.add('active');
-        }
+        // Atualizar indicadores
+        testimonialIndicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === currentSlide);
+        });
     }
     
-    if (prevTestimonial && nextTestimonial && testimonialSlides.length > 0) {
-        // Botão anterior
-        prevTestimonial.addEventListener('click', function() {
-            currentSlide = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length;
-            showTestimonialSlide(currentSlide);
+    // Adicionar eventos de navegação
+    if (prevTestimonial && nextTestimonial) {
+        prevTestimonial.addEventListener('click', () => {
+            showTestimonialSlide(currentSlide - 1);
         });
         
-        // Botão próximo
-        nextTestimonial.addEventListener('click', function() {
-            currentSlide = (currentSlide + 1) % testimonialSlides.length;
-            showTestimonialSlide(currentSlide);
-        });
-        
-        // Indicadores
-        testimonialIndicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', function() {
-                currentSlide = index;
-                showTestimonialSlide(currentSlide);
-            });
+        nextTestimonial.addEventListener('click', () => {
+            showTestimonialSlide(currentSlide + 1);
         });
     }
+    
+    // Adicionar eventos aos indicadores
+    testimonialIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showTestimonialSlide(index);
+        });
+    });
+    
+    // Rotação automática de depoimentos
+    setInterval(() => {
+        if (testimonialSlides.length > 1) {
+            showTestimonialSlide(currentSlide + 1);
+        }
+    }, 8000);
     
     // ======== Theme Toggle (Dark/Light Mode) ========
     const themeToggle = document.getElementById('themeToggle');

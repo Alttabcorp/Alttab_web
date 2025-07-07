@@ -5,13 +5,14 @@
 
 :root {
     /* Paleta de Cores Principal - Mais moderna e profissional */
-    --primary: #1E293B;         /* Azul escuro mais sofisticado */
-    --primary-light: #334155;   /* Tom médio para hover */
-    --primary-dark: #0F172A;    /* Tom mais escuro para elementos ativos */
-    --secondary: #3B82F6;       /* Azul vibrante para call-to-actions */
-    --secondary-light: #60A5FA; /* Tom mais claro para hover */
-    --secondary-dark: #2563EB;  /* Tom mais escuro para elementos ativos */
-    --accent: #10B981;          /* Verde para elementos de destaque */
+    --primary: #1A2238;         /* Azul escuro mais sofisticado */
+    --primary-light: #2D3B58;   /* Tom médio para hover */
+    --primary-dark: #0F1525;    /* Tom mais escuro para elementos ativos */
+    --secondary: #2563EB;       /* Azul vibrante para call-to-actions */
+    --secondary-light: #3B82F6; /* Tom mais claro para hover */
+    --secondary-dark: #1D4ED8;  /* Tom mais escuro para elementos ativos */
+    --accent: #0EA5E9;          /* Azul claro para elementos de destaque */
+    --accent-secondary: #10B981; /* Verde para elementos de destaque secundários */
     
     /* Cores Neutras - Mais refinadas */
     --dark: #0F172A;
@@ -32,10 +33,10 @@
     --danger: #EF4444;        /* Vermelho */
     --info: #3B82F6;          /* Azul */
     
-    /* Gradientes - Novos */
+    /* Gradientes - Novos e mais elegantes */
     --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-light));
     --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--secondary-light));
-    --gradient-accent: linear-gradient(135deg, var(--accent), #34D399);
+    --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-secondary));
     --gradient-dark: linear-gradient(135deg, var(--dark), var(--gray-800));
     --gradient-light: linear-gradient(135deg, var(--light), var(--gray-100));
     
@@ -126,7 +127,7 @@
     --backdrop-blur: blur(8px);
     --backdrop-saturation: saturate(180%);
     
-    /* Variáveis para tema */
+    /* Variáveis para tema claro */
     --body-bg: var(--light);
     --body-color: var(--gray-800);
     --header-bg: rgba(255, 255, 255, 0.98);
@@ -149,6 +150,13 @@
     --legal-bg: var(--light);
     --legal-text: var(--gray-700);
     --legal-heading: var(--primary);
+    
+    /* Variáveis para elementos interativos */
+    --hover-transition: all var(--transition-normal);
+    --button-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+    --button-shadow-hover: 0 8px 15px -3px rgba(37, 99, 235, 0.3);
+    --card-hover-transform: translateY(-5px);
+    --icon-hover-rotate: rotate(5deg) scale(1.1);
 }
 
 /* Dark Mode */
@@ -181,4 +189,8 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
     --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    
+    /* Variáveis para elementos interativos no tema escuro */
+    --button-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+    --button-shadow-hover: 0 8px 15px -3px rgba(59, 130, 246, 0.4);
 } 
