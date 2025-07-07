@@ -31,19 +31,26 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- CSS Principal -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    
-    <!-- CSS Específicos -->
+    <!-- CSS Base -->
     <link rel="stylesheet" href="../../assets/css/base/variables.css">
     <link rel="stylesheet" href="../../assets/css/base/reset.css">
     <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    
+    <!-- CSS Layout -->
     <link rel="stylesheet" href="../../assets/css/layout/grid.css">
+    
+    <!-- CSS Componentes -->
     <link rel="stylesheet" href="../../assets/css/components/header.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/components/buttons.css">
     <link rel="stylesheet" href="../../assets/css/components/cards.css">
+    <link rel="stylesheet" href="../../assets/css/components/section.css">
+    <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/pages/web.css">
+    <link rel="stylesheet" href="../../assets/css/fixes.css">
     
     <!-- PWA Support -->
     <link rel="manifest" href="../../manifest.json">
@@ -71,14 +78,21 @@
                             <li class="nav-item nav-dropdown">
                                 <a href="../esports/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
-                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                    <li><a href="../esports/estudio/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../esports/time/" class="dropdown-link">Time E-sports</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li><a href="../contato/" class="nav-link">Contato</a></li>
                 </ul>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="theme-toggle-track">
+                        <span class="theme-toggle-icon sun"><i class="fas fa-sun"></i></span>
+                        <span class="theme-toggle-icon moon"><i class="fas fa-moon"></i></span>
+                    </div>
+                    <div class="theme-toggle-thumb"></div>
+                </div>
                 <button class="mobile-menu-btn">
                     <span></span>
                     <span></span>
@@ -110,7 +124,7 @@
                 </div>
 
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll">
                         <div class="service-icon">
                             <i class="fas fa-laptop"></i>
                         </div>
@@ -118,7 +132,7 @@
                         <p>Sites profissionais que representam sua marca e comunicam sua mensagem com eficiência.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll">
                         <div class="service-icon">
                             <i class="fas fa-shopping-cart"></i>
                         </div>
@@ -126,7 +140,7 @@
                         <p>Lojas virtuais completas com gestão de produtos, pagamentos e logística integrados.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll">
                         <div class="service-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
@@ -134,7 +148,7 @@
                         <p>Sistemas web personalizados para automatizar processos e aumentar a produtividade.</p>
                     </div>
 
-                    <div class="service-card">
+                    <div class="service-card animate-on-scroll">
                         <div class="service-icon">
                             <i class="fas fa-search"></i>
                         </div>
@@ -145,13 +159,58 @@
             </div>
         </section>
 
+        <!-- Tecnologias Section -->
+        <section class="tech-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Tecnologias</span>
+                    <h2>Ferramentas que Utilizamos</h2>
+                    <p>Trabalhamos com as tecnologias mais modernas e eficientes do mercado</p>
+                </div>
+
+                <div class="tech-grid">
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3>React</h3>
+                        <p>Biblioteca JavaScript para criar interfaces de usuário interativas e responsivas.</p>
+                    </div>
+
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <h3>Node.js</h3>
+                        <p>Ambiente de execução JavaScript server-side para aplicações escaláveis.</p>
+                    </div>
+
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fab fa-wordpress"></i>
+                        </div>
+                        <h3>WordPress</h3>
+                        <p>CMS poderoso e flexível para sites e blogs com fácil gerenciamento de conteúdo.</p>
+                    </div>
+
+                    <div class="tech-card animate-on-scroll">
+                        <div class="tech-icon">
+                            <i class="fab fa-php"></i>
+                        </div>
+                        <h3>PHP</h3>
+                        <p>Linguagem de script para desenvolvimento web do lado do servidor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <div class="cta-content">
+                <div class="cta-content animate-on-scroll">
                     <h2>Pronto para transformar sua presença digital?</h2>
                     <p>Entre em contato conosco e descubra como podemos ajudar seu negócio a crescer online.</p>
-                    <a href="../contato/" class="cta-button">Solicitar Orçamento</a>
+                    <a href="../contato/" class="btn btn-primary btn-ripple">Solicitar Orçamento</a>
                 </div>
             </div>
         </section>
@@ -161,77 +220,148 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
-                    <p>Transformando ideias em soluções tecnológicas</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-links-column">
-                        <h3>Navegação</h3>
-                        <ul>
-                            <li><a href="../../">Início</a></li>
-                            <li><a href="../sobre/">Sobre</a></li>
-                            <li><a href="../servicos/">Serviços</a></li>
-                            <li><a href="../contato/">Contato</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links-column">
-                        <h3>Serviços</h3>
-                        <ul>
-                            <li><a href="../web/" class="active">Desenvolvimento Web</a></li>
-                            <li><a href="../consultoria/">Consultoria em TI</a></li>
-                            <li><a href="../impressao3d/">Impressão 3D</a></li>
-                            <li><a href="../esports/">E-Sports</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links-column">
-                        <h3>Legal</h3>
-                        <ul>
-                            <li><a href="../termos/">Termos de Uso</a></li>
-                            <li><a href="../privacidade/">Política de Privacidade</a></li>
-                            <li><a href="../cookies/">Política de Cookies</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3>Contato</h3>
-                    <p><i class="fas fa-envelope"></i> contato@alttabcorp.com.br</p>
-                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
-                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
-                    
-                    <div class="social-links">
+                <div class="footer-brand">
+                    <a href="../../" class="footer-logo">
+                        <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                    </a>
+                    <p class="footer-description">
+                        Desenvolvendo soluções tecnológicas inovadoras para transformar ideias em resultados concretos.
+                    </p>
+                    <div class="footer-social">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../" class="footer-link"><i class="fas fa-chevron-right"></i> Início</a></li>
+                        <li><a href="../sobre/" class="footer-link"><i class="fas fa-chevron-right"></i> Sobre</a></li>
+                        <li><a href="../servicos/" class="footer-link"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                        <li><a href="../contato/" class="footer-link"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Nossos Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="../web/" class="footer-link active"><i class="fas fa-chevron-right"></i> Desenvolvimento Web</a></li>
+                        <li><a href="../consultoria/" class="footer-link"><i class="fas fa-chevron-right"></i> Consultoria em TI</a></li>
+                        <li><a href="../impressao3d/" class="footer-link"><i class="fas fa-chevron-right"></i> Impressão 3D</a></li>
+                        <li><a href="../esports/" class="footer-link"><i class="fas fa-chevron-right"></i> E-Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Contato</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                        <p class="footer-contact-text">Av. Paulista, 1000, São Paulo, SP</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt footer-contact-icon"></i>
+                        <p class="footer-contact-text">
+                            <a href="tel:+551199999999" class="footer-contact-link">(11) 9999-9999</a>
+                        </p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope footer-contact-icon"></i>
+                        <p class="footer-contact-text">
+                            <a href="mailto:contato@alttabcorp.com.br" class="footer-contact-link">contato@alttabcorp.com.br</a>
+                        </p>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
+                <p class="footer-copyright">&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="../termos/" class="footer-legal-link">Termos de Uso</a>
+                    <a href="../privacidade/" class="footer-legal-link">Política de Privacidade</a>
+                    <a href="../cookies/" class="footer-legal-link">Política de Cookies</a>
+                </div>
             </div>
         </div>
+        
+        <a href="#" class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
 
-    <script>
-        // Script mínimo para funcionalidade do menu mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            // Menu Mobile
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (menuBtn && navMenu) {
-                menuBtn.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    menuBtn.classList.toggle('active');
-                });
-            }
-        });
-    </script>
+    <!-- Floating Contact Button -->
+    <div class="floating-contact">
+        <button class="floating-contact-btn pulse" id="floatingContactBtn">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="floating-contact-menu" id="floatingContactMenu">
+            <div class="floating-contact-title">
+                Fale Conosco
+                <span class="floating-contact-close" id="floatingContactClose">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+            <div class="floating-contact-options">
+                <a href="tel:+551199999999" class="floating-contact-option">
+                    <div class="floating-contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">Telefone</div>
+                        <div class="floating-contact-value">(11) 9999-9999</div>
+                    </div>
+                </a>
+                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option">
+                    <div class="floating-contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">E-mail</div>
+                        <div class="floating-contact-value">contato@alttabcorp.com.br</div>
+                    </div>
+                </a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="floating-contact-option">
+                    <div class="floating-contact-icon" style="background-color: #25D366;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">WhatsApp</div>
+                        <div class="floating-contact-value">Envie uma mensagem</div>
+                    </div>
+                </a>
+                <a href="../contato/" class="floating-contact-option">
+                    <div class="floating-contact-icon" style="background-color: var(--accent);">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">Formulário</div>
+                        <div class="floating-contact-value">Preencha nosso formulário</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <h3 class="cookie-title">Este site utiliza cookies</h3>
+            <p class="cookie-text">Utilizamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego do site. Ao continuar navegando, você concorda com nossa <a href="../cookies/" class="cookie-link">Política de Cookies</a>.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Aceitar</button>
+            <button class="cookie-btn cookie-btn-settings" id="cookieSettings">Configurações</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="../../assets/js/modules/animations.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/theme-toggle.js"></script>
+    <script src="../../assets/js/cookie-banner.js"></script>
 </body>
 </html> 

@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jogos e E-sports da Alt Tab Corp - Desenvolvimento de jogos e competições">
-    <meta name="theme-color" content="#1A2238">
     
-    <title>Jogos & E-sports - Alt tab Corp</title>
+    <!-- SEO Tags -->
+    <meta name="description" content="Alt tab Corp - E-Sports - Jogos e competições profissionais">
+    <meta name="keywords" content="esports, jogos, competições, gaming, time profissional">
+    <meta name="author" content="Alt tab Corp">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="E-Sports - Alt tab Corp">
+    <meta property="og:description" content="Entre no mundo dos E-Sports com nossa equipe profissional e estúdio de desenvolvimento">
+    <meta property="og:image" content="../../assets/images/og-image.jpg">
+    
+    <!-- Theme -->
+    <meta name="theme-color" content="#1A2238">
+    <title>E-Sports - Alt tab Corp</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
@@ -19,32 +31,31 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- CSS Principal -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    
-    <!-- CSS Específicos -->
+    <!-- CSS Base -->
     <link rel="stylesheet" href="../../assets/css/base/variables.css">
     <link rel="stylesheet" href="../../assets/css/base/reset.css">
     <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    
+    <!-- CSS Layout -->
     <link rel="stylesheet" href="../../assets/css/layout/grid.css">
+    
+    <!-- CSS Componentes -->
     <link rel="stylesheet" href="../../assets/css/components/header.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/components/buttons.css">
     <link rel="stylesheet" href="../../assets/css/components/cards.css">
     <link rel="stylesheet" href="../../assets/css/components/section.css">
-    <link rel="stylesheet" href="../../assets/css/components/animations.css">
     <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/pages/esports.css">
+    <link rel="stylesheet" href="../../assets/css/fixes.css">
     
     <!-- PWA Support -->
     <link rel="manifest" href="../../manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Jogos & E-sports - Alt tab Corp">
-    <meta property="og:description" content="Desenvolvimento de jogos originais e competições de alto nível">
-    <meta property="og:image" content="../../assets/images/og-image.jpg">
 </head>
 <body class="page-esports">
     <!-- Header -->
@@ -65,10 +76,10 @@
                             <li><a href="../impressao3d/" class="dropdown-link">Impressão 3D</a></li>
                             <li class="dropdown-divider"></li>
                             <li class="nav-item nav-dropdown">
-                                <a href="./" class="nav-link active">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <a href="../esports/" class="nav-link active">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="estudio/" class="dropdown-link">Estúdio de Jogos</a></li>
-                                    <li><a href="time/" class="dropdown-link">Time E-sports</a></li>
+                                    <li><a href="../esports/estudio/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../esports/time/" class="dropdown-link">Time E-sports</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -94,156 +105,184 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero-games">
-            <div class="hero-particles" id="particles-js"></div>
+        <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="animate-on-scroll">Jogos & E-sports</h1>
-                    <p class="animate-on-scroll">Desenvolvimento de jogos originais e competições de alto nível</p>
-                    <div class="hero-buttons animate-on-scroll">
-                        <a href="#navegacao" class="btn btn-primary btn-ripple">Explorar <i class="fas fa-gamepad"></i></a>
-                        <a href="../contato/" class="btn btn-outline-light">Fale Conosco</a>
-                    </div>
+                    <h1>E-Sports</h1>
+                    <p>Entre no mundo dos jogos eletrônicos profissionais com nossa equipe e estúdio de desenvolvimento</p>
                 </div>
             </div>
-            <div class="hero-shape"></div>
         </section>
 
-        <!-- Cards de Navegação -->
-        <section id="navegacao" class="section navegacao section-light">
+        <!-- Divisões Section -->
+        <section class="divisions-section">
             <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-badge">Nosso universo gamer</span>
-                    <h2>Explore nosso mundo dos jogos</h2>
-                    <p>Conheça nossas duas principais vertentes no universo dos games</p>
+                <div class="section-header">
+                    <span class="section-badge">Nossas Divisões</span>
+                    <h2>Conheça Nossas Áreas de Atuação</h2>
+                    <p>Atuamos em diferentes frentes no universo dos jogos eletrônicos</p>
                 </div>
-                
-                <div class="nav-grid">
-                    <a href="estudio/" class="nav-card hover-lift animate-on-scroll">
-                        <div class="nav-icon">
+
+                <div class="divisions-grid">
+                    <div class="division-card animate-on-scroll">
+                        <div class="division-icon">
                             <i class="fas fa-gamepad"></i>
                         </div>
-                        <h2>Estúdio de Jogos</h2>
-                        <p>Conheça nossos jogos originais, tecnologias e oportunidades de carreira</p>
-                        <ul class="nav-features">
-                            <li><i class="fas fa-check"></i> Jogos em desenvolvimento</li>
-                            <li><i class="fas fa-check"></i> Tecnologias utilizadas</li>
-                            <li><i class="fas fa-check"></i> Vagas disponíveis</li>
-                        </ul>
-                        <span class="btn btn-primary">Explorar Estúdio</span>
-                    </a>
+                        <h3>Time Profissional</h3>
+                        <p>Nossa equipe compete em torneios nacionais e internacionais em diversos jogos eletrônicos.</p>
+                        <a href="time/" class="btn btn-outline-primary btn-sm">Conhecer o Time</a>
+                    </div>
 
-                    <a href="time/" class="nav-card hover-lift animate-on-scroll">
-                        <div class="nav-icon">
+                    <div class="division-card animate-on-scroll">
+                        <div class="division-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Estúdio de Desenvolvimento</h3>
+                        <p>Desenvolvemos jogos inovadores para diversas plataformas, desde mobile até consoles.</p>
+                        <a href="estudio/" class="btn btn-outline-primary btn-sm">Conhecer o Estúdio</a>
+                    </div>
+
+                    <div class="division-card animate-on-scroll">
+                        <div class="division-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
-                        <h2>Time E-sports</h2>
-                        <p>Acompanhe nosso time competitivo, campeonatos e lives</p>
-                        <ul class="nav-features">
-                            <li><i class="fas fa-check"></i> Time de League of Legends</li>
-                            <li><i class="fas fa-check"></i> Próximos campeonatos</li>
-                            <li><i class="fas fa-check"></i> Lives e streaming</li>
-                        </ul>
-                        <span class="btn btn-secondary">Ver Time</span>
-                    </a>
+                        <h3>Organização de Torneios</h3>
+                        <p>Promovemos e organizamos competições de e-sports para amadores e profissionais.</p>
+                        <a href="torneios/" class="btn btn-outline-primary btn-sm">Ver Torneios</a>
+                    </div>
+
+                    <div class="division-card animate-on-scroll">
+                        <div class="division-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Academia de Jogadores</h3>
+                        <p>Formamos novos talentos para o cenário competitivo através de treinamentos especializados.</p>
+                        <a href="academia/" class="btn btn-outline-primary btn-sm">Conhecer a Academia</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Benefícios Section -->
-        <section class="section-gray section-wave">
+        <!-- Jogos Section -->
+        <section class="games-section">
             <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-badge">Por que nos escolher</span>
-                    <h2>Benefícios de trabalhar conosco</h2>
-                    <p>Descubra como podemos impulsionar seu projeto ou carreira nos games</p>
+                <div class="section-header">
+                    <span class="section-badge">Nossos Jogos</span>
+                    <h2>Títulos em que Atuamos</h2>
+                    <p>Conheça os jogos em que nossa equipe compete e desenvolve conteúdo</p>
+                </div>
+
+                <div class="games-grid">
+                    <div class="game-card animate-on-scroll">
+                        <div class="game-image">
+                            <img src="../../assets/images/pages/esports/game1.svg" alt="League of Legends">
+                        </div>
+                        <div class="game-info">
+                            <h3>League of Legends</h3>
+                            <p>MOBA - Multiplayer Online Battle Arena</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card animate-on-scroll">
+                        <div class="game-image">
+                            <img src="../../assets/images/pages/esports/game2.svg" alt="Counter-Strike 2">
+                        </div>
+                        <div class="game-info">
+                            <h3>Counter-Strike 2</h3>
+                            <p>FPS - First Person Shooter</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card animate-on-scroll">
+                        <div class="game-image">
+                            <img src="../../assets/images/pages/esports/game3.svg" alt="Valorant">
+                        </div>
+                        <div class="game-info">
+                            <h3>Valorant</h3>
+                            <p>FPS - First Person Shooter</p>
+                        </div>
+                    </div>
+
+                    <div class="game-card animate-on-scroll">
+                        <div class="game-image">
+                            <img src="../../assets/images/pages/esports/game4.svg" alt="Fortnite">
+                        </div>
+                        <div class="game-info">
+                            <h3>Fortnite</h3>
+                            <p>Battle Royale</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conquistas Section -->
+        <section class="achievements-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Conquistas</span>
+                    <h2>Nossos Resultados</h2>
+                    <p>Conheça algumas das conquistas de nossa equipe profissional</p>
                 </div>
                 
-                <div class="benefits-grid">
-                    <div class="benefit-card hover-lift animate-on-scroll">
-                        <div class="benefit-icon">
-                            <i class="fas fa-code"></i>
+                <div class="achievements-timeline">
+                    <div class="achievement-item animate-on-scroll">
+                        <div class="achievement-date">2023</div>
+                        <div class="achievement-content">
+                            <h3>Campeão Nacional de League of Legends</h3>
+                            <p>Conquistamos o título nacional no maior campeonato brasileiro de League of Legends.</p>
+                            <div class="achievement-medal">
+                                <i class="fas fa-medal"></i>
+                            </div>
                         </div>
-                        <h3>Tecnologia de Ponta</h3>
-                        <p>Utilizamos as mais recentes tecnologias e ferramentas para desenvolvimento de jogos e plataformas.</p>
                     </div>
                     
-                    <div class="benefit-card hover-lift animate-on-scroll">
-                        <div class="benefit-icon">
-                            <i class="fas fa-users"></i>
+                    <div class="achievement-item animate-on-scroll">
+                        <div class="achievement-date">2022</div>
+                        <div class="achievement-content">
+                            <h3>Vice-Campeão Latino-Americano de CS:GO</h3>
+                            <p>Segundo lugar no campeonato latino-americano de Counter-Strike: Global Offensive.</p>
+                            <div class="achievement-medal">
+                                <i class="fas fa-medal"></i>
+                            </div>
                         </div>
-                        <h3>Equipe Experiente</h3>
-                        <p>Nossa equipe é formada por profissionais com vasta experiência no mercado de games e e-sports.</p>
                     </div>
                     
-                    <div class="benefit-card hover-lift animate-on-scroll">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
+                    <div class="achievement-item animate-on-scroll">
+                        <div class="achievement-date">2021</div>
+                        <div class="achievement-content">
+                            <h3>Top 8 Mundial de Valorant</h3>
+                            <p>Classificação entre os 8 melhores times do mundo no campeonato mundial de Valorant.</p>
+                            <div class="achievement-medal">
+                                <i class="fas fa-medal"></i>
+                            </div>
                         </div>
-                        <h3>Crescimento Contínuo</h3>
-                        <p>Estamos em constante crescimento, buscando sempre novos desafios e oportunidades no mercado.</p>
                     </div>
                     
-                    <div class="benefit-card hover-lift animate-on-scroll">
-                        <div class="benefit-icon">
-                            <i class="fas fa-handshake"></i>
+                    <div class="achievement-item animate-on-scroll">
+                        <div class="achievement-date">2020</div>
+                        <div class="achievement-content">
+                            <h3>Lançamento do Primeiro Jogo</h3>
+                            <p>Lançamento do nosso primeiro jogo independente para PC e consoles, com mais de 100 mil cópias vendidas.</p>
+                            <div class="achievement-medal">
+                                <i class="fas fa-medal"></i>
+                            </div>
                         </div>
-                        <h3>Parcerias Estratégicas</h3>
-                        <p>Mantemos parcerias com grandes empresas do setor para oferecer as melhores soluções.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section section-dark section-pattern">
+        <section class="cta-section">
             <div class="container">
                 <div class="cta-content animate-on-scroll">
-                    <h2>Pronto para entrar no mundo dos games?</h2>
-                    <p>Entre em contato conosco e descubra como podemos transformar suas ideias em jogos incríveis ou ajudar você a entrar no cenário competitivo.</p>
+                    <h2>Quer fazer parte do nosso time?</h2>
+                    <p>Entre em contato conosco e descubra como você pode se juntar à nossa equipe ou participar dos nossos torneios.</p>
                     <div class="cta-buttons">
-                        <a href="../contato/" class="btn btn-primary btn-ripple">Fale com nossa Equipe <i class="fas fa-paper-plane"></i></a>
-                        <a href="../servicos/" class="btn btn-outline-light">Ver Todos os Serviços</a>
+                        <a href="../contato/" class="btn btn-primary btn-ripple">Fale Conosco</a>
+                        <a href="torneios/" class="btn btn-outline-light">Ver Próximos Torneios</a>
                     </div>
-                </div>
-            </div>
-        </section>
-        
-
-        <!-- Nossos Serviços -->
-        <section class="other-verticals section-light">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-badge">Mais opções</span>
-                    <h2>Nossos Outros Serviços</h2>
-                    <p>Conheça nossas áreas de atuação e descubra como podemos transformar seu negócio com tecnologia, inovação e criatividade.</p>
-                </div>
-                
-                <div class="verticals-grid">
-                    <a href="../consultoria/" class="vertical-card hover-lift animate-on-scroll">
-                        <div class="vertical-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h3><strong>Consultoria TI</strong></h3>
-                        <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
-                        <span class="btn-text">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <a href="../web/" class="vertical-card hover-lift animate-on-scroll">
-                        <div class="vertical-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h3><strong>Desenvolvimento Web</strong></h3>
-                        <p>Crie presença digital impactante com websites modernos, responsivos e otimizados para resultados.</p>
-                        <span class="btn-text">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <a href="../impressao3d/" class="vertical-card hover-lift animate-on-scroll">
-                        <div class="vertical-icon">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h3><strong>Impressão 3D</strong></h3>
-                        <p>Materialize suas ideias com tecnologia de impressão 3D de alta precisão e qualidade.</p>
-                        <span class="btn-text">Saiba mais <i class="fas fa-arrow-right"></i></span>
-                    </a>
                 </div>
             </div>
         </section>
@@ -258,7 +297,7 @@
                         <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
                     </a>
                     <p class="footer-description">
-                        Transformando ideias em soluções tecnológicas
+                        Desenvolvendo soluções tecnológicas inovadoras para transformar ideias em resultados concretos.
                     </p>
                     <div class="footer-social">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
@@ -284,7 +323,7 @@
                         <li><a href="../web/" class="footer-link"><i class="fas fa-chevron-right"></i> Desenvolvimento Web</a></li>
                         <li><a href="../consultoria/" class="footer-link"><i class="fas fa-chevron-right"></i> Consultoria em TI</a></li>
                         <li><a href="../impressao3d/" class="footer-link"><i class="fas fa-chevron-right"></i> Impressão 3D</a></li>
-                        <li><a href="./" class="footer-link active"><i class="fas fa-chevron-right"></i> E-Sports</a></li>
+                        <li><a href="../esports/" class="footer-link active"><i class="fas fa-chevron-right"></i> E-Sports</a></li>
                     </ul>
                 </div>
                 
@@ -318,11 +357,15 @@
                 </div>
             </div>
         </div>
+        
+        <a href="#" class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
 
     <!-- Floating Contact Button -->
     <div class="floating-contact">
-        <button class="floating-contact-btn" id="floatingContactBtn">
+        <button class="floating-contact-btn pulse" id="floatingContactBtn">
             <i class="fas fa-comments"></i>
         </button>
         <div class="floating-contact-menu" id="floatingContactMenu">
@@ -387,121 +430,10 @@
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="../../assets/js/modules/animations.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/theme-toggle.js"></script>
     <script src="../../assets/js/cookie-banner.js"></script>
-    <script src="../../assets/js/animations.js"></script>
-    <script>
-        // Inicializar partículas
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": {
-                            "value": 80,
-                            "density": {
-                                "enable": true,
-                                "value_area": 800
-                            }
-                        },
-                        "color": {
-                            "value": ["#2563EB", "#3B82F6", "#0EA5E9", "#10B981"]
-                        },
-                        "shape": {
-                            "type": ["circle", "triangle", "polygon"],
-                            "stroke": {
-                                "width": 0,
-                                "color": "#000000"
-                            },
-                            "polygon": {
-                                "nb_sides": 6
-                            }
-                        },
-                        "opacity": {
-                            "value": 0.6,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 1,
-                                "opacity_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "size": {
-                            "value": 4,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 2,
-                                "size_min": 0.3,
-                                "sync": false
-                            }
-                        },
-                        "line_linked": {
-                            "enable": true,
-                            "distance": 150,
-                            "color": "#3B82F6",
-                            "opacity": 0.4,
-                            "width": 1
-                        },
-                        "move": {
-                            "enable": true,
-                            "speed": 2,
-                            "direction": "none",
-                            "random": true,
-                            "straight": false,
-                            "out_mode": "out",
-                            "bounce": false,
-                            "attract": {
-                                "enable": true,
-                                "rotateX": 600,
-                                "rotateY": 1200
-                            }
-                        }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "grab"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "push"
-                            },
-                            "resize": true
-                        },
-                        "modes": {
-                            "grab": {
-                                "distance": 180,
-                                "line_linked": {
-                                    "opacity": 0.8
-                                }
-                            },
-                            "bubble": {
-                                "distance": 400,
-                                "size": 6,
-                                "duration": 2,
-                                "opacity": 0.8,
-                                "speed": 3
-                            },
-                            "repulse": {
-                                "distance": 200,
-                                "duration": 0.4
-                            },
-                            "push": {
-                                "particles_nb": 4
-                            },
-                            "remove": {
-                                "particles_nb": 2
-                            }
-                        }
-                    },
-                    "retina_detect": true
-                });
-            }
-        });
-    </script>
 </body>
 </html> 

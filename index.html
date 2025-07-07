@@ -33,13 +33,18 @@
     <link rel="stylesheet" href="assets/css/components/buttons.css">
     <link rel="stylesheet" href="assets/css/components/cards.css">
     <link rel="stylesheet" href="assets/css/components/hero.css">
-    <link rel="stylesheet" href="assets/css/components/forms.css">
     <link rel="stylesheet" href="assets/css/components/section.css">
+    <link rel="stylesheet" href="assets/css/components/forms.css">
     <link rel="stylesheet" href="assets/css/components/faq.css">
     <link rel="stylesheet" href="assets/css/components/cookie-banner.css">
+    <link rel="stylesheet" href="assets/css/components/floating-contact.css">
+    <link rel="stylesheet" href="assets/css/components/animations.css">
+    <link rel="stylesheet" href="assets/css/fixes.css">
     
     <!-- CSS Principal -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/fixes.css">
     
     <!-- PWA Support -->
     <link rel="manifest" href="manifest.json">
@@ -104,31 +109,61 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-particles" id="particles-js"></div>
+            <div class="hero-pattern parallax-bg" data-speed="0.1"></div>
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="animate-on-scroll">Transformando Ideias em Soluções Tecnológicas</h1>
-                    <p class="animate-on-scroll">Desenvolvimento web, consultoria em TI, impressão 3D e soluções para E-Sports. Tudo o que sua empresa precisa para se destacar no mundo digital.</p>
-                    <div class="hero-buttons animate-on-scroll">
+                    <h1 class="animate-on-scroll" data-animation="fade-in-up">Transformando Ideias em <span class="gradient-text">Soluções Tecnológicas</span></h1>
+                    <p class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">Desenvolvimento web, consultoria em TI, impressão 3D e soluções para E-Sports. Tudo o que sua empresa precisa para se destacar no mundo digital.</p>
+                    <div class="hero-buttons animate-on-scroll" data-animation="fade-in-up" data-delay="0.4s">
                         <a href="pages/servicos/" class="btn btn-primary btn-ripple">Nossos Serviços <i class="fas fa-arrow-right"></i></a>
                         <a href="pages/contato/" class="btn btn-outline-light">Fale Conosco</a>
                     </div>
+                    <div class="hero-features animate-on-scroll" data-animation="fade-in-up" data-delay="0.6s">
+                        <div class="hero-feature">
+                            <span class="hero-feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span class="hero-feature-text">Tecnologia de ponta</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="hero-feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span class="hero-feature-text">Equipe especializada</span>
+                        </div>
+                        <div class="hero-feature">
+                            <span class="hero-feature-icon"><i class="fas fa-check-circle"></i></span>
+                            <span class="hero-feature-text">Suporte contínuo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image animate-on-scroll" data-animation="fade-in-left">
+                    <div class="hero-image-placeholder">
+                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="hero-shape-1 parallax-element" data-speed="0.08"></div>
+                    <div class="hero-shape-2 parallax-element" data-speed="0.12"></div>
                 </div>
             </div>
             <div class="hero-shape"></div>
+            <div class="hero-wave">
+                <img src="assets/images/wave.svg" alt="Wave" class="wave">
+            </div>
         </section>
 
         <!-- Serviços Section -->
         <section class="section-light section-shapes">
+            <div class="section-pattern">
+                <img src="assets/images/pattern.svg" alt="Pattern" class="pattern">
+            </div>
             <div class="container">
-                <div class="section-header animate-on-scroll">
+                <div class="section-header animate-on-scroll" data-animation="fade-in-up">
                     <span class="section-badge">O que fazemos</span>
-                    <h2>Nossos Serviços</h2>
+                    <h2>Nossos <span class="gradient-text">Serviços</span></h2>
                     <p>Oferecemos soluções completas em tecnologia para impulsionar seu negócio</p>
                 </div>
                 
                 <div class="services-grid">
                     <!-- Serviço 1 -->
-                    <div class="service-card animate-on-scroll">
+                    <div class="service-card animate-on-scroll tilt-effect" data-animation="fade-in-up" data-delay="0.1s">
                         <div class="service-icon">
                             <i class="fas fa-laptop-code"></i>
                         </div>
@@ -138,7 +173,7 @@
                     </div>
                     
                     <!-- Serviço 2 -->
-                    <div class="service-card animate-on-scroll">
+                    <div class="service-card animate-on-scroll tilt-effect" data-animation="fade-in-up" data-delay="0.2s">
                         <div class="service-icon">
                             <i class="fas fa-server"></i>
                         </div>
@@ -148,7 +183,7 @@
                     </div>
                     
                     <!-- Serviço 3 -->
-                    <div class="service-card animate-on-scroll">
+                    <div class="service-card animate-on-scroll tilt-effect" data-animation="fade-in-up" data-delay="0.3s">
                         <div class="service-icon">
                             <i class="fas fa-cubes"></i>
                         </div>
@@ -158,7 +193,7 @@
                     </div>
                     
                     <!-- Serviço 4 -->
-                    <div class="service-card animate-on-scroll">
+                    <div class="service-card animate-on-scroll tilt-effect" data-animation="fade-in-up" data-delay="0.4s">
                         <div class="service-icon">
                             <i class="fas fa-gamepad"></i>
                         </div>
@@ -166,6 +201,10 @@
                         <p>Desenvolvemos soluções completas para o mercado de E-Sports, desde plataformas de streaming até gestão de times e eventos.</p>
                         <a href="pages/esports/" class="btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
+                
+                <div class="services-cta animate-on-scroll" data-animation="fade-in-up" data-delay="0.5s">
+                    <a href="pages/servicos/" class="btn btn-secondary btn-ripple">Ver todos os serviços <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
@@ -211,10 +250,17 @@
 
         <!-- Estatísticas Section -->
         <section class="stats-section section-gradient">
+            <div class="stats-pattern parallax-bg" data-speed="0.05"></div>
             <div class="container">
+                <div class="section-header animate-on-scroll" data-animation="fade-in-up">
+                    <span class="section-badge light">Nossos números</span>
+                    <h2 class="text-light">Resultados que <span class="gradient-text">Impressionam</span></h2>
+                    <p class="text-light">Conheça alguns números que demonstram nossa experiência e compromisso</p>
+                </div>
+                
                 <div class="stats-grid">
                     <!-- Estatística 1 -->
-                    <div class="stat-card animate-on-scroll">
+                    <div class="stat-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">
                         <div class="stat-icon">
                             <i class="fas fa-users"></i>
                         </div>
@@ -223,7 +269,7 @@
                     </div>
                     
                     <!-- Estatística 2 -->
-                    <div class="stat-card animate-on-scroll">
+                    <div class="stat-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">
                         <div class="stat-icon">
                             <i class="fas fa-laptop-code"></i>
                         </div>
@@ -232,7 +278,7 @@
                     </div>
                     
                     <!-- Estatística 3 -->
-                    <div class="stat-card animate-on-scroll">
+                    <div class="stat-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.3s">
                         <div class="stat-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
@@ -241,7 +287,7 @@
                     </div>
                     
                     <!-- Estatística 4 -->
-                    <div class="stat-card animate-on-scroll">
+                    <div class="stat-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.4s">
                         <div class="stat-icon">
                             <i class="fas fa-coffee"></i>
                         </div>
@@ -249,6 +295,13 @@
                         <div class="stat-label">Xícaras de Café</div>
                     </div>
                 </div>
+                
+                <div class="stats-cta animate-on-scroll" data-animation="fade-in-up" data-delay="0.5s">
+                    <a href="pages/sobre/" class="btn btn-light btn-ripple">Conheça nossa história <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="stats-wave">
+                <img src="assets/images/wave.svg" alt="Wave" class="wave flip">
             </div>
         </section>
 
@@ -505,185 +558,9 @@
         </a>
     </footer>
 
-    <!-- Cookie Banner -->
-    <div class="cookie-banner" id="cookieBanner">
-        <div class="cookie-content">
-            <h3 class="cookie-title">Este site utiliza cookies</h3>
-            <p class="cookie-text">Utilizamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego do site. Ao continuar navegando, você concorda com nossa <a href="pages/cookies/" class="cookie-link">Política de Cookies</a>.</p>
-        </div>
-        <div class="cookie-actions">
-            <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Aceitar</button>
-            <button class="cookie-btn cookie-btn-settings" id="cookieSettings">Configurações</button>
-        </div>
-    </div>
-    
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/theme-toggle.js"></script>
-    <script src="assets/js/cookie-banner.js"></script>
-    <script>
-        // Inicializar partículas
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof particlesJS !== 'undefined') {
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": {
-                            "value": 60,
-                            "density": {
-                                "enable": true,
-                                "value_area": 1000
-                            }
-                        },
-                        "color": {
-                            "value": ["#3B82F6", "#60A5FA", "#10B981", "#FFFFFF"]
-                        },
-                        "shape": {
-                            "type": ["circle", "triangle", "polygon"],
-                            "stroke": {
-                                "width": 0,
-                                "color": "#000000"
-                            },
-                            "polygon": {
-                                "nb_sides": 6
-                            }
-                        },
-                        "opacity": {
-                            "value": 0.6,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 1,
-                                "opacity_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "size": {
-                            "value": 4,
-                            "random": true,
-                            "anim": {
-                                "enable": true,
-                                "speed": 2,
-                                "size_min": 0.3,
-                                "sync": false
-                            }
-                        },
-                        "line_linked": {
-                            "enable": true,
-                            "distance": 150,
-                            "color": "#60A5FA",
-                            "opacity": 0.4,
-                            "width": 1
-                        },
-                        "move": {
-                            "enable": true,
-                            "speed": 2,
-                            "direction": "none",
-                            "random": true,
-                            "straight": false,
-                            "out_mode": "out",
-                            "bounce": false,
-                            "attract": {
-                                "enable": true,
-                                "rotateX": 600,
-                                "rotateY": 1200
-                            }
-                        }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "grab"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "push"
-                            },
-                            "resize": true
-                        },
-                        "modes": {
-                            "grab": {
-                                "distance": 180,
-                                "line_linked": {
-                                    "opacity": 0.8
-                                }
-                            },
-                            "bubble": {
-                                "distance": 400,
-                                "size": 6,
-                                "duration": 2,
-                                "opacity": 0.8,
-                                "speed": 3
-                            },
-                            "repulse": {
-                                "distance": 200,
-                                "duration": 0.4
-                            },
-                            "push": {
-                                "particles_nb": 4
-                            },
-                            "remove": {
-                                "particles_nb": 2
-                            }
-                        }
-                    },
-                    "retina_detect": true
-                });
-            }
-            
-            // Contador de estatísticas
-            const startCounters = function() {
-                const counters = document.querySelectorAll('.counter');
-                
-                counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    const duration = 2000; // 2 segundos
-                    const step = target / (duration / 16); // 16ms é aproximadamente 60fps
-                    
-                    let current = 0;
-                    const updateCounter = () => {
-                        current += step;
-                        
-                        if (current < target) {
-                            counter.textContent = Math.floor(current);
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target;
-                        }
-                    };
-                    
-                    updateCounter();
-                });
-            };
-            
-            // Inicia os contadores quando estiverem visíveis
-            const handleIntersection = function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        startCounters();
-                        // Desregistra o observer após iniciar os contadores
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-            
-            // Configura o Intersection Observer para os contadores
-            const statsSection = document.querySelector('.stats-section');
-            if (statsSection) {
-                const observer = new IntersectionObserver(handleIntersection, {
-                    threshold: 0.5
-                });
-                
-                observer.observe(statsSection);
-            }
-        });
-    </script>
-    
     <!-- Floating Contact Button -->
     <div class="floating-contact">
-        <button class="floating-contact-btn" id="floatingContactBtn">
+        <button class="floating-contact-btn pulse" id="floatingContactBtn">
             <i class="fas fa-comments"></i>
         </button>
         <div class="floating-contact-menu" id="floatingContactMenu">
@@ -733,5 +610,32 @@
             </div>
         </div>
     </div>
+    
+    <!-- Cookie Banner -->
+    <div class="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <div class="cookie-text">
+                <h3 class="cookie-title">Utilizamos Cookies</h3>
+                <p class="cookie-description">Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com nossa <a href="pages/cookies/">Política de Cookies</a>.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button class="cookie-btn-accept">Aceitar</button>
+                <button class="cookie-btn-settings">Configurações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="assets/js/modules/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script src="assets/js/cookie-banner.js"></script>
+    <script src="assets/js/faq.js"></script>
+    <script src="assets/js/site-check.js"></script>
 </body>
 </html>

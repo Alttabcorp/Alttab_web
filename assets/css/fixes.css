@@ -1,0 +1,295 @@
+/**
+ * Alt tab Corp - Correções de Estilo
+ * Correções específicas para problemas de contraste e legibilidade
+ */
+
+/* Correções para a seção de estatísticas */
+.stats-section {
+    color: #FFFFFF !important;
+}
+
+.stats-section .section-header h2,
+.stats-section .section-header p,
+.stats-section .section-badge {
+    color: #FFFFFF !important;
+}
+
+.stat-number {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Correções para texto em gradientes */
+.section-gradient h2,
+.section-gradient p,
+.section-gradient .section-badge {
+    color: #FFFFFF !important;
+}
+
+/* Correções para tema escuro */
+[data-theme="dark"] .stats-section .section-header h2,
+[data-theme="dark"] .stats-section .section-header p,
+[data-theme="dark"] .stats-section .section-badge {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .stat-number {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .stat-label {
+    color: #FFFFFF !important;
+}
+
+/* Correções para o FAQ */
+.faq-section {
+    background-color: var(--light) !important;
+}
+
+[data-theme="dark"] .faq-section {
+    background-color: var(--gray-800) !important;
+}
+
+.faq-item {
+    background-color: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.faq-question {
+    color: var(--text-color) !important;
+}
+
+.faq-answer {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .faq-question {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .faq-answer {
+    color: var(--gray-300) !important;
+}
+
+/* Correções para o botão flutuante */
+.floating-contact-btn {
+    background-color: var(--primary) !important;
+    color: var(--light) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.floating-contact-btn.pulse {
+    animation: pulse 2s infinite;
+}
+
+.floating-contact-menu {
+    background-color: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.floating-contact-title {
+    color: var(--text-color) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.floating-contact-option {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.floating-contact-label {
+    color: var(--text-color) !important;
+}
+
+.floating-contact-value {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .floating-contact-btn {
+    background-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .floating-contact-menu {
+    background-color: var(--gray-800) !important;
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .floating-contact-title {
+    color: var(--light) !important;
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .floating-contact-option {
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .floating-contact-label {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .floating-contact-value {
+    color: var(--gray-400) !important;
+}
+
+/* Correções para o banner de cookies */
+.cookie-banner {
+    background-color: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-xl) !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+.cookie-banner.active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
+.cookie-title {
+    color: var(--text-color) !important;
+}
+
+.cookie-text {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .cookie-banner {
+    background-color: var(--gray-800) !important;
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .cookie-title {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .cookie-text {
+    color: var(--gray-300) !important;
+}
+
+/* Correções para o dropdown de e-sports */
+.dropdown-menu .nav-dropdown {
+    position: relative !important;
+    width: 100% !important;
+}
+
+.dropdown-menu .dropdown-menu {
+    left: 100% !important;
+    top: 0 !important;
+    transform: translateX(0) !important;
+    margin-left: 5px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    pointer-events: none !important;
+}
+
+.dropdown-menu .nav-dropdown:hover > .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Correções para o tema escuro/claro */
+[data-theme="dark"] {
+    --body-bg: var(--gray-900) !important;
+    --body-color: var(--light) !important;
+    --text-color: var(--light) !important;
+    --text-secondary: var(--gray-400) !important;
+    --border-color: var(--gray-700) !important;
+    --card-background: var(--gray-800) !important;
+}
+
+[data-theme="light"] {
+    --body-bg: var(--light) !important;
+    --body-color: var(--gray-900) !important;
+    --text-color: var(--gray-900) !important;
+    --text-secondary: var(--gray-700) !important;
+    --border-color: var(--gray-200) !important;
+    --card-background: var(--light) !important;
+}
+
+/* Correções para a timeline */
+.timeline-content {
+    background-color: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.timeline-title {
+    color: var(--text-color) !important;
+}
+
+.timeline-description {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .timeline-content {
+    background-color: var(--gray-800) !important;
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .timeline-title {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .timeline-description {
+    color: var(--gray-400) !important;
+}
+
+/* Correções para a página Sobre */
+.team-card {
+    background-color: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.team-info h3 {
+    color: var(--text-color) !important;
+}
+
+.team-bio {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .team-card {
+    background-color: var(--gray-800) !important;
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .team-info h3 {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .team-bio {
+    color: var(--gray-400) !important;
+}
+
+/* Correções para a seção de valores */
+.value-card {
+    background-color: var(--card-background) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.value-card h3 {
+    color: var(--text-color) !important;
+}
+
+.value-card p {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .value-card {
+    background-color: var(--gray-800) !important;
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .value-card h3 {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .value-card p {
+    color: var(--gray-400) !important;
+} 

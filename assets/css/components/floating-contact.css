@@ -1,0 +1,232 @@
+/**
+ * Estilos do Botão Flutuante de Contato
+ * Componente de contato flutuante para o site Alt tab Corp
+ */
+
+.floating-contact {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: var(--z-fixed);
+}
+
+.floating-contact-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--light);
+    border: none;
+    box-shadow: var(--shadow-lg);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.floating-contact-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-dark);
+}
+
+.floating-contact-btn.active {
+    transform: rotate(45deg);
+    background-color: var(--gray-500);
+}
+
+.floating-contact-btn.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+}
+
+.floating-contact-menu {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 320px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transform: scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: bottom right;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 1;
+}
+
+.floating-contact-menu.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.floating-contact-title {
+    padding: 1rem 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lg);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.floating-contact-close {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-full);
+    transition: all 0.3s ease;
+}
+
+.floating-contact-close:hover {
+    background-color: var(--gray-200);
+}
+
+.floating-contact-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-contact-option {
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.floating-contact-option:last-child {
+    border-bottom: none;
+}
+
+.floating-contact-option:hover {
+    background-color: var(--gray-100);
+}
+
+.floating-contact-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius-full);
+    background-color: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.floating-contact-info {
+    flex-grow: 1;
+}
+
+.floating-contact-label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.floating-contact-value {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* Tema escuro */
+[data-theme="dark"] .floating-contact-btn {
+    background-color: var(--primary);
+}
+
+[data-theme="dark"] .floating-contact-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+[data-theme="dark"] .floating-contact-btn.active {
+    background-color: var(--gray-600);
+}
+
+[data-theme="dark"] .floating-contact-menu {
+    background-color: var(--gray-800);
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .floating-contact-title {
+    color: var(--light);
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .floating-contact-close:hover {
+    background-color: var(--gray-700);
+}
+
+[data-theme="dark"] .floating-contact-option {
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .floating-contact-option:hover {
+    background-color: var(--gray-700);
+}
+
+[data-theme="dark"] .floating-contact-label {
+    color: var(--light);
+}
+
+[data-theme="dark"] .floating-contact-value {
+    color: var(--gray-400);
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    .floating-contact {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .floating-contact-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .floating-contact-menu {
+        width: 280px;
+        right: 0;
+    }
+    
+    .floating-contact-title {
+        padding: 0.75rem 1rem;
+        font-size: var(--font-size-base);
+    }
+    
+    .floating-contact-option {
+        padding: 0.75rem 1rem;
+    }
+    
+    .floating-contact-icon {
+        width: 35px;
+        height: 35px;
+    }
+} 

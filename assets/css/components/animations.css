@@ -1,9 +1,9 @@
 /**
- * Animações CSS
- * Efeitos visuais para melhorar a experiência do usuário
+ * Animações e Efeitos Visuais
+ * Arquivo CSS com animações e transições para o site da Alt tab Corp
  */
 
-/* Animações de Entrada */
+/* Animações de entrada */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -13,72 +13,87 @@
     }
 }
 
-@keyframes slideInUp {
+@keyframes fadeInUp {
     from {
+        opacity: 0;
         transform: translateY(30px);
-        opacity: 0;
     }
     to {
+        opacity: 1;
         transform: translateY(0);
-        opacity: 1;
     }
 }
 
-@keyframes slideInLeft {
+@keyframes fadeInDown {
     from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
         transform: translateX(-30px);
-        opacity: 0;
     }
     to {
-        transform: translateX(0);
         opacity: 1;
+        transform: translateX(0);
     }
 }
 
-@keyframes slideInRight {
+@keyframes fadeInRight {
     from {
+        opacity: 0;
         transform: translateX(30px);
-        opacity: 0;
     }
     to {
+        opacity: 1;
         transform: translateX(0);
-        opacity: 1;
     }
 }
 
-@keyframes scaleIn {
+@keyframes zoomIn {
     from {
-        transform: scale(0.9);
         opacity: 0;
+        transform: scale(0.9);
     }
     to {
-        transform: scale(1);
         opacity: 1;
+        transform: scale(1);
     }
 }
 
-/* Animações de Ênfase */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0px);
     }
 }
 
@@ -94,6 +109,30 @@
     }
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -103,118 +142,92 @@
     }
 }
 
-/* Animações para Botões e Links */
-@keyframes ripple {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(2.5);
-        opacity: 0;
-    }
-}
-
-/* Classes de Animação */
-.animate-fade-in {
-    animation: fadeIn 0.8s ease-in-out forwards;
-}
-
-.animate-slide-up {
-    animation: slideInUp 0.8s ease-out forwards;
-}
-
-.animate-slide-left {
-    animation: slideInLeft 0.8s ease-out forwards;
-}
-
-.animate-slide-right {
-    animation: slideInRight 0.8s ease-out forwards;
-}
-
-.animate-scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-}
-
-.animate-pulse {
-    animation: pulse 2s infinite ease-in-out;
-}
-
-.animate-float {
-    animation: float 3s infinite ease-in-out;
-}
-
-.animate-shake {
-    animation: shake 0.8s ease-in-out;
-}
-
-.animate-rotate {
-    animation: rotate 2s linear infinite;
-}
-
-/* Animações para Scroll */
+/* Classes de animação para elementos */
 .animate-on-scroll {
     opacity: 0;
-    transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.animate-on-scroll.visible {
+.animate-on-scroll.animated {
     opacity: 1;
 }
 
-.fade-up {
-    transform: translateY(30px);
+/* Variações de animações */
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
 }
 
-.fade-up.visible {
-    transform: translateY(0);
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-.fade-left {
-    transform: translateX(-30px);
+.fade-in-down {
+    animation: fadeInDown 0.6s ease forwards;
 }
 
-.fade-left.visible {
-    transform: translateX(0);
+.fade-in-left {
+    animation: fadeInLeft 0.6s ease forwards;
 }
 
-.fade-right {
-    transform: translateX(30px);
+.fade-in-right {
+    animation: fadeInRight 0.6s ease forwards;
 }
 
-.fade-right.visible {
-    transform: translateX(0);
+.zoom-in {
+    animation: zoomIn 0.6s ease forwards;
 }
 
-.scale-in {
-    transform: scale(0.9);
+.bounce-in {
+    animation: bounceIn 0.8s ease forwards;
 }
 
-.scale-in.visible {
-    transform: scale(1);
+.pulse {
+    animation: pulse 2s infinite;
 }
 
-/* Efeito de Hover para Cards */
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.rotate {
+    animation: rotate 8s linear infinite;
+}
+
+/* Efeitos de hover */
 .hover-lift {
-    transition: var(--hover-transition);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
-    transform: var(--card-hover-transform);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
-/* Efeito de Hover para Ícones */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
 .hover-rotate {
-    transition: var(--hover-transition);
+    transition: transform 0.3s ease;
 }
 
 .hover-rotate:hover {
-    transform: var(--icon-hover-rotate);
-    color: var(--secondary);
+    transform: rotate(5deg);
 }
 
-/* Efeito de Ripple para Botões */
+.hover-opacity {
+    transition: opacity 0.3s ease;
+}
+
+.hover-opacity:hover {
+    opacity: 0.8;
+}
+
+/* Efeito Ripple para botões */
 .btn-ripple {
     position: relative;
     overflow: hidden;
@@ -243,76 +256,28 @@
     transition: 0s;
 }
 
-/* Animações para Carregamento */
-@keyframes spinner {
-    to {
-        transform: rotate(360deg);
-    }
+/* Efeito de destaque para cards */
+.card-highlight {
+    transition: all 0.3s ease;
 }
 
-.loading-spinner {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    border-top-color: var(--secondary);
-    animation: spinner 0.8s linear infinite;
+.card-highlight:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--secondary);
 }
 
-[data-theme="dark"] .loading-spinner {
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-top-color: var(--secondary-light);
-}
-
-/* Efeito de Revelação de Texto */
-.reveal-text {
-    position: relative;
-    color: transparent;
-    animation: reveal 1.5s ease forwards;
-}
-
-@keyframes reveal {
-    0% {
-        color: transparent;
-    }
-    100% {
-        color: var(--text-color);
-    }
-}
-
-.reveal-text::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--secondary);
-    transform-origin: left;
-    animation: revealTextAfter 1.5s ease forwards;
-}
-
-@keyframes revealTextAfter {
-    0% {
-        transform: scaleX(1);
-    }
-    100% {
-        transform: scaleX(0);
-    }
-}
-
-/* Efeito de Gradiente Animado */
+/* Efeito de gradiente animado */
 .gradient-text {
-    background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--accent-secondary));
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    background-size: 200% auto;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradientText 8s ease infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 3s linear infinite;
 }
 
-@keyframes gradientText {
+@keyframes gradient {
     0% {
         background-position: 0% 50%;
     }
@@ -324,77 +289,269 @@
     }
 }
 
-/* Animation Classes */
-.animate-fade-in {
-    animation: fadeIn 1s ease forwards;
+/* Efeito de borda animada */
+.border-glow {
+    position: relative;
 }
 
-.animate-fade-in-up {
-    animation: fadeInUp 1s ease forwards;
+.border-glow::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--secondary), var(--accent), var(--primary), var(--secondary));
+    background-size: 400% 400%;
+    z-index: -1;
+    border-radius: calc(var(--border-radius-md) + 2px);
+    animation: border-animation 3s ease alternate infinite;
 }
 
-.animate-fade-in-down {
-    animation: fadeInDown 1s ease forwards;
+@keyframes border-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
-.animate-fade-in-left {
-    animation: fadeInLeft 1s ease forwards;
+/* Efeito para contadores */
+.counter {
+    transition: all 0.5s ease;
 }
 
-.animate-fade-in-right {
-    animation: fadeInRight 1s ease forwards;
+.counter-complete {
+    animation: pulse 0.5s ease;
 }
 
-.animate-bounce {
-    animation: bounce 2s ease infinite;
+/* Efeito de foco para formulários */
+.form-control:focus {
+    animation: form-glow 1s ease-out;
 }
 
-/* Animation Delays */
-.delay-100 {
-    animation-delay: 0.1s;
+@keyframes form-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
 }
 
-.delay-200 {
-    animation-delay: 0.2s;
+/* Efeito de loading */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(37, 99, 235, 0.2);
+    border-left-color: var(--secondary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
-.delay-300 {
-    animation-delay: 0.3s;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.delay-400 {
-    animation-delay: 0.4s;
+/* Efeito de typing para texto */
+.typing-effect::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
 }
 
-.delay-500 {
-    animation-delay: 0.5s;
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
-/* Animation Durations */
-.duration-300 {
-    animation-duration: 0.3s;
+/* Efeito parallax para backgrounds */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.duration-500 {
-    animation-duration: 0.5s;
+/* Efeito de transição de página */
+.page-transition {
+    animation: fadeIn 0.5s ease-out;
 }
 
-.duration-700 {
-    animation-duration: 0.7s;
+/* Efeito de destaque para links de navegação */
+.nav-link {
+    position: relative;
 }
 
-.duration-1000 {
-    animation-duration: 1s;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary);
+    transition: width 0.3s ease;
 }
 
-.duration-1500 {
-    animation-duration: 1.5s;
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
-/* Intersection Observer Animation */
-.service-card.animated,
-.process-step.animated,
-.animated {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+/* Responsividade para animações */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Efeito de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Efeito de tilt para cards */
+.tilt-effect {
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+/* Efeito de máscara para imagens */
+.image-mask {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    transition: clip-path 0.3s ease;
+}
+
+.image-mask:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Efeito de revelação de texto */
+.text-reveal {
+    overflow: hidden;
+}
+
+.text-reveal span {
+    display: inline-block;
+    transform: translateY(100%);
+    animation: text-reveal 0.8s forwards;
+}
+
+@keyframes text-reveal {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Efeito de Tremor */
+.shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* Efeito de Piscar */
+.blink {
+    animation: blink 1.5s ease-in-out infinite;
+}
+
+/* Efeitos para Cards */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Efeito de Tilt */
+.tilt {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
+
+.tilt-inner {
+    transform: translateZ(20px);
+}
+
+/* Animações para Seções */
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animações para Imagens */
+.img-hover-zoom {
+    overflow: hidden;
+}
+
+.img-hover-zoom img {
+    transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.1);
+}
+
+/* Animações para Ícones */
+.icon-hover {
+    transition: all 0.3s ease;
+}
+
+.icon-hover:hover {
+    transform: var(--icon-hover-rotate);
+    color: var(--secondary);
+}
+
+/* Animações para Texto */
+.text-gradient {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animações para Links */
+.link-hover {
+    position: relative;
+    display: inline-block;
+}
+
+.link-hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--secondary);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.link-hover:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 } 

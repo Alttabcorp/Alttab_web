@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Entre em contato com a Alt tab Corp - Estamos prontos para atender você">
+    
+    <!-- SEO Tags -->
+    <meta name="description" content="Alt tab Corp - Entre em contato conosco - Estamos prontos para atender você">
+    <meta name="keywords" content="contato, suporte, atendimento, formulário, localização">
+    <meta name="author" content="Alt tab Corp">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contato - Alt tab Corp">
+    <meta property="og:description" content="Entre em contato conosco e descubra como podemos ajudar seu negócio">
+    <meta property="og:image" content="../../assets/images/og-image.jpg">
+    
+    <!-- Theme -->
     <meta name="theme-color" content="#1E293B">
-
     <title>Contato - Alt tab Corp</title>
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
     
@@ -32,11 +44,14 @@
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/components/buttons.css">
     <link rel="stylesheet" href="../../assets/css/components/cards.css">
+    <link rel="stylesheet" href="../../assets/css/components/section.css">
     <link rel="stylesheet" href="../../assets/css/components/forms.css">
+    <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
     
     <!-- CSS Principal -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/pages/contato.css">
+    <link rel="stylesheet" href="../../assets/css/fixes.css">
 </head>
 <body class="page-contato">
     <!-- Header -->
@@ -52,21 +67,28 @@
                     <li class="nav-item nav-dropdown">
                         <a href="../servicos/" class="nav-link">Serviços <span class="dropdown-arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../construcao/" class="dropdown-link">Consultoria TI</a></li>
-                            <li><a href="../construcao/" class="dropdown-link">Desenvolvimento Web</a></li>
+                            <li><a href="../consultoria/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="../web/" class="dropdown-link">Desenvolvimento Web</a></li>
                             <li><a href="../impressao3d/" class="dropdown-link">Impressão 3D</a></li>
                             <li class="dropdown-divider"></li>
                             <li class="nav-item nav-dropdown">
-                                <a href="../construcao/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <a href="../esports/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
-                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                    <li><a href="../esports/estudio/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../esports/time/" class="dropdown-link">Time E-sports</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li><a href="../contato/" class="nav-link active">Contato</a></li>
                 </ul>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="theme-toggle-track">
+                        <span class="theme-toggle-icon sun"><i class="fas fa-sun"></i></span>
+                        <span class="theme-toggle-icon moon"><i class="fas fa-moon"></i></span>
+                    </div>
+                    <div class="theme-toggle-thumb"></div>
+                </div>
                 <button class="mobile-menu-btn">
                     <span></span>
                     <span></span>
@@ -78,139 +100,193 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Page Header -->
-        <section class="page-header">
+        <!-- Hero Section -->
+        <section class="hero-section">
             <div class="container">
-                <div class="page-header-content">
+                <div class="hero-content">
                     <h1>Entre em Contato</h1>
-                    <p>Estamos prontos para atender você e transformar suas ideias em soluções tecnológicas inovadoras</p>
+                    <p>Estamos prontos para atender você e transformar suas ideias em realidade</p>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contato Section -->
         <section class="contact-section">
             <div class="container">
                 <div class="contact-grid">
-                    <!-- Contact Info -->
-                    <div class="contact-info animate-on-scroll">
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <h3>Endereço</h3>
-                            <p>Av. Paulista, 1000<br>Bela Vista, São Paulo - SP<br>CEP: 01310-100</p>
+                    <div class="contact-info">
+                        <div class="section-header">
+                            <span class="section-badge">Informações</span>
+                            <h2>Como nos Encontrar</h2>
+                            <p>Utilize os canais abaixo para entrar em contato conosco</p>
                         </div>
                         
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-phone-alt"></i>
+                        <div class="contact-methods">
+                            <div class="contact-method animate-on-scroll">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Endereço</h3>
+                                    <p>Av. Paulista, 1000<br>Bela Vista, São Paulo - SP<br>CEP: 01310-100</p>
+                                </div>
                             </div>
-                            <h3>Telefone</h3>
-                            <p>
-                                <a href="tel:+551199999999">(11) 9999-9999</a><br>
-                                <a href="tel:+551198888888">(11) 9888-8888</a>
-                            </p>
+                            
+                            <div class="contact-method animate-on-scroll">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Telefone</h3>
+                                    <p><a href="tel:+551199999999">(11) 9999-9999</a><br><a href="tel:+551122222222">(11) 2222-2222</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method animate-on-scroll">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>E-mail</h3>
+                                    <p><a href="mailto:contato@alttabcorp.com.br">contato@alttabcorp.com.br</a><br><a href="mailto:suporte@alttabcorp.com.br">suporte@alttabcorp.com.br</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method animate-on-scroll">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>Horário de Atendimento</h3>
+                                    <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <h3>E-mail</h3>
-                            <p>
-                                <a href="mailto:contato@alttabcorp.com.br">contato@alttabcorp.com.br</a><br>
-                                <a href="mailto:suporte@alttabcorp.com.br">suporte@alttabcorp.com.br</a>
-                            </p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <h3>Horário de Atendimento</h3>
-                            <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
-                        </div>
-                        
-                        <div class="social-links">
+                        <div class="social-media animate-on-scroll">
                             <h3>Redes Sociais</h3>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <div class="social-links">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Contact Form -->
                     <div class="contact-form-container animate-on-scroll">
-                        <div class="contact-form">
-                            <h2 class="form-title">Envie sua mensagem</h2>
-                            <p class="form-subtitle">Preencha o formulário abaixo e entraremos em contato o mais breve possível</p>
+                        <h2>Envie uma Mensagem</h2>
+                        <p>Preencha o formulário abaixo e entraremos em contato o mais breve possível</p>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Nome Completo *</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Digite seu nome completo" required>
+                            </div>
                             
-                            <form id="contactForm" class="form">
-                                <div class="form-row">
-                                    <div class="form-col">
-                                        <div class="form-group">
-                                            <label for="name" class="form-label">Nome completo</label>
-                                            <input type="text" id="name" name="name" class="form-control" placeholder="Digite seu nome" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-col">
-                                        <div class="form-group">
-                                            <label for="email" class="form-label">E-mail</label>
-                                            <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-row">
-                                    <div class="form-col">
-                                        <div class="form-group">
-                                            <label for="phone" class="form-label">Telefone</label>
-                                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Digite seu telefone">
-                                        </div>
-                                    </div>
-                                    <div class="form-col">
-                                        <div class="form-group">
-                                            <label for="subject" class="form-label">Assunto</label>
-                                            <select id="subject" name="subject" class="form-control" required>
-                                                <option value="" selected disabled>Selecione um assunto</option>
-                                                <option value="orcamento">Orçamento</option>
-                                                <option value="suporte">Suporte</option>
-                                                <option value="parceria">Parceria</option>
-                                                <option value="outros">Outros</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="message" class="form-label">Mensagem</label>
-                                    <textarea id="message" name="message" class="form-control" placeholder="Digite sua mensagem" rows="5" required></textarea>
-                                </div>
-                                
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Digite seu e-mail" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Telefone</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="Digite seu telefone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Assunto *</label>
+                                <select id="subject" name="subject" class="form-control" required>
+                                    <option value="" disabled selected>Selecione um assunto</option>
+                                    <option value="orcamento">Orçamento</option>
+                                    <option value="suporte">Suporte Técnico</option>
+                                    <option value="parceria">Parcerias</option>
+                                    <option value="trabalhe">Trabalhe Conosco</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Mensagem *</label>
+                                <textarea id="message" name="message" class="form-control" rows="5" placeholder="Digite sua mensagem" required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
                                 <div class="form-check">
                                     <input type="checkbox" id="privacy" name="privacy" class="form-check-input" required>
-                                    <label for="privacy" class="form-check-label">Concordo com a <a href="../privacidade/">Política de Privacidade</a> e autorizo o uso dos meus dados para contato.</label>
+                                    <label for="privacy" class="form-check-label">Concordo com a <a href="../privacidade/">Política de Privacidade</a> *</label>
                                 </div>
-                                
-                                <button type="submit" class="btn btn-primary">
-                                    <span>Enviar Mensagem</span>
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </form>
-                        </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-ripple btn-block">Enviar Mensagem</button>
+                            </div>
+                            
+                            <div class="form-message"></div>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Map Section -->
+        <!-- Mapa Section -->
         <section class="map-section">
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976521900253!2d-46.6546369!3d-23.5646162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1650000000000!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976951624297!2d-46.65390548502264!3d-23.563203284681532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1625764215576!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">FAQ</span>
+                    <h2>Perguntas Frequentes</h2>
+                    <p>Encontre respostas para as dúvidas mais comuns</p>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question">
+                            <h3>Como solicitar um orçamento?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Para solicitar um orçamento, você pode preencher o formulário de contato nesta página, enviar um e-mail para contato@alttabcorp.com.br ou ligar para (11) 9999-9999. Nossa equipe entrará em contato em até 24 horas úteis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question">
+                            <h3>Qual o prazo de entrega dos projetos?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>O prazo de entrega varia de acordo com a complexidade e escopo de cada projeto. Durante a fase de orçamento, apresentamos um cronograma detalhado com prazos específicos para cada etapa do desenvolvimento.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question">
+                            <h3>Vocês atendem em outras cidades?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim, atendemos clientes em todo o Brasil e também no exterior. Realizamos reuniões online e, quando necessário, podemos agendar visitas presenciais dependendo da localização e necessidades do projeto.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question">
+                            <h3>Como funciona o suporte técnico?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Oferecemos suporte técnico por e-mail, telefone e sistema de tickets. Nosso horário de atendimento é de segunda a sexta, das 9h às 18h, e aos sábados, das 9h às 13h. Para clientes com contrato de suporte premium, disponibilizamos atendimento 24/7.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -240,7 +316,7 @@
                         <li><a href="../../" class="footer-link"><i class="fas fa-chevron-right"></i> Início</a></li>
                         <li><a href="../sobre/" class="footer-link"><i class="fas fa-chevron-right"></i> Sobre</a></li>
                         <li><a href="../servicos/" class="footer-link"><i class="fas fa-chevron-right"></i> Serviços</a></li>
-                        <li><a href="../contato/" class="footer-link"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                        <li><a href="../contato/" class="footer-link active"><i class="fas fa-chevron-right"></i> Contato</a></li>
                     </ul>
                 </div>
                 
@@ -290,7 +366,104 @@
         </a>
     </footer>
 
+    <!-- Floating Contact Button -->
+    <div class="floating-contact">
+        <button class="floating-contact-btn pulse" id="floatingContactBtn">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="floating-contact-menu" id="floatingContactMenu">
+            <div class="floating-contact-title">
+                Fale Conosco
+                <span class="floating-contact-close" id="floatingContactClose">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+            <div class="floating-contact-options">
+                <a href="tel:+551199999999" class="floating-contact-option">
+                    <div class="floating-contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">Telefone</div>
+                        <div class="floating-contact-value">(11) 9999-9999</div>
+                    </div>
+                </a>
+                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option">
+                    <div class="floating-contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">E-mail</div>
+                        <div class="floating-contact-value">contato@alttabcorp.com.br</div>
+                    </div>
+                </a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="floating-contact-option">
+                    <div class="floating-contact-icon" style="background-color: #25D366;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">WhatsApp</div>
+                        <div class="floating-contact-value">Envie uma mensagem</div>
+                    </div>
+                </a>
+                <a href="../contato/" class="floating-contact-option">
+                    <div class="floating-contact-icon" style="background-color: var(--accent);">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">Formulário</div>
+                        <div class="floating-contact-value">Preencha nosso formulário</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <h3 class="cookie-title">Este site utiliza cookies</h3>
+            <p class="cookie-text">Utilizamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego do site. Ao continuar navegando, você concorda com nossa <a href="../cookies/" class="cookie-link">Política de Cookies</a>.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Aceitar</button>
+            <button class="cookie-btn cookie-btn-settings" id="cookieSettings">Configurações</button>
+        </div>
+    </div>
+
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="../../assets/js/modules/animations.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/theme-toggle.js"></script>
+    <script src="../../assets/js/cookie-banner.js"></script>
+    <script src="../../assets/js/faq-fix.js"></script>
+    <script>
+        // Formulário de contato
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.querySelector('.form-message');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simulação de envio de formulário
+                    formMessage.innerHTML = '<div class="alert alert-success">Mensagem enviada com sucesso! Entraremos em contato em breve.</div>';
+                    formMessage.style.display = 'block';
+                    
+                    // Limpar formulário
+                    contactForm.reset();
+                    
+                    // Esconder mensagem após 5 segundos
+                    setTimeout(function() {
+                        formMessage.style.display = 'none';
+                    }, 5000);
+                });
+            }
+        });
+    </script>
 </body>
+</html> 
 </html> 

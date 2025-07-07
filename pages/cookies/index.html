@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/components/buttons.css">
     <link rel="stylesheet" href="../../assets/css/components/cards.css">
+    <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
     <link rel="stylesheet" href="../../assets/css/pages/cookies.css">
     
     <!-- PWA Support -->
@@ -227,6 +228,20 @@
         </div>
     </div>
 
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-title">
+            <i class="fas fa-cookie-bite"></i> Política de Cookies
+        </div>
+        <p class="cookie-text">
+            Utilizamos cookies para melhorar sua experiência em nosso site. Ao continuar navegando, você concorda com nossa <a href="../cookies/" class="cookie-link">Política de Cookies</a>.
+        </p>
+        <div class="cookie-buttons">
+            <button class="cookie-accept">Aceitar</button>
+            <button class="cookie-settings">Configurações</button>
+        </div>
+    </div>
+
     <script>
         // Script mínimo para funcionalidade do menu mobile
         document.addEventListener('DOMContentLoaded', function() {
@@ -244,7 +259,10 @@
     </script>
 
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="../../assets/js/modules/animations.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/theme-toggle.js"></script>
+    <script src="../../assets/js/cookie-banner.js"></script>
 </body>
 </html> 

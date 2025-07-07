@@ -423,4 +423,332 @@ section {
         border-left: 5px solid var(--secondary);
         border-right: none;
     }
+}
+
+/* Estatísticas Section */
+.stats-section {
+    position: relative;
+    padding: 6rem 0;
+    color: var(--light);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.stats-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/pattern.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-xl);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-icon {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    font-size: 1.75rem;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover .stat-icon {
+    background-color: var(--secondary);
+    transform: scale(1.1) rotate(10deg);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--light);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+}
+
+.stat-label {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-medium);
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.02em;
+}
+
+.stats-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.stats-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 2;
+}
+
+.stats-wave .wave {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 5rem 0;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* Seção com formas geométricas */
+.section-shapes {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.section-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.section-pattern .pattern {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Seção com onda */
+.section-wave {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-wave::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-image: url('../../images/wave.svg');
+    background-size: cover;
+    background-position: top;
+    z-index: 1;
+}
+
+/* Seção com gradiente */
+.section-gradient {
+    background: var(--gradient-primary);
+    color: var(--light);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-gradient .section-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+}
+
+.section-gradient .section-header h2 {
+    color: var(--light);
+}
+
+.section-gradient .section-header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Seção com fundo escuro */
+.section-dark {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.section-dark .section-header h2 {
+    color: var(--light);
+}
+
+.section-dark .section-header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Seção com fundo claro */
+.section-light {
+    background-color: var(--light);
+}
+
+/* Seção com fundo cinza */
+.section-gray {
+    background-color: var(--gray-100);
+}
+
+/* Seção com padding reduzido */
+.section-sm {
+    padding: 3rem 0;
+}
+
+/* Seção com padding aumentado */
+.section-lg {
+    padding: 7rem 0;
+}
+
+/* Seção com divider */
+.section-divider {
+    position: relative;
+    padding: 6rem 0;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--gradient-secondary);
+    border-radius: var(--border-radius-full);
+}
+
+/* Seção com fundo de imagem */
+.section-bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--light);
+    z-index: 1;
+}
+
+.section-bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7));
+    z-index: -1;
+}
+
+.section-bg-image .section-header h2 {
+    color: var(--light);
+}
+
+.section-bg-image .section-header p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Badges para seções */
+.section-badge.light {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+}
+
+/* Utilitários para seções */
+.section-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Responsividade para seções */
+@media (max-width: 992px) {
+    section {
+        padding: 4rem 0;
+    }
+    
+    .section-lg {
+        padding: 5rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0;
+    }
+    
+    .section-lg {
+        padding: 4rem 0;
+    }
+    
+    .section-sm {
+        padding: 2rem 0;
+    }
 } 

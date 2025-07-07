@@ -11,23 +11,53 @@ document.addEventListener('DOMContentLoaded', function() {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     const savedTheme = localStorage.getItem('theme');
     
-    // Aplicar tema inicial
-    if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
+    // Função para aplicar tema
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        console.log('Tema aplicado:', theme);
+        
+        // Atualizar visual do toggle
+        if (themeToggle) {
+            if (theme === 'dark') {
+                themeToggle.classList.add('active');
+            } else {
+                themeToggle.classList.remove('active');
+            }
+        }
+        
+        // Salvar preferência
+        localStorage.setItem('theme', theme);
     }
     
-    // Adicionar evento de clique ao botão de alternância
+    // Aplicar tema inicial
+    if (savedTheme) {
+        // Se o usuário já escolheu um tema anteriormente
+        applyTheme(savedTheme);
+    } else if (prefersDarkScheme.matches) {
+        // Se o sistema operacional está em modo escuro
+        applyTheme('dark');
+    } else {
+        // Padrão: tema claro
+        applyTheme('light');
+    }
+    
+    // Adicionar evento de clique ao toggle
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            // Alternar tema
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            // Alternar entre temas
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
-            // Atualizar atributo e salvar preferência
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
         });
     }
+    
+    // Ouvir mudanças na preferência do sistema
+    prefersDarkScheme.addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+            // Só aplicar automaticamente se o usuário não tiver escolhido manualmente
+            const newTheme = e.matches ? 'dark' : 'light';
+            applyTheme(newTheme);
+        }
+    });
 }); 

@@ -1,265 +1,319 @@
 /**
- * E-sports Page Styles
- * Estilos específicos para a página de E-sports
+ * Estilos da página de E-Sports
+ * Design moderno e elegante para a página de E-Sports
  */
 
 /* Hero Section */
-.hero-games {
+.hero-section {
+    background: linear-gradient(135deg, #1a2238 0%, #3a416f 100%);
+    padding: 8rem 0 6rem;
     position: relative;
-    min-height: 600px;
-    padding: 120px 0 80px;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
     overflow: hidden;
+    color: var(--light);
 }
 
-.hero-particles {
+.hero-section::before {
+    content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    top: -150px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.03);
+    z-index: 0;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 700px;
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-content h1 {
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.2;
-    background: linear-gradient(to right, #fff, var(--secondary-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacing-lg);
-    color: var(--gray-300);
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
     max-width: 600px;
-    line-height: var(--line-height-relaxed);
+    margin: 0 auto;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+/* Divisões Section */
+.divisions-section {
+    padding: 5rem 0;
+    background-color: var(--light);
 }
 
-.hero-shape {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-image: url('../../images/wave.svg');
-    background-size: cover;
-    background-position: center top;
-    z-index: 3;
-}
-
-/* Cards de Navegação */
-.nav-grid {
+.divisions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-.nav-card {
+.division-card {
     background-color: var(--card-background);
     border-radius: var(--border-radius-lg);
-    padding: var(--spacing-xl);
+    padding: 2.5rem;
     box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
-    text-decoration: none;
-    color: var(--text-color);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--border-color);
+    height: 100%;
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--border-color);
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
+    text-align: center;
 }
 
-.nav-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--secondary-light) 0%, var(--accent) 100%);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity var(--transition-normal);
-}
-
-.nav-card:hover {
+.division-card:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-xl);
-    border-color: transparent;
-}
-
-.nav-card:hover::before {
-    opacity: 0.05;
-}
-
-.nav-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: var(--border-radius-lg);
-    background: var(--gradient-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--spacing-lg);
-    color: white;
-    font-size: 2rem;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
-}
-
-.nav-card:hover .nav-icon {
-    transform: scale(1.1) rotate(5deg);
     box-shadow: var(--shadow-lg);
 }
 
-.nav-card h2 {
+.division-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background: linear-gradient(135deg, #3a416f 0%, #4e54c8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.division-icon i {
+    font-size: 2rem;
+    color: var(--light);
+}
+
+.division-card h3 {
     font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--spacing-md);
-    color: var(--text-color);
-    transition: var(--transition-normal);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary);
+    margin-bottom: 1rem;
 }
 
-.nav-card:hover h2 {
-    color: var(--secondary);
-}
-
-.nav-card p {
+.division-card p {
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-lg);
     line-height: var(--line-height-relaxed);
+    margin-bottom: 1.5rem;
     flex-grow: 1;
 }
 
-.nav-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 var(--spacing-lg);
+.division-card .btn {
+    align-self: center;
 }
 
-.nav-features li {
-    padding: var(--spacing-sm) 0;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
+/* Jogos Section */
+.games-section {
+    padding: 5rem 0;
+    background-color: var(--gray-100);
+    position: relative;
+    overflow: hidden;
 }
 
-.nav-features li i {
-    color: var(--secondary);
-    margin-right: var(--spacing-sm);
-    font-size: 0.8em;
+.games-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: rgba(59, 130, 246, 0.05);
+    z-index: 0;
 }
 
-.nav-card .btn {
-    align-self: flex-start;
-    margin-top: auto;
-}
-
-/* Benefícios */
-.benefits-grid {
+.games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-.benefit-card {
+.game-card {
     background-color: var(--card-background);
     border-radius: var(--border-radius-lg);
-    padding: var(--spacing-lg);
+    overflow: hidden;
     box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
-    text-align: center;
+    transition: all var(--transition-normal);
     border: 1px solid var(--border-color);
+    height: 100%;
 }
 
-.benefit-card:hover {
-    transform: translateY(-5px);
+.game-card:hover {
+    transform: translateY(-10px);
     box-shadow: var(--shadow-lg);
 }
 
-.benefit-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: var(--gradient-secondary);
+.game-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background-color: #1a2238;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-normal);
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.05);
+}
+
+.game-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.game-info h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.game-info p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+}
+
+/* Conquistas Section */
+.achievements-section {
+    padding: 5rem 0;
+    background-color: var(--light);
+}
+
+.achievements-timeline {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    position: relative;
+}
+
+.achievements-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 4px;
+    background: linear-gradient(180deg, #3a416f 0%, #4e54c8 100%);
+    border-radius: var(--border-radius-full);
+}
+
+.achievement-item {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.achievement-item:last-child {
+    margin-bottom: 0;
+}
+
+.achievement-date {
+    min-width: 80px;
+    height: 40px;
+    background-color: #3a416f;
+    color: var(--light);
+    border-radius: var(--border-radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto var(--spacing-md);
-    color: white;
-    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-right: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.achievement-content {
+    flex: 1;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
     box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-normal);
+    position: relative;
 }
 
-.benefit-card:hover .benefit-icon {
-    transform: scale(1.1) rotate(5deg);
+.achievement-content:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
 }
 
-.benefit-card h3 {
+.achievement-content h3 {
     font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-color);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary);
+    margin-bottom: 0.5rem;
 }
 
-.benefit-card p {
+.achievement-content p {
     color: var(--text-secondary);
-    line-height: var(--line-height-relaxed);
+    margin-bottom: 0;
+}
+
+.achievement-medal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #ffc107;
+    font-size: 1.5rem;
 }
 
 /* CTA Section */
 .cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1a2238 0%, #3a416f 100%);
+    color: var(--light);
     position: relative;
-    padding: var(--spacing-3xl) 0;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: white;
-    text-align: center;
     overflow: hidden;
 }
 
-.section-pattern {
-    position: relative;
-}
-
-.section-pattern::before {
+.cta-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../../images/pattern.svg');
-    background-size: 100px;
-    opacity: 0.1;
+    top: -100px;
+    right: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 0;
 }
 
 .cta-content {
     position: relative;
     z-index: 1;
+    text-align: center;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -267,118 +321,105 @@
 .cta-content h2 {
     font-size: var(--font-size-3xl);
     font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 1.5rem;
+    color: var(--light);
 }
 
 .cta-content p {
     font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-xl);
-    color: var(--gray-300);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: var(--line-height-relaxed);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 2rem;
 }
 
 .cta-buttons {
     display: flex;
-    gap: var(--spacing-md);
     justify-content: center;
-}
-
-/* Outros Serviços */
-.verticals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
-}
-
-.vertical-card {
-    background-color: var(--card-background);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-lg);
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
-    text-decoration: none;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--border-color);
-    height: 100%;
-}
-
-.vertical-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.vertical-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: var(--border-radius-lg);
-    background: var(--gradient-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--spacing-md);
-    color: white;
-    font-size: 1.5rem;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
-}
-
-.vertical-card:hover .vertical-icon {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.vertical-card h3 {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-color);
-}
-
-.vertical-card p {
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
-    line-height: var(--line-height-relaxed);
-    flex-grow: 1;
-}
-
-/* Section Wave */
-.section-wave {
-    position: relative;
-}
-
-.section-wave::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-image: url('../../images/wave.svg');
-    background-size: cover;
-    background-position: center top;
-    transform: rotate(180deg);
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 /* Responsividade */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .hero-content h1 {
         font-size: var(--font-size-3xl);
     }
     
-    .hero-content p {
-        font-size: var(--font-size-lg);
+    .cta-content h2 {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media (max-width: 992px) {
+    .divisions-grid,
+    .games-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     
-    .nav-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    .achievements-timeline::before {
+        left: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 6rem 0 4rem;
+    }
+    
+    .hero-content h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero-content p {
+        font-size: var(--font-size-md);
+    }
+    
+    .divisions-section,
+    .games-section,
+    .achievements-section,
+    .cta-section {
+        padding: 4rem 0;
+    }
+    
+    .section-header h2 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .section-header p {
+        font-size: var(--font-size-md);
+    }
+    
+    .division-card,
+    .game-card {
+        padding: 1.5rem;
+    }
+    
+    .division-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .division-icon i {
+        font-size: 1.75rem;
+    }
+    
+    .game-image {
+        height: 150px;
+    }
+    
+    .achievement-date {
+        min-width: 70px;
+        height: 36px;
+        font-size: var(--font-size-sm);
+        margin-right: 1.5rem;
+    }
+    
+    .achievement-content {
+        padding: 1.25rem;
     }
     
     .cta-content h2 {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-xl);
     }
     
     .cta-content p {
@@ -386,61 +427,58 @@
     }
 }
 
-@media (max-width: 768px) {
-    .hero-games {
-        padding: 100px 0 60px;
-        min-height: 500px;
-    }
-    
-    .hero-content h1 {
-        font-size: var(--font-size-2xl);
-    }
-    
-    .hero-content p {
-        font-size: var(--font-size-md);
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .nav-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .verticals-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .hero-content h1 {
         font-size: var(--font-size-xl);
     }
     
     .hero-content p {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-sm);
     }
     
-    .benefit-icon {
+    .divisions-grid,
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .division-icon {
         width: 60px;
         height: 60px;
-        font-size: 1.25rem;
     }
     
-    .nav-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 1.75rem;
+    .division-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .game-image {
+        height: 140px;
+    }
+    
+    .achievement-item {
+        flex-direction: column;
+    }
+    
+    .achievement-date {
+        margin-bottom: 1rem;
+        margin-right: 0;
+        align-self: flex-start;
+    }
+    
+    .achievements-timeline::before {
+        left: 40px;
+        height: calc(100% - 40px);
+        top: 40px;
+    }
+    
+    .cta-content h2 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .cta-content p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
     }
 } 

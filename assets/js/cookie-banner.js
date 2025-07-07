@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const cookieBanner = document.getElementById('cookieBanner');
             if (cookieBanner) {
                 cookieBanner.classList.add('active');
+                console.log('Banner de cookies ativado');
+            } else {
+                console.error('Banner de cookies não encontrado');
             }
         }, 1000);
     }
@@ -40,4 +43,22 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = '/pages/cookies/';
         });
     }
+    
+    // Forçar exibição do banner para testes
+    window.showCookieBanner = function() {
+        const cookieBanner = document.getElementById('cookieBanner');
+        if (cookieBanner) {
+            cookieBanner.classList.add('active');
+            console.log('Banner de cookies forçado');
+        }
+    };
+    
+    // Forçar ocultação do banner para testes
+    window.hideCookieBanner = function() {
+        const cookieBanner = document.getElementById('cookieBanner');
+        if (cookieBanner) {
+            cookieBanner.classList.remove('active');
+            console.log('Banner de cookies ocultado');
+        }
+    };
 }); 

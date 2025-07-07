@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Serviços da Alt tab Corp - Soluções Tecnológicas">
-    <meta name="theme-color" content="#2C3E50">
+    <meta name="description" content="Conheça os serviços oferecidos pela Alt tab Corp - Desenvolvimento Web, Consultoria em TI, Impressão 3D e E-Sports">
+    <meta name="theme-color" content="#1E293B">
 
     <title>Serviços - Alt tab Corp</title>
 
@@ -19,30 +19,25 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- CSS Principal -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    
-    <!-- CSS Específicos -->
+    <!-- CSS Base -->
     <link rel="stylesheet" href="../../assets/css/base/variables.css">
     <link rel="stylesheet" href="../../assets/css/base/reset.css">
     <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    
+    <!-- CSS Layout -->
     <link rel="stylesheet" href="../../assets/css/layout/grid.css">
+    
+    <!-- CSS Componentes -->
     <link rel="stylesheet" href="../../assets/css/components/header.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/components/buttons.css">
     <link rel="stylesheet" href="../../assets/css/components/cards.css">
-    <link rel="stylesheet" href="../../assets/css/components/animations.css">
-    <link rel="stylesheet" href="../../assets/css/pages/servicos.css">
+    <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
     
-    <!-- PWA Support -->
-    <link rel="manifest" href="../../manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Serviços - Alt tab Corp">
-    <meta property="og:description" content="Conheça os serviços oferecidos pela Alt tab Corp">
-    <meta property="og:image" content="../../assets/images/og-image.jpg">
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/pages/servicos.css">
+    <link rel="stylesheet" href="../../assets/css/fixes.css">
 </head>
 <body class="page-servicos">
     <!-- Header -->
@@ -58,15 +53,15 @@
                     <li class="nav-item nav-dropdown">
                         <a href="../servicos/" class="nav-link active">Serviços <span class="dropdown-arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../construcao/" class="dropdown-link">Consultoria TI</a></li>
-                            <li><a href="../construcao/" class="dropdown-link">Desenvolvimento Web</a></li>
+                            <li><a href="../consultoria/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="../web/" class="dropdown-link">Desenvolvimento Web</a></li>
                             <li><a href="../impressao3d/" class="dropdown-link">Impressão 3D</a></li>
                             <li class="dropdown-divider"></li>
                             <li class="nav-item nav-dropdown">
-                                <a href="../construcao/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <a href="../esports/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
-                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                    <li><a href="../esports/estudio/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../esports/time/" class="dropdown-link">Time E-sports</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -91,118 +86,222 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section">
+        <!-- Page Header -->
+        <section class="page-header">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Soluções Tecnológicas Completas</h1>
-                    <p>
-                        Transforme seu negócio com nossas soluções inovadoras em tecnologia
-                    </p>
+                <div class="page-header-content">
+                    <h1>Nossos Serviços</h1>
+                    <p>Soluções tecnológicas completas para impulsionar seu negócio</p>
                 </div>
             </div>
         </section>
 
-        <!-- Main Services Section -->
-        <section class="main-services">
+        <!-- Serviços Section -->
+        <section class="services-section section-light">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Nossas Vertentes</span>
-                    <h2>Áreas de <span>Atuação</span></h2>
-                    <p class="section-description">
-                        Conheça nossas áreas de atuação e descubra como podemos transformar seu negócio
-                    </p>
+                <div class="section-header animate-on-scroll">
+                    <span class="section-badge">O que fazemos</span>
+                    <h2>Conheça Nossas Soluções</h2>
+                    <p>Oferecemos uma ampla gama de serviços tecnológicos para atender às necessidades do seu negócio</p>
                 </div>
+                
                 <div class="services-grid">
-                    <!-- Consultoria TI -->
-                    <div class="service-card">
+                    <!-- Serviço 1 -->
+                    <div class="service-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">
                         <div class="service-icon">
-                            <div class="icon-wrapper">
-                                <i class="fas fa-network-wired"></i>
-                            </div>
-                        </div>
-                        <h3>Consultoria TI</h3>
-                        <p>Transforme sua infraestrutura tecnológica com soluções estratégicas personalizadas para o seu negócio.</p>
-                        <a href="../consultoria/" class="service-cta">
-                            Saiba mais <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-
-                    <!-- Desenvolvimento Web -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <div class="icon-wrapper">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
+                            <i class="fas fa-laptop-code"></i>
                         </div>
                         <h3>Desenvolvimento Web</h3>
-                        <p>Crie presença digital impactante com websites modernos, responsivos e otimizados para resultados.</p>
-                        <a href="../web/" class="service-cta">
-                            Saiba mais <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <p>Criamos sites e aplicações web responsivas, modernas e otimizadas para buscadores, garantindo a melhor experiência para seus usuários.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Sites institucionais</li>
+                            <li><i class="fas fa-check"></i> E-commerce</li>
+                            <li><i class="fas fa-check"></i> Aplicações web</li>
+                            <li><i class="fas fa-check"></i> Portais corporativos</li>
+                            <li><i class="fas fa-check"></i> Otimização para SEO</li>
+                        </ul>
+                        <a href="../web/" class="btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
-
-                    <!-- E-Sports -->
-                    <div class="service-card">
+                    
+                    <!-- Serviço 2 -->
+                    <div class="service-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">
                         <div class="service-icon">
-                            <div class="icon-wrapper">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
+                            <i class="fas fa-server"></i>
                         </div>
-                        <h3>E-Sports</h3>
-                        <p>Entre no mundo dos esports com nossa equipe profissional e inovação em jogos.</p>
-                        <a href="../esports/" class="service-cta">
-                            Saiba mais <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <h3>Consultoria em TI</h3>
+                        <p>Oferecemos consultoria especializada para otimizar sua infraestrutura de TI, melhorar processos e aumentar a segurança dos seus dados.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Análise de infraestrutura</li>
+                            <li><i class="fas fa-check"></i> Segurança da informação</li>
+                            <li><i class="fas fa-check"></i> Gestão de projetos</li>
+                            <li><i class="fas fa-check"></i> Transformação digital</li>
+                            <li><i class="fas fa-check"></i> Suporte técnico</li>
+                        </ul>
+                        <a href="../consultoria/" class="btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
-
-                    <!-- Impressão 3D -->
-                    <div class="service-card">
+                    
+                    <!-- Serviço 3 -->
+                    <div class="service-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.3s">
                         <div class="service-icon">
-                            <div class="icon-wrapper">
-                                <i class="fas fa-cube"></i>
-                            </div>
+                            <i class="fas fa-cubes"></i>
                         </div>
                         <h3>Impressão 3D</h3>
-                        <p>Materialize suas ideias com tecnologia de impressão 3D de alta precisão e qualidade.</p>
-                        <a href="../impressao3d/" class="service-cta">
-                            Saiba mais <i class="fas fa-arrow-right"></i>
-                        </a>
+                        <p>Transformamos suas ideias em objetos reais com nossa tecnologia de impressão 3D de alta precisão para protótipos e produtos finais.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Prototipagem rápida</li>
+                            <li><i class="fas fa-check"></i> Produção sob demanda</li>
+                            <li><i class="fas fa-check"></i> Diversos materiais</li>
+                            <li><i class="fas fa-check"></i> Modelagem 3D</li>
+                            <li><i class="fas fa-check"></i> Consultoria em design</li>
+                        </ul>
+                        <a href="../impressao3d/" class="btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <!-- Serviço 4 -->
+                    <div class="service-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.4s">
+                        <div class="service-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Soluções para E-Sports</h3>
+                        <p>Desenvolvemos soluções completas para o mercado de E-Sports, desde plataformas de streaming até gestão de times e eventos.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Desenvolvimento de jogos</li>
+                            <li><i class="fas fa-check"></i> Gestão de equipes</li>
+                            <li><i class="fas fa-check"></i> Plataformas de streaming</li>
+                            <li><i class="fas fa-check"></i> Organização de eventos</li>
+                            <li><i class="fas fa-check"></i> Marketing para games</li>
+                        </ul>
+                        <a href="../esports/" class="btn-text">Saiba mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Process Section -->
+        <!-- Processo Section -->
         <section class="process-section">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-badge">Como Trabalhamos</span>
-                    <h2>Nosso Processo</h2>
-                    <p class="section-description">
-                        Uma abordagem estruturada para garantir resultados excepcionais
-                    </p>
+                <div class="section-header animate-on-scroll">
+                    <span class="section-badge">Nosso Processo</span>
+                    <h2>Como Trabalhamos</h2>
+                    <p>Conheça nossa metodologia de trabalho para entregar projetos de alta qualidade</p>
                 </div>
-                <div class="process-grid">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <h3>Análise</h3>
-                        <p>Compreendemos suas necessidades e objetivos para criar a melhor estratégia.</p>
+                
+                <div class="process-steps">
+                    <!-- Etapa 1 -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <h3>Análise</h3>
+                            <p>Entendemos suas necessidades e objetivos através de reuniões e pesquisas detalhadas para definir o escopo do projeto.</p>
+                        </div>
                     </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <h3>Planejamento</h3>
-                        <p>Desenvolvemos um plano detalhado e personalizado para seu projeto.</p>
+                    
+                    <!-- Etapa 2 -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <h3>Planejamento</h3>
+                            <p>Desenvolvemos um plano estratégico com cronograma, recursos necessários e definição de metas claras para o projeto.</p>
+                        </div>
                     </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <h3>Execução</h3>
-                        <p>Implementamos as soluções com tecnologia de ponta e metodologias ágeis.</p>
+                    
+                    <!-- Etapa 3 -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <h3>Execução</h3>
+                            <p>Implementamos a solução utilizando metodologias ágeis, com entregas incrementais e feedback constante do cliente.</p>
+                        </div>
                     </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <h3>Suporte</h3>
-                        <p>Oferecemos suporte contínuo e acompanhamento para garantir o sucesso.</p>
+                    
+                    <!-- Etapa 4 -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <h3>Testes</h3>
+                            <p>Realizamos testes rigorosos para garantir a qualidade, segurança e desempenho da solução antes da entrega final.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 5 -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">5</div>
+                        <div class="process-content">
+                            <h3>Entrega</h3>
+                            <p>Implementamos a solução em ambiente de produção, com treinamento e documentação completa para sua equipe.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Etapa 6 -->
+                    <div class="process-step animate-on-scroll">
+                        <div class="process-number">6</div>
+                        <div class="process-content">
+                            <h3>Suporte</h3>
+                            <p>Oferecemos suporte contínuo após a entrega, com monitoramento, atualizações e melhorias para garantir o sucesso a longo prazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnologias Section -->
+        <section class="tech-section section-light">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-badge">Tecnologias</span>
+                    <h2>Ferramentas que Utilizamos</h2>
+                    <p>Trabalhamos com as tecnologias mais modernas e eficientes do mercado</p>
+                </div>
+                
+                <div class="tech-grid">
+                    <div class="tech-category animate-on-scroll">
+                        <h3>Desenvolvimento Web</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                            <div class="tech-icon"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                            <div class="tech-icon"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                            <div class="tech-icon"><i class="fab fa-react"></i><span>React</span></div>
+                            <div class="tech-icon"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
+                            <div class="tech-icon"><i class="fab fa-angular"></i><span>Angular</span></div>
+                            <div class="tech-icon"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                            <div class="tech-icon"><i class="fab fa-php"></i><span>PHP</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category animate-on-scroll">
+                        <h3>Mobile & Desktop</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class="fab fa-android"></i><span>Android</span></div>
+                            <div class="tech-icon"><i class="fab fa-apple"></i><span>iOS</span></div>
+                            <div class="tech-icon"><i class="fab fa-react"></i><span>React Native</span></div>
+                            <div class="tech-icon"><i class="fab fa-windows"></i><span>Windows</span></div>
+                            <div class="tech-icon"><i class="fab fa-linux"></i><span>Linux</span></div>
+                            <div class="tech-icon"><i class="fab fa-apple"></i><span>macOS</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category animate-on-scroll">
+                        <h3>Banco de Dados</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class="fas fa-database"></i><span>MySQL</span></div>
+                            <div class="tech-icon"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+                            <div class="tech-icon"><i class="fas fa-database"></i><span>MongoDB</span></div>
+                            <div class="tech-icon"><i class="fas fa-database"></i><span>SQLite</span></div>
+                            <div class="tech-icon"><i class="fas fa-database"></i><span>Redis</span></div>
+                            <div class="tech-icon"><i class="fas fa-database"></i><span>Firebase</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category animate-on-scroll">
+                        <h3>DevOps & Cloud</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class="fab fa-aws"></i><span>AWS</span></div>
+                            <div class="tech-icon"><i class="fab fa-google"></i><span>Google Cloud</span></div>
+                            <div class="tech-icon"><i class="fab fa-microsoft"></i><span>Azure</span></div>
+                            <div class="tech-icon"><i class="fab fa-docker"></i><span>Docker</span></div>
+                            <div class="tech-icon"><i class="fab fa-kubernetes"></i><span>Kubernetes</span></div>
+                            <div class="tech-icon"><i class="fab fa-github"></i><span>GitHub</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -211,10 +310,13 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <div class="cta-content">
-                    <h2>Pronto para transformar seu negócio?</h2>
-                    <p>Entre em contato conosco e descubra como podemos ajudar sua empresa a alcançar novos patamares.</p>
-                    <a href="../contato/" class="cta-button">Fale Conosco</a>
+                <div class="cta-content animate-on-scroll">
+                    <h2>Vamos Transformar Suas Ideias em Realidade</h2>
+                    <p>Entre em contato conosco e descubra como podemos ajudar seu negócio a crescer com nossas soluções tecnológicas</p>
+                    <div class="cta-buttons">
+                        <a href="../contato/" class="btn btn-primary btn-ripple">Fale Conosco <i class="fas fa-paper-plane"></i></a>
+                        <a href="../sobre/" class="btn btn-outline-light">Conheça Nossa Equipe</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -224,61 +326,75 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
-                    <p>Transformando ideias em soluções tecnológicas</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-links-column">
-                        <h3>Navegação</h3>
-                        <ul>
-                            <li><a href="../../">Início</a></li>
-                            <li><a href="../sobre/">Sobre</a></li>
-                            <li><a href="../servicos/" class="active">Serviços</a></li>
-                            <li><a href="../contato/">Contato</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links-column">
-                        <h3>Serviços</h3>
-                        <ul>
-                            <li><a href="../web/">Desenvolvimento Web</a></li>
-                            <li><a href="../consultoria/">Consultoria em TI</a></li>
-                            <li><a href="../impressao3d/">Impressão 3D</a></li>
-                            <li><a href="../esports/">E-Sports</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links-column">
-                        <h3>Legal</h3>
-                        <ul>
-                            <li><a href="../termos/">Termos de Uso</a></li>
-                            <li><a href="../privacidade/">Política de Privacidade</a></li>
-                            <li><a href="../cookies/">Política de Cookies</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3>Contato</h3>
-                    <p><i class="fas fa-envelope"></i> contato@alttabcorp.com.br</p>
-                    <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
-                    <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
-                    
-                    <div class="social-links">
+                <div class="footer-brand">
+                    <a href="../../" class="footer-logo">
+                        <img src="../../assets/images/logo/logo.png" alt="Alt tab Corp Logo">
+                    </a>
+                    <p class="footer-description">
+                        Desenvolvendo soluções tecnológicas inovadoras para transformar ideias em resultados concretos.
+                    </p>
+                    <div class="footer-social">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../" class="footer-link"><i class="fas fa-chevron-right"></i> Início</a></li>
+                        <li><a href="../sobre/" class="footer-link"><i class="fas fa-chevron-right"></i> Sobre</a></li>
+                        <li><a href="../servicos/" class="footer-link"><i class="fas fa-chevron-right"></i> Serviços</a></li>
+                        <li><a href="../contato/" class="footer-link"><i class="fas fa-chevron-right"></i> Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Nossos Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="../web/" class="footer-link"><i class="fas fa-chevron-right"></i> Desenvolvimento Web</a></li>
+                        <li><a href="../consultoria/" class="footer-link"><i class="fas fa-chevron-right"></i> Consultoria em TI</a></li>
+                        <li><a href="../impressao3d/" class="footer-link"><i class="fas fa-chevron-right"></i> Impressão 3D</a></li>
+                        <li><a href="../esports/" class="footer-link"><i class="fas fa-chevron-right"></i> E-Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links-section">
+                    <h3 class="footer-title">Contato</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                        <p class="footer-contact-text">Av. Paulista, 1000, São Paulo, SP</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt footer-contact-icon"></i>
+                        <p class="footer-contact-text">
+                            <a href="tel:+551199999999" class="footer-contact-link">(11) 9999-9999</a>
+                        </p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope footer-contact-icon"></i>
+                        <p class="footer-contact-text">
+                            <a href="mailto:contato@alttabcorp.com.br" class="footer-contact-link">contato@alttabcorp.com.br</a>
+                        </p>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
+                <p class="footer-copyright">&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
+                <div class="footer-legal">
+                    <a href="../termos/" class="footer-legal-link">Termos de Uso</a>
+                    <a href="../privacidade/" class="footer-legal-link">Política de Privacidade</a>
+                    <a href="../cookies/" class="footer-legal-link">Política de Cookies</a>
+                </div>
             </div>
         </div>
+        
+        <a href="#" class="back-to-top" id="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
 
     <!-- Floating Contact Button -->
@@ -333,26 +449,24 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // Script mínimo para funcionalidade do menu mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            // Menu Mobile
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (menuBtn && navMenu) {
-                menuBtn.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    menuBtn.classList.toggle('active');
-                });
-            }
-        });
-    </script>
+    
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <h3 class="cookie-title">Este site utiliza cookies</h3>
+            <p class="cookie-text">Utilizamos cookies para melhorar sua experiência, personalizar conteúdo e analisar o tráfego do site. Ao continuar navegando, você concorda com nossa <a href="../cookies/" class="cookie-link">Política de Cookies</a>.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-btn cookie-btn-accept" id="acceptCookies">Aceitar</button>
+            <button class="cookie-btn cookie-btn-settings" id="cookieSettings">Configurações</button>
+        </div>
+    </div>
 
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="../../assets/js/modules/animations.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/theme-toggle.js"></script>
-    <script src="../../assets/js/animations.js"></script>
+    <script src="../../assets/js/cookie-banner.js"></script>
 </body>
 </html> 

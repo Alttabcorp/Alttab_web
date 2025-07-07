@@ -32,6 +32,11 @@
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/components/buttons.css">
     <link rel="stylesheet" href="../../assets/css/components/cards.css">
+    <link rel="stylesheet" href="../../assets/css/components/timeline.css">
+    <link rel="stylesheet" href="../../assets/css/components/section.css">
+    <link rel="stylesheet" href="../../assets/css/components/animations.css">
+    <link rel="stylesheet" href="../../assets/css/components/forms.css">
+    <link rel="stylesheet" href="../../assets/css/fixes.css">
     
     <!-- CSS Principal -->
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -51,21 +56,28 @@
                     <li class="nav-item nav-dropdown">
                         <a href="../servicos/" class="nav-link">Serviços <span class="dropdown-arrow">&#9662;</span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../construcao/" class="dropdown-link">Consultoria TI</a></li>
-                            <li><a href="../construcao/" class="dropdown-link">Desenvolvimento Web</a></li>
+                            <li><a href="../consultoria/" class="dropdown-link">Consultoria TI</a></li>
+                            <li><a href="../web/" class="dropdown-link">Desenvolvimento Web</a></li>
                             <li><a href="../impressao3d/" class="dropdown-link">Impressão 3D</a></li>
                             <li class="dropdown-divider"></li>
                             <li class="nav-item nav-dropdown">
-                                <a href="../construcao/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
+                                <a href="../esports/" class="nav-link">E-Sports <span class="dropdown-arrow">&#9662;</span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="../construcao/" class="dropdown-link">Estúdio de Jogos</a></li>
-                                    <li><a href="../construcao/" class="dropdown-link">Time E-sports</a></li>
+                                    <li><a href="../esports/estudio/" class="dropdown-link">Estúdio de Jogos</a></li>
+                                    <li><a href="../esports/time/" class="dropdown-link">Time E-sports</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li><a href="../contato/" class="nav-link">Contato</a></li>
                 </ul>
+                <div class="theme-toggle" id="themeToggle">
+                    <div class="theme-toggle-track">
+                        <span class="theme-toggle-icon sun"><i class="fas fa-sun"></i></span>
+                        <span class="theme-toggle-icon moon"><i class="fas fa-moon"></i></span>
+                    </div>
+                    <div class="theme-toggle-thumb"></div>
+                </div>
                 <button class="mobile-menu-btn">
                     <span></span>
                     <span></span>
@@ -204,7 +216,7 @@
                     <!-- Membro 1 -->
                     <div class="team-card animate-on-scroll">
                         <div class="team-image">
-                            <img src="../../assets/images/equipe/membro1.jpg" alt="João Silva" data-src="../../assets/images/equipe/membro1.jpg">
+                            <img src="../../assets/images/equipe/membro1.svg" alt="João Silva">
                         </div>
                         <div class="team-info">
                             <h3>João Silva</h3>
@@ -221,7 +233,7 @@
                     <!-- Membro 2 -->
                     <div class="team-card animate-on-scroll">
                         <div class="team-image">
-                            <img src="../../assets/images/equipe/membro2.jpg" alt="Maria Oliveira" data-src="../../assets/images/equipe/membro2.jpg">
+                            <img src="../../assets/images/equipe/membro2.svg" alt="Maria Oliveira">
                         </div>
                         <div class="team-info">
                             <h3>Maria Oliveira</h3>
@@ -238,7 +250,7 @@
                     <!-- Membro 3 -->
                     <div class="team-card animate-on-scroll">
                         <div class="team-image">
-                            <img src="../../assets/images/equipe/membro3.jpg" alt="Carlos Santos" data-src="../../assets/images/equipe/membro3.jpg">
+                            <img src="../../assets/images/equipe/membro3.svg" alt="Carlos Santos">
                         </div>
                         <div class="team-info">
                             <h3>Carlos Santos</h3>
@@ -255,7 +267,7 @@
                     <!-- Membro 4 -->
                     <div class="team-card animate-on-scroll">
                         <div class="team-image">
-                            <img src="../../assets/images/equipe/membro4.jpg" alt="Ana Pereira" data-src="../../assets/images/equipe/membro4.jpg">
+                            <img src="../../assets/images/equipe/membro4.svg" alt="Ana Pereira">
                         </div>
                         <div class="team-info">
                             <h3>Ana Pereira</h3>
@@ -411,8 +423,63 @@
         </a>
     </footer>
 
+    <!-- Floating Contact Button -->
+    <div class="floating-contact">
+        <button class="floating-contact-btn pulse" id="floatingContactBtn">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="floating-contact-menu" id="floatingContactMenu">
+            <div class="floating-contact-title">
+                Fale Conosco
+                <span class="floating-contact-close" id="floatingContactClose">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+            <div class="floating-contact-options">
+                <a href="tel:+551199999999" class="floating-contact-option">
+                    <div class="floating-contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">Telefone</div>
+                        <div class="floating-contact-value">(11) 9999-9999</div>
+                    </div>
+                </a>
+                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option">
+                    <div class="floating-contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">E-mail</div>
+                        <div class="floating-contact-value">contato@alttabcorp.com.br</div>
+                    </div>
+                </a>
+                <a href="https://wa.me/5511999999999" target="_blank" class="floating-contact-option">
+                    <div class="floating-contact-icon" style="background-color: #25D366;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">WhatsApp</div>
+                        <div class="floating-contact-value">Envie uma mensagem</div>
+                    </div>
+                </a>
+                <a href="../contato/" class="floating-contact-option">
+                    <div class="floating-contact-icon" style="background-color: var(--accent);">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="floating-contact-info">
+                        <div class="floating-contact-label">Formulário</div>
+                        <div class="floating-contact-value">Preencha nosso formulário</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
+    <script src="../../assets/js/modules/animations.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/theme-toggle.js"></script>
     <script>
         // Contador de estatísticas
         document.addEventListener('DOMContentLoaded', function() {
@@ -459,6 +526,46 @@
                 });
                 
                 observer.observe(statsSection);
+            }
+            
+            // Animações para a timeline
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observerTimeline = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observerTimeline.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+            
+            timelineItems.forEach(item => {
+                observerTimeline.observe(item);
+            });
+            
+            // Inicializar o botão flutuante de contato
+            const floatingContactBtn = document.getElementById('floatingContactBtn');
+            const floatingContactMenu = document.getElementById('floatingContactMenu');
+            const floatingContactClose = document.getElementById('floatingContactClose');
+            
+            if (floatingContactBtn && floatingContactMenu) {
+                floatingContactBtn.addEventListener('click', function() {
+                    floatingContactMenu.classList.toggle('active');
+                    floatingContactBtn.classList.toggle('active');
+                    floatingContactBtn.classList.remove('pulse');
+                });
+                
+                if (floatingContactClose) {
+                    floatingContactClose.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        floatingContactMenu.classList.remove('active');
+                        floatingContactBtn.classList.remove('active');
+                    });
+                }
             }
         });
     </script>
