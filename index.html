@@ -558,9 +558,9 @@
         </a>
     </footer>
 
-    <!-- Floating Contact Button -->
-    <div class="floating-contact">
-        <button class="floating-contact-btn pulse" id="floatingContactBtn">
+     <!-- Floating Contact Button -->
+     <div class="floating-contact">
+        <button class="floating-contact-btn" id="floatingContactBtn">
             <i class="fas fa-comments"></i>
         </button>
         <div class="floating-contact-menu" id="floatingContactMenu">
@@ -598,15 +598,6 @@
                         <div class="floating-contact-value">Envie uma mensagem</div>
                     </div>
                 </a>
-                <a href="pages/contato/" class="floating-contact-option">
-                    <div class="floating-contact-icon" style="background-color: var(--accent);">
-                        <i class="fas fa-paper-plane"></i>
-                    </div>
-                    <div class="floating-contact-info">
-                        <div class="floating-contact-label">Formulário</div>
-                        <div class="floating-contact-value">Preencha nosso formulário</div>
-                    </div>
-                </a>
             </div>
         </div>
     </div>
@@ -632,15 +623,16 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="assets/js/modules/animations.js"></script>
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/theme-toggle.js"></script>
     <script src="assets/js/cookie-banner.js"></script>
     <script src="assets/js/faq-fix.js"></script>
     <script src="assets/js/site-check.js"></script>
+    <script src="assets/js/floating-contact.js"></script>
+    <script src="assets/js/main.js"></script>
     
     <!-- Script para garantir que o FAQ seja visível -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('load', function() {
             console.log('Inicializando script de correção do FAQ');
             
             // Aplicar força bruta após tudo carregar

@@ -378,7 +378,7 @@
 /* Botão Flutuante de Contato - Correção */
 .floating-contact {
     position: fixed;
-    bottom: 2rem;
+    bottom: 100px; /* Ajustado para ficar acima do botão de voltar ao topo */
     right: 2rem;
     z-index: var(--z-fixed);
     display: flex;
@@ -557,7 +557,7 @@
 /* Responsividade */
 @media (max-width: 576px) {
     .floating-contact {
-        bottom: 1.5rem;
+        bottom: 90px; /* Ajustado para telas menores */
         right: 1.5rem;
     }
     

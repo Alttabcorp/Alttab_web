@@ -3,7 +3,7 @@
  * Script principal para funcionalidades do site
  */
 
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
     console.log('DOM carregado, inicializando scripts...');
     
     // Inicializa todas as animações
@@ -124,46 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
         animateElements.forEach(element => {
             animateElementsObserver.observe(element);
         });
-    }
-    
-    // ======== Botão Flutuante de Contato ========
-    const floatingContactBtn = document.querySelector('.floating-contact-btn');
-    const floatingContactMenu = document.querySelector('.floating-contact-menu');
-    const floatingContactClose = document.querySelector('.floating-contact-close');
-    
-    if (floatingContactBtn && floatingContactMenu) {
-        floatingContactBtn.addEventListener('click', function() {
-            floatingContactMenu.classList.toggle('active');
-            floatingContactBtn.classList.toggle('active');
-            
-            // Adicionar classe de pulsação quando o menu estiver fechado
-            if (!floatingContactMenu.classList.contains('active')) {
-                setTimeout(() => {
-                    floatingContactBtn.classList.add('pulse');
-                }, 2000);
-            } else {
-                floatingContactBtn.classList.remove('pulse');
-            }
-        });
-        
-        // Fechar o menu ao clicar no botão de fechar
-        if (floatingContactClose) {
-            floatingContactClose.addEventListener('click', function(e) {
-                e.stopPropagation();
-                floatingContactMenu.classList.remove('active');
-                floatingContactBtn.classList.remove('active');
-                
-                // Adicionar classe de pulsação após fechar
-                setTimeout(() => {
-                    floatingContactBtn.classList.add('pulse');
-                }, 2000);
-            });
-        }
-        
-        // Adicionar classe de pulsação após 3 segundos
-        setTimeout(() => {
-            floatingContactBtn.classList.add('pulse');
-        }, 3000);
     }
     
     // ======== Banner de Cookies ========
