@@ -14,6 +14,14 @@
     --accent: #0EA5E9;          /* Azul claro para elementos de destaque */
     --accent-secondary: #10B981; /* Verde para elementos de destaque secundários */
     
+    /* Versões RGB para uso em elementos translúcidos */
+    --primary-rgb: 26, 34, 56;
+    --primary-light-rgb: 45, 59, 88;
+    --primary-dark-rgb: 15, 21, 37;
+    --secondary-rgb: 37, 99, 235;
+    --secondary-light-rgb: 59, 130, 246;
+    --accent-rgb: 14, 165, 233;
+    
     /* Cores Neutras - Mais refinadas */
     --dark: #0F172A;
     --gray-900: #1E293B;

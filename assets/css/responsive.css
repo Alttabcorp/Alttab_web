@@ -308,3 +308,47 @@
         padding: 0.75rem;
     }
 } 
+
+/* Header Responsive */
+@media (max-width: 992px) {
+    .nav-dropdown .nav-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-item.nav-dropdown {
+        position: relative;
+    }
+    
+    .nav-item.nav-dropdown .dropdown-menu {
+        background: rgba(255, 255, 255, 0.03);
+        border-left: 1px solid var(--accent);
+    }
+    
+    /* Remover bullets de lista no menu mobile */
+    .nav-menu,
+    .nav-menu ul,
+    .dropdown-menu,
+    .nav-menu li,
+    .dropdown-menu li,
+    .nav-item,
+    .nav-dropdown {
+        list-style: none !important;
+        list-style-type: none !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+    
+    .dropdown-arrow {
+        transition: transform 0.3s;
+    }
+    
+    .nav-link.active .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+    
+    .nav-item.nav-dropdown .nav-link.active .dropdown-arrow {
+        transform: rotate(-90deg);
+    }
+} 

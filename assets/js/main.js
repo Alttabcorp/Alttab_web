@@ -23,6 +23,67 @@ window.addEventListener('load', function() {
         });
     }
     
+    // ======== E-Sports Submenu Fix ========
+    // Função específica para garantir que o submenu de E-Sports funcione corretamente
+    const initEsportsSubMenu = () => {
+        const esportsMenu = document.querySelector('.nav-dropdown a[href="pages/esports/"]');
+        if (!esportsMenu) return;
+        
+        const esportsDropdown = esportsMenu.closest('.nav-dropdown');
+        const subDropdowns = esportsDropdown.querySelectorAll('.nav-item.nav-dropdown');
+        
+        subDropdowns.forEach(subMenu => {
+            const subMenuLink = subMenu.querySelector('.nav-link');
+            const subDropdownMenu = subMenu.querySelector('.dropdown-menu');
+            
+            if (window.innerWidth > 992) {
+                // Configuração para desktop
+                subMenu.addEventListener('mouseenter', function(e) {
+                    if (subDropdownMenu) {
+                        subDropdownMenu.style.opacity = '1';
+                        subDropdownMenu.style.visibility = 'visible';
+                        subDropdownMenu.classList.add('active');
+                    }
+                });
+                
+                subMenu.addEventListener('mouseleave', function(e) {
+                    if (subDropdownMenu) {
+                        subDropdownMenu.style.opacity = '0';
+                        subDropdownMenu.style.visibility = 'hidden';
+                        subDropdownMenu.classList.remove('active');
+                    }
+                });
+            } else {
+                // Configuração para mobile
+                if (subMenuLink) {
+                    subMenuLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        if (subDropdownMenu) {
+                            subDropdownMenu.classList.toggle('active');
+                            if (subDropdownMenu.classList.contains('active')) {
+                                subDropdownMenu.style.opacity = '1';
+                                subDropdownMenu.style.visibility = 'visible';
+                                subDropdownMenu.style.maxHeight = '500px';
+                                subMenuLink.classList.add('active');
+                            } else {
+                                subDropdownMenu.style.opacity = '0';
+                                subDropdownMenu.style.visibility = 'hidden';
+                                subDropdownMenu.style.maxHeight = '0';
+                                subMenuLink.classList.remove('active');
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    };
+
+    // Inicializar o fix para o submenu de E-Sports
+    document.addEventListener('DOMContentLoaded', initEsportsSubMenu);
+    window.addEventListener('resize', initEsportsSubMenu);
+    
     // ======== Dropdown Menu ========
     const dropdownItems = document.querySelectorAll('.nav-dropdown');
     
@@ -31,20 +92,102 @@ window.addEventListener('load', function() {
             const link = item.querySelector('.nav-link');
             const dropdownMenu = item.querySelector('.dropdown-menu');
             
+            // Função para mostrar dropdown
+            const showDropdown = (menu) => {
+                menu.classList.add('active');
+                menu.style.opacity = '1';
+                menu.style.visibility = 'visible';
+            };
+            
+            // Função para esconder dropdown
+            const hideDropdown = (menu) => {
+                menu.classList.remove('active');
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+            };
+            
             if (window.innerWidth > 992) {
                 // Desktop: Hover
                 item.addEventListener('mouseenter', function() {
-                    dropdownMenu.classList.add('active');
+                    showDropdown(dropdownMenu);
                 });
                 
                 item.addEventListener('mouseleave', function() {
-                    dropdownMenu.classList.remove('active');
+                    hideDropdown(dropdownMenu);
+                });
+                
+                // Lidar com submenus aninhados
+                const nestedDropdowns = item.querySelectorAll('.nav-item.nav-dropdown');
+                nestedDropdowns.forEach(nestedItem => {
+                    const nestedLink = nestedItem.querySelector('.nav-link');
+                    const nestedMenu = nestedItem.querySelector('.dropdown-menu');
+                    
+                    nestedItem.addEventListener('mouseenter', function(e) {
+                        e.stopPropagation();
+                        showDropdown(nestedMenu);
+                    });
+                    
+                    nestedItem.addEventListener('mouseleave', function(e) {
+                        e.stopPropagation();
+                        hideDropdown(nestedMenu);
+                    });
                 });
             } else {
                 // Mobile: Click
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    dropdownMenu.classList.toggle('active');
+                    e.stopPropagation();
+                    
+                    // Verifica se este dropdown já está ativo
+                    const isActive = dropdownMenu.classList.contains('active');
+                    
+                    // Fecha todos os outros dropdowns do mesmo nível
+                    const siblings = Array.from(item.parentNode.children);
+                    siblings.forEach(sibling => {
+                        if (sibling !== item && sibling.classList.contains('nav-dropdown')) {
+                            const siblingMenu = sibling.querySelector('.dropdown-menu');
+                            if (siblingMenu) hideDropdown(siblingMenu);
+                        }
+                    });
+                    
+                    // Alterna o estado atual
+                    if (isActive) {
+                        hideDropdown(dropdownMenu);
+                    } else {
+                        showDropdown(dropdownMenu);
+                    }
+                });
+                
+                // Lidar com submenus aninhados em mobile
+                const nestedDropdowns = item.querySelectorAll('.nav-item.nav-dropdown');
+                nestedDropdowns.forEach(nestedItem => {
+                    const nestedLink = nestedItem.querySelector('.nav-link');
+                    const nestedMenu = nestedItem.querySelector('.dropdown-menu');
+                    
+                    nestedLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Verifica se este dropdown já está ativo
+                        const isActive = nestedMenu.classList.contains('active');
+                        
+                        // Alterna o estado atual
+                        if (isActive) {
+                            hideDropdown(nestedMenu);
+                        } else {
+                            showDropdown(nestedMenu);
+                        }
+                    });
+                });
+            }
+        });
+        
+        // Fecha todos os dropdowns ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-dropdown')) {
+                dropdownItems.forEach(item => {
+                    const menu = item.querySelector('.dropdown-menu');
+                    if (menu) hideDropdown(menu);
                 });
             }
         });

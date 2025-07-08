@@ -25,6 +25,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
+        // Atualizar dropdowns abertos para o novo tema
+        const activeDropdowns = document.querySelectorAll('.dropdown-menu.active');
+        if (activeDropdowns.length > 0) {
+            setTimeout(() => {
+                activeDropdowns.forEach(dropdown => {
+                    // Aplicar força de atualização para garantir estilos corretos
+                    dropdown.style.display = 'none';
+                    setTimeout(() => {
+                        dropdown.style.display = '';
+                    }, 10);
+                });
+            }, 50);
+        }
+        
         // Salvar preferência
         localStorage.setItem('theme', theme);
     }

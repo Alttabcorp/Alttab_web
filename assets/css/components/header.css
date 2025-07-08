@@ -54,12 +54,18 @@
     height: 2.2rem;
 }
 
+/* Nav Menu */
 .nav-menu {
     display: flex;
-    gap: 2.5rem;
+    align-items: center;
+    gap: 2rem;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    list-style: none;
+}
+
+.nav-menu li {
+    position: relative;
 }
 
 .nav-link {
@@ -175,111 +181,145 @@
     position: relative;
 }
 
-.nav-dropdown .dropdown-arrow {
-    font-size: 0.7em;
-    margin-left: 0.3em;
-    transition: transform var(--transition-normal);
-}
-
-.nav-dropdown:hover .dropdown-arrow,
-.nav-dropdown.open .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
 .dropdown-menu {
-    display: none;
     position: absolute;
-    top: calc(100% + 0.75rem);
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 220px;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
     background: var(--card-background);
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--border-radius-md);
-    padding: 0.7em 0;
-    z-index: var(--z-dropdown);
-    flex-direction: column;
-    gap: 0;
-    animation: fadeInDropdown var(--transition-normal);
-    overflow: hidden;
     border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    list-style-type: none;
+    margin: 0;
 }
 
-.nav-dropdown:hover > .dropdown-menu,
-.nav-dropdown:focus-within > .dropdown-menu {
-    display: flex;
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .dropdown-link {
     display: block;
-    padding: 0.9em 1.5em;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: var(--font-weight-medium);
-    transition: all var(--transition-fast);
-    border: none;
-    background: none;
-    text-align: center;
-    font-size: var(--font-size-sm);
-    position: relative;
+    padding: 8px 20px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .dropdown-link:hover {
     background: var(--background-color);
-    color: var(--secondary);
+    color: var(--accent);
 }
 
-.dropdown-link.active {
-    color: var(--secondary);
-    background: var(--background-color);
+.dropdown-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 8px 0;
 }
 
-.dropdown-link.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
+/* Nested Dropdown */
+.nav-item.nav-dropdown .dropdown-menu {
+    left: 100%;
     top: 0;
-    height: 100%;
-    width: 3px;
-    background: var(--secondary);
+    margin-left: 1px;
 }
 
-@keyframes fadeInDropdown {
-    from { opacity: 0; transform: translateY(10px) translateX(-50%); }
-    to { opacity: 1; transform: translateY(0) translateX(-50%); }
+.dropdown-arrow {
+    margin-left: 4px;
+    font-size: 10px;
+    transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
-    .nav-dropdown {
-        position: static;
+.nav-dropdown:hover > .nav-link .dropdown-arrow,
+.dropdown-menu.active + .nav-link .dropdown-arrow,
+.nav-dropdown .nav-link.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-item.nav-dropdown .dropdown-arrow {
+    transform: rotate(-90deg);
+}
+
+.nav-item.nav-dropdown:hover > .nav-link .dropdown-arrow,
+.nav-item.nav-dropdown .dropdown-menu.active + .nav-link .dropdown-arrow {
+    transform: rotate(0deg);
+}
+
+/* Mobile Dropdown */
+@media (max-width: 992px) {
+    .nav-menu {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
     }
     
-    .dropdown-menu {
+    .nav-menu li,
+    .nav-menu .nav-item {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .dropdown-menu,
+    .nav-menu .dropdown-menu {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    
+    .nav-menu.active .dropdown-menu {
         position: static;
-        min-width: 0;
+        background: rgba(var(--primary-light-rgb, 45, 59, 88), 0.1);
         box-shadow: none;
         border-radius: 0;
-        padding: 0.5rem 0 0.5rem 1.5rem;
-        background: var(--background-color);
-        display: none;
-        transform: none;
-        animation: none;
-        margin-top: 0.5rem;
-        border: none;
-        border-left: 2px solid var(--secondary);
+        margin-left: 15px;
+        padding: 5px 0;
+        max-height: 0;
+        overflow: hidden;
     }
     
-    .nav-dropdown.open .dropdown-menu {
-        display: flex;
+    .nav-menu.active .dropdown-menu.active {
+        max-height: 500px;
+        padding: 5px 0;
+        opacity: 1;
+        visibility: visible;
     }
     
     .dropdown-link {
-        padding: 0.7em 1em;
-        text-align: left;
+        padding: 8px 15px;
     }
     
-    .dropdown-link.active::before {
-        display: none;
+    /* Nested mobile dropdown */
+    .nav-item.nav-dropdown .dropdown-menu {
+        left: auto;
+        top: auto;
+        margin-left: 15px;
+        width: calc(100% - 15px);
+    }
+    
+    .nav-dropdown a[href="pages/esports/"] + .dropdown-menu .nav-item.nav-dropdown .dropdown-menu {
+        top: auto;
+        left: auto;
+        background: rgba(var(--primary-light-rgb, 45, 59, 88), 0.05);
+        margin-left: 15px;
+        width: calc(100% - 15px);
+        border-left: 1px solid var(--accent);
+        list-style: none;
+        padding-left: 0;
     }
 }
 
@@ -467,4 +507,59 @@
     .theme-toggle {
         margin-right: 3rem;
     }
+} 
+
+/* Esports Submenu Specific */
+.nav-dropdown a[href="pages/esports/"] + .dropdown-menu {
+    z-index: 101;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.nav-dropdown a[href="pages/esports/"] + .dropdown-menu li,
+.nav-dropdown a[href="pages/esports/"] + .dropdown-menu .nav-item {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.nav-dropdown a[href="pages/esports/"] + .dropdown-menu .nav-item.nav-dropdown .dropdown-menu {
+    top: 0;
+    left: 100%;
+    background: var(--card-background);
+    z-index: 102;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+} 
+
+/* Nav Menu - Remove All Bullets */
+.nav-menu,
+.nav-menu ul,
+.nav-menu li,
+.nav-menu .dropdown-menu,
+.dropdown-menu,
+.dropdown-menu li,
+.nav-dropdown,
+.nav-dropdown ul,
+.nav-dropdown li {
+    list-style-type: none !important;
+    list-style-image: none !important;
+    list-style: none !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+.nav-menu::before,
+.nav-menu::after,
+.dropdown-menu::before,
+.dropdown-menu::after,
+.nav-menu li::before,
+.nav-menu li::after,
+.dropdown-menu li::before,
+.dropdown-menu li::after {
+    display: none !important;
 } 
