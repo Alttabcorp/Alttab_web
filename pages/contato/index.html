@@ -368,44 +368,54 @@
 
     <!-- Floating Contact Button -->
     <div class="floating-contact">
-        <button class="floating-contact-btn" id="floatingContactBtn">
+        <button class="floating-contact-btn" id="floatingContactBtn" aria-label="Abrir opções de contato">
             <i class="fas fa-comments"></i>
+            <span class="floating-contact-tooltip">Fale Conosco</span>
         </button>
         <div class="floating-contact-menu" id="floatingContactMenu">
             <div class="floating-contact-title">
-                Fale Conosco
-                <span class="floating-contact-close" id="floatingContactClose">
+                <span>Fale Conosco</span>
+                <span class="floating-contact-close" id="floatingContactClose" aria-label="Fechar menu">
                     <i class="fas fa-times"></i>
                 </span>
             </div>
+            <div class="floating-contact-header">
+                <p>Como podemos ajudar você hoje?</p>
+            </div>
             <div class="floating-contact-options">
-                <a href="tel:+551199999999" class="floating-contact-option">
+                <a href="tel:+551199999999" class="floating-contact-option" aria-label="Ligar para (11) 9999-9999">
                     <div class="floating-contact-icon">
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <div class="floating-contact-info">
                         <div class="floating-contact-label">Telefone</div>
                         <div class="floating-contact-value">(11) 9999-9999</div>
+                        <div class="floating-contact-desc">Seg-Sex: 9h-18h</div>
                     </div>
                 </a>
-                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option">
+                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option" aria-label="Enviar email para contato@alttabcorp.com.br">
                     <div class="floating-contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="floating-contact-info">
                         <div class="floating-contact-label">E-mail</div>
                         <div class="floating-contact-value">contato@alttabcorp.com.br</div>
+                        <div class="floating-contact-desc">Resposta em 24h</div>
                     </div>
                 </a>
-                <a href="https://wa.me/5511999999999" target="_blank" class="floating-contact-option">
+                <a href="https://wa.me/5511999999999" target="_blank" class="floating-contact-option" aria-label="Enviar mensagem no WhatsApp">
                     <div class="floating-contact-icon" style="background-color: #25D366;">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="floating-contact-info">
                         <div class="floating-contact-label">WhatsApp</div>
-                        <div class="floating-contact-value">Envie uma mensagem</div>
+                        <div class="floating-contact-value">(11) 99999-9999</div>
+                        <div class="floating-contact-desc">Atendimento rápido</div>
                     </div>
                 </a>
+            </div>
+            <div class="floating-contact-footer">
+                <p>Estamos prontos para atender você!</p>
             </div>
         </div>
     </div>

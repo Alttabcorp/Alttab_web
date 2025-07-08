@@ -17,10 +17,10 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: var(--light);
     border: none;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;
@@ -31,16 +31,77 @@
     z-index: 2;
     visibility: visible;
     opacity: 1;
+    overflow: hidden;
+}
+
+/* Tooltip */
+.floating-contact-tooltip {
+    position: absolute;
+    right: 70px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-contact-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.8);
+}
+
+.floating-contact-btn:hover .floating-contact-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.floating-contact-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5), 0 4px 20px rgba(37, 99, 235, 0.3);
+}
+
+.floating-contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .floating-contact-btn:hover {
-    transform: scale(1.1);
-    background-color: var(--primary-dark);
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.4);
+}
+
+.floating-contact-btn:hover::before {
+    opacity: 1;
+}
+
+.floating-contact-btn i {
+    position: relative;
+    z-index: 1;
 }
 
 .floating-contact-btn.active {
     transform: rotate(45deg);
-    background-color: var(--gray-500);
+    background: linear-gradient(135deg, var(--gray-600) 0%, var(--gray-700) 100%);
 }
 
 .floating-contact-btn.pulse {
@@ -66,10 +127,10 @@
     position: absolute;
     bottom: 80px;
     right: 0;
-    width: 320px;
+    width: 280px;
     background-color: var(--card-background);
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-xl);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border: 1px solid var(--border-color);
     overflow: hidden;
     transform: scale(0.9);
@@ -78,6 +139,9 @@
     transform-origin: bottom right;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 1;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 .floating-contact-menu.active {
@@ -87,14 +151,30 @@
 }
 
 .floating-contact-title {
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-lg);
+    font-size: 1rem;
     color: var(--text-color);
     border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: linear-gradient(to right, var(--gray-100), var(--gray-50));
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.floating-contact-header {
+    padding: 0.5rem 1.25rem;
+    background-color: var(--gray-50);
+    text-align: center;
+}
+
+.floating-contact-header p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
 }
 
 .floating-contact-close {
@@ -106,24 +186,75 @@
     justify-content: center;
     border-radius: var(--border-radius-full);
     transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .floating-contact-close:hover {
-    background-color: var(--gray-200);
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
 }
 
 .floating-contact-options {
     display: flex;
     flex-direction: column;
+    max-height: 60vh;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* Estilizar scrollbar */
+.floating-contact-options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.floating-contact-options::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+.floating-contact-options::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: 3px;
+}
+
+.floating-contact-options::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-400);
+}
+
+/* Efeito Ripple */
+.floating-contact-ripple {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Animação dos itens do menu */
 .floating-contact-option {
-    padding: 1rem 1.5rem;
+    padding: 0.9rem 1.25rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     text-decoration: none;
     border-bottom: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.floating-contact-option.animate-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .floating-contact-option:last-child {
@@ -131,7 +262,8 @@
 }
 
 .floating-contact-option:hover {
-    background-color: var(--gray-100);
+    background-color: var(--gray-50);
+    transform: translateX(5px);
 }
 
 .floating-contact-icon {
@@ -143,51 +275,98 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1rem;
+    margin-right: 0.75rem;
     flex-shrink: 0;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .floating-contact-info {
     flex-grow: 1;
+    overflow: hidden;
+    width: calc(100% - 50px);
+    max-width: 190px;
+    box-sizing: border-box;
 }
 
 .floating-contact-label {
-    font-size: var(--font-size-sm);
+    font-size: 0.95rem;
     font-weight: var(--font-weight-semibold);
     color: var(--text-color);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .floating-contact-value {
-    font-size: var(--font-size-sm);
+    font-size: 0.8rem;
     color: var(--text-secondary);
+    margin-bottom: 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.floating-contact-desc {
+    font-size: 0.7rem;
+    color: var(--gray-500);
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.floating-contact-footer {
+    padding: 0.5rem 1.25rem;
+    text-align: center;
+    background-color: var(--gray-50);
+    border-top: 1px solid var(--border-color);
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+}
+
+.floating-contact-footer p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
 }
 
 /* Tema escuro */
 [data-theme="dark"] .floating-contact-btn {
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.5);
 }
 
-[data-theme="dark"] .floating-contact-btn:hover {
-    background-color: var(--primary-dark);
+[data-theme="dark"] .floating-contact-btn::before {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
 }
 
 [data-theme="dark"] .floating-contact-btn.active {
-    background-color: var(--gray-600);
+    background: linear-gradient(135deg, var(--gray-700) 0%, var(--gray-800) 100%);
 }
 
 [data-theme="dark"] .floating-contact-menu {
     background-color: var(--gray-800);
     border-color: var(--gray-700);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 [data-theme="dark"] .floating-contact-title {
     color: var(--light);
     border-color: var(--gray-700);
+    background: linear-gradient(to right, var(--gray-800), var(--gray-700));
+}
+
+[data-theme="dark"] .floating-contact-close {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="dark"] .floating-contact-close:hover {
-    background-color: var(--gray-700);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 [data-theme="dark"] .floating-contact-option {
@@ -206,35 +385,108 @@
     color: var(--gray-400);
 }
 
-/* Responsividade */
+[data-theme="dark"] .floating-contact-header {
+    background-color: var(--gray-750);
+}
+
+[data-theme="dark"] .floating-contact-header p {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .floating-contact-options::-webkit-scrollbar-track {
+    background: var(--gray-750);
+}
+
+[data-theme="dark"] .floating-contact-options::-webkit-scrollbar-thumb {
+    background: var(--gray-600);
+}
+
+[data-theme="dark"] .floating-contact-options::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
+[data-theme="dark"] .floating-contact-desc {
+    color: var(--gray-500);
+}
+
+[data-theme="dark"] .floating-contact-footer {
+    background-color: var(--gray-750);
+    border-color: var(--gray-700);
+}
+
+[data-theme="dark"] .floating-contact-footer p {
+    color: var(--gray-400);
+}
+
 @media (max-width: 576px) {
     .floating-contact {
-        bottom: 1.5rem;
+        bottom: 90px;
         right: 1.5rem;
     }
     
     .floating-contact-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 1.25rem;
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+    }
+    
+    .floating-contact-tooltip {
+        right: 65px;
+        font-size: 12px;
+        padding: 4px 10px;
     }
     
     .floating-contact-menu {
-        width: 280px;
-        right: 0;
+        width: 260px;
+        bottom: 70px;
+        max-height: 70vh;
     }
     
     .floating-contact-title {
-        padding: 0.75rem 1rem;
-        font-size: var(--font-size-base);
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .floating-contact-header {
+        padding: 0.4rem 1rem;
+    }
+    
+    .floating-contact-header p {
+        font-size: 0.75rem;
     }
     
     .floating-contact-option {
-        padding: 0.75rem 1rem;
+        padding: 0.8rem 1rem;
     }
     
     .floating-contact-icon {
-        width: 35px;
-        height: 35px;
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+        margin-right: 0.6rem;
+    }
+    
+    .floating-contact-label {
+        font-size: 0.85rem;
+    }
+    
+    .floating-contact-value {
+        font-size: 0.75rem;
+    }
+    
+    .floating-contact-desc {
+        font-size: 0.65rem;
+    }
+    
+    .floating-contact-footer {
+        padding: 0.4rem 1rem;
+    }
+    
+    .floating-contact-footer p {
+        font-size: 0.75rem;
+    }
+
+    .floating-contact-info {
+        max-width: 170px;
     }
 } 
