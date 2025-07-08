@@ -213,7 +213,7 @@
         <section class="section-gray section-wave">
             <div class="container">
                 <div class="about-grid">
-                    <div class="about-content animate-on-scroll">
+                    <div class="about-content animate-on-scroll" data-animation="fade-in-right" data-delay="0.1s">
                         <span class="section-badge light">Quem somos</span>
                         <h2>Sobre a Alt tab Corp</h2>
                         <p class="about-description">
@@ -241,8 +241,12 @@
                             <a href="pages/sobre/" class="btn btn-secondary btn-ripple">Conheça nossa história <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="about-image animate-on-scroll">
-                        <img src="assets/images/about-image.jpg" alt="Equipe Alt tab Corp" data-src="assets/images/about-image.jpg">
+                    <div class="about-image animate-on-scroll" data-animation="fade-in-left" data-delay="0.3s">
+                        <!-- Mockup SVG com dimensões 800x600 -->
+                        <img src="assets/images/mockups/team-mockup.svg" alt="Equipe Alt tab Corp" width="800" height="600">
+                        <!-- Comentário para facilitar a troca futura: 
+                             Este mockup tem dimensões de 800x600 pixels. 
+                             Para manter a proporção, use imagens com aspect ratio de 4:3 (800x600, 1200x900, etc.) -->
                     </div>
                 </div>
             </div>
