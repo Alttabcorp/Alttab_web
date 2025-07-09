@@ -116,7 +116,7 @@
                         <button class="timeline-nav-item" data-year="2019">2019</button>
                         <button class="timeline-nav-item" data-year="2021">2021</button>
                         <button class="timeline-nav-item" data-year="2023">2023</button>
-                    </div>
+                        </div>
                     
                     <div class="timeline-progress">
                         <div class="timeline-progress-bar"></div>
@@ -143,8 +143,8 @@
                         <div class="timeline-slide" id="year-2017">
                             <div class="timeline-slide-content">
                                 <div class="timeline-slide-info">
-                                    <h3 class="timeline-title">Expansão</h3>
-                                    <p class="timeline-description">Com o crescimento rápido, expandimos nossa equipe e abrimos nosso primeiro escritório físico exclusivo na Avenida Paulista, ampliando nossa capacidade de atendimento e conquistando clientes de médio e grande porte.</p>
+                            <h3 class="timeline-title">Expansão</h3>
+                            <p class="timeline-description">Com o crescimento rápido, expandimos nossa equipe e abrimos nosso primeiro escritório físico exclusivo na Avenida Paulista, ampliando nossa capacidade de atendimento e conquistando clientes de médio e grande porte.</p>
                                 </div>
                                 <div class="timeline-slide-image">
                                     <div class="timeline-image-placeholder">
@@ -153,14 +153,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
+                    </div>
+                    
                         <!-- 2019 Content -->
                         <div class="timeline-slide" id="year-2019">
                             <div class="timeline-slide-content">
                                 <div class="timeline-slide-info">
-                                    <h3 class="timeline-title">Diversificação</h3>
-                                    <p class="timeline-description">Iniciamos nossa divisão de E-Sports e Impressão 3D, diversificando nosso portfólio de serviços e atendendo novos segmentos de mercado. Neste ano também abrimos nossa filial no Rio de Janeiro para atender a região sudeste.</p>
+                            <h3 class="timeline-title">Diversificação</h3>
+                            <p class="timeline-description">Iniciamos nossa divisão de E-Sports e Impressão 3D, diversificando nosso portfólio de serviços e atendendo novos segmentos de mercado. Neste ano também abrimos nossa filial no Rio de Janeiro para atender a região sudeste.</p>
                                 </div>
                                 <div class="timeline-slide-image">
                                     <div class="timeline-image-placeholder">
@@ -169,14 +169,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
+                    </div>
+                    
                         <!-- 2021 Content -->
                         <div class="timeline-slide" id="year-2021">
                             <div class="timeline-slide-content">
                                 <div class="timeline-slide-info">
-                                    <h3 class="timeline-title">Reconhecimento</h3>
-                                    <p class="timeline-description">Fomos reconhecidos como uma das empresas mais inovadoras do setor de tecnologia, recebendo prêmios e destaque na mídia especializada. Nossa solução de gestão para E-Sports foi premiada como a mais inovadora do ano.</p>
+                            <h3 class="timeline-title">Reconhecimento</h3>
+                            <p class="timeline-description">Fomos reconhecidos como uma das empresas mais inovadoras do setor de tecnologia, recebendo prêmios e destaque na mídia especializada. Nossa solução de gestão para E-Sports foi premiada como a mais inovadora do ano.</p>
                                 </div>
                                 <div class="timeline-slide-image">
                                     <div class="timeline-image-placeholder">
@@ -310,8 +310,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
+                    </div>
+                    
                         <div class="values-tab-pane" id="valores">
                             <div class="values-content-grid">
                                 <div class="values-content-text">
@@ -438,7 +438,7 @@
                 <!-- Transformando o convite em uma seção própria -->
             </div>
         </section>
-        
+
         <!-- Seção de Recrutamento -->
         <section class="recruitment-section">
             <div class="container">
@@ -715,45 +715,10 @@
             // Inicializar a timeline
             initTimelineHorizontal();
             
-            // Contador de estatísticas
-            const startCounters = function() {
-                const counters = document.querySelectorAll('.counter');
-                
-                counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    const duration = prefersReducedMotion ? 0 : 2000; // Respeita preferências de usuário
-                    
-                    if (prefersReducedMotion) {
-                        counter.textContent = target;
-                        return;
-                    }
-                    
-                    const step = target / (duration / 16); // 16ms é aproximadamente 60fps
-                    
-                    let current = 0;
-                    const updateCounter = () => {
-                        current += step;
-                        
-                        if (current < target) {
-                            counter.textContent = Math.floor(current);
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target;
-                        }
-                    };
-                    
-                    updateCounter();
-                });
-            };
-            
-            // Inicia os contadores quando estiverem visíveis
+            // Inicia as animações quando os elementos estiverem visíveis
             const handleIntersection = function(entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        if (entry.target.classList.contains('stats-section')) {
-                            startCounters();
-                        }
-                        
                         // Anima elementos quando visíveis
                         const animatedElements = entry.target.querySelectorAll('.animate-on-scroll');
                         animatedElements.forEach(element => {
