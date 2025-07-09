@@ -225,38 +225,128 @@
                     <p>Os pilares que guiam nossa empresa e definem quem somos</p>
                 </div>
                 
-                <div class="values-grid">
-                    <!-- Missão -->
-                    <div class="value-card animate-on-scroll">
-                        <div class="value-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <h3>Missão</h3>
-                        <p>Desenvolver soluções tecnológicas inovadoras que transformem ideias em resultados concretos, impulsionando o crescimento dos nossos clientes e contribuindo para um mundo mais conectado.</p>
+                <div class="values-tabs animate-on-scroll">
+                    <div class="values-tabs-nav">
+                        <button class="values-tab-btn active" data-tab="missao">
+                            <span class="values-tab-icon"><i class="fas fa-rocket"></i></span>
+                            <span class="values-tab-text">Missão</span>
+                        </button>
+                        
+                        <button class="values-tab-btn" data-tab="visao">
+                            <span class="values-tab-icon"><i class="fas fa-eye"></i></span>
+                            <span class="values-tab-text">Visão</span>
+                        </button>
+                        
+                        <button class="values-tab-btn" data-tab="valores">
+                            <span class="values-tab-icon"><i class="fas fa-heart"></i></span>
+                            <span class="values-tab-text">Valores</span>
+                        </button>
                     </div>
                     
-                    <!-- Visão -->
-                    <div class="value-card animate-on-scroll">
-                        <div class="value-icon">
-                            <i class="fas fa-eye"></i>
+                    <div class="values-tab-content">
+                        <div class="values-tab-pane active" id="missao">
+                            <div class="values-content-grid">
+                                <div class="values-content-text">
+                                    <h3 class="values-content-title">Nossa Missão</h3>
+                                    <p class="values-content-description">Desenvolver soluções tecnológicas inovadoras que transformem ideias em resultados concretos, impulsionando o crescimento dos nossos clientes e contribuindo para um mundo mais conectado.</p>
+                                    <div class="values-content-features">
+                                        <div class="values-feature">
+                                            <div class="values-feature-icon">
+                                                <i class="fas fa-lightbulb"></i>
+                                            </div>
+                                            <div class="values-feature-text">
+                                                <h4>Inovação Constante</h4>
+                                                <p>Buscamos sempre novas formas de resolver problemas</p>
+                                            </div>
+                                        </div>
+                                        <div class="values-feature">
+                                            <div class="values-feature-icon">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <div class="values-feature-text">
+                                                <h4>Resultados Concretos</h4>
+                                                <p>Focamos em entregar valor mensurável e tangível</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="values-content-visual">
+                                    <div class="values-illustration">
+                                        <i class="fas fa-rocket fa-beat-fade"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3>Visão</h3>
-                        <p>Ser referência nacional em soluções tecnológicas, reconhecida pela excelência, inovação e capacidade de antecipar tendências, criando impacto positivo na sociedade através da tecnologia.</p>
-                    </div>
-                    
-                    <!-- Valores -->
-                    <div class="value-card animate-on-scroll">
-                        <div class="value-icon">
-                            <i class="fas fa-heart"></i>
+                        
+                        <div class="values-tab-pane" id="visao">
+                            <div class="values-content-grid">
+                                <div class="values-content-text">
+                                    <h3 class="values-content-title">Nossa Visão</h3>
+                                    <p class="values-content-description">Ser referência nacional em soluções tecnológicas, reconhecida pela excelência, inovação e capacidade de antecipar tendências, criando impacto positivo na sociedade através da tecnologia.</p>
+                                    <div class="values-content-features">
+                                        <div class="values-feature">
+                                            <div class="values-feature-icon">
+                                                <i class="fas fa-medal"></i>
+                                            </div>
+                                            <div class="values-feature-text">
+                                                <h4>Referência Nacional</h4>
+                                                <p>Liderança e reconhecimento no mercado brasileiro</p>
+                                            </div>
+                                        </div>
+                                        <div class="values-feature">
+                                            <div class="values-feature-icon">
+                                                <i class="fas fa-globe"></i>
+                                            </div>
+                                            <div class="values-feature-text">
+                                                <h4>Impacto Social</h4>
+                                                <p>Compromisso com a transformação positiva da sociedade</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="values-content-visual">
+                                    <div class="values-illustration">
+                                        <i class="fas fa-eye fa-beat-fade"></i>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h3>Valores</h3>
-                        <ul class="values-list">
-                            <li><span>Inovação</span> - Buscamos constantemente novas ideias e soluções</li>
-                            <li><span>Excelência</span> - Comprometimento com a qualidade em tudo que fazemos</li>
-                            <li><span>Integridade</span> - Agimos com ética e transparência em todas as relações</li>
-                            <li><span>Colaboração</span> - Valorizamos o trabalho em equipe e as parcerias</li>
-                            <li><span>Responsabilidade</span> - Compromisso com nossos clientes e com a sociedade</li>
-                        </ul>
+                        
+                        <div class="values-tab-pane" id="valores">
+                            <div class="values-content-grid">
+                                <div class="values-content-text">
+                                    <h3 class="values-content-title">Nossos Valores</h3>
+                                    <p class="values-content-description">Princípios fundamentais que norteiam nossas ações e decisões em todos os níveis da empresa.</p>
+                                    <div class="values-pillars">
+                                        <div class="value-pill">
+                                            <span class="value-pill-icon"><i class="fas fa-lightbulb"></i></span>
+                                            <span class="value-pill-text">Inovação</span>
+                                        </div>
+                                        <div class="value-pill">
+                                            <span class="value-pill-icon"><i class="fas fa-award"></i></span>
+                                            <span class="value-pill-text">Excelência</span>
+                                        </div>
+                                        <div class="value-pill">
+                                            <span class="value-pill-icon"><i class="fas fa-handshake"></i></span>
+                                            <span class="value-pill-text">Integridade</span>
+                                        </div>
+                                        <div class="value-pill">
+                                            <span class="value-pill-icon"><i class="fas fa-users"></i></span>
+                                            <span class="value-pill-text">Colaboração</span>
+                                        </div>
+                                        <div class="value-pill">
+                                            <span class="value-pill-icon"><i class="fas fa-shield-alt"></i></span>
+                                            <span class="value-pill-text">Responsabilidade</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="values-content-visual">
+                                    <div class="values-illustration">
+                                        <i class="fas fa-heart fa-beat-fade"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

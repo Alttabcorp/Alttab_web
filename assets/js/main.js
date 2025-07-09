@@ -462,6 +462,122 @@ window.addEventListener('load', function() {
         });
     }
     
+    // ======== Abas de Missão, Visão e Valores ========
+    const valuesTabs = document.querySelectorAll('.values-tab-btn');
+    const valuesTabsContent = document.querySelectorAll('.values-tab-pane');
+    
+    if (valuesTabs.length > 0 && valuesTabsContent.length > 0) {
+        // Função para alternar entre as abas
+        const switchValueTab = (tabId) => {
+            // Desativa todas as abas
+            valuesTabs.forEach(tab => tab.classList.remove('active'));
+            valuesTabsContent.forEach(content => content.classList.remove('active'));
+            
+            // Ativa a aba selecionada
+            const activeTab = document.querySelector(`.values-tab-btn[data-tab="${tabId}"]`);
+            const activeContent = document.getElementById(tabId);
+            
+            if (activeTab && activeContent) {
+                activeTab.classList.add('active');
+                activeContent.classList.add('active');
+                
+                // Animação para o conteúdo
+                activeContent.style.animation = 'none';
+                activeContent.offsetHeight; // Trigger reflow
+                activeContent.style.animation = 'fadeIn 0.5s ease forwards';
+            }
+        };
+        
+        // Adiciona evento de clique para cada botão de aba
+        valuesTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                switchValueTab(tabId);
+            });
+        });
+        
+        // Navegação automática entre as abas a cada 6 segundos
+        let currentTabIndex = 0;
+        const autoSwitchTabs = () => {
+            currentTabIndex = (currentTabIndex + 1) % valuesTabs.length;
+            const nextTabId = valuesTabs[currentTabIndex].getAttribute('data-tab');
+            switchValueTab(nextTabId);
+        };
+        
+        // Iniciar rotação automática
+        let tabInterval = setInterval(autoSwitchTabs, 6000);
+        
+        // Parar a rotação automática quando o usuário interagir com as abas
+        const valuesTabsContainer = document.querySelector('.values-tabs');
+        if (valuesTabsContainer) {
+            valuesTabsContainer.addEventListener('mouseenter', () => {
+                clearInterval(tabInterval);
+            });
+            
+            valuesTabsContainer.addEventListener('mouseleave', () => {
+                tabInterval = setInterval(autoSwitchTabs, 6000);
+            });
+            
+            // Parar a rotação automática em dispositivos de toque
+            valuesTabsContainer.addEventListener('touchstart', () => {
+                clearInterval(tabInterval);
+            }, { passive: true });
+        }
+    }
+    
+    // ======== Timeline Horizontal na Página Sobre ========
+    const timelineNavItems = document.querySelectorAll('.timeline-nav-item');
+    const timelineSlides = document.querySelectorAll('.timeline-slide');
+    const timelineProgressBar = document.querySelector('.timeline-progress-bar');
+    const timelineNext = document.querySelector('.timeline-control-next');
+    const timelinePrev = document.querySelector('.timeline-control-prev');
+    
+    if (timelineNavItems.length > 0 && timelineSlides.length > 0) {
+        // Função para alternar entre os slides da timeline
+        const switchTimelineSlide = (slideIndex) => {
+            // Desativa todos os slides e itens de navegação
+            timelineNavItems.forEach(item => item.classList.remove('active'));
+            timelineSlides.forEach(slide => slide.classList.remove('active'));
+            
+            // Ativa o slide selecionado e item de navegação
+            timelineNavItems[slideIndex].classList.add('active');
+            timelineSlides[slideIndex].classList.add('active');
+            
+            // Atualiza a barra de progresso
+            if (timelineProgressBar) {
+                const progressPercent = (slideIndex / (timelineNavItems.length - 1)) * 100;
+                timelineProgressBar.style.width = `${progressPercent}%`;
+            }
+        };
+        
+        // Adiciona evento de clique para cada item de navegação da timeline
+        timelineNavItems.forEach((item, index) => {
+            item.addEventListener('click', function() {
+                switchTimelineSlide(index);
+            });
+        });
+        
+        // Adiciona evento de clique para os botões de navegação
+        let currentSlideIndex = 0;
+        
+        if (timelineNext) {
+            timelineNext.addEventListener('click', function() {
+                currentSlideIndex = (currentSlideIndex + 1) % timelineSlides.length;
+                switchTimelineSlide(currentSlideIndex);
+            });
+        }
+        
+        if (timelinePrev) {
+            timelinePrev.addEventListener('click', function() {
+                currentSlideIndex = (currentSlideIndex - 1 + timelineSlides.length) % timelineSlides.length;
+                switchTimelineSlide(currentSlideIndex);
+            });
+        }
+        
+        // Ativa o primeiro slide por padrão
+        switchTimelineSlide(0);
+    }
+    
     // ======== Typed.js Animation ========
     const typedElements = document.querySelectorAll('.typed-element');
     
