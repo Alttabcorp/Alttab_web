@@ -667,85 +667,6 @@
     margin-bottom: 0;
 }
 
-/* Seção de Estatísticas */
-.stats-section {
-    padding: 5rem 0;
-    background: var(--gradient-primary);
-    color: var(--light);
-    position: relative;
-    overflow: hidden;
-}
-
-.stats-section::before {
-    content: '';
-    position: absolute;
-    top: -150px;
-    right: -150px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
-    z-index: 0;
-}
-
-.stats-section::after {
-    content: '';
-    position: absolute;
-    bottom: -100px;
-    left: -100px;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
-    z-index: 0;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    position: relative;
-    z-index: 1;
-}
-
-.stat-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-lg);
-    padding: 2rem;
-    text-align: center;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all var(--transition-normal);
-}
-
-.stat-card:hover {
-    transform: translateY(-10px);
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-.stat-icon {
-    font-size: 2.5rem;
-    color: var(--light);
-    margin-bottom: 1rem;
-}
-
-.stat-number {
-    font-size: 3rem;
-    font-weight: var(--font-weight-bold);
-    color: var(--light);
-    margin-bottom: 0.5rem;
-    line-height: 1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.stat-label {
-    font-size: var(--font-size-md);
-    color: var(--light);
-    opacity: 0.9;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
 /* CTA Section */
 .cta-section {
     padding: 5rem 0;
@@ -1056,9 +977,12 @@
     color: var(--light);
 }
 
-[data-theme="dark"] .team-cta {
-    background-color: var(--gray-800);
-    border-color: var(--gray-700);
+[data-theme="dark"] .team-cta-container {
+    background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+}
+
+[data-theme="dark"] .team-cta-benefits li i {
+    color: var(--secondary-light);
 }
 
 /* Responsividade */
@@ -1361,7 +1285,8 @@
 /* Garantir espaçamento correto entre seções */
 .history-section + .values-section,
 .values-section + .team-section,
-.team-section + .stats-section,
+.team-section + .recruitment-section,
+.recruitment-section + .stats-section,
 .stats-section + .cta-section {
     margin-top: -2rem;
 } 
@@ -1744,5 +1669,207 @@
     
     .value-pill-text {
         font-size: var(--font-size-xs);
+    }
+} 
+
+/* Os estilos do team-cta foram removidos e substituídos pelos estilos da seção de recrutamento */
+
+/* Seção de Recrutamento */
+.recruitment-section {
+    padding: 5rem 0;
+    background-color: var(--light);
+    position: relative;
+    overflow: hidden;
+}
+
+.recruitment-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(59, 130, 246, 0.03);
+    z-index: 0;
+}
+
+.recruitment-container {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.recruitment-content {
+    padding: 3rem;
+    color: var(--light);
+    position: relative;
+    z-index: 1;
+}
+
+.recruitment-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.section-header.text-left {
+    text-align: left;
+}
+
+.section-header.text-left .section-badge {
+    margin-left: 0;
+}
+
+.recruitment-content h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--light);
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recruitment-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-lg);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+.recruitment-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+}
+
+.recruitment-benefits li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-base);
+}
+
+.recruitment-benefits li i {
+    color: var(--secondary);
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.recruitment-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.recruitment-link {
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: var(--font-weight-medium);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.recruitment-link:hover {
+    border-bottom-color: var(--light);
+    transform: translateY(-2px);
+}
+
+/* Tema escuro */
+[data-theme="dark"] .recruitment-section {
+    background-color: var(--gray-900);
+}
+
+[data-theme="dark"] .recruitment-container {
+    background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+}
+
+[data-theme="dark"] .recruitment-benefits li i {
+    color: var(--secondary-light);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .recruitment-content h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .recruitment-content p {
+        font-size: var(--font-size-base);
+    }
+    
+    .recruitment-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .recruitment-section {
+        padding: 3rem 0;
+    }
+    
+    .recruitment-content {
+        padding: 2rem;
+    }
+    
+    .recruitment-content h2 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .recruitment-content p {
+        font-size: var(--font-size-sm);
+        margin-bottom: 1.25rem;
+    }
+    
+    .recruitment-benefits li {
+        font-size: var(--font-size-sm);
+        margin-bottom: 0.5rem;
+    }
+    
+    .recruitment-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .recruitment-link {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 576px) {
+    .recruitment-section {
+        padding: 2.5rem 0;
+    }
+    
+    .recruitment-content {
+        padding: 1.5rem;
+    }
+    
+    .recruitment-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
 } 

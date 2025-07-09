@@ -435,56 +435,43 @@
                     </div>
                 </div>
                 
-                <div class="team-cta animate-on-scroll">
-                    <h3>Quer fazer parte da nossa equipe?</h3>
-                    <p>Estamos sempre em busca de talentos para crescer conosco</p>
-                    <a href="../contato/" class="btn btn-primary btn-ripple">Entre em Contato</a>
+                <!-- Transformando o convite em uma seção própria -->
+            </div>
+        </section>
+        
+        <!-- Seção de Recrutamento -->
+        <section class="recruitment-section">
+            <div class="container">
+                <div class="recruitment-container animate-on-scroll">
+                    <div class="recruitment-content">
+                        <div class="recruitment-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="section-header text-left">
+                            <span class="section-badge">Carreira</span>
+                            <h2>Quer fazer parte da nossa equipe?</h2>
+                        </div>
+                        <p>Estamos em constante crescimento e buscamos talentos apaixonados por tecnologia e inovação para se juntar ao nosso time. Oferecemos:</p>
+                        
+                        <ul class="recruitment-benefits">
+                            <li><i class="fas fa-check-circle"></i> Ambiente de trabalho colaborativo</li>
+                            <li><i class="fas fa-check-circle"></i> Projetos desafiadores e inovadores</li>
+                            <li><i class="fas fa-check-circle"></i> Oportunidades de crescimento profissional</li>
+                            <li><i class="fas fa-check-circle"></i> Flexibilidade e equilíbrio entre vida pessoal e trabalho</li>
+                        </ul>
+                        
+                        <div class="recruitment-actions">
+                            <a href="../contato/" class="btn btn-primary btn-ripple">Envie seu currículo</a>
+                            <a href="https://www.linkedin.com/company/alttabcorp" target="_blank" class="recruitment-link">
+                                <i class="fab fa-linkedin"></i> Siga-nos no LinkedIn
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Estatísticas Section -->
-        <section class="stats-section">
-            <div class="container">
-                <div class="stats-grid">
-                    <!-- Estatística 1 -->
-                    <div class="stat-card animate-on-scroll">
-                        <div class="stat-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="stat-number counter" data-target="150">0</div>
-                        <div class="stat-label">Clientes Satisfeitos</div>
-                    </div>
-                    
-                    <!-- Estatística 2 -->
-                    <div class="stat-card animate-on-scroll">
-                        <div class="stat-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <div class="stat-number counter" data-target="300">0</div>
-                        <div class="stat-label">Projetos Entregues</div>
-                    </div>
-                    
-                    <!-- Estatística 3 -->
-                    <div class="stat-card animate-on-scroll">
-                        <div class="stat-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="stat-number counter" data-target="15">0</div>
-                        <div class="stat-label">Prêmios Recebidos</div>
-                    </div>
-                    
-                    <!-- Estatística 4 -->
-                    <div class="stat-card animate-on-scroll">
-                        <div class="stat-icon">
-                            <i class="fas fa-coffee"></i>
-                        </div>
-                        <div class="stat-number counter" data-target="5000">0</div>
-                        <div class="stat-label">Xícaras de Café</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- CTA Section -->
         <section class="cta-section">
@@ -578,53 +565,64 @@
 
     <!-- Floating Contact Button -->
     <div class="floating-contact">
-        <button class="floating-contact-btn pulse" id="floatingContactBtn">
+        <button class="floating-contact-btn" id="floatingContactBtn" aria-label="Abrir opções de contato" aria-haspopup="dialog">
             <i class="fas fa-comments"></i>
+            <span class="floating-contact-tooltip">Fale Conosco</span>
         </button>
-        <div class="floating-contact-menu" id="floatingContactMenu">
+        <div class="floating-contact-menu" id="floatingContactMenu" role="dialog" aria-hidden="true">
             <div class="floating-contact-title">
-                Fale Conosco
-                <span class="floating-contact-close" id="floatingContactClose">
+                <span>Fale Conosco</span>
+                <span class="floating-contact-close" id="floatingContactClose" aria-label="Fechar menu">
                     <i class="fas fa-times"></i>
                 </span>
             </div>
+            <div class="floating-contact-header">
+                <p>Como podemos ajudar você hoje?</p>
+            </div>
             <div class="floating-contact-options">
-                <a href="tel:+551199999999" class="floating-contact-option">
+                <a href="tel:+551199999999" class="floating-contact-option" aria-label="Ligar para (11) 9999-9999">
                     <div class="floating-contact-icon">
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <div class="floating-contact-info">
-                        <div class="floating-contact-label">Telefone</div>
+                        <div class="floating-contact-label">Atendimento Telefônico</div>
                         <div class="floating-contact-value">(11) 9999-9999</div>
+                        <div class="floating-contact-desc">Seg-Sex: 9h às 18h</div>
                     </div>
                 </a>
-                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option">
+                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option" aria-label="Enviar email para contato@alttabcorp.com.br">
                     <div class="floating-contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="floating-contact-info">
                         <div class="floating-contact-label">E-mail</div>
                         <div class="floating-contact-value">contato@alttabcorp.com.br</div>
+                        <div class="floating-contact-desc">Resposta em até 24h</div>
                     </div>
                 </a>
-                <a href="https://wa.me/5511999999999" target="_blank" class="floating-contact-option">
+                <a href="https://wa.me/5511999999999" target="_blank" class="floating-contact-option" aria-label="Enviar mensagem no WhatsApp">
                     <div class="floating-contact-icon" style="background-color: #25D366;">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="floating-contact-info">
                         <div class="floating-contact-label">WhatsApp</div>
-                        <div class="floating-contact-value">Envie uma mensagem</div>
+                        <div class="floating-contact-value">(11) 99999-9999</div>
+                        <div class="floating-contact-desc">Atendimento imediato</div>
                     </div>
                 </a>
-                <a href="../contato/" class="floating-contact-option">
+                <a href="../contato/" class="floating-contact-option" aria-label="Acessar página de contato">
                     <div class="floating-contact-icon" style="background-color: var(--accent);">
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="fas fa-file-alt"></i>
                     </div>
                     <div class="floating-contact-info">
-                        <div class="floating-contact-label">Formulário</div>
-                        <div class="floating-contact-value">Preencha nosso formulário</div>
+                        <div class="floating-contact-label">Formulário de Contato</div>
+                        <div class="floating-contact-value">Envie sua mensagem</div>
+                        <div class="floating-contact-desc">Para solicitações detalhadas</div>
                     </div>
                 </a>
+            </div>
+            <div class="floating-contact-footer">
+                <p>Estamos prontos para atender você!</p>
             </div>
         </div>
     </div>
