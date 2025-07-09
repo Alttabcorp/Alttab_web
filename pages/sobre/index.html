@@ -36,11 +36,15 @@
     <link rel="stylesheet" href="../../assets/css/components/section.css">
     <link rel="stylesheet" href="../../assets/css/components/animations.css">
     <link rel="stylesheet" href="../../assets/css/components/forms.css">
+    <link rel="stylesheet" href="../../assets/css/components/floating-contact.css">
     <link rel="stylesheet" href="../../assets/css/fixes.css">
     
     <!-- CSS Principal -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/pages/sobre.css">
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body class="page-sobre">
     <!-- Header -->
@@ -152,7 +156,7 @@
                                         <span class="timeline-year-badge">2017</span>
                                     </div>
                                 </div>
-                            </div>
+                        </div>
                     </div>
                     
                         <!-- 2019 Content -->
@@ -168,7 +172,7 @@
                                         <span class="timeline-year-badge">2019</span>
                                     </div>
                                 </div>
-                            </div>
+                        </div>
                     </div>
                     
                         <!-- 2021 Content -->
@@ -363,7 +367,7 @@
                 
                 <div class="team-grid">
                     <!-- Membro 1 -->
-                    <div class="team-card animate-on-scroll">
+                    <div class="team-card animate-on-scroll tilt-effect" data-animation="fade-in-up" data-delay="0.1s">
                         <div class="team-image">
                             <img src="../../assets/images/equipe/membro1.svg" alt="João Silva">
                             <div class="team-overlay"></div>
@@ -381,7 +385,7 @@
                     </div>
                     
                     <!-- Membro 2 -->
-                    <div class="team-card animate-on-scroll" data-delay="100">
+                    <div class="team-card animate-on-scroll tilt-effect" data-animation="fade-in-up" data-delay="0.2s">
                         <div class="team-image">
                             <img src="../../assets/images/equipe/membro2.svg" alt="Maria Oliveira">
                             <div class="team-overlay"></div>
@@ -399,7 +403,7 @@
                     </div>
                     
                     <!-- Membro 3 -->
-                    <div class="team-card animate-on-scroll" data-delay="200">
+                    <div class="team-card animate-on-scroll tilt-effect" data-animation="fade-in-up" data-delay="0.3s">
                         <div class="team-image">
                             <img src="../../assets/images/equipe/membro3.svg" alt="Carlos Santos">
                             <div class="team-overlay"></div>
@@ -417,7 +421,7 @@
                     </div>
                     
                     <!-- Membro 4 -->
-                    <div class="team-card animate-on-scroll" data-delay="300">
+                    <div class="team-card animate-on-scroll tilt-effect" data-animation="fade-in-up" data-delay="0.4s">
                         <div class="team-image">
                             <img src="../../assets/images/equipe/membro4.svg" alt="Ana Pereira">
                             <div class="team-overlay"></div>
@@ -452,14 +456,14 @@
                             <h2>Quer fazer parte da nossa equipe?</h2>
                         </div>
                         <p>Estamos em constante crescimento e buscamos talentos apaixonados por tecnologia e inovação para se juntar ao nosso time. Oferecemos:</p>
-                        
+                    
                         <ul class="recruitment-benefits">
                             <li><i class="fas fa-check-circle"></i> Ambiente de trabalho colaborativo</li>
                             <li><i class="fas fa-check-circle"></i> Projetos desafiadores e inovadores</li>
                             <li><i class="fas fa-check-circle"></i> Oportunidades de crescimento profissional</li>
                             <li><i class="fas fa-check-circle"></i> Flexibilidade e equilíbrio entre vida pessoal e trabalho</li>
                         </ul>
-                        
+                    
                         <div class="recruitment-actions">
                             <a href="../contato/" class="btn btn-primary btn-ripple">Envie seu currículo</a>
                             <a href="https://www.linkedin.com/company/alttabcorp" target="_blank" class="recruitment-link">
@@ -563,9 +567,9 @@
         </a>
     </footer>
 
-    <!-- Floating Contact Button -->
+      <!-- Floating Contact Button -->
     <div class="floating-contact">
-        <button class="floating-contact-btn" id="floatingContactBtn" aria-label="Abrir opções de contato" aria-haspopup="dialog">
+        <button class="floating-contact-btn pulse" id="floatingContactBtn" aria-label="Abrir opções de contato" aria-haspopup="dialog">
             <i class="fas fa-comments"></i>
             <span class="floating-contact-tooltip">Fale Conosco</span>
         </button>
@@ -628,14 +632,93 @@
     </div>
 
     <!-- JavaScript -->
+    <script src="../../assets/js/libs/typed.min.js"></script>
     <script src="../../assets/js/modules/animations.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/theme-toggle.js"></script>
+    <script src="../../assets/js/floating-contact.js"></script>
+
     <script>
         // Inicialização da página Sobre
         document.addEventListener('DOMContentLoaded', function() {
             // Verificar se o usuário prefere movimento reduzido
             const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            // Inicializa animações
+            if (window.animations && typeof window.animations.init === 'function') {
+                window.animations.init();
+            } else {
+                // Fallback para inicialização de animações caso o módulo não esteja disponível
+                initAnimations();
+            }
+            
+            // Reinicializar o botão flutuante
+            if (window.initFloatingContact) {
+                console.log('Reinicializando botão flutuante na página sobre');
+                window.initFloatingContact();
+            }
+            
+            // Função de fallback para inicializar animações
+            function initAnimations() {
+                const animateElements = document.querySelectorAll('.animate-on-scroll');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animated');
+                            
+                            // Adiciona delay para elementos em sequência
+                            if (entry.target.dataset.delay) {
+                                entry.target.style.animationDelay = entry.target.dataset.delay;
+                            }
+                            
+                            // Adiciona animação específica se definida
+                            if (entry.target.dataset.animation) {
+                                entry.target.classList.add(entry.target.dataset.animation);
+                            } else {
+                                entry.target.classList.add('fade-in');
+                            }
+                            
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -100px 0px'
+                });
+                
+                animateElements.forEach(element => {
+                    observer.observe(element);
+                });
+            }
+            
+            // Inicializar efeitos de hover para cards
+            document.querySelectorAll('.team-card, .service-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.classList.add('hover-active');
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.classList.remove('hover-active');
+                });
+            });
+            
+            // Inicializar efeito tilt para cards
+            document.querySelectorAll('.tilt-effect').forEach(element => {
+                element.addEventListener('mousemove', function(e) {
+                    const card = this;
+                    const cardRect = card.getBoundingClientRect();
+                    const cardCenterX = cardRect.left + cardRect.width / 2;
+                    const cardCenterY = cardRect.top + cardRect.height / 2;
+                    const angleY = -(e.clientX - cardCenterX) * 0.01;
+                    const angleX = (e.clientY - cardCenterY) * 0.01;
+                    card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.02, 1.02, 1.02)`;
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                });
+            });
             
             // Timeline Horizontal
             function initTimelineHorizontal() {
@@ -705,42 +788,15 @@
                         let newIndex = activeIndex + 1;
                         if (newIndex >= totalSlides) newIndex = 0;
                         activateSlide(newIndex);
-                    }
+                        }
                 });
-                
+                    
                 // Inicializar
                 updateProgressBar();
             }
             
             // Inicializar a timeline
             initTimelineHorizontal();
-            
-            // Inicia as animações quando os elementos estiverem visíveis
-            const handleIntersection = function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Anima elementos quando visíveis
-                        const animatedElements = entry.target.querySelectorAll('.animate-on-scroll');
-                        animatedElements.forEach(element => {
-                            element.classList.add('animated');
-                        });
-                        
-                        // Desregistra o observer após iniciar as animações
-                        observer.unobserve(entry.target);
-                    }
-                });
-            };
-            
-            // Configura o Intersection Observer para animações
-            const observer = new IntersectionObserver(handleIntersection, {
-                threshold: 0.2
-            });
-            
-            // Observa seções para animar
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                observer.observe(section);
-            });
             
             // Animações para a timeline
             const timelineItems = document.querySelectorAll('.timeline-item');
@@ -759,49 +815,6 @@
             timelineItems.forEach(item => {
                 observerTimeline.observe(item);
             });
-            
-            // Inicializar o botão flutuante de contato
-            const floatingContactBtn = document.getElementById('floatingContactBtn');
-            const floatingContactMenu = document.getElementById('floatingContactMenu');
-            const floatingContactClose = document.getElementById('floatingContactClose');
-            
-            if (floatingContactBtn && floatingContactMenu) {
-                floatingContactBtn.addEventListener('click', function() {
-                    floatingContactMenu.classList.toggle('active');
-                    floatingContactBtn.classList.toggle('active');
-                    floatingContactBtn.classList.remove('pulse');
-                    
-                    // Gerenciar acessibilidade
-                    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-                    this.setAttribute('aria-expanded', !expanded);
-                    floatingContactMenu.setAttribute('aria-hidden', expanded);
-                });
-                
-                if (floatingContactClose) {
-                    floatingContactClose.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        floatingContactMenu.classList.remove('active');
-                        floatingContactBtn.classList.remove('active');
-                        floatingContactBtn.setAttribute('aria-expanded', 'false');
-                        floatingContactMenu.setAttribute('aria-hidden', 'true');
-                    });
-                }
-                
-                // Fechar menu ao clicar fora
-                document.addEventListener('click', function(e) {
-                    if (floatingContactMenu.classList.contains('active') && 
-                        !floatingContactMenu.contains(e.target) && 
-                        e.target !== floatingContactBtn && 
-                        !floatingContactBtn.contains(e.target)) {
-                        
-                        floatingContactMenu.classList.remove('active');
-                        floatingContactBtn.classList.remove('active');
-                        floatingContactBtn.setAttribute('aria-expanded', 'false');
-                        floatingContactMenu.setAttribute('aria-hidden', 'true');
-                    }
-                });
-            }
             
             // Botão voltar ao topo suave
             const backToTop = document.getElementById('backToTop');

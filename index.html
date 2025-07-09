@@ -668,6 +668,12 @@
                     });
                 }
             }, 1500);
+            
+            // Garantir inicialização do botão flutuante
+            if (window.initFloatingContact) {
+                console.log('Reinicializando botão flutuante na página principal');
+                window.initFloatingContact();
+            }
         });
     </script>
 </body>

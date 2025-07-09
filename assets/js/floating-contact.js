@@ -4,9 +4,18 @@
  */
 
 (function() {
+    // Variáveis para controle do estado global
+    let isMenuOpen = false;
+    let isInitialized = false;
+    
     // Função para inicializar o botão flutuante
     function initFloatingContact() {
         console.log('Inicializando botão flutuante de contato...');
+        
+        // Se já foi inicializado, limpa os eventos anteriores
+        if (isInitialized) {
+            cleanupFloatingContact();
+        }
         
         const floatingContactBtn = document.querySelector('.floating-contact-btn');
         const floatingContactMenu = document.querySelector('.floating-contact-menu');
@@ -17,6 +26,9 @@
             console.error('Elementos do botão flutuante não encontrados!');
             return;
         }
+        
+        // Marcar como inicializado
+        isInitialized = true;
         
         // Garantir que o botão esteja visível
         floatingContactBtn.style.visibility = 'visible';
@@ -133,17 +145,52 @@
         // Ouvir por mudanças de tamanho da tela
         window.addEventListener('resize', adjustMenuPosition);
         
+        // Função para abrir o menu
+        function openMenu() {
+            isMenuOpen = true;
+            floatingContactMenu.classList.add('active');
+            floatingContactBtn.classList.add('active');
+            floatingContactBtn.setAttribute('aria-expanded', 'true');
+            floatingContactBtn.classList.remove('pulse');
+            
+            // Animar os itens do menu sequencialmente
+            floatingContactOptions.forEach((option, index) => {
+                option.style.transitionDelay = `${index * 0.1}s`;
+                option.classList.add('animate-in');
+            });
+        }
+        
+        // Função para fechar o menu
+        function closeMenu() {
+            isMenuOpen = false;
+            floatingContactMenu.classList.remove('active');
+            floatingContactBtn.classList.remove('active');
+            floatingContactBtn.setAttribute('aria-expanded', 'false');
+            
+            // Resetar animações dos itens
+            floatingContactOptions.forEach(option => {
+                option.style.transitionDelay = '0s';
+                option.classList.remove('animate-in');
+            });
+            
+            // Adicionar classe de pulsação após fechar
+            setTimeout(() => {
+                floatingContactBtn.classList.add('pulse');
+            }, 2000);
+        }
+        
         // Adicionar evento de clique ao botão
-        floatingContactBtn.addEventListener('click', function(e) {
+        function handleButtonClick(e) {
             e.preventDefault();
+            e.stopPropagation();
             console.log('Botão flutuante clicado');
             
             // Adicionar efeito de ripple ao clicar
             const ripple = document.createElement('span');
             ripple.classList.add('floating-contact-ripple');
-            this.appendChild(ripple);
+            floatingContactBtn.appendChild(ripple);
             
-            const rect = this.getBoundingClientRect();
+            const rect = floatingContactBtn.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
             ripple.style.width = ripple.style.height = `${size}px`;
             
@@ -160,35 +207,14 @@
             adjustMenuPosition();
             
             // Alternar estado do menu
-            floatingContactMenu.classList.toggle('active');
-            floatingContactBtn.classList.toggle('active');
-            
-            // Gerenciar acessibilidade
-            const expanded = floatingContactBtn.getAttribute('aria-expanded') === 'true' || false;
-            floatingContactBtn.setAttribute('aria-expanded', !expanded);
-            
-            // Remover classe de pulsação quando o menu estiver aberto
-            if (floatingContactMenu.classList.contains('active')) {
-                floatingContactBtn.classList.remove('pulse');
-                
-                // Animar os itens do menu sequencialmente
-                floatingContactOptions.forEach((option, index) => {
-                    option.style.transitionDelay = `${index * 0.1}s`;
-                    option.classList.add('animate-in');
-                });
+            if (isMenuOpen) {
+                closeMenu();
             } else {
-                // Adicionar classe de pulsação quando o menu estiver fechado
-                setTimeout(() => {
-                    floatingContactBtn.classList.add('pulse');
-                }, 2000);
-                
-                // Resetar animações dos itens
-                floatingContactOptions.forEach(option => {
-                    option.style.transitionDelay = '0s';
-                    option.classList.remove('animate-in');
-                });
+                openMenu();
             }
-        });
+        }
+        
+        floatingContactBtn.addEventListener('click', handleButtonClick);
         
         // Adicionar eventos para os itens do menu
         floatingContactOptions.forEach(option => {
@@ -216,91 +242,56 @@
         });
         
         // Fechar o menu ao clicar no botão de fechar
+        function handleCloseClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeMenu();
+        }
+        
         if (floatingContactClose) {
-            floatingContactClose.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                floatingContactMenu.classList.remove('active');
-                floatingContactBtn.classList.remove('active');
-                floatingContactBtn.setAttribute('aria-expanded', 'false');
-                
-                // Resetar animações dos itens
-                floatingContactOptions.forEach(option => {
-                    option.style.transitionDelay = '0s';
-                    option.classList.remove('animate-in');
-                });
-                
-                // Adicionar classe de pulsação após fechar
-                setTimeout(() => {
-                    floatingContactBtn.classList.add('pulse');
-                }, 2000);
-            });
+            floatingContactClose.addEventListener('click', handleCloseClick);
         }
         
         // Fechar o menu ao clicar fora dele
-        document.addEventListener('click', function(e) {
-            if (floatingContactMenu.classList.contains('active') && 
+        function handleDocumentClick(e) {
+            if (isMenuOpen && 
                 !floatingContactMenu.contains(e.target) && 
                 e.target !== floatingContactBtn && 
                 !floatingContactBtn.contains(e.target)) {
-                
-                floatingContactMenu.classList.remove('active');
-                floatingContactBtn.classList.remove('active');
-                floatingContactBtn.setAttribute('aria-expanded', 'false');
-                
-                // Resetar animações dos itens
-                floatingContactOptions.forEach(option => {
-                    option.style.transitionDelay = '0s';
-                    option.classList.remove('animate-in');
-                });
-                
-                // Adicionar classe de pulsação após fechar
-                setTimeout(() => {
-                    floatingContactBtn.classList.add('pulse');
-                }, 2000);
+                closeMenu();
             }
-        });
+        }
         
-        // Adicionar atributos de acessibilidade
-        floatingContactBtn.setAttribute('aria-expanded', 'false');
-        floatingContactBtn.setAttribute('aria-controls', 'floatingContactMenu');
-        floatingContactMenu.setAttribute('role', 'dialog');
-        floatingContactMenu.setAttribute('aria-label', 'Opções de contato');
+        document.addEventListener('click', handleDocumentClick);
         
-        // Verificar orientação em dispositivos móveis
-        window.addEventListener('orientationchange', function() {
-            // Pequeno atraso para permitir que o navegador recalcule dimensões
-            setTimeout(adjustMenuPosition, 300);
-        });
+        // Função para limpar eventos quando reinicializar
+        function cleanupFloatingContact() {
+            console.log('Limpando eventos do botão flutuante...');
+            if (floatingContactBtn) {
+                floatingContactBtn.removeEventListener('click', handleButtonClick);
+            }
+            
+            if (floatingContactClose) {
+                floatingContactClose.removeEventListener('click', handleCloseClick);
+            }
+            
+            document.removeEventListener('click', handleDocumentClick);
+        }
         
-        // Ajustar tamanho ao redimensionar
-        window.addEventListener('resize', function() {
-            adjustMenuPosition();
-        });
-    }
-
-    // Executar quando o DOM estiver completamente carregado
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(initFloatingContact, 500);
-        });
-    } else {
-        // Se o DOM já estiver carregado
-        setTimeout(initFloatingContact, 500);
+        // Armazenar função de limpeza para uso posterior
+        window.cleanupFloatingContact = cleanupFloatingContact;
+        
+        // Resetar o menu ao carregar a página
+        closeMenu();
     }
     
-    // Garantir que a inicialização também ocorra após o carregamento completo da página
-    window.addEventListener('load', function() {
-        setTimeout(initFloatingContact, 1000);
-        
-        // Verificação adicional após 3 segundos para garantir que a animação esteja aplicada
-        setTimeout(function() {
-            const floatingContactBtn = document.querySelector('.floating-contact-btn');
-            if (floatingContactBtn && !floatingContactBtn.classList.contains('pulse')) {
-                console.log('Aplicando classe pulse novamente após 3 segundos');
-                floatingContactBtn.classList.add('pulse');
-            }
-        }, 3000);
-    });
+    // Verificar se o DOM está carregado
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFloatingContact);
+    } else {
+        initFloatingContact();
+    }
+    
+    // Expor a função globalmente
+    window.initFloatingContact = initFloatingContact;
 })(); 

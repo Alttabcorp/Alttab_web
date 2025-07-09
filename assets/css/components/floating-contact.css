@@ -142,12 +142,14 @@
     max-height: 80vh;
     overflow-y: auto;
     box-sizing: border-box;
+    pointer-events: none; /* Garantir que não captura eventos quando invisível */
 }
 
 .floating-contact-menu.active {
     transform: scale(1);
     opacity: 1;
     visibility: visible;
+    pointer-events: all; /* Permitir interação quando visível */
 }
 
 .floating-contact-title {
