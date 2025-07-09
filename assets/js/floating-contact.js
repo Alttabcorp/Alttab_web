@@ -22,11 +22,116 @@
         floatingContactBtn.style.visibility = 'visible';
         floatingContactBtn.style.opacity = '1';
         
+        // Verificar se é dispositivo móvel
+        const isMobile = window.innerWidth <= 576;
+        
         // Adicionar classe de pulsação com um pequeno atraso para chamar atenção
         setTimeout(() => {
             floatingContactBtn.classList.add('pulse');
             console.log('Classe pulse adicionada ao botão flutuante');
         }, 2000);
+        
+        // Função para ajustar o menu com base no tamanho da tela
+        function adjustMenuPosition() {
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const backToTopBtn = document.querySelector('.back-to-top');
+            const contactButton = document.querySelector('.floating-contact');
+            
+            // Ajustar posição do botão com base na resolução
+            if (contactButton) {
+                if (windowWidth <= 380) {
+                    // Telas muito pequenas
+                    contactButton.style.bottom = '90px';
+                } else if (windowWidth <= 480) {
+                    // Telas pequenas
+                    contactButton.style.bottom = '95px';
+                } else if (windowWidth <= 576) {
+                    // Telas médias/pequenas
+                    contactButton.style.bottom = '100px';
+                } else {
+                    // Telas maiores
+                    contactButton.style.bottom = '120px';
+                }
+                
+                // Ajuste adicional para telas com altura baixa
+                if (windowHeight <= 600) {
+                    contactButton.style.bottom = '85px';
+                }
+            }
+            
+            if (floatingContactMenu) {
+                if (windowWidth <= 380) {
+                    // Configurações para telas muito pequenas
+                    floatingContactMenu.style.width = 'calc(100vw - 1.5rem)';
+                    floatingContactMenu.style.left = '0.75rem';
+                    floatingContactMenu.style.right = '0.75rem';
+                    floatingContactMenu.style.maxHeight = '45vh';
+                } else if (windowWidth <= 576) {
+                    // Configurações para telas pequenas
+                    floatingContactMenu.style.width = 'calc(100vw - 2rem)';
+                    floatingContactMenu.style.left = '1rem';
+                    floatingContactMenu.style.right = '1rem';
+                    floatingContactMenu.style.maxHeight = windowWidth <= 480 ? '50vh' : '55vh';
+                } else {
+                    // Configurações para desktop
+                    floatingContactMenu.style.width = '';
+                    floatingContactMenu.style.left = '';
+                    floatingContactMenu.style.right = '';
+                    floatingContactMenu.style.maxHeight = '80vh';
+                }
+                
+                // Ajuste adicional para telas com altura baixa
+                if (windowHeight <= 600) {
+                    floatingContactMenu.style.maxHeight = '40vh';
+                }
+            }
+            
+            // Garantir que cada opção de contato tenha espaço adequado
+            const contactOptions = document.querySelectorAll('.floating-contact-option');
+            contactOptions.forEach(option => {
+                // Verificar se o texto está sobrepondo
+                const info = option.querySelector('.floating-contact-info');
+                const icon = option.querySelector('.floating-contact-icon');
+                
+                if (info && icon) {
+                    // Ajustar largura máxima baseado no espaço disponível
+                    const iconWidth = icon.offsetWidth + parseInt(getComputedStyle(icon).marginRight);
+                    const containerWidth = option.offsetWidth;
+                    const availableWidth = containerWidth - iconWidth - 8; // 8px de segurança
+                    
+                    if (availableWidth > 0) {
+                        info.style.maxWidth = `${availableWidth}px`;
+                        
+                        // Em telas pequenas, garantir que os textos não sobreponham
+                        const label = option.querySelector('.floating-contact-label');
+                        const value = option.querySelector('.floating-contact-value');
+                        const desc = option.querySelector('.floating-contact-desc');
+                        
+                        if (label && windowWidth <= 576) {
+                            label.style.maxWidth = `${availableWidth}px`;
+                        }
+                        
+                        if (value && windowWidth <= 576) {
+                            value.style.maxWidth = `${availableWidth}px`;
+                        }
+                        
+                        if (desc && windowWidth <= 576) {
+                            desc.style.maxWidth = `${availableWidth}px`;
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Ajustar posicionamento inicial
+        adjustMenuPosition();
+        
+        // Chamar também com um pequeno atraso para garantir que os elementos estejam completamente renderizados
+        setTimeout(adjustMenuPosition, 300);
+        
+        // Ouvir por mudanças de tamanho da tela
+        window.addEventListener('resize', adjustMenuPosition);
         
         // Adicionar evento de clique ao botão
         floatingContactBtn.addEventListener('click', function(e) {
@@ -50,6 +155,9 @@
             setTimeout(() => {
                 ripple.remove();
             }, 600);
+            
+            // Verificar posição novamente ao abrir o menu
+            adjustMenuPosition();
             
             // Alternar estado do menu
             floatingContactMenu.classList.toggle('active');
@@ -159,6 +267,17 @@
         floatingContactBtn.setAttribute('aria-controls', 'floatingContactMenu');
         floatingContactMenu.setAttribute('role', 'dialog');
         floatingContactMenu.setAttribute('aria-label', 'Opções de contato');
+        
+        // Verificar orientação em dispositivos móveis
+        window.addEventListener('orientationchange', function() {
+            // Pequeno atraso para permitir que o navegador recalcule dimensões
+            setTimeout(adjustMenuPosition, 300);
+        });
+        
+        // Ajustar tamanho ao redimensionar
+        window.addEventListener('resize', function() {
+            adjustMenuPosition();
+        });
     }
 
     // Executar quando o DOM estiver completamente carregado

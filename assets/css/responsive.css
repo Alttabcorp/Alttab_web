@@ -254,18 +254,15 @@
 
 /* Melhorias para o Botão Flutuante em dispositivos móveis */
 @media (max-width: 767px) {
-    .floating-contact-btn {
-        width: 50px;
-        height: 50px;
+    .floating-contact {
+        bottom: 100px;
         right: 1rem;
-        bottom: 5rem;
     }
     
     .floating-contact-menu {
-        width: calc(100% - 2rem);
-        right: 1rem;
-        bottom: 5rem;
-        max-width: none;
+        width: 320px;
+        max-width: calc(100vw - 2rem);
+        bottom: 80px;
     }
 }
 

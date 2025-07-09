@@ -5,7 +5,7 @@
 
 .floating-contact {
     position: fixed;
-    bottom: 100px; /* Ajustado para ficar acima do botão de voltar ao topo */
+    bottom: 120px; /* Aumentado para ficar acima do botão de voltar ao topo com espaço adequado */
     right: 2rem;
     z-index: var(--z-fixed);
     display: flex;
@@ -239,6 +239,7 @@
 }
 
 /* Animação dos itens do menu */
+/* Conteúdo dos cards */
 .floating-contact-option {
     padding: 0.8rem 1rem;
     display: flex;
@@ -248,8 +249,9 @@
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(10px);
-    width: 100%;
-    box-sizing: border-box;
+    position: relative; /* Adicionado para evitar sobreposição */
+    overflow: hidden; /* Adicionado para conter o conteúdo */
+    min-height: 60px; /* Altura mínima para garantir espaço */
 }
 
 .floating-contact-option.animate-in {
@@ -284,12 +286,14 @@
 }
 
 .floating-contact-info {
-    flex-grow: 1;
-    overflow: hidden;
-    width: calc(100% - 50px);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     max-width: 245px;
     box-sizing: border-box;
     padding-right: 2px;
+    position: relative; /* Adicionado para evitar sobreposição */
+    z-index: 1; /* Garante que o conteúdo esteja na frente */
 }
 
 .floating-contact-label {
@@ -307,19 +311,20 @@
     font-size: 0.8rem;
     color: var(--text-secondary);
     margin-bottom: 0.1rem;
-    overflow: visible;
+    overflow: hidden; /* Impede que o texto transborde */
     white-space: normal;
-    text-overflow: initial;
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
     line-height: 1.15;
+    max-width: 100%; /* Limita largura ao container pai */
 }
 
 .floating-contact-desc {
     font-size: 0.7rem;
     color: var(--gray-500);
     font-style: italic;
-    overflow: visible;
+    overflow: hidden; /* Impede que o texto transborde */
     white-space: normal;
-    text-overflow: initial;
+    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
     line-height: 1.15;
 }
 
@@ -425,73 +430,172 @@
 
 @media (max-width: 576px) {
     .floating-contact {
-        bottom: 90px;
-        right: 1.5rem;
+        bottom: 100px; /* Ajustado para dispositivos móveis */
+        right: 1rem;
     }
     
     .floating-contact-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 1.3rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
     
     .floating-contact-tooltip {
-        right: 65px;
+        right: 60px;
         font-size: 12px;
-        padding: 4px 10px;
+        padding: 4px 8px;
     }
     
     .floating-contact-menu {
-        width: 290px;
+        width: calc(100vw - 2rem);
+        max-width: 100%;
+        left: 1rem;
+        right: 1rem;
         bottom: 70px;
-        max-height: 70vh;
+        max-height: 55vh;
     }
     
     .floating-contact-title {
-        padding: 0.6rem 0.8rem;
+        padding: 0.5rem 0.8rem;
         font-size: 0.9rem;
+        position: sticky;
+        top: 0;
+        z-index: 5;
     }
     
     .floating-contact-header {
         padding: 0.3rem 0.8rem;
+        position: relative;
+        z-index: 2;
     }
     
     .floating-contact-header p {
         font-size: 0.75rem;
     }
     
+    .floating-contact-options {
+        padding-bottom: 10px;
+    }
+    
     .floating-contact-option {
-        padding: 0.7rem 0.8rem;
+        padding: 0.6rem 0.8rem;
+        min-height: 54px; /* Aumentada para ter mais espaço */
+        display: flex;
+        flex-wrap: nowrap;
     }
     
     .floating-contact-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 0.9rem;
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
         margin-right: 0.5rem;
+        min-width: 32px;
+        flex-shrink: 0;
     }
     
     .floating-contact-info {
-        max-width: 215px;
+        max-width: calc(100% - 40px);
+        overflow: hidden;
     }
     
     .floating-contact-label {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .floating-contact-value {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: keep-all;
     }
     
     .floating-contact-desc {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     
     .floating-contact-footer {
         padding: 0.3rem 0.8rem;
+        position: sticky;
+        bottom: 0;
+        z-index: 5;
     }
     
     .floating-contact-footer p {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-contact {
+        bottom: 95px;
+    }
+    
+    .floating-contact-menu {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 380px) {
+    .floating-contact {
+        bottom: 90px; /* Ajustado para dispositivos muito pequenos */
+        right: 0.75rem;
+    }
+    
+    .floating-contact-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+    
+    .floating-contact-tooltip {
+        right: 55px;
+        font-size: 11px;
+        padding: 3px 6px;
+    }
+    
+    .floating-contact-menu {
+        width: calc(100vw - 1.5rem);
+        bottom: 60px;
+        max-height: 45vh;
+    }
+    
+    .floating-contact-option {
+        padding: 0.5rem 0.6rem;
+        min-height: 50px;
+    }
+    
+    .floating-contact-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+        min-width: 28px;
+    }
+    
+    .floating-contact-info {
+        max-width: calc(100% - 35px);
+    }
+}
+
+/* Media query adicional para telas muito baixas */
+@media (max-height: 600px) {
+    .floating-contact {
+        bottom: 85px;
+    }
+    
+    .floating-contact-menu {
+        max-height: 40vh;
+    }
+    
+    .floating-contact-option {
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+        min-height: 46px;
     }
 } 

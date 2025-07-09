@@ -974,3 +974,22 @@ textarea.form-control {
         background-color: var(--gray-800);
     }
 }
+
+/* Ajustes para elementos flutuantes em telas menores */
+@media (max-width: 576px) {
+    .floating-contact-option * {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+    
+    .floating-contact-value {
+        max-width: 100%;
+    }
+    
+    /* Garantir que elementos não sobreponham em telas pequenas */
+    .z-top {
+        position: relative;
+        z-index: 10;
+    }
+}
