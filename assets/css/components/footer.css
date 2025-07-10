@@ -1,6 +1,6 @@
 /* Footer Component - Design moderno e elegante */
 .footer {
-    background-color: #0A0F1A; /* Cor mais escura que a var(--primary-dark) para melhor contraste com a logo */
+    background-color:var(--primary-dark);
     color: var(--gray-300);
     padding: 5rem 0 2rem;
     position: relative;
