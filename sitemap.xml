@@ -3,7 +3,7 @@
     
     <!-- Página Principal -->
     <url>
-        <loc>https://alttabcorp.com.br/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -11,89 +11,127 @@
     
     <!-- Páginas Principais -->
     <url>
-        <loc>https://alttabcorp.com.br/pages/sobre/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/sobre/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/servicos/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/contato/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Páginas de Serviços Principais -->
+    <url>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/web/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.com.br/pages/servicos/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/consultoria/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.com.br/pages/contato/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/impressao3d/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Páginas de Serviços -->
-    <url>
-        <loc>https://alttabcorp.com.br/pages/web/</loc>
-        <lastmod>2024-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.com.br/pages/consultoria/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
     
+    <!-- Subpáginas E-Sports -->
     <url>
-        <loc>https://alttabcorp.com.br/pages/impressao3d/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/estudio/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.com.br/pages/esports/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/time/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.com.br/pages/esports/estudio/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/torneios/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/academia/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
+    <!-- Páginas SaaS e Construção -->
     <url>
-        <loc>https://alttabcorp.com.br/pages/esports/time/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/saas/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/construcao/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
     </url>
     
     <!-- Páginas Legais -->
     <url>
-        <loc>https://alttabcorp.com.br/pages/termos/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/termos/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.com.br/pages/privacidade/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/privacidade/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.com.br/pages/cookies/</loc>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/cookies/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+    </url>
+    
+    <!-- Página 404 -->
+    <url>
+        <loc>https://alttabcorp.github.io/Alttab_web/pages/404/</loc>
+        <lastmod>2024-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
     </url>
     
 </urlset> 
