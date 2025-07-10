@@ -5,9 +5,9 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'GA_MEASUREMENT_ID', {
+gtag('config', 'G-XTXHKDRDTJ', {
     'page_title': 'Alt tab Corp - Página Inicial',
-    'page_location': 'https://alttabcorp.com.br/',
+    'page_location': 'https://alttabcorp.github.io/Alttab_web/',
     'custom_map': {
         'dimension1': 'user_type',
         'dimension2': 'service_interest'
