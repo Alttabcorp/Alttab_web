@@ -76,6 +76,25 @@
     color: var(--gray-300) !important;
 }
 
+/* Fix para alinhamento do título na página de contato */
+.page-contato .hero h1 .title-wrapper {
+    display: inline;
+    white-space: nowrap;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+.page-contato .hero h1 .gradient-text {
+    vertical-align: baseline;
+    line-height: inherit;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    font-weight: inherit;
+}
+
 /* Correções para o botão flutuante */
 .floating-contact-btn {
     background-color: var(--primary) !important;
@@ -327,6 +346,14 @@
 
 .faq-item.active .faq-icon i.fa-chevron-down {
     transform: rotate(180deg) !important;
+}
+
+/* Correção adicional para texto gradiente na página de contato */
+.page-contato .hero h1 {
+    position: relative;
+    text-align: center;
+    font-size: var(--font-size-4xl);
+    white-space: nowrap;
 }
 
 /* Correção para o estilo hover do FAQ */

@@ -5,40 +5,15 @@
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    padding: 6rem 0 4rem;
-    color: var(--light);
     position: relative;
+    background: var(--gradient-primary);
+    color: var(--light);
+    padding: 8rem 0 6rem;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    min-height: 50vh;
+    z-index: 1;
     display: flex;
     align-items: center;
-    z-index: 1;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    z-index: 0;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: -150px;
-    left: -150px;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.05);
-    z-index: 0;
+    min-height: 60vh; /* Altura mínima para garantir bom espaçamento */
 }
 
 .hero-particles {
@@ -54,33 +29,30 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
     background-image: url('../../images/hero-pattern.svg');
     background-size: cover;
     background-position: center;
-    opacity: 0.05;
+    opacity: 0.1;
     z-index: 0;
+    animation: float 6s ease-in-out infinite;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 0 1rem;
 }
 
 .hero h1 {
     font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
-    color: var(--light);
     margin-bottom: 1.5rem;
-    line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--light);
     position: relative;
-    text-align: center;
 }
 
 .hero h1:after {
@@ -89,39 +61,22 @@
     width: 100px;
     height: 4px;
     background: var(--gradient-secondary);
-    margin: 1rem auto 0;
+    margin: 0.75rem auto 0;
     border-radius: 2px;
-}
-
-.hero h1 .gradient-text, 
-.page-header h1 .gradient-text {
-    vertical-align: baseline;
-    line-height: inherit;
-    display: inline-block;
-}
-
-.title-wrapper {
-    display: inline-block;
-    white-space: nowrap;
-    vertical-align: baseline;
 }
 
 .hero p {
     font-size: var(--font-size-lg);
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-    line-height: var(--line-height-relaxed);
-    text-align: center;
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
 .hero-wave {
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    z-index: 3;
-    line-height: 0;
+    z-index: 2;
 }
 
 .hero-wave .wave {
@@ -184,7 +139,8 @@
 }
 
 /* Efeito de partículas flutuantes adicionais no hero */
-.hero .floating-particle-1 {
+.hero:before {
+    content: '';
     position: absolute;
     top: 10%;
     left: 5%;
@@ -197,7 +153,8 @@
     animation: floatingParticle 10s infinite ease-in-out;
 }
 
-.hero .floating-particle-2 {
+.hero:after {
+    content: '';
     position: absolute;
     bottom: 20%;
     right: 10%;
@@ -225,60 +182,63 @@
     }
 }
 
-/* Efeitos para o cabeçalho da página de contato */
-.page-header-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+/* Animações para elementos com scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+}
+
+.animate-on-scroll[data-animation="fade-in-up"] {
+    transform: translateY(30px);
+}
+
+.animate-on-scroll[data-animation="fade-in-up"].animated {
+    transform: translateY(0);
+}
+
+.animate-on-scroll[data-animation="fade-in-left"] {
+    transform: translateX(-30px);
+}
+
+.animate-on-scroll[data-animation="fade-in-left"].animated {
+    transform: translateX(0);
+}
+
+.animate-on-scroll[data-animation="fade-in-right"] {
+    transform: translateX(30px);
+}
+
+.animate-on-scroll[data-animation="fade-in-right"].animated {
+    transform: translateX(0);
 }
 
 /* Melhorias para o efeito de texto gradiente */
-.hero .gradient-text, 
-.page-header .gradient-text {
-    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 3s linear infinite;
+.hero .gradient-text {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative;
-    display: inline;
-    vertical-align: baseline;
-    line-height: inherit;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    display: inline-block;
+    overflow: hidden;
 }
 
 /* Botões na hero section */
 .hero-buttons {
+    margin-top: 2rem;
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
     z-index: 10;
-    margin-top: 1.5rem;
 }
 
 .hero-buttons .btn {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    min-width: 180px;
-    text-align: center;
 }
 
 .hero-buttons .btn-primary:before {
@@ -567,22 +527,16 @@
 
 /* Melhorias responsivas para a hero section */
 @media (max-width: 768px) {
-    .hero, .page-header {
-        min-height: 40vh;
-        padding: 5rem 0 3rem;
+    .hero {
+        min-height: 50vh;
+        padding: 6rem 0 4rem;
     }
     
-    .hero h1, .page-header h1 {
+    .hero h1 {
         font-size: var(--font-size-2xl);
     }
     
-    .title-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .hero p, .page-header p {
+    .hero p {
         font-size: var(--font-size-base);
     }
     
@@ -622,37 +576,4 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-/* Suporte ao tema escuro */
-[data-theme="dark"] .contact-section,
-[data-theme="dark"] .section-light {
-    background-color: var(--dark);
-    color: var(--light);
-}
-
-[data-theme="dark"] .contact-details p,
-[data-theme="dark"] .contact-details a,
-[data-theme="dark"] .section-header p {
-    color: var(--gray-300);
-}
-
-[data-theme="dark"] .contact-form-container {
-    background-color: var(--dark-card);
-    border-color: var(--dark-border);
-}
-
-[data-theme="dark"] .section-badge {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .google-form-container {
-    background: var(--dark-card);
-    border: 1px solid var(--dark-border);
-}
-
-.title-wrapper {
-    display: inline;
-    white-space: nowrap;
-    position: relative;
 }

@@ -55,6 +55,10 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/pages/contato.css">
     <link rel="stylesheet" href="../../assets/css/fixes.css">
+    
+    <!-- Preload de recursos importantes -->
+    <link rel="preload" href="../../assets/images/wave.svg" as="image">
+    <link rel="preload" href="../../assets/images/hero-pattern.svg" as="image">
 </head>
 <body class="page-contato">
     <!-- Header -->
@@ -103,21 +107,22 @@
 
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Hero Section / Page Header -->
+        <section class="hero page-header">
             <div class="hero-particles" id="particles-js"></div>
             <div class="hero-pattern parallax-bg" data-speed="0.1"></div>
+            <div class="floating-particle-1"></div>
+            <div class="floating-particle-2"></div>
             <div class="container">
-                <div class="hero-content animate-on-scroll" data-animation="fade-in-up">
-                    <h1>Entre em <span class="gradient-text">Contato</span></h1>
+                <div class="page-header-content hero-content">
+                    <h1 class="animate-on-scroll" data-animation="fade-in-up"><span class="title-wrapper">Entre em <span class="gradient-text">Contato</span></span></h1>
                     <p class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">Estamos prontos para atender você e transformar suas ideias em realidade</p>
                     <div class="hero-buttons animate-on-scroll" data-animation="fade-in-up" data-delay="0.4s">
-                        <a href="#contact-form" class="btn btn-primary btn-lg btn-ripple">Formulário de Contato <i class="fas fa-arrow-right"></i></a>
-                        <a href="#contact-info" class="btn btn-outline-light btn-lg">Nossas Informações <i class="fas fa-info-circle"></i></a>
+                        <a href="#contact-form" class="btn btn-primary btn-ripple">Formulário de Contato <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact-info" class="btn btn-outline-light">Nossas Informações <i class="fas fa-info-circle"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="hero-shape"></div>
             <div class="hero-wave">
                 <img src="../../assets/images/wave.svg" alt="Wave" class="wave">
             </div>
@@ -455,65 +460,59 @@
         window.addEventListener('load', function() {
             const contactForm = document.getElementById('contactForm');
             const formMessage = document.querySelector('.form-message');
+        });
+    </script>
+
+    <script>
+        // Script específico para inicializar o FAQ
+        document.addEventListener('DOMContentLoaded', function() {
+            // Selecionar todos os itens do FAQ
+            const faqItems = document.querySelectorAll('.faq-item');
             
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
+            // Verificar se há elementos FAQ na página
+            if (faqItems.length > 0) {
+                faqItems.forEach(function(item) {
+                    const question = item.querySelector('.faq-question');
+                    const answer = item.querySelector('.faq-answer');
                     
-                    // Simulação de envio de formulário
-                    formMessage.innerHTML = '<div class="alert alert-success">Mensagem enviada com sucesso! Entraremos em contato em breve.</div>';
-                    formMessage.style.display = 'block';
-                    
-                    // Limpar formulário
-                    contactForm.reset();
-                    
-                    // Esconder mensagem após 5 segundos
-                    setTimeout(function() {
-                        formMessage.style.display = 'none';
-                    }, 5000);
+                    if (question) {
+                        question.addEventListener('click', function() {
+                            // Alternar o estado de ativo
+                            const isActive = item.classList.contains('active');
+                            
+                            // Fechar todos os outros itens
+                            document.querySelectorAll('.faq-item.active').forEach(function(activeItem) {
+                                if (activeItem !== item) {
+                                    activeItem.classList.remove('active');
+                                    const activeAnswer = activeItem.querySelector('.faq-answer');
+                                    const activeIcon = activeItem.querySelector('.faq-icon i');
+                                    
+                                    if (activeAnswer) activeAnswer.style.maxHeight = '0';
+                                    if (activeIcon) activeIcon.className = activeIcon.className.replace('fa-minus', 'fa-plus');
+                                }
+                            });
+                            
+                            // Alternar o estado do item atual
+                            if (isActive) {
+                                item.classList.remove('active');
+                                if (answer) answer.style.maxHeight = '0';
+                                const icon = item.querySelector('.faq-icon i');
+                                if (icon) icon.className = icon.className.replace('fa-minus', 'fa-plus');
+                            } else {
+                                item.classList.add('active');
+                                if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+                                const icon = item.querySelector('.faq-icon i');
+                                if (icon) icon.className = icon.className.replace('fa-plus', 'fa-minus');
+                            }
+                        });
+                    }
                 });
+                
+                console.log('FAQ inicializado com sucesso na página de contato!');
             }
         });
     </script>
-    
-    <!-- Script para garantir que o FAQ seja visível e compatível com a estrutura do componente -->
-    <script>
-        window.addEventListener('load', function() {
-            console.log('Inicializando script para o novo layout de FAQ');
-            
-            setTimeout(function() {
-                // Aplicar animações aos itens do FAQ
-                var faqItems = document.querySelectorAll('.faq-item');
-                console.log('Encontrados ' + faqItems.length + ' itens de FAQ');
-                
-                // Animar os itens de FAQ conforme rolagem
-                faqItems.forEach(function(item, index) {
-                    item.classList.add('animated');
-                    
-                    // Adicionar um pequeno atraso para animação sequencial
-                    setTimeout(function() {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
-                
-                // Garantir que o primeiro item de cada categoria esteja aberto
-                var categories = document.querySelectorAll('.faq-category');
-                categories.forEach(function(category) {
-                    var firstItem = category.querySelector('.faq-item');
-                    if (firstItem) {
-                        firstItem.classList.add('active');
-                        
-                        var answer = firstItem.querySelector('.faq-answer');
-                        if (answer) {
-                            answer.style.maxHeight = answer.scrollHeight + 'px';
-                        }
-                    }
-                });
-            }, 800);
-        });
-    </script>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Inicialização das partículas
@@ -603,29 +602,51 @@
                 }
             }, 500);
 
-            // Ativar animações ao scroll
-            function checkAnimations() {
-                const elements = document.querySelectorAll('.animate-on-scroll');
+            // A animação de scroll é tratada no script abaixo
+        });
+    </script>
+
+    <!-- Script para animações de scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Função para verificar se um elemento está visível na tela
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85
+                );
+            }
+            
+            // Função para animar elementos quando aparecem na tela
+            function animateOnScroll() {
+                var elements = document.querySelectorAll('.animate-on-scroll:not(.animated)');
                 
                 elements.forEach(function(element) {
-                    const rect = element.getBoundingClientRect();
-                    const windowHeight = window.innerHeight;
-                    
-                    if (rect.top <= windowHeight * 0.9) {
-                        const animation = element.getAttribute('data-animation') || 'fadeIn';
-                        const delay = element.getAttribute('data-delay') || '0s';
+                    if (isElementInViewport(element)) {
+                        // Adiciona a classe animated para iniciar a animação
+                        element.classList.add('animated');
                         
-                        element.style.animation = `${animation} 0.8s ease ${delay} forwards`;
-                        element.style.visibility = 'visible';
+                        // Se houver delay especificado, aplica o delay
+                        var delay = element.getAttribute('data-delay');
+                        if (delay) {
+                            element.style.animationDelay = delay;
+                            element.style.transitionDelay = delay;
+                        }
                     }
                 });
             }
             
-            // Verificar animações no carregamento da página
-            checkAnimations();
+            // Anima elementos que já estão visíveis no carregamento
+            setTimeout(animateOnScroll, 100);
             
-            // Verificar animações durante o scroll
-            window.addEventListener('scroll', checkAnimations);
+            // Adiciona evento de scroll para animar elementos conforme o usuário desce a página
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Inicializa as partículas com atraso para melhor desempenho
+            setTimeout(function() {
+                // Código para as partículas já existe em outro script
+                console.log("Animações inicializadas com sucesso!");
+            }, 300);
         });
     </script>
 

@@ -95,11 +95,16 @@
     <main id="main-content">
         <!-- Page Header -->
         <section class="page-header">
+            <div class="hero-particles" id="particles-js"></div>
+            <div class="hero-pattern parallax-bg" data-speed="0.1"></div>
             <div class="container">
                 <div class="page-header-content">
-                    <h1>Sobre Nós</h1>
-                    <p>Conheça nossa história, valores e a equipe por trás da Alt tab Corp</p>
+                    <h1 class="animate-on-scroll" data-animation="fade-in-up">Sobre Nós</h1>
+                    <p class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">Conheça nossa história, valores e a equipe por trás da Alt tab Corp</p>
                 </div>
+            </div>
+            <div class="hero-wave">
+                <img src="../../assets/images/wave.svg" alt="Wave" class="wave">
             </div>
         </section>
 
@@ -637,206 +642,147 @@
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/theme-toggle.js"></script>
     <script src="../../assets/js/floating-contact.js"></script>
-
+    <script src="../../assets/js/analytics.js"></script>
+    
     <script>
-        // Inicialização da página Sobre
         document.addEventListener('DOMContentLoaded', function() {
-            // Verificar se o usuário prefere movimento reduzido
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            
-            // Inicializa animações
-            if (window.animations && typeof window.animations.init === 'function') {
+            // Inicialização das animações
+            if (window.animations) {
                 window.animations.init();
-            } else {
-                // Fallback para inicialização de animações caso o módulo não esteja disponível
-                initAnimations();
             }
+
+            // Botões com efeito ripple
+            const rippleButtons = document.querySelectorAll('.btn-ripple');
             
-            // Reinicializar o botão flutuante
-            if (window.initFloatingContact) {
-                console.log('Reinicializando botão flutuante na página sobre');
-                window.initFloatingContact();
-            }
-            
-            // Função de fallback para inicializar animações
-            function initAnimations() {
-                const animateElements = document.querySelectorAll('.animate-on-scroll');
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('animated');
-                            
-                            // Adiciona delay para elementos em sequência
-                            if (entry.target.dataset.delay) {
-                                entry.target.style.animationDelay = entry.target.dataset.delay;
+            rippleButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const x = e.clientX - e.target.getBoundingClientRect().left;
+                    const y = e.clientY - e.target.getBoundingClientRect().top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple');
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Configuração específica para a página sobre
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: {
+                            value: 60,
+                            density: {
+                                enable: true,
+                                value_area: 1000
                             }
-                            
-                            // Adiciona animação específica se definida
-                            if (entry.target.dataset.animation) {
-                                entry.target.classList.add(entry.target.dataset.animation);
-                            } else {
-                                entry.target.classList.add('fade-in');
+                        },
+                        color: {
+                            value: ['#2563EB', '#0EA5E9', '#10B981']
+                        },
+                        shape: {
+                            type: ['circle', 'triangle'],
+                            stroke: {
+                                width: 0,
+                                color: '#000000'
                             }
-                            
-                            observer.unobserve(entry.target);
+                        },
+                        opacity: {
+                            value: 0.5,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 1,
+                                opacity_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        size: {
+                            value: 4,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 2,
+                                size_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: '#2563EB',
+                            opacity: 0.4,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: 'none',
+                            random: true,
+                            straight: false,
+                            out_mode: 'out',
+                            bounce: false
                         }
-                    });
-                }, {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -100px 0px'
-                });
-                
-                animateElements.forEach(element => {
-                    observer.observe(element);
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: 'grab'
+                            },
+                            onclick: {
+                                enable: true,
+                                mode: 'push'
+                            },
+                            resize: true
+                        },
+                        modes: {
+                            grab: {
+                                distance: 140,
+                                line_linked: {
+                                    opacity: 1
+                                }
+                            },
+                            push: {
+                                particles_nb: 4
+                            }
+                        }
+                    },
+                    retina_detect: true
                 });
             }
-            
-            // Inicializar efeitos de hover para cards
-            document.querySelectorAll('.team-card, .service-card').forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.classList.add('hover-active');
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.classList.remove('hover-active');
-                });
-            });
-            
-            // Inicializar efeito tilt para cards
-            document.querySelectorAll('.tilt-effect').forEach(element => {
-                element.addEventListener('mousemove', function(e) {
-                    const card = this;
-                    const cardRect = card.getBoundingClientRect();
-                    const cardCenterX = cardRect.left + cardRect.width / 2;
-                    const cardCenterY = cardRect.top + cardRect.height / 2;
-                    const angleY = -(e.clientX - cardCenterX) * 0.01;
-                    const angleX = (e.clientY - cardCenterY) * 0.01;
-                    card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale3d(1.02, 1.02, 1.02)`;
-                });
-                
-                element.addEventListener('mouseleave', function() {
-                    this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-                });
-            });
-            
-            // Timeline Horizontal
-            function initTimelineHorizontal() {
-                const timelineNavItems = document.querySelectorAll('.timeline-nav-item');
-                const timelineSlides = document.querySelectorAll('.timeline-slide');
-                const timelineProgressBar = document.querySelector('.timeline-progress-bar');
-                const prevButton = document.querySelector('.timeline-control-prev');
-                const nextButton = document.querySelector('.timeline-control-next');
-                
-                let activeIndex = 0;
-                const totalSlides = timelineSlides.length;
-                
-                // Atualizar barra de progresso
-                function updateProgressBar() {
-                    const progress = ((activeIndex) / (totalSlides - 1)) * 100;
-                    timelineProgressBar.style.width = `${progress}%`;
-                }
-                
-                // Ativar slide específico
-                function activateSlide(index) {
-                    // Desativar todos os slides e botões
-                    timelineNavItems.forEach(item => item.classList.remove('active'));
+
+            // Script para timeline
+            const timelineNavItems = document.querySelectorAll('.timeline-nav-item');
+            const timelineSlides = document.querySelectorAll('.timeline-slide');
+            const progressBar = document.querySelector('.timeline-progress-bar');
+
+            timelineNavItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const year = this.getAttribute('data-year');
+                    
+                    // Remove classe active de todos os itens
+                    timelineNavItems.forEach(navItem => navItem.classList.remove('active'));
                     timelineSlides.forEach(slide => slide.classList.remove('active'));
                     
-                    // Ativar o slide atual
-                    activeIndex = index;
-                    timelineNavItems[activeIndex].classList.add('active');
-                    timelineSlides[activeIndex].classList.add('active');
+                    // Adiciona classe active ao item selecionado
+                    this.classList.add('active');
+                    document.getElementById('year-' + year).classList.add('active');
                     
-                    // Atualizar barra de progresso
-                    updateProgressBar();
-                    
-                    // Scroll para o botão ativo (para mobile)
-                    if (window.innerWidth <= 768) {
-                        const activeButton = timelineNavItems[activeIndex];
-                        activeButton.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
-                    }
-                }
-                
-                // Adicionar event listeners aos botões de navegação
-                timelineNavItems.forEach((item, index) => {
-                    item.addEventListener('click', () => activateSlide(index));
+                    // Atualiza barra de progresso
+                    const index = Array.from(timelineNavItems).indexOf(this);
+                    const progressPercentage = (index / (timelineNavItems.length - 1)) * 100;
+                    progressBar.style.width = `${progressPercentage}%`;
                 });
-                
-                // Botões de anterior/próximo
-                if (prevButton && nextButton) {
-                    prevButton.addEventListener('click', () => {
-                        let newIndex = activeIndex - 1;
-                        if (newIndex < 0) newIndex = totalSlides - 1;
-                        activateSlide(newIndex);
-                    });
-                    
-                    nextButton.addEventListener('click', () => {
-                        let newIndex = activeIndex + 1;
-                        if (newIndex >= totalSlides) newIndex = 0;
-                        activateSlide(newIndex);
-                    });
-                }
-                
-                // Teclas de navegação
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowLeft') {
-                        let newIndex = activeIndex - 1;
-                        if (newIndex < 0) newIndex = totalSlides - 1;
-                        activateSlide(newIndex);
-                    } else if (e.key === 'ArrowRight') {
-                        let newIndex = activeIndex + 1;
-                        if (newIndex >= totalSlides) newIndex = 0;
-                        activateSlide(newIndex);
-                        }
-                });
-                    
-                // Inicializar
-                updateProgressBar();
-            }
-            
-            // Inicializar a timeline
-            initTimelineHorizontal();
-            
-            // Animações para a timeline
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            
-            const observerTimeline = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                        observerTimeline.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.2
             });
-            
-            timelineItems.forEach(item => {
-                observerTimeline.observe(item);
-            });
-            
-            // Botão voltar ao topo suave
-            const backToTop = document.getElementById('backToTop');
-            if (backToTop) {
-                backToTop.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: prefersReducedMotion ? 'auto' : 'smooth'
-                    });
-                });
-                
-                // Mostrar/esconder botão de voltar ao topo
-                window.addEventListener('scroll', function() {
-                    if (window.scrollY > 300) {
-                        backToTop.classList.add('active');
-                    } else {
-                        backToTop.classList.remove('active');
-                    }
-                });
-            }
         });
     </script>
 </body>
-</html> 
+</html>
