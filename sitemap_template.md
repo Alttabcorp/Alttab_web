@@ -1,3 +1,8 @@
+# Template de Sitemap.xml Atualizado - Alt tab Corp
+
+Este é um modelo atualizado para o sitemap.xml que você deve implementar ao migrar para o domínio www.alttabcorp.com.br:
+
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
@@ -47,91 +52,69 @@
     </url>
     
     <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/impressao3d/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://www.alttabcorp.com.br/pages/impressao3d/</loc>
+        <lastmod>2025-07-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://www.alttabcorp.com.br/pages/esports/</loc>
+        <lastmod>2025-07-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     
-    <!-- Subpáginas E-Sports -->
+    <!-- Subpáginas de E-sports -->
     <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/estudio/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://www.alttabcorp.com.br/pages/esports/estudio/</loc>
+        <lastmod>2025-07-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/time/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://www.alttabcorp.com.br/pages/esports/time/</loc>
+        <lastmod>2025-07-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     
+    <!-- Páginas Legais e de Suporte -->
     <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/torneios/</loc>
-        <lastmod>2024-01-15</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/esports/academia/</loc>
-        <lastmod>2024-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- Páginas SaaS e Construção -->
-    <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/saas/</loc>
-        <lastmod>2024-01-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/construcao/</loc>
-        <lastmod>2024-01-15</lastmod>
-        <changefreq>monthly</changefreq>
+        <loc>https://www.alttabcorp.com.br/pages/termos/</loc>
+        <lastmod>2025-07-11</lastmod>
+        <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     
-    <!-- Páginas Legais -->
     <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/termos/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://www.alttabcorp.com.br/pages/privacidade/</loc>
+        <lastmod>2025-07-11</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <priority>0.5</priority>
     </url>
     
     <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/privacidade/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://www.alttabcorp.com.br/pages/cookies/</loc>
+        <lastmod>2025-07-11</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-    <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/cookies/</loc>
-        <lastmod>2024-01-15</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
+        <priority>0.5</priority>
     </url>
     
     <!-- Página 404 -->
     <url>
-        <loc>https://alttabcorp.github.io/Alttab_web/pages/404/</loc>
-        <lastmod>2024-01-15</lastmod>
+        <loc>https://www.alttabcorp.com.br/pages/404/</loc>
+        <lastmod>2025-07-11</lastmod>
         <changefreq>yearly</changefreq>
-        <priority>0.1</priority>
+        <priority>0.3</priority>
     </url>
-    
-</urlset> 
+</urlset>
+```
+
+Importante:
+1. Atualize a data `lastmod` sempre que fizer alterações significativas em uma página
+2. Ajuste a frequência de alteração (`changefreq`) conforme a atualização real da página
+3. Prioridades (`priority`) devem refletir a importância relativa da página no seu site
+4. Certifique-se de incluir todas as páginas novas que criar no sitemap
+5. Após atualizar o sitemap, reenvie-o ao Google Search Console para reindexação

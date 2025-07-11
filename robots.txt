@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://alttabcorp.github.io/Alttab_web/sitemap.xml
+Sitemap: https://www.alttabcorp.com.br/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

@@ -1,18 +1,35 @@
 // Google Analytics - Alt tab Corp
-// Substitua GA_MEASUREMENT_ID pelo seu ID do Google Analytics
+// Configuração do Google Analytics 4 
 
 // Google Analytics 4
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XTXHKDRDTJ', {
-    'page_title': 'Alt tab Corp - Página Inicial',
-    'page_location': 'https://alttabcorp.github.io/Alttab_web/',
+    'page_title': document.title,
+    'page_location': window.location.href,
+    'page_path': window.location.pathname,
+    'cookie_domain': 'alttabcorp.com.br',
     'custom_map': {
         'dimension1': 'user_type',
-        'dimension2': 'service_interest'
+        'dimension2': 'service_interest',
+        'dimension3': 'device_type',
+        'dimension4': 'page_section'
     }
 });
+
+// Detecção do tipo de dispositivo para dimensão personalizada
+const deviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+        return "tablet";
+    } else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+        return "mobile";
+    }
+    return "desktop";
+};
+
+gtag('set', {'dimension3': deviceType()});
 
 // Eventos personalizados
 document.addEventListener('DOMContentLoaded', function() {

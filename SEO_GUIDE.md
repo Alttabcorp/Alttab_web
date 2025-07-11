@@ -17,6 +17,7 @@
 - ✅ Schema.org structured data
 - ✅ Google Analytics configurado
 - ✅ Arquivo de verificação do Google Search Console
+- ✅ Google Tag Manager implementado
 
 ### 3. Conteúdo Otimizado
 - ✅ Títulos H1, H2, H3 estruturados
@@ -24,19 +25,19 @@
 - ✅ Alt text em imagens
 - ✅ URLs amigáveis
 
-## 🔧 O que você precisa fazer:
+## 🔧 O que você precisa fazer agora:
 
-### 1. Configurar Google Analytics
+### 1. Finalizar a configuração do Google Analytics
 1. Acesse [Google Analytics](https://analytics.google.com/)
-2. Crie uma conta e propriedade
-3. Substitua `GA_MEASUREMENT_ID` no arquivo `assets/js/analytics.js` pelo seu ID real
-4. Substitua `GA_MEASUREMENT_ID` no HTML pelo seu ID real
+2. Confirme que sua conta e propriedade estão configuradas corretamente
+3. Verifique se o ID do GA4 `G-XTXHKDRDTJ` no arquivo `assets/js/analytics.js` é o correto
+4. Configure as dimensões personalizadas no GA4 conforme definidas no arquivo analytics.js
 
-### 2. Configurar Google Search Console
-1. Acesse [Google Search Console](https://search.google.com/search-console)
-2. Adicione sua propriedade (domínio)
-3. Faça a verificação usando o arquivo `google123456789.html`
-4. Envie o sitemap.xml para indexação
+### 2. Configurar Google Tag Manager
+1. Acesse [Google Tag Manager](https://tagmanager.google.com/)
+2. Crie uma conta e contêiner para o site
+3. Substitua `GTM-XXXXXXX` no código do GTM pelo seu ID real no arquivo `index.html`
+4. Configure as tags necessárias no GTM (Analytics, Eventos, Conversões)
 
 ### 3. Criar Contas em Redes Sociais
 - LinkedIn: https://www.linkedin.com/company/alttabcorp
