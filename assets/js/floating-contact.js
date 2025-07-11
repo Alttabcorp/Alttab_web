@@ -55,15 +55,19 @@
                 if (windowWidth <= 380) {
                     // Telas muito pequenas
                     contactButton.style.bottom = '90px';
+                    contactButton.style.right = '15px';
                 } else if (windowWidth <= 480) {
                     // Telas pequenas
                     contactButton.style.bottom = '95px';
+                    contactButton.style.right = '20px';
                 } else if (windowWidth <= 576) {
                     // Telas médias/pequenas
                     contactButton.style.bottom = '100px';
+                    contactButton.style.right = '20px';
                 } else {
                     // Telas maiores
                     contactButton.style.bottom = '120px';
+                    contactButton.style.right = '25px';
                 }
                 
                 // Ajuste adicional para telas com altura baixa
@@ -75,21 +79,18 @@
             if (floatingContactMenu) {
                 if (windowWidth <= 380) {
                     // Configurações para telas muito pequenas
-                    floatingContactMenu.style.width = 'calc(100vw - 1.5rem)';
-                    floatingContactMenu.style.left = '0.75rem';
-                    floatingContactMenu.style.right = '0.75rem';
+                    floatingContactMenu.style.width = 'calc(100vw - 30px)';
+                    floatingContactMenu.style.right = '0';
                     floatingContactMenu.style.maxHeight = '45vh';
                 } else if (windowWidth <= 576) {
                     // Configurações para telas pequenas
-                    floatingContactMenu.style.width = 'calc(100vw - 2rem)';
-                    floatingContactMenu.style.left = '1rem';
-                    floatingContactMenu.style.right = '1rem';
-                    floatingContactMenu.style.maxHeight = windowWidth <= 480 ? '50vh' : '55vh';
+                    floatingContactMenu.style.width = 'calc(100vw - 40px)';
+                    floatingContactMenu.style.right = '0';
+                    floatingContactMenu.style.maxHeight = '50vh';
                 } else {
                     // Configurações para desktop
-                    floatingContactMenu.style.width = '';
-                    floatingContactMenu.style.left = '';
-                    floatingContactMenu.style.right = '';
+                    floatingContactMenu.style.width = '320px';
+                    floatingContactMenu.style.right = '0';
                     floatingContactMenu.style.maxHeight = '80vh';
                 }
                 

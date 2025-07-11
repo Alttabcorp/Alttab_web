@@ -185,11 +185,22 @@
     <main id="main-content">
         <!-- Page Header -->
         <section class="page-header">
+            <div class="hero-particles" id="particles-js"></div>
+            <div class="hero-pattern parallax-bg" data-speed="0.1"></div>
             <div class="container">
                 <div class="page-header-content">
-                    <h1>Nossos Serviços</h1>
-                    <p>Soluções tecnológicas completas para impulsionar seu negócio</p>
+                    <h1 class="animate-on-scroll" data-animation="fade-in-up">Nossos <span class="gradient-text">Serviços</span></h1>
+                    <p class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">Soluções tecnológicas completas para transformar suas ideias em realidade</p>
+
                 </div>
+            </div>
+            <div class="hero-wave">
+                <img src="../../assets/images/wave.svg" alt="Wave" class="wave">
+            </div>
+            <div class="hero-wave">
+                <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                    <path fill="var(--light)" fill-opacity="1" d="M0,32L80,42.7C160,53,320,75,480,74.7C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+                </svg>
             </div>
         </section>
 
@@ -275,67 +286,398 @@
         </section>
 
         <!-- Processo Section -->
-        <section class="process-section">
+        <section class="process-section" id="process-section">
+            <div class="process-pattern"></div>
             <div class="container">
-                <div class="section-header animate-on-scroll">
+                <div class="section-header animate-on-scroll" data-animation="fade-in-up">
                     <span class="section-badge">Nosso Processo</span>
                     <h2>Como Trabalhamos</h2>
                     <p>Conheça nossa metodologia de trabalho para entregar projetos de alta qualidade</p>
                 </div>
                 
-                <div class="process-steps">
-                    <!-- Etapa 1 -->
-                    <div class="process-step animate-on-scroll">
-                        <div class="process-number">1</div>
-                        <div class="process-content">
-                            <h3>Análise</h3>
-                            <p>Entendemos suas necessidades e objetivos através de reuniões e pesquisas detalhadas para definir o escopo do projeto.</p>
-                        </div>
+                <div class="process-tabs">
+                    <div class="process-tabs-nav animate-on-scroll">
+                        <button class="process-tab-btn active" data-tab="etapa1">
+                            <div class="process-tab-number">1</div>
+                            <span class="process-tab-text">Análise</span>
+                        </button>
+                        <button class="process-tab-btn" data-tab="etapa2">
+                            <div class="process-tab-number">2</div>
+                            <span class="process-tab-text">Planejamento</span>
+                        </button>
+                        <button class="process-tab-btn" data-tab="etapa3">
+                            <div class="process-tab-number">3</div>
+                            <span class="process-tab-text">Execução</span>
+                        </button>
+                        <button class="process-tab-btn" data-tab="etapa4">
+                            <div class="process-tab-number">4</div>
+                            <span class="process-tab-text">Testes</span>
+                        </button>
+                        <button class="process-tab-btn" data-tab="etapa5">
+                            <div class="process-tab-number">5</div>
+                            <span class="process-tab-text">Entrega</span>
+                        </button>
+                        <button class="process-tab-btn" data-tab="etapa6">
+                            <div class="process-tab-number">6</div>
+                            <span class="process-tab-text">Suporte</span>
+                        </button>
                     </div>
                     
-                    <!-- Etapa 2 -->
-                    <div class="process-step animate-on-scroll">
-                        <div class="process-number">2</div>
-                        <div class="process-content">
-                            <h3>Planejamento</h3>
-                            <p>Desenvolvemos um plano estratégico com cronograma, recursos necessários e definição de metas claras para o projeto.</p>
+                    <div class="process-tab-content animate-on-scroll">
+                        <!-- Etapa 1 -->
+                        <div class="process-tab-pane active" id="etapa1">
+                            <div class="process-content-grid">
+                                <div class="process-content-text">
+                                    <div class="process-icon-wrapper">
+                                        <div class="process-icon">
+                                            <i class="fas fa-search fa-beat-fade"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Análise</h3>
+                                    <p>Entendemos suas necessidades e objetivos através de reuniões e pesquisas detalhadas para definir o escopo do projeto. Uma análise completa permite desenvolver soluções personalizadas que atendam exatamente às suas expectativas.</p>
+                                    <div class="process-features">
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Reunião de descoberta</h4>
+                                                <p>Conversamos para entender suas necessidades</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-clipboard-list"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Análise de requisitos</h4>
+                                                <p>Documentamos todos os requisitos do projeto</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-bullseye"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Definição de objetivos</h4>
+                                                <p>Estabelecemos metas claras para o projeto</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="process-content-visual">
+                                    <div class="process-illustration">
+                                        <img src="../../assets/images/services/analise-processo.svg" alt="Etapa de Análise" class="process-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Etapa 2 -->
+                        <div class="process-tab-pane" id="etapa2">
+                            <div class="process-content-grid">
+                                <div class="process-content-text">
+                                    <div class="process-icon-wrapper">
+                                        <div class="process-icon">
+                                            <i class="fas fa-tasks fa-beat-fade"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Planejamento</h3>
+                                    <p>Desenvolvemos um plano estratégico com cronograma, recursos necessários e definição de metas claras para o projeto. Um planejamento detalhado é essencial para garantir o sucesso e a eficiência da execução.</p>
+                                    <div class="process-features">
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-calendar-alt"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Cronograma detalhado</h4>
+                                                <p>Definimos prazos e marcos do projeto</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-cogs"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Alocação de recursos</h4>
+                                                <p>Selecionamos a equipe e ferramentas ideais</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-laptop-code"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Definição de tecnologias</h4>
+                                                <p>Escolhemos as melhores tecnologias para seu projeto</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="process-content-visual">
+                                    <div class="process-illustration">
+                                        <img src="../../assets/images/services/planejamento-processo.svg" alt="Etapa de Planejamento" class="process-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Etapa 3 -->
+                        <div class="process-tab-pane" id="etapa3">
+                            <div class="process-content-grid">
+                                <div class="process-content-text">
+                                    <div class="process-icon-wrapper">
+                                        <div class="process-icon">
+                                            <i class="fas fa-code fa-beat-fade"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Execução</h3>
+                                    <p>Implementamos a solução utilizando metodologias ágeis, com entregas incrementais e feedback constante do cliente. Isso permite ajustes ao longo do processo e garante que o produto final atenda completamente às expectativas.</p>
+                                    <div class="process-features">
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Metodologia ágil</h4>
+                                                <p>Trabalhamos com sprints e adaptação contínua</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-box-open"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Entregas incrementais</h4>
+                                                <p>Entregamos versões funcionais progressivamente</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-comments"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Feedback contínuo</h4>
+                                                <p>Mantemos comunicação constante durante o desenvolvimento</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="process-content-visual">
+                                    <div class="process-illustration">
+                                        <img src="../../assets/images/services/execucao-processo.svg" alt="Etapa de Execução" class="process-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Etapa 4 -->
+                        <div class="process-tab-pane" id="etapa4">
+                            <div class="process-content-grid">
+                                <div class="process-content-text">
+                                    <div class="process-icon-wrapper">
+                                        <div class="process-icon">
+                                            <i class="fas fa-vial fa-beat-fade"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Testes</h3>
+                                    <p>Realizamos testes rigorosos para garantir a qualidade, segurança e desempenho da solução antes da entrega final. Nossa abordagem de testes abrangente identifica e corrige potenciais problemas antes do lançamento.</p>
+                                    <div class="process-features">
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-check-double"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Testes de qualidade</h4>
+                                                <p>Verificamos a funcionalidade e usabilidade</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Testes de segurança</h4>
+                                                <p>Garantimos a proteção dos dados e sistemas</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-tachometer-alt"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Testes de desempenho</h4>
+                                                <p>Asseguramos velocidade e eficiência</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="process-content-visual">
+                                    <div class="process-illustration">
+                                        <img src="../../assets/images/services/testes-processo.svg" alt="Etapa de Testes" class="process-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Etapa 5 -->
+                        <div class="process-tab-pane" id="etapa5">
+                            <div class="process-content-grid">
+                                <div class="process-content-text">
+                                    <div class="process-icon-wrapper">
+                                        <div class="process-icon">
+                                            <i class="fas fa-rocket fa-beat-fade"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Entrega</h3>
+                                    <p>Implementamos a solução em ambiente de produção, com treinamento e documentação completa para sua equipe. A transição é realizada de forma suave, garantindo que todos saibam utilizar o novo sistema.</p>
+                                    <div class="process-features">
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-server"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Implementação</h4>
+                                                <p>Colocamos a solução em ambiente de produção</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-chalkboard-teacher"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Treinamento</h4>
+                                                <p>Capacitamos sua equipe para utilizar o sistema</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-file-alt"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Documentação</h4>
+                                                <p>Fornecemos material completo de referência</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="process-content-visual">
+                                    <div class="process-illustration">
+                                        <img src="../../assets/images/services/entrega-processo.svg" alt="Etapa de Entrega" class="process-image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Etapa 6 -->
+                        <div class="process-tab-pane" id="etapa6">
+                            <div class="process-content-grid">
+                                <div class="process-content-text">
+                                    <div class="process-icon-wrapper">
+                                        <div class="process-icon">
+                                            <i class="fas fa-headset fa-beat-fade"></i>
+                                        </div>
+                                    </div>
+                                    <h3>Suporte</h3>
+                                    <p>Oferecemos suporte contínuo após a entrega, com monitoramento, atualizações e melhorias para garantir o sucesso a longo prazo. Nossa parceria não termina com o lançamento, estamos comprometidos com seu sucesso contínuo.</p>
+                                    <div class="process-features">
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-desktop"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Monitoramento contínuo</h4>
+                                                <p>Acompanhamos o desempenho da solução 24/7</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-sync"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Atualizações regulares</h4>
+                                                <p>Mantemos seu sistema sempre atualizado e seguro</p>
+                                            </div>
+                                        </div>
+                                        <div class="process-feature">
+                                            <div class="process-feature-icon">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <div class="process-feature-text">
+                                                <h4>Melhorias contínuas</h4>
+                                                <p>Implementamos novas funcionalidades e otimizações</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="process-content-visual">
+                                    <div class="process-illustration">
+                                        <img src="../../assets/images/services/suporte-processo.svg" alt="Etapa de Suporte" class="process-image">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Etapa 3 -->
-                    <div class="process-step animate-on-scroll">
-                        <div class="process-number">3</div>
-                        <div class="process-content">
-                            <h3>Execução</h3>
-                            <p>Implementamos a solução utilizando metodologias ágeis, com entregas incrementais e feedback constante do cliente.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefícios Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-badge">Por que nos escolher</span>
+                    <h2>Benefícios dos Nossos Serviços</h2>
+                    <p>Ao escolher a Alt tab Corp, você conta com vantagens que fazem a diferença no resultado final</p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
                         </div>
+                        <h3>Alta Performance</h3>
+                        <p>Soluções otimizadas para garantir o máximo desempenho e eficiência, mesmo em condições de alto tráfego.</p>
                     </div>
                     
-                    <!-- Etapa 4 -->
-                    <div class="process-step animate-on-scroll">
-                        <div class="process-number">4</div>
-                        <div class="process-content">
-                            <h3>Testes</h3>
-                            <p>Realizamos testes rigorosos para garantir a qualidade, segurança e desempenho da solução antes da entrega final.</p>
+                    <div class="benefit-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
                         </div>
+                        <h3>Segurança Avançada</h3>
+                        <p>Implementamos as melhores práticas de segurança para proteger seus dados e sistemas contra vulnerabilidades.</p>
                     </div>
                     
-                    <!-- Etapa 5 -->
-                    <div class="process-step animate-on-scroll">
-                        <div class="process-number">5</div>
-                        <div class="process-content">
-                            <h3>Entrega</h3>
-                            <p>Implementamos a solução em ambiente de produção, com treinamento e documentação completa para sua equipe.</p>
+                    <div class="benefit-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.3s">
+                        <div class="benefit-icon">
+                            <i class="fas fa-sync-alt"></i>
                         </div>
+                        <h3>Soluções Escaláveis</h3>
+                        <p>Desenvolvemos projetos que crescem junto com sua empresa, adaptando-se às suas necessidades futuras.</p>
                     </div>
                     
-                    <!-- Etapa 6 -->
-                    <div class="process-step animate-on-scroll">
-                        <div class="process-number">6</div>
-                        <div class="process-content">
-                            <h3>Suporte</h3>
-                            <p>Oferecemos suporte contínuo após a entrega, com monitoramento, atualizações e melhorias para garantir o sucesso a longo prazo.</p>
+                    <div class="benefit-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.4s">
+                        <div class="benefit-icon">
+                            <i class="fas fa-thumbs-up"></i>
                         </div>
+                        <h3>Satisfação Garantida</h3>
+                        <p>Trabalhamos incansavelmente até que você esteja 100% satisfeito com o resultado do projeto.</p>
+                    </div>
+                    
+                    <div class="benefit-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.5s">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Resultados Mensuráveis</h3>
+                        <p>Acompanhamos e reportamos métricas de desempenho para que você possa ver o retorno do seu investimento.</p>
+                    </div>
+                    
+                    <div class="benefit-card animate-on-scroll" data-animation="fade-in-up" data-delay="0.6s">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Suporte Contínuo</h3>
+                        <p>Nossa equipe está sempre disponível para ajudar com qualquer dúvida ou problema que possa surgir.</p>
                     </div>
                 </div>
             </div>
@@ -351,53 +693,65 @@
                 </div>
                 
                 <div class="tech-grid">
-                    <div class="tech-category animate-on-scroll">
-                        <h3>Desenvolvimento Web</h3>
+                    <div class="tech-category animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">
+                        <h3>Frontend & Backend</h3>
                         <div class="tech-icons">
                             <div class="tech-icon"><i class="fab fa-html5"></i><span>HTML5</span></div>
                             <div class="tech-icon"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
                             <div class="tech-icon"><i class="fab fa-js"></i><span>JavaScript</span></div>
                             <div class="tech-icon"><i class="fab fa-react"></i><span>React</span></div>
-                            <div class="tech-icon"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
-                            <div class="tech-icon"><i class="fab fa-angular"></i><span>Angular</span></div>
                             <div class="tech-icon"><i class="fab fa-node-js"></i><span>Node.js</span></div>
-                            <div class="tech-icon"><i class="fab fa-php"></i><span>PHP</span></div>
-                        </div>
-                    </div>
-                    
-                    <div class="tech-category animate-on-scroll">
-                        <h3>Mobile & Desktop</h3>
-                        <div class="tech-icons">
-                            <div class="tech-icon"><i class="fab fa-android"></i><span>Android</span></div>
-                            <div class="tech-icon"><i class="fab fa-apple"></i><span>iOS</span></div>
+                            <div class="tech-icon"><i class="fas fa-server"></i><span>NestJS</span></div>
                             <div class="tech-icon"><i class="fab fa-react"></i><span>React Native</span></div>
-                            <div class="tech-icon"><i class="fab fa-windows"></i><span>Windows</span></div>
-                            <div class="tech-icon"><i class="fab fa-linux"></i><span>Linux</span></div>
-                            <div class="tech-icon"><i class="fab fa-apple"></i><span>macOS</span></div>
+                            <div class="tech-icon"><i class="fab fa-typescript"></i><span>TypeScript</span></div>
                         </div>
                     </div>
                     
-                    <div class="tech-category animate-on-scroll">
+                    <div class="tech-category animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">
                         <h3>Banco de Dados</h3>
                         <div class="tech-icons">
-                            <div class="tech-icon"><i class="fas fa-database"></i><span>MySQL</span></div>
                             <div class="tech-icon"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+                            <div class="tech-icon"><i class="fas fa-project-diagram"></i><span>Neo4j</span></div>
                             <div class="tech-icon"><i class="fas fa-database"></i><span>MongoDB</span></div>
-                            <div class="tech-icon"><i class="fas fa-database"></i><span>SQLite</span></div>
-                            <div class="tech-icon"><i class="fas fa-database"></i><span>Redis</span></div>
-                            <div class="tech-icon"><i class="fas fa-database"></i><span>Firebase</span></div>
+                            <div class="tech-icon"><i class="fas fa-memory"></i><span>Redis</span></div>
+                            <div class="tech-icon"><i class="fas fa-layer-group"></i><span>GraphQL</span></div>
+                            <div class="tech-icon"><i class="fas fa-sitemap"></i><span>Prisma</span></div>
                         </div>
                     </div>
                     
-                    <div class="tech-category animate-on-scroll">
-                        <h3>DevOps & Cloud</h3>
+                    <div class="tech-category animate-on-scroll" data-animation="fade-in-up" data-delay="0.3s">
+                        <h3>DevOps & Infraestrutura</h3>
                         <div class="tech-icons">
-                            <div class="tech-icon"><i class="fab fa-aws"></i><span>AWS</span></div>
-                            <div class="tech-icon"><i class="fab fa-google"></i><span>Google Cloud</span></div>
-                            <div class="tech-icon"><i class="fab fa-microsoft"></i><span>Azure</span></div>
                             <div class="tech-icon"><i class="fab fa-docker"></i><span>Docker</span></div>
-                            <div class="tech-icon"><i class="fab fa-kubernetes"></i><span>Kubernetes</span></div>
                             <div class="tech-icon"><i class="fab fa-github"></i><span>GitHub</span></div>
+                            <div class="tech-icon"><i class="fab fa-aws"></i><span>AWS</span></div>
+                            <div class="tech-icon"><i class="fab fa-github-alt"></i><span>GitHub Actions</span></div>
+                            <div class="tech-icon"><i class="fas fa-terminal"></i><span>CI/CD</span></div>
+                            <div class="tech-icon"><i class="fas fa-shield-alt"></i><span>JWT</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category animate-on-scroll" data-animation="fade-in-up" data-delay="0.4s">
+                        <h3>Games & 3D</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class="fas fa-gamepad"></i><span>Godot</span></div>
+                            <div class="tech-icon"><i class="fas fa-cube"></i><span>UltiMaker Cura</span></div>
+                            <div class="tech-icon"><i class="fas fa-cubes"></i><span>Blender</span></div>
+                            <div class="tech-icon"><i class="fas fa-shapes"></i><span>Unity</span></div>
+                            <div class="tech-icon"><i class="fas fa-vr-cardboard"></i><span>VR/AR</span></div>
+                            <div class="tech-icon"><i class="fas fa-print"></i><span>3D Printing</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-category animate-on-scroll" data-animation="fade-in-up" data-delay="0.5s">
+                        <h3>Ferramentas & Design</h3>
+                        <div class="tech-icons">
+                            <div class="tech-icon"><i class="fab fa-figma"></i><span>Figma</span></div>
+                            <div class="tech-icon"><i class="fab fa-sketch"></i><span>Sketch</span></div>
+                            <div class="tech-icon"><i class="fab fa-trello"></i><span>Trello</span></div>
+                            <div class="tech-icon"><i class="fab fa-jira"></i><span>Jira</span></div>
+                            <div class="tech-icon"><i class="fas fa-palette"></i><span>Adobe XD</span></div>
+                            <div class="tech-icon"><i class="fas fa-vector-square"></i><span>Illustrator</span></div>
                         </div>
                     </div>
                 </div>
@@ -407,12 +761,27 @@
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container">
-                <div class="cta-content animate-on-scroll">
-                    <h2>Vamos Transformar Suas Ideias em Realidade</h2>
-                    <p>Entre em contato conosco e descubra como podemos ajudar seu negócio a crescer com nossas soluções tecnológicas</p>
+                <div class="cta-content animate-on-scroll" data-animation="fade-in-up">
+                    <div class="cta-badge">Vamos Trabalhar Juntos</div>
+                    <h2>Transforme Suas Ideias em Resultados Concretos</h2>
+                    <p>Estamos prontos para ajudar seu negócio a alcançar novos patamares com nossas soluções tecnológicas personalizadas. Nossa equipe especializada está à disposição para entender suas necessidades e desenvolver a melhor estratégia para o seu projeto.</p>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Atendimento personalizado</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Orçamento sem compromisso</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Projetos sob medida</span>
+                        </div>
+                    </div>
                     <div class="cta-buttons">
-                        <a href="../contato/" class="btn btn-primary btn-ripple">Fale Conosco <i class="fas fa-paper-plane"></i></a>
-                        <a href="../sobre/" class="btn btn-outline-light">Conheça Nossa Equipe</a>
+                        <a href="../contato/" class="btn btn-primary btn-ripple btn-lg">Solicitar Orçamento <i class="fas fa-paper-plane"></i></a>
+                        <a href="../sobre/" class="btn btn-outline-light btn-lg">Conheça Nossa Equipe <i class="fas fa-users"></i></a>
                     </div>
                 </div>
             </div>
@@ -480,7 +849,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2023 Alt tab Corp. Todos os direitos reservados.</p>
+                <p class="footer-copyright">&copy; 2025 Alt tab Corp. Todos os direitos reservados.</p>
                 <div class="footer-legal">
                     <a href="../termos/" class="footer-legal-link">Termos de Uso</a>
                     <a href="../privacidade/" class="footer-legal-link">Política de Privacidade</a>
@@ -496,53 +865,64 @@
 
     <!-- Floating Contact Button -->
     <div class="floating-contact">
-        <button class="floating-contact-btn" id="floatingContactBtn">
+        <button class="floating-contact-btn" id="floatingContactBtn" aria-label="Abrir opções de contato" aria-haspopup="dialog">
             <i class="fas fa-comments"></i>
+            <span class="floating-contact-tooltip">Fale Conosco</span>
         </button>
-        <div class="floating-contact-menu" id="floatingContactMenu">
+        <div class="floating-contact-menu" id="floatingContactMenu" role="dialog" aria-hidden="true">
             <div class="floating-contact-title">
-                Fale Conosco
-                <span class="floating-contact-close" id="floatingContactClose">
+                <span>Fale Conosco</span>
+                <span class="floating-contact-close" id="floatingContactClose" aria-label="Fechar menu">
                     <i class="fas fa-times"></i>
                 </span>
             </div>
+            <div class="floating-contact-header">
+                <p>Como podemos ajudar você hoje?</p>
+            </div>
             <div class="floating-contact-options">
-                <a href="tel:+551199999999" class="floating-contact-option">
+                <a href="tel:+5583993322427" class="floating-contact-option" aria-label="Ligar para (83) 99332-2427">
                     <div class="floating-contact-icon">
                         <i class="fas fa-phone-alt"></i>
                     </div>
                     <div class="floating-contact-info">
-                        <div class="floating-contact-label">Telefone</div>
-                        <div class="floating-contact-value">(11) 9999-9999</div>
+                        <div class="floating-contact-label">Atendimento Telefônico</div>
+                        <div class="floating-contact-value">(83) 99332-2427</div>
+                        <div class="floating-contact-desc">Seg-Sex: 9h às 18h</div>
                     </div>
                 </a>
-                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option">
+                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option" aria-label="Enviar email para contato@alttabcorp.com.br">
                     <div class="floating-contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="floating-contact-info">
                         <div class="floating-contact-label">E-mail</div>
-                        <div class="floating-contact-value">contato@alttabcorp.com.br</div>
+                        <div class="floating-contact-value">alttabcorp@gmail.com</div>
+                        <div class="floating-contact-desc">Resposta em até 24h</div>
                     </div>
                 </a>
-                <a href="https://wa.me/5511999999999" target="_blank" class="floating-contact-option">
+                <a href="https://wa.me/5583993322427" target="_blank" class="floating-contact-option" aria-label="Enviar mensagem no WhatsApp">
                     <div class="floating-contact-icon" style="background-color: #25D366;">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="floating-contact-info">
                         <div class="floating-contact-label">WhatsApp</div>
-                        <div class="floating-contact-value">Envie uma mensagem</div>
+                        <div class="floating-contact-value">(83) 99332-2427</div>
+                        <div class="floating-contact-desc">Atendimento imediato</div>
                     </div>
                 </a>
-                <a href="../contato/" class="floating-contact-option">
+                <a href="../contato/" class="floating-contact-option" aria-label="Acessar página de contato">
                     <div class="floating-contact-icon" style="background-color: var(--accent);">
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="fas fa-file-alt"></i>
                     </div>
                     <div class="floating-contact-info">
-                        <div class="floating-contact-label">Formulário</div>
-                        <div class="floating-contact-value">Preencha nosso formulário</div>
+                        <div class="floating-contact-label">Formulário de Contato</div>
+                        <div class="floating-contact-value">Envie sua mensagem</div>
+                        <div class="floating-contact-desc">Para solicitações detalhadas</div>
                     </div>
                 </a>
+            </div>
+            <div class="floating-contact-footer">
+                <p>Estamos prontos para atender você!</p>
             </div>
         </div>
     </div>
@@ -565,10 +945,139 @@
     <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/theme-toggle.js"></script>
     <script src="../../assets/js/cookie-banner.js"></script>
-    <!-- Scripts -->
-    <script src="../../assets/js/main.js"></script>
-    <script src="../../assets/js/cookie-banner.js"></script>
     <script src="../../assets/js/floating-contact.js"></script>
     <script src="../../assets/js/analytics.js"></script>
+    <script src="../../assets/js/pages/servicos.js"></script>
+    
+    <!-- Particles.js para animação do hero -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Inicialização do Typed.js para texto animado no hero
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('typedHero')) {
+                new Typed('#typedHero', {
+                    strings: [
+                        'impulsionar seu negócio',
+                        'transformar suas ideias',
+                        'aumentar sua presença digital',
+                        'alcançar seus objetivos',
+                        'conquistar novos clientes'
+                    ],
+                    typeSpeed: 50,
+                    backSpeed: 30,
+                    backDelay: 2000,
+                    loop: true,
+                    smartBackspace: true,
+                    onComplete: (self) => {
+                        document.querySelector('.typed-text').classList.add('typed-done');
+                    },
+                    preStringTyped: (arrayPos, self) => {
+                        document.querySelector('.typed-text').classList.remove('typed-done');
+                    }
+                });
+            }
+            
+            // Inicializa as partículas no hero - igual à página sobre
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: {
+                            value: 80,
+                            density: {
+                                enable: true,
+                                value_area: 800
+                            }
+                        },
+                        color: {
+                            value: '#2563EB'
+                        },
+                        shape: {
+                            type: 'circle',
+                            stroke: {
+                                width: 0,
+                                color: '#000000'
+                            },
+                        },
+                        opacity: {
+                            value: 0.8,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 1,
+                                opacity_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        size: {
+                            value: 3,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 2,
+                                size_min: 0.1,
+                                sync: false
+                            }
+                        },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: '#2563EB',
+                            opacity: 0.4,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: 'none',
+                            random: true,
+                            straight: false,
+                            out_mode: 'out',
+                            bounce: false
+                        }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: 'grab'
+                            },
+                            onclick: {
+                                enable: true,
+                                mode: 'push'
+                            },
+                            resize: true
+                        },
+                        modes: {
+                            grab: {
+                                distance: 150,
+                                line_linked: {
+                                    opacity: 0.5
+                                }
+                            },
+                            push: {
+                                particles_nb: 3
+                            }
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+        });
+    </script>
+    
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M12XYZ7P89"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-M12XYZ7P89', {
+            'page_title': 'Serviços Tecnológicos',
+            'page_path': '/pages/servicos/',
+            'site_section': 'serviços',
+            'update_date': '11/07/2025'
+        });
+    </script>
 </body>
 </html> 
