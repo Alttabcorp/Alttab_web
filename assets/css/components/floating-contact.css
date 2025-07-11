@@ -600,4 +600,20 @@
         padding-bottom: 0.4rem;
         min-height: 46px;
     }
-} 
+}
+
+/* Ajustes para garantir visibilidade em diferentes contextos de página */
+.page-contato .floating-contact {
+    z-index: 999;
+    position: fixed;
+}
+
+.page-contato .floating-contact-menu {
+    z-index: 1000;
+}
+
+/* Ajuste para evitar conflitos com outros elementos na página de contato */
+.page-contato .map-section {
+    z-index: 1; /* Garante que o mapa fique abaixo do botão flutuante */
+    position: relative;
+}

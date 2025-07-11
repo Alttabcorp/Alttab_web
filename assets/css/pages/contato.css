@@ -58,6 +58,45 @@
     margin: 0 auto;
 }
 
+/* Ajustes adicionais para a seção hero */
+.hero-pattern-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../images/hero-pattern.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Botões estilizados para combinar com o padrão do site */
+.btn-outline-light {
+    border: 2px solid var(--light);
+    color: var(--light);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-lg {
+    padding: 0.75rem 1.75rem;
+    font-size: var(--font-size-md);
+}
+
 /* Contato Section */
 .contact-section {
     padding: 5rem 0;
@@ -278,18 +317,294 @@
     border: none;
 }
 
-/* FAQ Section */
-.faq-section {
+/* FAQ Section - usando estilos do componente faq.css */
+/* Removido todos os estilos específicos para usar apenas os do componente faq.css */
+
+/* Estilos para o container do Google Form */
+.google-form-container {
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 0;
+    overflow: hidden;
+    animation: fadeSlideIn 0.6s ease-out;
+    transform-origin: top;
+}
+
+.google-form-container iframe {
+    width: 100%;
+    height: 100vh;
+    max-height: 900px;
+    min-height: 850px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+}
+
+/* Atualizações para a página de contato para suporte ao tema dark e melhor alinhamento com a página principal */
+
+/* Estilo atualizado para a hero section */
+.hero {
+    position: relative;
+    background: var(--gradient-primary);
+    color: var(--light);
+    padding: 8rem 0 6rem;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../images/hero-pattern.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-wave {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.hero-wave .wave {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-shape {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 1;
+}
+
+/* Tema dark para as seções */
+.page-contato.dark-theme .section-light {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.page-contato.dark-theme .section-header h2 {
+    color: var(--light);
+}
+
+.page-contato.dark-theme .section-badge.light {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+}
+
+.page-contato.dark-theme .contact-details h3 {
+    color: var(--light);
+}
+
+.page-contato.dark-theme .contact-icon {
+    background: var(--gradient-secondary);
+}
+
+.page-contato.dark-theme .contact-form-container {
+    background-color: var(--gray-800);
+    color: var(--light);
+}
+
+/* Melhorias para o container do Google Form */
+.google-form-container {
+    position: relative;
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 0;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.google-form-container:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.form-loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loader-ring {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+}
+
+.loader-ring:after {
+    content: " ";
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 4px solid var(--primary);
+    border-color: var(--primary) transparent var(--primary) transparent;
+    animation: loader-ring 1s linear infinite;
+}
+
+@keyframes loader-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.page-contato.dark-theme .google-form-container {
+    background-color: var(--gray-800);
+}
+
+.page-contato.dark-theme .form-loading-overlay {
+    background: rgba(30, 41, 59, 0.7);
+    color: var(--light);
+}
+
+.page-contato.dark-theme .loader-ring:after {
+    border-color: var(--accent) transparent var(--accent) transparent;
+}
+
+/* Ajustes para CTA Section */
+.cta-section {
     padding: 5rem 0;
-    background-color: var(--gray-100);
+    position: relative;
+    overflow: hidden;
+    color: var(--light);
 }
 
-.faq-container {
+.section-dark {
+    background: var(--gradient-dark);
+    color: var(--light);
+}
+
+.section-pattern {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-pattern .pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
     max-width: 800px;
-    margin: 3rem auto 0;
+    margin: 0 auto;
 }
 
-/* Responsividade */
+.cta-content h2 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1.5rem;
+    color: var(--light);
+}
+
+.cta-content p {
+    font-size: var(--font-size-lg);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Efeitos Tilt */
+.tilt-effect {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 767px) {
+    .google-form-container iframe {
+        height: 1000px;
+    }
+}
+
+@media (max-width: 576px) {
+    .google-form-container iframe {
+        height: 1050px;
+    }
+}
+
+/* Garantir que o botão flutuante fique na frente do formulário */
+.floating-contact {
+    z-index: 9999;
+}
+
+/* Efeito de carregamento para formulário */
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.form-loading-overlay p {
+    animation: pulse 1.5s infinite;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
 @media (max-width: 1200px) {
     .hero-content h1 {
         font-size: var(--font-size-3xl);
@@ -320,8 +635,7 @@
         font-size: var(--font-size-md);
     }
     
-    .contact-section,
-    .faq-section {
+    .contact-section {
         padding: 4rem 0;
     }
     
@@ -376,4 +690,124 @@
     .map-section {
         height: 300px;
     }
+}
+
+/* Animação para o container do Google Form */
+.google-form-container {
+    animation: fadeSlideIn 0.6s ease-out;
+    transform-origin: top;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Melhoria visual para o container do formulário */
+.contact-form-container {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form-container:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Melhor contraste para elementos do Google Form */
+.google-form-container {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Ajustes aprimorados para o iframe do Google Forms */
+.google-form-container iframe {
+    width: 100%;
+    height: 100vh;
+    max-height: 900px;
+    min-height: 850px;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+}
+
+/* Ajustes para tema dark no formulário - invertendo cores para melhor visualização */
+.page-contato.dark-theme .google-form-container iframe {
+    filter: invert(0.9) hue-rotate(180deg) brightness(0.9);
+}
+
+/* Classe para controle responsivo */
+@media (max-width: 992px) {
+    .google-form-container iframe {
+        height: 950px;
+    }
+    
+    .contact-grid {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        order: 2; /* Coloca as informações abaixo do formulário em telas pequenas */
+    }
+    
+    .contact-form-container {
+        order: 1; /* Coloca o formulário acima das informações em telas pequenas */
+        margin-bottom: 2rem;
+    }
+    
+    .google-form-container iframe {
+        height: 1000px;
+    }
+}
+
+@media (max-width: 576px) {
+    .google-form-container iframe {
+        height: 1050px;
+    }
+}
+
+/* Melhorias adicionais para o container do formulário */
+.contact-form-container {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.section-light .contact-form-container {
+    background-color: var(--white);
+}
+
+.page-contato.dark-theme .section-light .contact-form-container {
+    background-color: var(--gray-800);
+    color: var(--light);
+}
+
+.contact-form-container .section-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Removendo animação que pode atrapalhar a experiência */
+.google-form-container {
+    transform: none !important;
+    animation: none !important;
 }
