@@ -235,7 +235,7 @@
     gap: 1rem;
 }
 
-.social-link {
+.social-media .social-link {
     width: 45px;
     height: 45px;
     border-radius: var(--border-radius-full);
@@ -248,7 +248,7 @@
     transition: all var(--transition-normal);
 }
 
-.social-link:hover {
+.social-media .social-link:hover {
     background-color: var(--primary);
     color: var(--light);
     transform: translateY(-3px);
@@ -1223,496 +1223,48 @@
     }
 }
 
-/* =====================================================
-   MELHORIAS DE RESPONSIVIDADE APRIMORADAS
-   ===================================================== */
+/* Correção para manter especificidade correta dos ícones sociais */
+/* Aplicar estilos apenas aos ícones da seção de contato, não aos do footer */
 
-/* Responsividade aprimorada para Desktop Grande */
-@media (min-width: 1400px) {
-    .hero {
-        min-height: 70vh;
-        padding: 8rem 0 6rem;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 1.2);
-        max-width: 900px;
-        margin: 0 auto 2rem;
-    }
-    
-    .hero p {
-        font-size: calc(var(--font-size-lg) * 1.1);
-        max-width: 700px;
-    }
-    
-    .contact-grid {
-        gap: 4rem;
-    }
-}
-
-/* Responsividade para Tablets e Dispositivos Médios */
-@media (max-width: 1200px) {
-    .hero {
-        min-height: 55vh;
-        padding: 5rem 0 4rem;
-    }
-    
-    .hero-content {
-        max-width: 700px;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 0.85);
-    }
-    
-    .contact-grid {
-        gap: 2rem;
-    }
-    
-    .contact-info {
-        margin-bottom: 2rem;
-    }
-    
-    .contact-methods {
-        gap: 1.5rem;
-    }
-    
-    .contact-form-container {
-        padding: 2rem;
-    }
-}
-
-/* Tablets */
-@media (max-width: 992px) {
-    .hero {
-        min-height: 50vh;
-        padding: 5rem 0 3rem;
-    }
-    
-    .hero-content {
-        max-width: 600px;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 0.8);
-    }
-    
-    .hero h1:after {
-        width: 80px;
-        height: 3px;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .contact-info {
-        order: 2;
-        margin-bottom: 0;
-    }
-    
-    .contact-form-container {
-        order: 1;
-    }
-    
-    .contact-methods {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-    
-    .social-media {
-        grid-column: 1 / -1;
-        text-align: center;
-        margin-top: 2rem;
-    }
-    
-    .google-form-container iframe {
-        min-height: 800px;
-    }
-}
-
-/* Dispositivos Móveis */
+/* Sobrescrevendo regras globais com mais especificidade */
 @media (max-width: 768px) {
-    .hero {
-        min-height: 45vh;
-        padding: 4rem 0 2.5rem;
-    }
-    
-    .hero-content {
-        max-width: 100%;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 0.7);
-    }
-    
-    .hero h1:after {
-        width: 70px;
-    }
-    
-    .contact-methods {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .contact-method {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    
-    .contact-icon {
-        flex-shrink: 0;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--primary);
-        color: white;
-        border-radius: 50%;
-        font-size: 1.2rem;
-    }
-    
-    .contact-details h3 {
-        font-size: var(--font-size-lg);
-        margin-bottom: 0.5rem;
-        color: var(--primary);
-    }
-    
-    .contact-details p {
-        font-size: var(--font-size-sm);
-        line-height: 1.5;
-        margin: 0;
-    }
-    
-    .google-form-container iframe {
-        border-radius: var(--border-radius-lg);
-    }
-}
-
-@media (max-width: 576px) {
-    .hero {
-        min-height: 40vh;
-        padding: 3.5rem 0 2rem;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 0.6);
-        margin-bottom: 1rem;
-    }
-    
-    .hero h1:after {
-        width: 60px;
-        margin-top: 0.75rem;
-    }
-    
-    .hero p {
-        font-size: calc(var(--font-size-base) * 0.9);
-    }
-    
-    .contact-grid {
-        gap: 2rem;
-    }
-    
-    .section-header {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    
-    .section-header h2 {
-        font-size: var(--font-size-xl);
-    }
-    
-    .contact-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-    
-    .contact-details h3 {
-        font-size: var(--font-size-base);
-    }
-    
-    .contact-details p {
-        font-size: var(--font-size-xs);
-    }
-    
-    .social-links {
-        justify-content: center;
-        gap: 1rem;
-    }
-    
-    .social-link {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+    .social-media .social-link {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1rem !important;
+        /* Força os estilos apenas para os ícones da seção de contato */
     }
 }
 
 @media (max-width: 480px) {
-    .contact-method {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 0.75rem;
-    }
-    
-    .contact-details {
-        text-align: center;
-    }
-    
-    .google-form-container {
-        margin: 0 -1rem;
-    }
-}
-
-/* =====================================================
-   MELHORIAS DE RESPONSIVIDADE APRIMORADAS
-   ===================================================== */
-
-/* Responsividade aprimorada para Desktop Grande */
-@media (min-width: 1400px) {
-    .hero {
-        min-height: 70vh;
-        padding: 8rem 0 6rem;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 1.2);
-        max-width: 900px;
-        margin: 0 auto 2rem;
-    }
-    
-    .hero p {
-        font-size: calc(var(--font-size-lg) * 1.1);
-        max-width: 700px;
-    }
-    
-    .contact-grid {
-        gap: 4rem;
-    }
-}
-
-/* Responsividade para Tablets e Dispositivos Médios */
-@media (max-width: 1200px) {
-    .hero {
-        min-height: 55vh;
-        padding: 5rem 0 4rem;
-    }
-    
-    .hero-content {
-        max-width: 700px;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 0.85);
-    }
-    
-    .contact-grid {
-        gap: 2rem;
-    }
-    
-    .contact-info {
-        margin-bottom: 2rem;
-    }
-    
-    .contact-methods {
-        gap: 1.5rem;
-    }
-    
-    .contact-form-container {
-        padding: 2rem;
-    }
-}
-
-/* Tablets */
-@media (max-width: 992px) {
-    .hero {
-        min-height: 50vh;
-        padding: 5rem 0 3rem;
-    }
-    
-    .hero-content {
-        max-width: 600px;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 0.8);
-    }
-    
-    .hero h1:after {
-        width: 80px;
-        height: 3px;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .contact-info {
-        order: 2;
-        margin-bottom: 0;
-    }
-    
-    .contact-form-container {
-        order: 1;
-    }
-    
-    .contact-methods {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-    
-    .social-media {
-        grid-column: 1 / -1;
-        text-align: center;
-        margin-top: 2rem;
-    }
-    
-    .google-form-container iframe {
-        min-height: 800px;
-    }
-}
-
-/* Dispositivos Móveis */
-@media (max-width: 768px) {
-    .hero {
-        min-height: 45vh;
-        padding: 4rem 0 2.5rem;
-    }
-    
-    .hero-content {
-        max-width: 100%;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 0.7);
-    }
-    
-    .hero h1:after {
-        width: 70px;
-    }
-    
-    .contact-methods {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .contact-method {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    
-    .contact-icon {
-        flex-shrink: 0;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--primary);
-        color: white;
-        border-radius: 50%;
-        font-size: 1.2rem;
-    }
-    
-    .contact-details h3 {
-        font-size: var(--font-size-lg);
-        margin-bottom: 0.5rem;
-        color: var(--primary);
-    }
-    
-    .contact-details p {
-        font-size: var(--font-size-sm);
-        line-height: 1.5;
-        margin: 0;
-    }
-    
-    .google-form-container iframe {
-        border-radius: var(--border-radius-lg);
+    .social-media .social-link {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 0.9rem !important;
     }
 }
 
 @media (max-width: 576px) {
-    .hero {
-        min-height: 40vh;
-        padding: 3.5rem 0 2rem;
-    }
-    
-    .hero h1 {
-        font-size: calc(var(--font-size-4xl) * 0.6);
-        margin-bottom: 1rem;
-    }
-    
-    .hero h1:after {
-        width: 60px;
-        margin-top: 0.75rem;
-    }
-    
-    .hero p {
-        font-size: calc(var(--font-size-base) * 0.9);
-    }
-    
-    .contact-grid {
-        gap: 2rem;
-    }
-    
-    .section-header {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    
-    .section-header h2 {
-        font-size: var(--font-size-xl);
-    }
-    
-    .contact-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-    }
-    
-    .contact-details h3 {
-        font-size: var(--font-size-base);
-    }
-    
-    .contact-details p {
-        font-size: var(--font-size-xs);
-    }
-    
-    .social-links {
-        justify-content: center;
-        gap: 1rem;
-    }
-    
-    .social-link {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+    .social-media .social-link {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 0.9rem !important;
     }
 }
 
-@media (max-width: 480px) {
-    .contact-method {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 0.75rem;
-    }
-    
-    .contact-details {
-        text-align: center;
-    }
-    
-    .google-form-container {
-        margin: 0 -1rem;
-    }
+/* Garantir que os ícones do footer mantenham o estilo original */
+.footer .social-link {
+    width: 36px !important;
+    height: 36px !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: var(--gray-200) !important;
+}
+
+.footer .social-link:hover {
+    background-color: var(--accent) !important;
+    color: var(--light) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3) !important;
 }
 
 /* Loading overlay para formulário */
