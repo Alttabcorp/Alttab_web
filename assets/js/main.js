@@ -54,28 +54,9 @@ window.addEventListener('load', function() {
                     }
                 });
             } else {
-                // Configuração para mobile
-                if (subMenuLink) {
-                    subMenuLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        if (subDropdownMenu) {
-                            subDropdownMenu.classList.toggle('active');
-                            if (subDropdownMenu.classList.contains('active')) {
-                                subDropdownMenu.style.opacity = '1';
-                                subDropdownMenu.style.visibility = 'visible';
-                                subDropdownMenu.style.maxHeight = '500px';
-                                subMenuLink.classList.add('active');
-                            } else {
-                                subDropdownMenu.style.opacity = '0';
-                                subDropdownMenu.style.visibility = 'hidden';
-                                subDropdownMenu.style.maxHeight = '0';
-                                subMenuLink.classList.remove('active');
-                            }
-                        }
-                    });
-                }
+                // Mobile: Desabilitar submenus para navegação direta
+                // Não adicionar event listeners que impedem navegação
+                console.log('Mobile: E-Sports submenu desabilitado para navegação direta');
             }
         });
     };
@@ -133,52 +114,9 @@ window.addEventListener('load', function() {
                     });
                 });
             } else {
-                // Mobile: Click
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    // Verifica se este dropdown já está ativo
-                    const isActive = dropdownMenu.classList.contains('active');
-                    
-                    // Fecha todos os outros dropdowns do mesmo nível
-                    const siblings = Array.from(item.parentNode.children);
-                    siblings.forEach(sibling => {
-                        if (sibling !== item && sibling.classList.contains('nav-dropdown')) {
-                            const siblingMenu = sibling.querySelector('.dropdown-menu');
-                            if (siblingMenu) hideDropdown(siblingMenu);
-                        }
-                    });
-                    
-                    // Alterna o estado atual
-                    if (isActive) {
-                        hideDropdown(dropdownMenu);
-                    } else {
-                        showDropdown(dropdownMenu);
-                    }
-                });
-                
-                // Lidar com submenus aninhados em mobile
-                const nestedDropdowns = item.querySelectorAll('.nav-item.nav-dropdown');
-                nestedDropdowns.forEach(nestedItem => {
-                    const nestedLink = nestedItem.querySelector('.nav-link');
-                    const nestedMenu = nestedItem.querySelector('.dropdown-menu');
-                    
-                    nestedLink.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        // Verifica se este dropdown já está ativo
-                        const isActive = nestedMenu.classList.contains('active');
-                        
-                        // Alterna o estado atual
-                        if (isActive) {
-                            hideDropdown(nestedMenu);
-                        } else {
-                            showDropdown(nestedMenu);
-                        }
-                    });
-                });
+                // Mobile: Navegar diretamente para a página (sem dropdown)
+                // Permitir navegação normal - não adicionar event listeners que impedem navegação
+                console.log('Dispositivo móvel: dropdowns desabilitados, navegação direta habilitada');
             }
         });
         

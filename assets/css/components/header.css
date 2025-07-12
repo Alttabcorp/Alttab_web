@@ -325,6 +325,30 @@
         list-style: none;
         padding-left: 0;
     }
+    
+    /* Ocultar dropdowns em dispositivos móveis */
+    .nav-dropdown .dropdown-menu {
+        display: none !important;
+    }
+    
+    /* Remover seta dos dropdowns em mobile */
+    .nav-dropdown .dropdown-arrow {
+        display: none !important;
+    }
+    
+    /* Estilizar links de dropdown como links normais em mobile */
+    .nav-dropdown > .nav-link {
+        pointer-events: all;
+        cursor: pointer;
+    }
+    
+    /* Remover estilos de hover para dropdown em mobile */
+    .nav-dropdown:hover > .dropdown-menu,
+    .nav-dropdown.active > .dropdown-menu {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
 }
 
 /* Correção para submenu de E-sports */
@@ -566,4 +590,4 @@
 .dropdown-menu li::before,
 .dropdown-menu li::after {
     display: none !important;
-} 
+}
