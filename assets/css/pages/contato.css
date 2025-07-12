@@ -3,7 +3,7 @@
  * Design moderno e elegante para a página de Contato
  */
 
-/* Page Header - seguindo padrão da página sobre */
+/* Header da página */
 .page-header {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     padding: 6rem 0 4rem;
@@ -99,59 +99,6 @@
     max-width: 600px;
     margin: 0 auto;
     line-height: var(--line-height-relaxed);
-}
-
-/* Melhorias para o efeito de texto gradiente */
-.page-header .gradient-text {
-    background: linear-gradient(90deg, var(--secondary), var(--accent));
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 3s linear infinite;
-    position: relative;
-    display: inline;
-    vertical-align: baseline;
-    line-height: inherit;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Botões na hero section (removidos temporariamente) */
-.hero-buttons .btn-primary:hover:before {
-    left: 100%;
-}
-
-.hero-buttons .btn-outline-light:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.btn-outline-light {
-    border: 2px solid var(--light);
-    color: var(--light);
-    background: transparent;
-    transition: all 0.3s ease;
-}
-
-.btn-outline-light:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.btn-lg {
-    padding: 0.75rem 1.75rem;
-    font-size: var(--font-size-md);
 }
 
 /* Contato Section */
@@ -402,25 +349,11 @@
     display: block;
 }
 
-/* Melhorias responsivas para a hero section */
+/* Melhorias responsivas */
 @media (max-width: 768px) {
-    .hero, .page-header {
-        min-height: 40vh;
-        padding: 5rem 0 3rem;
-    }
-    
-    .hero h1, .page-header h1 {
-        font-size: var(--font-size-2xl);
-    }
-    
-    .title-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .hero p, .page-header p {
-        font-size: var(--font-size-base);
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .contact-grid {
@@ -1361,53 +1294,6 @@
     
     .hero p {
         font-size: calc(var(--font-size-base) * 0.9);
-    }
-}
-
-/* Estilos responsivos para page-header */
-@media (max-width: 1200px) {
-    .page-header {
-        padding: 5rem 0 3rem;
-    }
-    
-    .page-header h1 {
-        font-size: var(--font-size-3xl);
-    }
-}
-
-@media (max-width: 992px) {
-    .page-header {
-        padding: 4rem 0 2.5rem;
-        min-height: 45vh;
-    }
-    
-    .page-header h1 {
-        font-size: var(--font-size-2xl);
-    }
-    
-    .page-header p {
-        font-size: var(--font-size-base);
-    }
-}
-
-@media (max-width: 768px) {
-    .page-header {
-        padding: 3rem 0 2rem;
-        min-height: 40vh;
-    }
-    
-    .page-header h1 {
-        font-size: var(--font-size-xl);
-        margin-bottom: 1rem;
-    }
-    
-    .page-header p {
-        font-size: var(--font-size-sm);
-        max-width: 100%;
-    }
-    
-    .page-header-content {
-        padding: 0 1rem;
     }
 }
 
