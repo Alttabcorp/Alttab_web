@@ -91,25 +91,22 @@
 }
 
 .page-header h1 {
-    font-size: var(--font-size-5xl);
+    font-size: var(--font-size-4xl);
     font-weight: var(--font-weight-bold);
     color: var(--light);
     margin-bottom: 1.5rem;
     line-height: 1.2;
-    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    animation: fadeInDown 1s ease-out;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo já definido em animations.css, não precisa duplicar */
 
 .page-header p {
-    font-size: var(--font-size-xl);
-    color: rgba(255, 255, 255, 0.95);
-    max-width: 750px;
-    margin: 0 auto 2rem;
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
     line-height: var(--line-height-relaxed);
-    animation: fadeInUp 1s ease-out 0.3s;
-    animation-fill-mode: both;
 }
 
 .hero-buttons {
