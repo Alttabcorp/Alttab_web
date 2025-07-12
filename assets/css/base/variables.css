@@ -159,12 +159,19 @@
     --legal-text: var(--gray-700);
     --legal-heading: var(--primary);
     
-    /* Variáveis para elementos interativos */
-    --hover-transition: all var(--transition-normal);
-    --button-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
-    --button-shadow-hover: 0 8px 15px -3px rgba(37, 99, 235, 0.3);
-    --card-hover-transform: translateY(-5px);
-    --icon-hover-rotate: rotate(5deg) scale(1.1);
+    /* Gradientes para hexágonos e elementos especiais */
+    --hex-gradient-1: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    --hex-gradient-2: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    --hex-gradient-3: linear-gradient(135deg, #f3e5f5, #e1bee7);
+    --hex-gradient-4: linear-gradient(135deg, #e8f5e8, #c8e6c8);
+    --hex-gradient-5: linear-gradient(135deg, #fff3e0, #ffcc02);
+    --hex-gradient-6: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --hex-gradient-7: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --hex-gradient-8: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --hex-gradient-9: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --hex-gradient-10: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --hex-gradient-11: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --warning-color: #ffc107;
 }
 
 /* Dark Mode */
@@ -191,14 +198,17 @@
     --legal-text: var(--gray-300);
     --legal-heading: var(--gray-100);
     
-    /* Sombras para dark mode */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
-    
-    /* Variáveis para elementos interativos no tema escuro */
-    --button-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
-    --button-shadow-hover: 0 8px 15px -3px rgba(59, 130, 246, 0.4);
+    /* Gradientes para hexágonos no tema escuro */
+    --hex-gradient-1: linear-gradient(135deg, #374151, #4b5563);
+    --hex-gradient-2: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    --hex-gradient-3: linear-gradient(135deg, #581c87, #a855f7);
+    --hex-gradient-4: linear-gradient(135deg, #166534, #16a34a);
+    --hex-gradient-5: linear-gradient(135deg, #92400e, #fbbf24);
+    --hex-gradient-6: linear-gradient(135deg, #4c1d95 0%, #6366f1 100%);
+    --hex-gradient-7: linear-gradient(135deg, #be185d 0%, #f97316 100%);
+    --hex-gradient-8: linear-gradient(135deg, #0369a1 0%, #06b6d4 100%);
+    --hex-gradient-9: linear-gradient(135deg, #166534 0%, #10b981 100%);
+    --hex-gradient-10: linear-gradient(135deg, #be123c 0%, #fbbf24 100%);
+    --hex-gradient-11: linear-gradient(135deg, #0c4a6e 0%, #7e22ce 100%);
+    --warning-color: #fbbf24;
 }
