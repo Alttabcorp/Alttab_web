@@ -1252,332 +1252,96 @@
     .team-cta {
         padding: 1.5rem;
     }
-}
-
-/* Correções adicionais para problemas de overflow e timeline responsivo */
-
-/* Prevenir overflow horizontal em todos os dispositivos */
-@media (max-width: 1200px) {
-    .page-sobre {
-        overflow-x: hidden;
+    
+    /* Responsividade para dispositivos pequenos - seção Valores/Princípios */
+    .values-tabs {
+        margin: 1.5rem auto 0;
+        border-radius: var(--border-radius-md);
     }
     
-    .page-sobre .container {
-        max-width: 100%;
-        overflow-x: hidden;
+    .values-tabs-nav {
+        padding: 0.75rem;
+        gap: 0.25rem;
     }
     
-    /* Timeline - ajustes para evitar overflow */
-    .timeline-nav {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-    }
-    
-    .timeline-nav::-webkit-scrollbar {
-        height: 6px;
-    }
-    
-    .timeline-nav::-webkit-scrollbar-track {
-        background: var(--gray-200);
-        border-radius: 3px;
-    }
-    
-    .timeline-nav::-webkit-scrollbar-thumb {
-        background: var(--primary);
-        border-radius: 3px;
-    }
-}
-
-/* Melhorias específicas para timeline responsivo */
-@media (max-width: 768px) {
-    .page-sobre .timeline-nav {
-        justify-content: flex-start;
-        gap: 0.75rem;
-        padding: 0 1rem 1rem 1rem;
-    }
-    
-    .page-sobre .timeline-nav-item {
+    .values-tab-btn {
+        padding: 0.75rem;
         font-size: var(--font-size-sm);
-        padding: 0.5rem 1rem;
-        white-space: nowrap;
-        flex-shrink: 0;
-        min-width: auto;
-    }
-    
-    .page-sobre .timeline-content-wrapper {
-        padding: 0 1rem;
-    }
-    
-    .page-sobre .timeline-slide {
-        padding: 1.5rem 1rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .page-sobre .timeline-nav {
         gap: 0.5rem;
-        padding: 0 0.5rem 1rem 0.5rem;
     }
     
-    .page-sobre .timeline-nav-item {
-        font-size: var(--font-size-xs);
-        padding: 0.4rem 0.8rem;
+    .values-tab-icon {
+        font-size: 1rem;
     }
     
-    .page-sobre .timeline-slide {
-        padding: 1rem 0.5rem;
+    .values-tab-content {
+        padding: 1rem;
     }
     
-    .page-sobre .timeline-year {
+    .values-content-grid {
+        gap: 1.5rem;
+    }
+    
+    .values-illustration {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
+    }
+    
+    .values-content-title {
         font-size: var(--font-size-lg);
+        margin-bottom: 1rem;
     }
     
-    .page-sobre .timeline-title {
-        font-size: var(--font-size-base);
-    }
-    
-    .page-sobre .timeline-description {
+    .values-content-description {
         font-size: var(--font-size-sm);
-    }
-}
-
-/* Ajustes para team section responsiva */
-@media (max-width: 768px) {
-    .page-sobre .team-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
     }
     
-    .page-sobre .team-card {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-}
-
-/* Ajustes para values e approach grids */
-@media (max-width: 768px) {
-    .page-sobre .values-grid,
-    .page-sobre .approach-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
-    }
-}
-
-/* Ajustes para stats grid */
-@media (max-width: 768px) {
-    .page-sobre .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .page-sobre .stats-grid {
-        grid-template-columns: 1fr;
+    .values-content-features {
         gap: 1rem;
     }
-}
-
-/* Melhorias gerais de responsividade para evitar quebras */
-@media (max-width: 480px) {
-    .page-sobre * {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
     
-    .page-sobre .section-header {
-        padding: 0 1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .page-sobre .section-header h2 {
-        font-size: calc(var(--font-size-2xl) * 0.85);
-        line-height: 1.2;
-    }
-    
-    .page-sobre .section-header p {
-        font-size: var(--font-size-sm);
-        line-height: 1.5;
-    }
-    
-    /* Botões responsivos */
-    .page-sobre .btn {
-        padding: 0.75rem 1.5rem;
-        font-size: var(--font-size-sm);
-        width: 100%;
-        max-width: 280px;
-        margin: 0 auto;
-        display: block;
-    }
-    
-    .page-sobre .btn-group {
+    .values-feature {
+        padding: 0.5rem;
         flex-direction: column;
+        text-align: center;
         gap: 0.75rem;
-        align-items: center;
-    }
-}
-
-/* Estilos específicos para a página Sobre */ 
-
-/* Animações */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.animate-on-scroll.animated {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Animações específicas */
-.fade-in-up {
-    transform: translateY(30px);
-}
-
-.fade-in-up.animated {
-    transform: translateY(0);
-}
-
-.fade-in-left {
-    transform: translateX(-30px);
-}
-
-.fade-in-left.animated {
-    transform: translateX(0);
-}
-
-.fade-in-right {
-    transform: translateX(30px);
-}
-
-.fade-in-right.animated {
-    transform: translateX(0);
-}
-
-/* Cards da equipe */
-.team-card {
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    overflow: hidden;
-    border-radius: var(--border-radius-xl);
-    box-shadow: var(--shadow-md);
-    background-color: var(--card-background);
-}
-
-.team-card:hover, .team-card.hover-active {
-    box-shadow: var(--shadow-xl);
-    transform: translateY(-10px);
-}
-
-.team-card .team-image {
-    overflow: hidden;
-    position: relative;
-    border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
-}
-
-.team-card .team-image img {
-    transition: transform 0.6s ease;
-    width: 100%;
-    height: auto;
-}
-
-.team-card:hover .team-image img, .team-card.hover-active .team-image img {
-    transform: scale(1.05);
-}
-
-/* Efeito tilt */
-.tilt-effect {
-    transition: transform 0.3s ease;
-    will-change: transform;
-}
-
-/* Seção de recrutamento */
-.recruitment-section {
-    padding: 5rem 0;
-    background-color: var(--background-secondary);
-}
-
-.recruitment-container {
-    background-color: var(--card-background);
-    border-radius: var(--border-radius-xl);
-    padding: 3rem;
-    box-shadow: var(--shadow-lg);
-}
-
-.recruitment-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.recruitment-icon {
-    font-size: 3rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.recruitment-benefits {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-
-.recruitment-benefits li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.recruitment-benefits li i {
-    color: var(--primary);
-}
-
-.recruitment-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.recruitment-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary);
-    font-weight: var(--font-weight-medium);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.recruitment-link:hover {
-    color: var(--primary-light);
-}
-
-.text-left {
-    text-align: left;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .recruitment-actions {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
     }
     
-    .recruitment-container {
-        padding: 2rem;
+    .values-feature-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        align-self: center;
+    }
+    
+    .values-feature-text h4 {
+        font-size: var(--font-size-sm);
+        margin-bottom: 0.15rem;
+    }
+    
+    .values-feature-text p {
+        font-size: var(--font-size-xs);
+    }
+    
+    .values-pillars {
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+    
+    .value-pill {
+        padding: 0.4rem 0.8rem;
+        font-size: var(--font-size-xs);
+        gap: 0.4rem;
+    }
+    
+    .value-pill-icon {
+        font-size: 0.9rem;
     }
 }
 
-/* Breakpoint adicional para dispositivos muito pequenos */
 @media (max-width: 480px) {
     .page-header {
         min-height: 40vh;
@@ -1808,5 +1572,392 @@
     .btn {
         width: 100%;
         text-align: center;
+    }
+}
+
+/* Responsividade para seção de Valores/Princípios */
+@media (max-width: 768px) {
+    .values-tabs {
+        margin: 2rem auto 0;
+    }
+    
+    .values-tabs-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .values-tab-btn {
+        justify-content: flex-start;
+        padding: 1rem;
+        text-align: left;
+        border-radius: var(--border-radius-md);
+    }
+    
+    .values-tab-content {
+        padding: 1.5rem;
+    }
+    
+    .values-content-grid {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .values-content-visual {
+        flex: none;
+        order: -1;
+    }
+    
+    .values-illustration {
+        width: 140px;
+        height: 140px;
+        font-size: 3rem;
+    }
+    
+    .values-content-title {
+        font-size: var(--font-size-xl);
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .values-content-title::before {
+        display: none;
+    }
+    
+    .values-content-description {
+        font-size: var(--font-size-base);
+        text-align: center;
+    }
+    
+    .values-content-features {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .values-feature {
+        padding: 0.75rem;
+    }
+    
+    .values-pillars {
+        justify-content: center;
+        max-width: 400px;
+        margin: 1rem auto 0;
+    }
+    
+    .value-pill {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 576px) {
+    /* Responsividade para dispositivos pequenos - seção Valores/Princípios */
+    .values-tabs {
+        margin: 1.5rem auto 0;
+        border-radius: var(--border-radius-md);
+    }
+    
+    .values-tabs-nav {
+        padding: 0.75rem;
+        gap: 0.25rem;
+    }
+    
+    .values-tab-btn {
+        padding: 0.75rem;
+        font-size: var(--font-size-sm);
+        gap: 0.5rem;
+    }
+    
+    .values-tab-icon {
+        font-size: 1rem;
+    }
+    
+    .values-tab-content {
+        padding: 1rem;
+    }
+    
+    .values-content-grid {
+        gap: 1.5rem;
+    }
+    
+    .values-illustration {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
+    }
+    
+    .values-content-title {
+        font-size: var(--font-size-lg);
+        margin-bottom: 1rem;
+    }
+    
+    .values-content-description {
+        font-size: var(--font-size-sm);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .values-content-features {
+        gap: 1rem;
+    }
+    
+    .values-feature {
+        padding: 0.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .values-feature-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        align-self: center;
+    }
+    
+    .values-feature-text h4 {
+        font-size: var(--font-size-sm);
+        margin-bottom: 0.15rem;
+    }
+    
+    .values-feature-text p {
+        font-size: var(--font-size-xs);
+    }
+    
+    .values-pillars {
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+    
+    .value-pill {
+        padding: 0.4rem 0.8rem;
+        font-size: var(--font-size-xs);
+        gap: 0.4rem;
+    }
+    
+    .value-pill-icon {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        min-height: 40vh;
+        padding: 3rem 0 2rem;
+    }
+    
+    .page-header h1 {
+        font-size: calc(var(--font-size-xl) * 0.9);
+        margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+        font-size: var(--font-size-sm);
+        padding: 0 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: calc(var(--font-size-2xl) * 0.85);
+    }
+    
+    .section-header p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .value-card,
+    .approach-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .value-icon,
+    .approach-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .value-card h3,
+    .approach-card h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .value-card p,
+    .approach-card p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .stat-card {
+        padding: 1.25rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: var(--font-size-sm);
+    }
+    
+    .team-card {
+        padding: 1.5rem;
+    }
+    
+    .team-name {
+        font-size: var(--font-size-lg);
+    }
+    
+    .team-role {
+        font-size: var(--font-size-sm);
+    }
+    
+    .team-description {
+        font-size: var(--font-size-xs);
+        line-height: 1.4;
+    }
+    
+    .timeline {
+        padding: 1rem 0;
+    }
+    
+    .timeline-nav {
+        gap: 0.5rem;
+        padding: 0 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .timeline-nav-item {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-size-sm);
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .timeline-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .timeline-year {
+        font-size: var(--font-size-lg);
+    }
+    
+    .timeline-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .timeline-description {
+        font-size: var(--font-size-sm);
+    }
+    
+    .cta-section {
+        padding: 2rem 0;
+    }
+    
+    .cta-content h2 {
+        font-size: calc(var(--font-size-2xl) * 0.8);
+    }
+    
+    .cta-content p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Responsividade extrema para seção Valores/Princípios */
+    .values-tabs {
+        margin: 1rem auto 0;
+        max-width: 100%;
+    }
+    
+    .values-tabs-nav {
+        padding: 0.5rem;
+        gap: 0.25rem;
+        flex-direction: column;
+    }
+    
+    .values-tab-btn {
+        padding: 0.6rem 0.8rem;
+        font-size: var(--font-size-xs);
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .values-tab-content {
+        padding: 0.75rem;
+    }
+    
+    .values-content-grid {
+        gap: 1rem;
+    }
+    
+    .values-illustration {
+        width: 100px;
+        height: 100px;
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+    
+    .values-content-title {
+        font-size: var(--font-size-base);
+        margin-bottom: 0.75rem;
+    }
+    
+    .values-content-description {
+        font-size: var(--font-size-xs);
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .values-content-features {
+        gap: 0.75rem;
+        padding: 0 0.5rem;
+    }
+    
+    .values-feature {
+        padding: 0.4rem;
+        gap: 0.5rem;
+        border-radius: var(--border-radius-sm);
+    }
+    
+    .values-feature-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    .values-feature-text h4 {
+        font-size: var(--font-size-xs);
+        line-height: 1.3;
+    }
+    
+    .values-feature-text p {
+        font-size: calc(var(--font-size-xs) * 0.9);
+        line-height: 1.4;
+    }
+    
+    .values-pillars {
+        gap: 0.4rem;
+        justify-content: center;
+        margin: 0.75rem auto 0;
+    }
+    
+    .value-pill {
+        padding: 0.3rem 0.6rem;
+        font-size: calc(var(--font-size-xs) * 0.9);
+        gap: 0.3rem;
+        border-radius: var(--border-radius-sm);
+    }
+    
+    .value-pill-icon {
+        font-size: 0.8rem;
     }
 }
