@@ -21,31 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.warn('⚠️ Toggle de tema não encontrado');
     }
-    
-    // Verificar botão flutuante de contato
-    const floatingContactBtn = document.querySelector('.floating-contact-btn');
-    const floatingContactMenu = document.querySelector('.floating-contact-menu');
-    
-    if (floatingContactBtn && floatingContactMenu) {
-        console.log('✅ Botão flutuante de contato encontrado');
         
-        // Garantir que o botão seja visível
-        floatingContactBtn.style.visibility = 'visible';
-        floatingContactBtn.style.opacity = '1';
-        
-        // Adicionar evento de clique se não existir
-        if (!floatingContactBtn.hasAttribute('data-initialized')) {
-            floatingContactBtn.addEventListener('click', function() {
-                floatingContactMenu.classList.toggle('active');
-                floatingContactBtn.classList.toggle('active');
-            });
-            floatingContactBtn.setAttribute('data-initialized', 'true');
-            console.log('✅ Evento de clique adicionado ao botão flutuante');
-        }
-    } else {
-        console.warn('⚠️ Botão flutuante de contato não encontrado');
-    }
-    
     // Verificar banner de cookies
     const cookieBanner = document.getElementById('cookieBanner');
     if (cookieBanner) {

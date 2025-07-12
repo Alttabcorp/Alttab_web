@@ -104,7 +104,6 @@
     <link rel="stylesheet" href="../../assets/css/components/section.css">
     <link rel="stylesheet" href="../../assets/css/components/forms.css">
     <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
-    <link rel="stylesheet" href="../../assets/css/components/floating-contact.css">
     <link rel="stylesheet" href="../../assets/css/components/animations.css">
     <link rel="stylesheet" href="../../assets/css/components/faq.css">
     
@@ -426,70 +425,6 @@
         </a>
     </footer>
 
-    <!-- Floating Contact Button -->
-    <div class="floating-contact">
-        <button class="floating-contact-btn" id="floatingContactBtn" aria-label="Abrir opções de contato" aria-haspopup="dialog">
-            <i class="fas fa-comments"></i>
-            <span class="floating-contact-tooltip">Fale Conosco</span>
-        </button>
-        <div class="floating-contact-menu" id="floatingContactMenu" role="dialog" aria-hidden="true">
-            <div class="floating-contact-title">
-                <span>Fale Conosco</span>
-                <span class="floating-contact-close" id="floatingContactClose" aria-label="Fechar menu">
-                    <i class="fas fa-times"></i>
-                </span>
-            </div>
-            <div class="floating-contact-header">
-                <p>Como podemos ajudar você hoje?</p>
-            </div>
-            <div class="floating-contact-options">
-                <a href="tel:+5583993322427" class="floating-contact-option" aria-label="Ligar para (83) 99332-2427">
-                    <div class="floating-contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="floating-contact-info">
-                        <div class="floating-contact-label">Atendimento Telefônico</div>
-                        <div class="floating-contact-value">(83) 99332-2427</div>
-                        <div class="floating-contact-desc">Seg-Sex: 9h às 18h</div>
-                    </div>
-                </a>
-                <a href="mailto:contato@alttabcorp.com.br" class="floating-contact-option" aria-label="Enviar email para contato@alttabcorp.com.br">
-                    <div class="floating-contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="floating-contact-info">
-                        <div class="floating-contact-label">E-mail</div>
-                        <div class="floating-contact-value">alttabcorp@gmail.com</div>
-                        <div class="floating-contact-desc">Resposta em até 24h</div>
-                    </div>
-                </a>
-                <a href="https://wa.me/5583993322427" target="_blank" class="floating-contact-option" aria-label="Enviar mensagem no WhatsApp">
-                    <div class="floating-contact-icon" style="background-color: #25D366;">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <div class="floating-contact-info">
-                        <div class="floating-contact-label">WhatsApp</div>
-                        <div class="floating-contact-value">(83) 99332-2427</div>
-                        <div class="floating-contact-desc">Atendimento imediato</div>
-                    </div>
-                </a>
-                <a href="#contact-form" class="floating-contact-option" aria-label="Acessar formulário de contato">
-                    <div class="floating-contact-icon" style="background-color: var(--accent);">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="floating-contact-info">
-                        <div class="floating-contact-label">Formulário de Contato</div>
-                        <div class="floating-contact-value">Envie sua mensagem</div>
-                        <div class="floating-contact-desc">Para solicitações detalhadas</div>
-                    </div>
-                </a>
-            </div>
-            <div class="floating-contact-footer">
-                <p>Estamos prontos para atender você!</p>
-            </div>
-        </div>
-    </div>
-
     <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-content">
@@ -510,7 +445,6 @@
     <script src="../../assets/js/cookie-banner.js"></script>
     <script src="../../assets/js/faq-fix.js"></script>
     <script src="../../assets/js/site-check.js"></script>
-    <script src="../../assets/js/floating-contact.js"></script>
     <script src="../../assets/js/main.js"></script>
     
     <script>
@@ -649,18 +583,6 @@
                     });
                 });
             }
-
-            // Inicializar o botão flutuante após o carregamento completo da página
-            setTimeout(function() {
-                if (window.initFloatingContact) {
-                    console.log('Inicializando botão flutuante na página de contato...');
-                    window.initFloatingContact();
-                } else {
-                    console.error('Função initFloatingContact não encontrada');
-                }
-            }, 500);
-
-            // A animação de scroll é tratada no script abaixo
         });
     </script>
 

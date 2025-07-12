@@ -705,23 +705,6 @@ textarea.form-control {
     border-color: var(--border-color);
 }
 
-[data-theme="dark"] .floating-contact-menu {
-    background-color: var(--gray-800);
-    border: 1px solid var(--gray-700);
-}
-
-[data-theme="dark"] .floating-contact-option {
-    color: var(--gray-300);
-}
-
-[data-theme="dark"] .floating-contact-option:hover {
-    background-color: var(--gray-700);
-}
-
-[data-theme="dark"] .floating-contact-value {
-    color: var(--gray-400);
-}
-
 [data-theme="dark"] .footer {
     background-color: var(--footer-bg);
 }
@@ -808,24 +791,6 @@ textarea.form-control {
 [data-theme="dark"] .section-badge {
     background-color: var(--primary-light);
     color: var(--gray-300);
-}
-
-[data-theme="dark"] .floating-contact-menu {
-    background-color: var(--gray-800);
-    border-color: var(--gray-700);
-}
-
-[data-theme="dark"] .floating-contact-option {
-    background-color: var(--gray-900);
-    border-color: var(--gray-700);
-}
-
-[data-theme="dark"] .floating-contact-option:hover {
-    background-color: var(--gray-800);
-}
-
-[data-theme="dark"] .floating-contact-value {
-    color: var(--gray-400);
 }
 
 /* Melhorias para links no tema escuro */
@@ -930,15 +895,6 @@ textarea.form-control {
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 10.01%);
 }
 
-/* Ajustes para o botão flutuante de contato no tema escuro */
-[data-theme="dark"] .floating-contact-btn {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="dark"] .floating-contact-btn:hover {
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
-}
-
 /* Ajustes para o botão de voltar ao topo no tema escuro */
 [data-theme="dark"] .back-to-top {
     background-color: var(--gray-800);
@@ -977,16 +933,6 @@ textarea.form-control {
 
 /* Ajustes para elementos flutuantes em telas menores */
 @media (max-width: 576px) {
-    .floating-contact-option * {
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-        word-break: break-word;
-    }
-    
-    .floating-contact-value {
-        max-width: 100%;
-    }
-    
     /* Garantir que elementos não sobreponham em telas pequenas */
     .z-top {
         position: relative;

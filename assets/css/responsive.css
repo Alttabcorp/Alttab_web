@@ -252,20 +252,6 @@
     }
 }
 
-/* Melhorias para o Botão Flutuante em dispositivos móveis */
-@media (max-width: 767px) {
-    .floating-contact {
-        bottom: 100px;
-        right: 1rem;
-    }
-    
-    .floating-contact-menu {
-        width: 320px;
-        max-width: calc(100vw - 2rem);
-        bottom: 80px;
-    }
-}
-
 /* Melhorias para o Banner de Cookies em dispositivos móveis */
 @media (max-width: 767px) {
     .cookie-banner {
