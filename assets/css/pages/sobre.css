@@ -1035,6 +1035,36 @@
     .cta-content h2 {
         font-size: var(--font-size-2xl);
     }
+    
+    .page-sobre {
+        overflow-x: hidden;
+    }
+    
+    .page-sobre .container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Timeline - ajustes para evitar overflow */
+    .timeline-nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    
+    .timeline-nav::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .timeline-nav::-webkit-scrollbar-track {
+        background: var(--gray-200);
+        border-radius: 3px;
+    }
+    
+    .timeline-nav::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 3px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -1052,7 +1082,8 @@
     }
     
     .team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
     }
     
     .team-image {
@@ -1165,14 +1196,6 @@
         margin-top: 2.5rem;
         padding: 2rem;
     }
-    
-    .team-cta h3 {
-        font-size: var(--font-size-lg);
-    }
-    
-    .team-cta p {
-        font-size: var(--font-size-sm);
-    }
 }
 
 @media (max-width: 576px) {
@@ -1229,489 +1252,173 @@
     .team-cta {
         padding: 1.5rem;
     }
-} 
-
-/* Animações */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.animate-on-scroll.animated {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Correções adicionais para problemas de overflow e timeline responsivo */
 
-/* Delay para animações em cascata */
-[data-delay="100"] {
-    transition-delay: 0.1s;
-}
-
-[data-delay="200"] {
-    transition-delay: 0.2s;
-}
-
-[data-delay="300"] {
-    transition-delay: 0.3s;
-}
-
-/* Timeline animada */
-.timeline-item {
-    opacity: 0;
-    transition: all 0.6s ease;
-}
-
-.timeline-item.timeline-left {
-    transform: translateX(-50px);
-}
-
-.timeline-item.timeline-right {
-    transform: translateX(50px);
-}
-
-.timeline-item.animated {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Stats animação */
-.stat-number {
-    display: inline-block;
-    position: relative;
-}
-
-.stat-number::after {
-    content: "+";
-    position: absolute;
-    right: -15px;
-    top: 0;
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.4s ease;
-}
-
-.stat-card:hover .stat-number::after {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Acessibilidade e interatividade */
-.team-social-link:focus,
-.btn:focus {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .animate-on-scroll,
-    .timeline-item,
-    .team-card,
-    .value-card,
-    .stat-card {
-        transition: none !important;
-        opacity: 1 !important;
-        transform: none !important;
+/* Prevenir overflow horizontal em todos os dispositivos */
+@media (max-width: 1200px) {
+    .page-sobre {
+        overflow-x: hidden;
     }
     
-    .team-image img {
-        transition: none !important;
+    .page-sobre .container {
+        max-width: 100%;
+        overflow-x: hidden;
     }
     
-    .team-card:hover {
-        transform: none !important;
-    }
-}
-
-/* Garantir espaçamento correto entre seções */
-.history-section + .values-section,
-.values-section + .team-section,
-.team-section + .recruitment-section,
-.recruitment-section + .stats-section,
-.stats-section + .cta-section {
-    margin-top: -2rem;
-} 
-
-/* Tema escuro */
-[data-theme="dark"] .history-section {
-    background-color: var(--gray-900);
-}
-
-[data-theme="dark"] .timeline-progress {
-    background-color: var(--gray-700);
-}
-
-[data-theme="dark"] .timeline-nav-item {
-    color: var(--gray-400);
-}
-
-[data-theme="dark"] .timeline-nav-item.active,
-[data-theme="dark"] .timeline-nav-item:hover {
-    color: var(--accent);
-}
-
-[data-theme="dark"] .timeline-nav-item.active::after {
-    background: var(--accent);
-}
-
-[data-theme="dark"] .timeline-slide-content {
-    background-color: var(--gray-800);
-    border-color: var(--gray-700);
-}
-
-[data-theme="dark"] .timeline-control-prev,
-[data-theme="dark"] .timeline-control-next {
-    background-color: var(--gray-800);
-    border-color: var(--gray-700);
-    color: var(--gray-300);
-}
-
-[data-theme="dark"] .timeline-control-prev:hover,
-[data-theme="dark"] .timeline-control-next:hover,
-[data-theme="dark"] .timeline-control-prev:focus,
-[data-theme="dark"] .timeline-control-next:focus {
-    background-color: var(--primary);
-    color: var(--light);
-}
-
-/* Responsividade para Timeline Horizontal */
-@media (max-width: 992px) {
-    .timeline-horizontal {
-        padding: 1.5rem 0;
-    }
-    
-    .timeline-slide-content {
-        padding: 1.5rem;
-    }
-    
-    .timeline-image-placeholder {
-        width: 140px;
-        height: 140px;
-        font-size: 2.5rem;
-    }
-    
-    .timeline-title {
-        font-size: var(--font-size-lg);
-    }
-    
-    .timeline-nav-item {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .history-section {
-        padding: 3rem 0;
-    }
-    
+    /* Timeline - ajustes para evitar overflow */
     .timeline-nav {
         overflow-x: auto;
-        padding-bottom: 0.5rem;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
+        scrollbar-width: thin;
     }
     
     .timeline-nav::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Edge */
+        height: 6px;
     }
     
-    .timeline-nav-item {
-        padding: 0.5rem 0.75rem;
-        white-space: nowrap;
+    .timeline-nav::-webkit-scrollbar-track {
+        background: var(--gray-200);
+        border-radius: 3px;
     }
     
-    .timeline-slide-content {
-        flex-direction: column-reverse;
-        gap: 1.5rem;
-    }
-    
-    .timeline-slide-image {
-        flex: 0 0 auto;
-        margin-bottom: 0.5rem;
-    }
-    
-    .timeline-image-placeholder {
-        width: 120px;
-        height: 120px;
-        font-size: 2.25rem;
-    }
-    
-    .timeline-slide-info {
-        text-align: center;
-    }
-    
-    .timeline-content-wrapper {
-        min-height: 400px;
+    .timeline-nav::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 3px;
     }
 }
 
-@media (max-width: 576px) {
-    .timeline-horizontal {
-        margin-top: 2rem;
-    }
-    
-    .timeline-nav-item {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.6rem;
-    }
-    
-    .timeline-slide-content {
-        padding: 1.25rem;
-    }
-    
-    .timeline-image-placeholder {
-        width: 100px;
-        height: 100px;
-        font-size: 2rem;
-    }
-    
-    .timeline-year-badge {
-        font-size: 0.8rem;
-        padding: 0.2rem 0.8rem;
-    }
-    
-    .timeline-title {
-        font-size: var(--font-size-base);
-        margin-bottom: 0.75rem;
-    }
-    
-    .timeline-description {
-        font-size: 0.9rem;
-    }
-    
-    .timeline-content-wrapper {
-        min-height: 450px;
-    }
-    
-    .timeline-controls {
-        margin-top: 0.5rem;
-    }
-    
-    .timeline-control-prev,
-    .timeline-control-next {
-        width: 36px;
-        height: 36px;
-    }
-} 
-
-/* Tema escuro */
-[data-theme="dark"] .values-section {
-    background-color: var(--gray-800);
-}
-
-[data-theme="dark"] .values-tabs {
-    background-color: var(--gray-850);
-    border-color: var(--gray-700);
-}
-
-[data-theme="dark"] .values-tab-content {
-    background-color: var(--gray-850);
-}
-
-[data-theme="dark"] .values-content-title {
-    color: var(--light);
-}
-
-[data-theme="dark"] .values-content-description {
-    color: var(--gray-300);
-}
-
-[data-theme="dark"] .values-feature {
-    background-color: var(--gray-750);
-    border-left-color: var(--accent-light);
-}
-
-[data-theme="dark"] .values-feature:hover {
-    background-color: rgba(var(--accent-rgb), 0.1);
-    border-left-color: var(--accent);
-}
-
-[data-theme="dark"] .values-feature-icon {
-    background-color: var(--gray-700);
-    color: var(--accent);
-    border-color: var(--gray-600);
-}
-
-[data-theme="dark"] .values-feature-text h4 {
-    color: var(--gray-100);
-}
-
-[data-theme="dark"] .values-feature-text p {
-    color: var(--gray-400);
-}
-
-[data-theme="dark"] .values-illustration {
-    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.2), rgba(var(--accent-rgb), 0.1));
-    color: var(--accent);
-}
-
-[data-theme="dark"] .values-illustration::before {
-    border-color: var(--accent-light);
-}
-
-[data-theme="dark"] .value-pill {
-    background-color: var(--gray-750);
-    border-color: var(--gray-700);
-}
-
-[data-theme="dark"] .value-pill:hover {
-    background-color: rgba(var(--accent-rgb), 0.1);
-    border-color: var(--accent-light);
-}
-
-[data-theme="dark"] .value-pill-icon {
-    color: var(--accent);
-}
-
-[data-theme="dark"] .value-pill-text {
-    color: var(--gray-200);
-}
-
-/* Responsividade */
-@media (max-width: 992px) {
-    .values-content-grid {
-        gap: 2rem;
-    }
-    
-    .values-content-title {
-        font-size: var(--font-size-xl);
-    }
-    
-    .values-content-description {
-        font-size: var(--font-size-base);
-        margin-bottom: 1.5rem;
-    }
-    
-    .values-illustration {
-        width: 150px;
-        height: 150px;
-        font-size: 3.5rem;
-    }
-}
-
+/* Melhorias específicas para timeline responsivo */
 @media (max-width: 768px) {
-    .values-tab-btn {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 1rem 0.75rem;
+    .page-sobre .timeline-nav {
+        justify-content: flex-start;
+        gap: 0.75rem;
+        padding: 0 1rem 1rem 1rem;
     }
     
-    .values-tab-text {
+    .page-sobre .timeline-nav-item {
         font-size: var(--font-size-sm);
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+        min-width: auto;
     }
     
-    .values-tab-content {
-        padding: 1.5rem;
+    .page-sobre .timeline-content-wrapper {
+        padding: 0 1rem;
     }
     
-    .values-content-grid {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 1.5rem;
-    }
-    
-    .values-content-title {
-        padding-left: 0;
-        margin-bottom: 1rem;
-    }
-    
-    .values-content-title::before {
-        left: 50%;
-        top: -10px;
-        bottom: auto;
-        width: 50px;
-        height: 4px;
-        transform: translateX(-50%);
-    }
-    
-    .values-content-description {
-        margin-bottom: 1.5rem;
-    }
-    
-    .values-feature {
-        justify-content: center;
-        text-align: left;
-    }
-    
-    .values-content-visual {
-        flex: 0 0 auto;
-    }
-    
-    .values-illustration {
-        width: 120px;
-        height: 120px;
-        font-size: 3rem;
+    .page-sobre .timeline-slide {
+        padding: 1.5rem 1rem;
     }
 }
 
 @media (max-width: 576px) {
-    .values-tabs {
-        margin-top: 2rem;
-        box-shadow: var(--shadow-md);
+    .page-sobre .timeline-nav {
+        gap: 0.5rem;
+        padding: 0 0.5rem 1rem 0.5rem;
     }
     
-    .values-tabs-nav {
-        padding: 0.25rem;
-    }
-    
-    .values-tab-btn {
-        padding: 0.75rem 0.5rem;
-    }
-    
-    .values-tab-icon {
-        font-size: 1rem;
-    }
-    
-    .values-tab-text {
+    .page-sobre .timeline-nav-item {
         font-size: var(--font-size-xs);
+        padding: 0.4rem 0.8rem;
     }
     
-    .values-tab-content {
-        padding: 1.25rem;
+    .page-sobre .timeline-slide {
+        padding: 1rem 0.5rem;
     }
     
-    .values-content-title {
+    .page-sobre .timeline-year {
         font-size: var(--font-size-lg);
     }
     
-    .values-content-description {
+    .page-sobre .timeline-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .page-sobre .timeline-description {
         font-size: var(--font-size-sm);
     }
-    
-    .values-feature {
-        padding: 0.75rem;
+}
+
+/* Ajustes para team section responsiva */
+@media (max-width: 768px) {
+    .page-sobre .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
     }
     
-    .values-feature-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
+    .page-sobre .team-card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Ajustes para values e approach grids */
+@media (max-width: 768px) {
+    .page-sobre .values-grid,
+    .page-sobre .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+}
+
+/* Ajustes para stats grid */
+@media (max-width: 768px) {
+    .page-sobre .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-sobre .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Melhorias gerais de responsividade para evitar quebras */
+@media (max-width: 480px) {
+    .page-sobre * {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
-    .values-feature-text h4 {
+    .page-sobre .section-header {
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .page-sobre .section-header h2 {
+        font-size: calc(var(--font-size-2xl) * 0.85);
+        line-height: 1.2;
+    }
+    
+    .page-sobre .section-header p {
         font-size: var(--font-size-sm);
+        line-height: 1.5;
     }
     
-    .values-feature-text p {
-        font-size: var(--font-size-xs);
+    /* Botões responsivos */
+    .page-sobre .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: var(--font-size-sm);
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        display: block;
     }
     
-    .values-pillars {
-        justify-content: center;
+    .page-sobre .btn-group {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: center;
     }
-    
-    .value-pill {
-        padding: 0.5rem 0.75rem;
-    }
-    
-    .value-pill-icon {
-        font-size: 0.9rem;
-    }
-    
-    .value-pill-text {
-        font-size: var(--font-size-xs);
-    }
-} 
+}
 
 /* Estilos específicos para a página Sobre */ 
 
@@ -1867,5 +1574,239 @@
     
     .recruitment-container {
         padding: 2rem;
+    }
+}
+
+/* Breakpoint adicional para dispositivos muito pequenos */
+@media (max-width: 480px) {
+    .page-header {
+        min-height: 40vh;
+        padding: 3rem 0 2rem;
+    }
+    
+    .page-header h1 {
+        font-size: calc(var(--font-size-xl) * 0.9);
+        margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+        font-size: var(--font-size-sm);
+        padding: 0 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: calc(var(--font-size-2xl) * 0.85);
+    }
+    
+    .section-header p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .value-card,
+    .approach-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .value-icon,
+    .approach-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .value-card h3,
+    .approach-card h3 {
+        font-size: var(--font-size-lg);
+    }
+    
+    .value-card p,
+    .approach-card p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .stat-card {
+        padding: 1.25rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-label {
+        font-size: var(--font-size-sm);
+    }
+    
+    .team-card {
+        padding: 1.5rem;
+    }
+    
+    .team-name {
+        font-size: var(--font-size-lg);
+    }
+    
+    .team-role {
+        font-size: var(--font-size-sm);
+    }
+    
+    .team-description {
+        font-size: var(--font-size-xs);
+        line-height: 1.4;
+    }
+    
+    .timeline {
+        padding: 1rem 0;
+    }
+    
+    .timeline-nav {
+        gap: 0.5rem;
+        padding: 0 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .timeline-nav-item {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-size-sm);
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .timeline-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .timeline-year {
+        font-size: var(--font-size-lg);
+    }
+    
+    .timeline-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .timeline-description {
+        font-size: var(--font-size-sm);
+    }
+    
+    .cta-section {
+        padding: 2rem 0;
+    }
+    
+    .cta-content h2 {
+        font-size: calc(var(--font-size-2xl) * 0.8);
+    }
+    
+    .cta-content p {
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Melhorias adicionais de responsividade para elementos específicos */
+
+/* Grid da equipe - melhor adaptação em diferentes tamanhos */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Valores e abordagem - melhor disposição */
+@media (max-width: 768px) {
+    .values-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .values-grid,
+    .approach-grid {
+        gap: 1rem;
+    }
+}
+
+/* Timeline - melhoria na responsividade */
+@media (max-width: 768px) {
+    .timeline-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
+    
+    .timeline-nav-item {
+        flex-shrink: 0;
+        white-space: nowrap;
+        min-width: max-content;
+    }
+}
+
+/* Melhorias gerais de responsividade */
+@media (max-width: 480px) {
+    /* Garantir que imagens não quebrem o layout */
+    .team-image,
+    .team-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    
+    /* Evitar overflow horizontal */
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    /* Melhorar espaçamento em telas muito pequenas */
+    .section-header {
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Cards da equipe - ajustes finos */
+    .team-card {
+        min-height: auto;
+        height: auto;
+    }
+    
+    .team-content {
+        padding: 1rem;
+    }
+    
+    /* Botões - melhor adaptação */
+    .btn-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
     }
 }
