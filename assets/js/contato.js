@@ -4,18 +4,27 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Validação avançada do formulário
+    // Garantir que as animações do hero funcionem
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+        // Verificar se as partículas estão visíveis
+        const particlesElement = document.getElementById('particles-js');
+        if (particlesElement && window.particlesJS) {
+            particlesElement.style.opacity = '1';
+            particlesElement.style.visibility = 'visible';
+        }
+    }
+    
+    // ==================== VALIDAÇÃO DO FORMULÁRIO ====================
     const contactForm = document.getElementById('contactForm');
     const inputs = contactForm ? contactForm.querySelectorAll('input, textarea, select') : [];
     
     // Adicionar eventos de validação em tempo real
     inputs.forEach(input => {
-        // Validação ao perder o foco
         input.addEventListener('blur', function() {
             validateInput(this);
         });
         
-        // Validação ao digitar (para remover erros quando corrigidos)
         input.addEventListener('input', function() {
             if (this.classList.contains('error')) {
                 validateInput(this);
@@ -50,17 +59,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (input.value && !emailRegex.test(input.value)) {
                     input.classList.add(errorClass);
-                    addErrorMessage(input, 'E-mail inválido');
+                    addErrorMessage(input, 'Por favor, digite um e-mail válido');
                     return false;
                 }
                 break;
                 
             case 'tel':
                 if (input.value) {
-                    const phoneRegex = /^(\+\d{1,3}\s?)?\(?\d{2,3}\)?[\s.-]?\d{4,5}[\s.-]?\d{4}$/;
+                    const phoneRegex = /^[\d\s\(\)\-\+]{10,}$/;
                     if (!phoneRegex.test(input.value)) {
                         input.classList.add(errorClass);
-                        addErrorMessage(input, 'Telefone inválido');
+                        addErrorMessage(input, 'Por favor, digite um telefone válido');
                         return false;
                     }
                 }
@@ -69,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'checkbox':
                 if (input.hasAttribute('required') && !input.checked) {
                     input.classList.add(errorClass);
-                    addErrorMessage(input, 'Você precisa concordar para continuar');
+                    addErrorMessage(input, 'Este campo é obrigatório');
                     return false;
                 }
                 break;
@@ -77,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             case 'select-one':
                 if (input.value === '' && input.hasAttribute('required')) {
                     input.classList.add(errorClass);
-                    addErrorMessage(input, 'Selecione uma opção');
+                    addErrorMessage(input, 'Por favor, selecione uma opção');
                     return false;
                 }
                 break;
@@ -94,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
         errorElement.className = 'input-error';
         errorElement.textContent = message;
         
-        // Inserir após o input ou após o label do checkbox
         if (input.type === 'checkbox') {
             input.parentElement.appendChild(errorElement);
         } else {
@@ -107,7 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Validar todos os campos
             let isValid = true;
             inputs.forEach(input => {
                 if (!validateInput(input)) {
@@ -116,14 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             if (!isValid) {
-                // Rolar até o primeiro campo com erro
                 const firstError = contactForm.querySelector('.error');
                 if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     firstError.focus();
-                    window.scrollTo({
-                        top: firstError.getBoundingClientRect().top + window.pageYOffset - 150,
-                        behavior: 'smooth'
-                    });
                 }
                 return;
             }
@@ -135,89 +138,144 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             
-            // Simular atraso de rede
             setTimeout(() => {
-                // Criar mensagem de sucesso
                 const formMessage = document.createElement('div');
                 formMessage.className = 'form-message success';
                 formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Mensagem enviada com sucesso! Entraremos em contato em breve.';
                 
-                // Inserir mensagem após o formulário
                 contactForm.parentNode.insertBefore(formMessage, contactForm.nextSibling);
                 
-                // Restaurar botão
                 submitButton.disabled = false;
                 submitButton.innerHTML = originalText;
-                
-                // Limpar formulário
                 contactForm.reset();
-                
-                // Remover classes de validação
-                inputs.forEach(input => {
-                    input.classList.remove('valid', 'error');
-                });
-                
-                // Rolar até a mensagem de sucesso
-                window.scrollTo({
-                    top: formMessage.getBoundingClientRect().top + window.pageYOffset - 150,
-                    behavior: 'smooth'
-                });
-                
-                // Remover mensagem após alguns segundos
-                setTimeout(() => {
-                    formMessage.classList.add('fade-out');
-                    setTimeout(() => {
-                        formMessage.remove();
-                    }, 500);
-                }, 5000);
             }, 1500);
         });
     }
     
-    // Máscara para campo de telefone
+    // ==================== MÁSCARA PARA TELEFONE ====================
     const phoneInput = document.getElementById('phone');
     if (phoneInput) {
         phoneInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             
             if (value.length <= 11) {
-                // Formato: (XX) XXXXX-XXXX
-                if (value.length > 2) {
-                    value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
-                }
-                if (value.length > 10) {
-                    value = `${value.substring(0, 10)}-${value.substring(10)}`;
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+                if (value.length < 14) {
+                    value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
                 }
             } else {
-                // Formato internacional: +XX (XX) XXXXX-XXXX
-                value = `+${value.substring(0, 2)} (${value.substring(2, 4)}) ${value.substring(4, 9)}-${value.substring(9, 13)}`;
+                value = value.substring(0, 11);
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
             }
             
             e.target.value = value;
         });
     }
     
-    // Efeito de foco nos campos do formulário
+    // ==================== AJUSTE RESPONSIVO GOOGLE FORM ====================
+    function adjustGoogleFormHeight() {
+        const iframe = document.querySelector('.google-form-container iframe');
+        if (!iframe) return;
+        
+        const viewportWidth = window.innerWidth;
+        
+        if (viewportWidth > 1200) {
+            iframe.style.height = '850px';
+        } else if (viewportWidth > 992) {
+            iframe.style.height = '800px';
+        } else if (viewportWidth > 768) {
+            iframe.style.height = '780px';
+        } else if (viewportWidth > 576) {
+            iframe.style.height = '750px';
+        } else if (viewportWidth > 480) {
+            iframe.style.height = '700px';
+        } else {
+            iframe.style.height = '680px';
+        }
+        
+        // Ajuste especial para orientação paisagem em dispositivos móveis
+        if (window.matchMedia("(max-height: 500px) and (orientation: landscape)").matches) {
+            iframe.style.height = '700px';
+        }
+    }
+    
+    // ==================== MELHORIAS PARA LINKS DE CONTATO ====================
+    function enhanceContactLinks() {
+        // Efeito para links de telefone
+        const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+        phoneLinks.forEach(link => {
+            link.addEventListener('touchstart', function() {
+                this.classList.add('active-link');
+            });
+            
+            link.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.classList.remove('active-link');
+                }, 300);
+            });
+        });
+        
+        // Efeito para links de email
+        const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
+        emailLinks.forEach(link => {
+            link.addEventListener('touchstart', function() {
+                this.classList.add('active-link');
+            });
+            
+            link.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.classList.remove('active-link');
+                }, 300);
+            });
+        });
+    }
+    
+    // ==================== DETECÇÃO DE ORIENTAÇÃO ====================
+    function handleOrientationChange() {
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            document.body.classList.add('orientation-portrait');
+            document.body.classList.remove('orientation-landscape');
+        } else {
+            document.body.classList.add('orientation-landscape');
+            document.body.classList.remove('orientation-portrait');
+        }
+        
+        adjustGoogleFormHeight();
+    }
+    
+    // ==================== OVERLAY DE CARREGAMENTO ====================
+    function handleFormLoadingOverlay() {
+        const formLoadingOverlay = document.getElementById('formLoadingOverlay');
+        if (formLoadingOverlay) {
+            setTimeout(function() {
+                formLoadingOverlay.style.opacity = '0';
+                setTimeout(function() {
+                    formLoadingOverlay.style.display = 'none';
+                }, 300);
+            }, 3000);
+        }
+    }
+    
+    // ==================== EFEITOS NOS CAMPOS DO FORMULÁRIO ====================
     inputs.forEach(input => {
         if (input.type !== 'checkbox') {
             input.addEventListener('focus', function() {
-                this.parentElement.classList.add('input-focused');
+                this.parentElement.classList.add('focused');
             });
             
             input.addEventListener('blur', function() {
-                this.parentElement.classList.remove('input-focused');
+                this.parentElement.classList.remove('focused');
             });
         }
     });
     
-    // Animação do mapa ao entrar na viewport
+    // ==================== ANIMAÇÃO DO MAPA ====================
     const mapSection = document.querySelector('.map-section');
     if (mapSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('map-visible');
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('animate-in');
                 }
             });
         }, {
@@ -226,4 +284,134 @@ document.addEventListener('DOMContentLoaded', function() {
         
         observer.observe(mapSection);
     }
-}); 
+    
+    // ==================== INICIALIZAÇÃO ====================
+    function init() {
+        enhanceContactLinks();
+        handleOrientationChange();
+        adjustGoogleFormHeight();
+        handleFormLoadingOverlay();
+        
+        // Inicializar partículas do hero/page-header
+        if (window.particlesJS) {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 6,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+    }
+    
+    // ==================== EVENT LISTENERS ====================
+    window.addEventListener('resize', function() {
+        adjustGoogleFormHeight();
+        handleOrientationChange();
+    });
+    
+    window.addEventListener('orientationchange', function() {
+        setTimeout(function() {
+            adjustGoogleFormHeight();
+            handleOrientationChange();
+        }, 100);
+    });
+    
+    // Inicializar todas as funcionalidades
+    init();
+    
+    // Event listener para mudanças no formulário Google
+    const googleFormIframe = document.getElementById('googleFormIframe');
+    if (googleFormIframe) {
+        googleFormIframe.addEventListener('load', function() {
+            const formLoadingOverlay = document.getElementById('formLoadingOverlay');
+            if (formLoadingOverlay) {
+                formLoadingOverlay.style.display = 'none';
+            }
+        });
+    }
+});

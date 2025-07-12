@@ -257,38 +257,6 @@
 /* Correções específicas para problemas no site */
 
 /* ===== FAQ FIX ===== */
-/* Esta seção corrige problemas de visibilidade no FAQ */
-.faq-answer {
-    max-height: 0 !important;
-    overflow: hidden !important;
-    opacity: 0 !important;
-    transition: all 0.3s ease-out !important;
-    padding: 0 1.5rem !important;
-    visibility: hidden !important;
-    display: none !important;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 500px !important;
-    opacity: 1 !important;
-    padding: 1.5rem !important;
-    visibility: visible !important;
-    display: block !important;
-}
-
-/* Correção para o ícone do FAQ */
-.faq-item .faq-icon i {
-    transition: transform 0.3s ease !important;
-}
-
-.faq-item.active .faq-icon i.fa-plus {
-    transform: rotate(45deg) !important;
-}
-
-.faq-item.active .faq-icon i.fa-chevron-down {
-    transform: rotate(180deg) !important;
-}
-
 /* Correção adicional para texto gradiente na página de contato */
 .page-contato .hero h1 {
     position: relative;
