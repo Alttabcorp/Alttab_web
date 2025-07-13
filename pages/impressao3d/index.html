@@ -96,6 +96,7 @@
     <link rel="stylesheet" href="../../assets/css/components/cards.css">
     <link rel="stylesheet" href="../../assets/css/components/section.css">
     <link rel="stylesheet" href="../../assets/css/components/hero.css">
+    <link rel="stylesheet" href="../../assets/css/components/faq.css">
     <link rel="stylesheet" href="../../assets/css/components/animations.css">
     <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
     
@@ -561,49 +562,53 @@
         </section>
 
         <!-- FAQ Section -->
-        <section class="faq-section">
+        <section class="faq-section section-light">
             <div class="container">
                 <div class="section-header animate-on-scroll" data-animation="fade-in-up">
-                    <span class="section-badge">FAQ</span>
-                    <h2>Perguntas Frequentes</h2>
+                    <span class="section-badge light">Dúvidas</span>
+                    <h2>Perguntas <span class="gradient-text">Frequentes</span></h2>
                     <p>Tire suas dúvidas sobre nossos serviços de impressão 3D</p>
                 </div>
                 
                 <div class="faq-container">
-                    <div class="faq-item animate-on-scroll" data-animation="fade-in-up" data-delay="0.1s">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item animate-on-scroll">
                         <div class="faq-question">
-                            <h4>Qual o tempo de entrega para um protótipo?</h4>
-                            <i class="fas fa-chevron-down"></i>
+                            <h3>Qual o tempo de entrega para um protótipo?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="faq-answer">
                             <p>Dependendo da complexidade, entregamos protótipos simples em 24-48h e projetos mais complexos em até 7 dias úteis. Nossa Ender 3 trabalha de forma eficiente para garantir prazos justos.</p>
                         </div>
                     </div>
                     
-                    <div class="faq-item animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item animate-on-scroll">
                         <div class="faq-question">
-                            <h4>Quais formatos de arquivo vocês aceitam?</h4>
-                            <i class="fas fa-chevron-down"></i>
+                            <h3>Quais formatos de arquivo vocês aceitam?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="faq-answer">
                             <p>Aceitamos STL, OBJ, 3MF e outros formatos padrão. Processamos tudo no UltiMaker Cura para otimizar a impressão. Também oferecemos serviço de modelagem caso você não tenha o arquivo.</p>
                         </div>
                     </div>
                     
-                    <div class="faq-item animate-on-scroll" data-animation="fade-in-up" data-delay="0.3s">
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item animate-on-scroll">
                         <div class="faq-question">
-                            <h4>Por que utilizam apenas PLA?</h4>
-                            <i class="fas fa-chevron-down"></i>
+                            <h3>Por que utilizam apenas PLA?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="faq-answer">
                             <p>O PLA oferece excelente qualidade, é ecológico, fácil de imprimir e ideal para a maioria dos projetos. Com nossa Ender 3, conseguimos resultados consistentes e precisos usando este material.</p>
                         </div>
                     </div>
                     
-                    <div class="faq-item animate-on-scroll" data-animation="fade-in-up" data-delay="0.4s">
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item animate-on-scroll">
                         <div class="faq-question">
-                            <h4>Vocês fazem acabamento nas peças?</h4>
-                            <i class="fas fa-chevron-down"></i>
+                            <h3>Vocês fazem acabamento nas peças?</h3>
+                            <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                         </div>
                         <div class="faq-answer">
                             <p>Sim! Oferecemos remoção de suportes, lixamento básico e acabamento final. Para projetos especiais, também fazemos pintura e tratamentos específicos conforme necessário.</p>
@@ -722,10 +727,10 @@
     <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.0/intersection-observer.js"></script>
     <script src="../../assets/js/modules/animations.js"></script>
     <script src="../../assets/js/theme-toggle.js"></script>
-    <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/cookie-banner.js"></script>
+    <script src="../../assets/js/site-check.js"></script>
+    <script src="../../assets/js/main.js"></script>
     <script src="../../assets/js/analytics.js"></script>
-    <script src="../../assets/js/faq-fix.js"></script>
 
     <script>
         // WhatsApp integration
@@ -736,34 +741,7 @@
             window.open(whatsappURL, '_blank');
         }
 
-        // FAQ functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                const icon = question.querySelector('i');
-                
-                question.addEventListener('click', () => {
-                    const isOpen = item.classList.contains('active');
-                    
-                    // Close all FAQ items
-                    faqItems.forEach(faq => {
-                        faq.classList.remove('active');
-                        faq.querySelector('.faq-answer').style.maxHeight = null;
-                        faq.querySelector('.faq-question i').style.transform = 'rotate(0deg)';
-                    });
-                    
-                    // Open clicked item if it wasn't open
-                    if (!isOpen) {
-                        item.classList.add('active');
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        icon.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-
             // Hexagon gallery hover effects
             const hexItems = document.querySelectorAll('.hex-item');
             hexItems.forEach(item => {
