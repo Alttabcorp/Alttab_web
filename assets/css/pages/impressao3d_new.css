@@ -1875,32 +1875,3 @@
     background: var(--gray-200);
     color: var(--gray-900);
 }
-
-/* Footer Dark Theme Fixes - Para garantir que os links fiquem azuis */
-[data-theme="dark"] .footer-link {
-    color: var(--secondary-light) !important;
-}
-
-[data-theme="dark"] .footer-link:hover {
-    color: var(--secondary) !important;
-}
-
-[data-theme="dark"] .footer-link i {
-    color: var(--secondary) !important;
-}
-
-[data-theme="dark"] .footer-contact-link {
-    color: var(--secondary-light) !important;
-}
-
-[data-theme="dark"] .footer-contact-link:hover {
-    color: var(--secondary) !important;
-}
-
-[data-theme="dark"] .footer-legal-link {
-    color: var(--gray-400) !important;
-}
-
-[data-theme="dark"] .footer-legal-link:hover {
-    color: var(--secondary-light) !important;
-}
