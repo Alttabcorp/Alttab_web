@@ -30,72 +30,8 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    
-    <!-- Páginas de Serviços Principais -->
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/web/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/consultoria/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/impressao3d/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/esports/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Subpáginas E-Sports -->
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/esports/estudio/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/esports/time/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/esports/torneios/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/esports/academia/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- Páginas SaaS e Construção -->
-    <url>
-        <loc>https://www.alttabcorp.com.br/pages/saas/</loc>
-        <lastmod>2025-07-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+        
+    <!-- Construção -->
     
     <url>
         <loc>https://www.alttabcorp.com.br/pages/construcao/</loc>
