@@ -1,0 +1,83 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E293B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2C3E50;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Pattern Background -->
+  <pattern id="dots" patternUnits="userSpaceOnUse" width="50" height="50">
+    <circle cx="25" cy="25" r="2" fill="#ffffff" opacity="0.1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  
+  <!-- Main Content -->
+  <g transform="translate(100, 150)">
+    <!-- Company Name -->
+    <text x="0" y="80" font-family="Montserrat, sans-serif" font-size="72" font-weight="700" fill="#ffffff" filter="url(#glow)">
+      ALT TAB CORP
+    </text>
+    
+    <!-- Tagline -->
+    <text x="0" y="140" font-family="Montserrat, sans-serif" font-size="32" font-weight="400" fill="#ffffff" opacity="0.9">
+      Desenvolvimento Web, Consultoria TI e Soluções Tecnológicas
+    </text>
+    
+    <!-- Location -->
+    <text x="0" y="200" font-family="Montserrat, sans-serif" font-size="24" font-weight="400" fill="#ffffff" opacity="0.7">
+      Cajazeiras - Paraíba, Brasil
+    </text>
+    
+    <!-- Accent Line -->
+    <rect x="0" y="230" width="200" height="4" fill="#4F46E5"/>
+    
+    <!-- Services Icons -->
+    <g transform="translate(0, 280)">
+      <!-- Web Development Icon -->
+      <circle cx="30" cy="30" r="25" fill="#4F46E5" opacity="0.2"/>
+      <text x="30" y="38" font-family="FontAwesome" font-size="20" text-anchor="middle" fill="#4F46E5">💻</text>
+      
+      <!-- Consulting Icon -->
+      <circle cx="100" cy="30" r="25" fill="#10B981" opacity="0.2"/>
+      <text x="100" y="38" font-family="FontAwesome" font-size="20" text-anchor="middle" fill="#10B981">⚙️</text>
+      
+      <!-- 3D Printing Icon -->
+      <circle cx="170" cy="30" r="25" fill="#F59E0B" opacity="0.2"/>
+      <text x="170" y="38" font-family="FontAwesome" font-size="20" text-anchor="middle" fill="#F59E0B">🖨️</text>
+      
+      <!-- E-Sports Icon -->
+      <circle cx="240" cy="30" r="25" fill="#EF4444" opacity="0.2"/>
+      <text x="240" y="38" font-family="FontAwesome" font-size="20" text-anchor="middle" fill="#EF4444">🎮</text>
+    </g>
+  </g>
+  
+  <!-- Logo Area (Right Side) -->
+  <g transform="translate(800, 200)">
+    <!-- Hexagon Shape (inspired by your logo) -->
+    <polygon points="100,50 150,87.5 150,162.5 100,200 50,162.5 50,87.5" 
+             fill="none" 
+             stroke="#ffffff" 
+             stroke-width="3" 
+             opacity="0.8"/>
+    <polygon points="100,70 130,92.5 130,137.5 100,160 70,137.5 70,92.5" 
+             fill="#4F46E5" 
+             opacity="0.6"/>
+  </g>
+  
+  <!-- Website URL -->
+  <text x="100" y="580" font-family="Montserrat, sans-serif" font-size="20" font-weight="500" fill="#ffffff" opacity="0.8">
+    www.alttabcorp.com.br
+  </text>
+</svg>

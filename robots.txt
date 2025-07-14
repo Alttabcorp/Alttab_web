@@ -4,15 +4,32 @@ Allow: /
 # Sitemap
 Sitemap: https://www.alttabcorp.com.br/sitemap.xml
 
-# Crawl-delay
+# Crawl-delay for better server performance
 Crawl-delay: 1
 
 # Disallow admin areas (if any)
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
+Disallow: /*.pdf$
 
-# Allow important files
+# Allow important files and directories
 Allow: /assets/
 Allow: /pages/
-Allow: /manifest.json 
+Allow: /manifest.json
+Allow: /favicon.ico
+Allow: /sitemap.xml
+
+# Specific bot configurations
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+# Block problematic bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: / 

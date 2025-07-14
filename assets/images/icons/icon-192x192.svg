@@ -1,0 +1,6 @@
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" rx="20" fill="#1E293B"/>
+  <polygon points="96,32 144,64 144,128 96,160 48,128 48,64" fill="#4F46E5"/>
+  <polygon points="96,52 124,72 124,120 96,140 68,120 68,72" fill="#ffffff"/>
+  <text x="96" y="105" font-family="Montserrat, sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#1E293B">AT</text>
+</svg>

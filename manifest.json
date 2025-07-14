@@ -1,11 +1,27 @@
 {
-    "name": "Alt tab Corp",
+    "name": "Alt tab Corp - Soluções Tecnológicas",
     "short_name": "Alt tab",
-    "description": "Tecnologia e Inovação",
+    "description": "Desenvolvimento Web, Consultoria TI, Impressão 3D e E-Sports",
     "start_url": "./",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#2C3E50",
+    "theme_color": "#1E293B",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "pt-BR",
     "icons": [
-    ]
+        {
+            "src": "assets/images/icons/icon-192x192.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/images/icons/icon-512x512.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["business", "technology", "developer"]
 } 
