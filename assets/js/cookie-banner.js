@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const cookieBanner = document.getElementById('cookieBanner');
             if (cookieBanner) {
                 cookieBanner.classList.add('active');
-                console.log('Banner de cookies ativado');
             } else {
                 console.error('Banner de cookies não encontrado');
             }
@@ -49,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const cookieBanner = document.getElementById('cookieBanner');
         if (cookieBanner) {
             cookieBanner.classList.add('active');
-            console.log('Banner de cookies forçado');
         }
     };
     
@@ -58,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const cookieBanner = document.getElementById('cookieBanner');
         if (cookieBanner) {
             cookieBanner.classList.remove('active');
-            console.log('Banner de cookies ocultado');
         }
     };
 }); 

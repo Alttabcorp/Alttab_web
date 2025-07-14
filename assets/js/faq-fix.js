@@ -4,7 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("Inicializando script do FAQ...");
 
     // Aguardar um pouco para garantir que todos os estilos carregaram
     setTimeout(initializeFAQ, 100);
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeFAQ() {
         // Selecionar todos os itens do FAQ
         const faqItems = document.querySelectorAll('.faq-item');
-        console.log(`Encontrados ${faqItems.length} itens de FAQ`);
         
         if (faqItems.length === 0) {
             console.error("Nenhum item de FAQ encontrado na página!");
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Função para abrir um item de FAQ
         function openFaqItem(item) {
-            console.log("Abrindo item FAQ:", item);
             
             // Obtém a resposta e o ícone
             const answer = item.querySelector('.faq-answer');
@@ -52,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 answer.style.opacity = '1';
                 answer.style.padding = '1.25rem';
                 
-                console.log("Answer height set to:", height + 'px');
             }
 
             // Muda o ícone
@@ -72,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Função para fechar um item de FAQ
         function closeFaqItem(item) {
-            console.log("Fechando item FAQ:", item);
             
             // Obtém a resposta e o ícone
             const answer = item.querySelector('.faq-answer');
@@ -123,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 question.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log(`FAQ item ${index + 1} clicado`);
                     
                     // Verificar se este item já está ativo
                     const isActive = item.classList.contains('active');
@@ -138,10 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Se o item clicado não estava ativo, ativá-lo
                     if (!isActive) {
                         openFaqItem(item);
-                        console.log(`FAQ item ${index + 1} ativado`);
                     } else {
                         closeFaqItem(item);
-                        console.log(`FAQ item ${index + 1} fechado`);
                     }
                 });
                 
@@ -171,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Abrir o primeiro item do FAQ por padrão após um delay
         setTimeout(() => {
-            console.log("Ativando o primeiro item do FAQ por padrão");
             if (faqItems.length > 0) {
                 openFaqItem(faqItems[0]);
             }

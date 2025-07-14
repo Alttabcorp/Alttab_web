@@ -91,5 +91,3 @@ document.addEventListener('submit', function(e) {
         });
     }
 });
-
-console.log('📊 Google Analytics configurado'); 

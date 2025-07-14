@@ -6,14 +6,11 @@
 (function() {
     'use strict';
     
-    console.log('FAQ Script Robusto carregado');
     
     function initFAQ() {
-        console.log('Inicializando FAQ...');
         
         // Aguardar o DOM estar completamente carregado
         const faqItems = document.querySelectorAll('.faq-item');
-        console.log(`Encontrados ${faqItems.length} itens de FAQ`);
         
         if (faqItems.length === 0) {
             console.error('Nenhum item de FAQ encontrado!');
@@ -22,7 +19,6 @@
         
         // Função para aplicar estilos de abertura
         function openFaqItem(item) {
-            console.log('Abrindo FAQ item:', item);
             
             const answer = item.querySelector('.faq-answer');
             const icon = item.querySelector('.faq-icon i') || item.querySelector('.faq-question i');
@@ -48,7 +44,6 @@
             
             // Calcular altura real
             const realHeight = answer.scrollHeight;
-            console.log('Altura calculada:', realHeight + 'px');
             
             // Aplicar animação
             answer.style.maxHeight = '0px';
@@ -80,7 +75,6 @@
         
         // Função para aplicar estilos de fechamento
         function closeFaqItem(item) {
-            console.log('Fechando FAQ item:', item);
             
             const answer = item.querySelector('.faq-answer');
             const icon = item.querySelector('.faq-icon i') || item.querySelector('.faq-question i');
@@ -162,7 +156,6 @@
                 e.preventDefault();
                 e.stopPropagation();
                 
-                console.log(`FAQ item ${index + 1} clicado`);
                 
                 const isActive = item.classList.contains('active');
                 
@@ -198,12 +191,10 @@
         // Inicializar com primeiro item aberto
         setTimeout(() => {
             if (faqItems.length > 0) {
-                console.log('Abrindo primeiro item por padrão');
                 openFaqItem(faqItems[0]);
             }
         }, 100);
         
-        console.log('FAQ inicializado com sucesso!');
     }
     
     // Executar quando o DOM estiver pronto

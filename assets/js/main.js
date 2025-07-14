@@ -4,7 +4,6 @@
  */
 
 window.addEventListener('load', function() {
-    console.log('DOM carregado, inicializando scripts...');
     
     // Inicializa todas as animações
     if (window.animations && typeof window.animations.init === 'function') {
@@ -56,7 +55,6 @@ window.addEventListener('load', function() {
             } else {
                 // Mobile: Desabilitar submenus para navegação direta
                 // Não adicionar event listeners que impedem navegação
-                console.log('Mobile: E-Sports submenu desabilitado para navegação direta');
             }
         });
     };
@@ -116,7 +114,6 @@ window.addEventListener('load', function() {
             } else {
                 // Mobile: Navegar diretamente para a página (sem dropdown)
                 // Permitir navegação normal - não adicionar event listeners que impedem navegação
-                console.log('Dispositivo móvel: dropdowns desabilitados, navegação direta habilitada');
             }
         });
         
@@ -601,5 +598,4 @@ window.addEventListener('load', function() {
         });
     }
     
-    console.log('Scripts inicializados com sucesso!');
 });

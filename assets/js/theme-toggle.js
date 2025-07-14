@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para aplicar tema
     function applyTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        console.log('Tema aplicado:', theme);
         
         // Atualizar visual do toggle
         if (themeToggle) {
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 themeToggle.classList.remove('active');
             }
         }
-        
+
         // Atualizar dropdowns abertos para o novo tema
         const activeDropdowns = document.querySelectorAll('.dropdown-menu.active');
         if (activeDropdowns.length > 0) {

@@ -197,23 +197,7 @@
                 <ul class="nav-menu">
                     <li><a href="./" class="nav-link active">Início</a></li>
                     <li><a href="pages/sobre/" class="nav-link">Sobre</a></li>
-                    <li class="nav-item nav-dropdown">
-                        <a href="pages/servicos/" class="nav-link">Serviços <span
-                                class="dropdown-arrow">&#9662;</span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="pages/consultoria/" class="dropdown-link">Consultoria TI</a></li>
-                            <li><a href="pages/web/" class="dropdown-link">Desenvolvimento Web</a></li>
-                            <li><a href="pages/impressao3d/" class="dropdown-link">Impressão 3D</a></li>
-                            <li class="dropdown-divider"></li>
-                            <li class="nav-item nav-dropdown">
-                                <a href="pages/esports/" class="nav-link">E-Sports <span
-                                        class="dropdown-arrow">&#9662;</span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="pages/esports/estudio/" class="dropdown-link">Estúdio de Jogos</a></li>
-                                    <li><a href="pages/esports/time/" class="dropdown-link">Time E-sports</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li> <a href="pages/servicos/" class="nav-link">Serviços</a>
                     </li>
                     <li><a href="pages/contato/" class="nav-link">Contato</a></li>
                 </ul>
@@ -640,12 +624,10 @@
     <!-- Script para garantir que o FAQ seja visível -->
     <script>
         window.addEventListener('load', function () {
-            console.log('Inicializando script de correção do FAQ');
 
             // Aplicar força bruta após tudo carregar
             setTimeout(function () {
                 var faqItems = document.querySelectorAll('.faq-item');
-                console.log('Encontrados ' + faqItems.length + ' itens de FAQ para corrigir');
 
                 if (faqItems.length > 0) {
                     // Forçar abertura do primeiro item
@@ -653,15 +635,12 @@
 
                     var firstAnswer = faqItems[0].querySelector('.faq-answer');
                     if (firstAnswer) {
-                        console.log('Forçando exibição da primeira resposta');
                         firstAnswer.style.maxHeight = '1000px';
                         firstAnswer.style.opacity = '1';
                         firstAnswer.style.visibility = 'visible';
                         firstAnswer.style.display = 'block';
                         firstAnswer.style.padding = '1.5rem';
 
-                        // Mostrar altura real da resposta
-                        console.log('Altura da resposta: ' + firstAnswer.scrollHeight + 'px');
                     }
 
                     var firstIcon = faqItems[0].querySelector('.faq-icon i');
@@ -674,7 +653,6 @@
                         var question = item.querySelector('.faq-question');
                         if (question) {
                             question.addEventListener('click', function () {
-                                console.log('Clique detectado em pergunta do FAQ');
 
                                 var isActive = item.classList.contains('active');
 
