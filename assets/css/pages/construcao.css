@@ -1,220 +1,221 @@
-/* Estilos específicos para a página Em Construção */
+/**
+ * Estilos da página Em Construção
+ * Design minimalista para a página de construção
+ * Atualizado em 15 de julho de 2025
+ */
 
-/* Hero Section */
-.page-construcao .hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/images/backgrounds/construction-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    padding: 150px 0 100px;
-    text-align: center;
-    margin-bottom: 60px;
-    margin-top: 0;
-}
-
-.page-construcao .hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    animation: fadeInUp 1s ease;
-}
-
-.page-construcao .hero-section p {
-    font-size: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto;
-    animation: fadeInUp 1s ease 0.2s;
-    animation-fill-mode: both;
-}
-
-/* Construction Section */
-.construction {
-    padding: 60px 0;
-    text-align: center;
-}
-
-.construction-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.construction-icon {
-    font-size: 5rem;
-    color: var(--color-primary);
-    margin-bottom: 30px;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-.construction-features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 40px 0;
-}
-
-.feature {
+/* Header da página */
+.page-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 6rem 0 4rem;
+    color: var(--light);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-height: 50vh;
     display: flex;
     align-items: center;
-    padding: 15px 25px;
-    background-color: #f8f9fa;
-    border-radius: 30px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
-.feature i {
-    font-size: 1.5rem;
-    color: var(--color-primary);
-    margin-right: 15px;
+.page-header::before,
+.page-header::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 0;
 }
 
-.feature span {
-    font-weight: 500;
+.page-header::before {
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
 }
 
-.construction-cta {
-    margin-top: 40px;
+.page-header::after {
+    bottom: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    opacity: 0.05;
 }
 
-.construction-cta .btn {
-    padding: 15px 30px;
-    font-size: 1.1rem;
+.page-header .hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-.construction-cta .btn i {
-    margin-right: 10px;
+.page-header .hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../images/hero-pattern.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.page-header .hero-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    line-height: 0;
+}
+
+.page-header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-header h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--light);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header p {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: var(--line-height-relaxed);
 }
 
 /* CTA Section */
 .cta-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/images/backgrounds/cta-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
+    padding: 5rem 0;
+    background-color: var(--gray-100);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content {
     text-align: center;
-    padding: 100px 0;
-    margin-top: 60px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: var(--border-radius-xl);
+    padding: 4rem 2rem;
+    color: var(--light);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.cta-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--light);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-full);
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cta-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1.5rem;
 }
 
 .cta-content p {
-    font-size: 1.2rem;
+    font-size: var(--font-size-lg);
+    margin-bottom: 2rem;
     max-width: 700px;
-    margin: 0 auto 30px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: var(--color-primary);
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
 }
 
-.cta-button:hover {
-    background-color: var(--color-primary-dark);
-    transform: translateY(-3px);
+/* Tema escuro */
+[data-theme="dark"] .cta-section {
+    background-color: var(--gray-900);
 }
 
-.cta-button i {
-    margin-left: 10px;
-}
-
-/* Animações */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .page-construcao .hero-section {
-        padding: 120px 0 80px;
-    }
-    
-    .page-construcao .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    
-    .construction-features {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .feature {
-        width: 100%;
+/* Responsividade - Atualizado */
+@media (max-width: 1200px) {
+    .page-header h1 {
+        font-size: var(--font-size-3xl);
     }
     
     .cta-content h2 {
-        font-size: 2rem;
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 5rem 0 3rem;
+    }
+    
+    .page-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .page-header p {
+        font-size: var(--font-size-base);
+    }
+    
+    .cta-section {
+        padding: 4rem 0;
+    }
+    
+    .cta-content {
+        padding: 3rem 1.5rem;
+    }
+    
+    .cta-content h2 {
+        font-size: var(--font-size-xl);
+    }
+    
+    .cta-content p {
+        font-size: var(--font-size-base);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 
 @media (max-width: 576px) {
-    .page-construcao .hero-section h1 {
-        font-size: 2rem;
+    .page-header h1 {
+        font-size: var(--font-size-xl);
     }
     
-    .page-construcao .hero-section p {
-        font-size: 1rem;
+    .page-header p {
+        font-size: var(--font-size-sm);
     }
     
-    .construction-content {
-        padding: 30px 20px;
+    .cta-section {
+        padding: 3rem 0;
     }
-    
-    .construction-icon {
-        font-size: 4rem;
-    }
-    
-    .feature {
-        padding: 12px 20px;
-    }
-    
-    .feature i {
-        font-size: 1.2rem;
-    }
-    
-    .cta-content h2 {
-        font-size: 1.8rem;
-    }
-    
-    .cta-content p {
-        font-size: 1rem;
-    }
-    
-    .cta-button {
-        padding: 12px 25px;
-        font-size: 1rem;
-    }
-} 
+}
