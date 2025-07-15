@@ -1,5 +1,4 @@
 /* Página de Política de Cookies - Alt tab Corp */
-
 .cookies-main {
     background: var(--background-color);
     min-height: 100vh;
@@ -57,49 +56,57 @@
 
 .cookies-section p,
 .cookies-section ul {
-    color: var(--legal-text);
-    font-size: var(--font-size-base);
+    color: var(--text-secondary);
     line-height: var(--line-height-relaxed);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 1rem;
 }
 
 .cookies-section ul {
-    padding-left: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
+    padding-left: 1.5rem;
+    list-style: disc;
 }
 
 .cookies-section li {
-    margin-bottom: var(--spacing-sm);
-    position: relative;
-}
-
-.cookies-section li::before {
-    content: '';
-    position: absolute;
-    left: -18px;
-    top: 10px;
-    width: 6px;
-    height: 6px;
-    border-radius: var(--border-radius-full);
-    background-color: var(--secondary);
+    margin-bottom: 0.5rem;
 }
 
 .cookies-section a {
-    color: var(--link-color);
-    text-decoration: underline;
-    transition: var(--transition-normal);
-    font-weight: var(--font-weight-medium);
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .cookies-section a:hover {
-    color: var(--link-hover-color);
-    text-decoration: none;
+    color: var(--primary-color-dark);
+    text-decoration: underline;
 }
 
-.cookies-section .container {
-    max-width: 700px;
-    margin: 0 auto;
+/* Media Queries */
+@media (max-width: 768px) {
+    .cookies-main {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .cookies-section {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+    
+    .cookies-section h1 {
+        font-size: var(--font-size-xl);
+    }
 }
+
+@media (max-width: 480px) {
+    .cookies-section {
+        padding: 1rem;
+    }
+    
+    .cookies-section h2 {
+        font-size: var(--font-size-md);
+    }
+}
+
 
 @media (max-width: 768px) {
     .cookies-main {

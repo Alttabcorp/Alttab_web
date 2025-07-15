@@ -1,5 +1,4 @@
 /* Página de Política de Privacidade - Alt tab Corp */
-
 .privacy-main {
     background: var(--background-color);
     min-height: 100vh;
@@ -57,31 +56,14 @@
 
 .privacy-section p,
 .privacy-section ul {
-    color: var(--legal-text);
-    font-size: var(--font-size-base);
+    color: var(--text-secondary);
     line-height: var(--line-height-relaxed);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 1rem;
 }
 
 .privacy-section ul {
-    padding-left: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-}
-
-.privacy-section li {
-    margin-bottom: var(--spacing-sm);
-    position: relative;
-}
-
-.privacy-section li::before {
-    content: '';
-    position: absolute;
-    left: -18px;
-    top: 10px;
-    width: 6px;
-    height: 6px;
-    border-radius: var(--border-radius-full);
-    background-color: var(--secondary);
+    padding-left: 1.5rem;
+    list-style: disc;
 }
 
 .privacy-section a {
@@ -96,11 +78,7 @@
     text-decoration: none;
 }
 
-.privacy-section .container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
     .privacy-main {
         padding: 100px 0 40px 0;
@@ -133,4 +111,4 @@
     .privacy-section h2 {
         font-size: var(--font-size-base);
     }
-} 
+}
