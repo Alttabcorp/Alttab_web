@@ -213,6 +213,8 @@
     <link rel="stylesheet" href="../../assets/css/components/cards.css">
     <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
     <link rel="stylesheet" href="../../assets/css/components/animations.css">
+    <link rel="stylesheet" href="../../assets/css/components/cookie-banner.css">
+
 
     <!-- CSS Principal -->
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -1007,32 +1009,8 @@
     <!-- Particles.js para animação do hero -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Inicialização do Typed.js para texto animado no hero
         document.addEventListener('DOMContentLoaded', function () {
-            if (document.getElementById('typedHero')) {
-                new Typed('#typedHero', {
-                    strings: [
-                        'impulsionar seu negócio',
-                        'transformar suas ideias',
-                        'aumentar sua presença digital',
-                        'alcançar seus objetivos',
-                        'conquistar novos clientes'
-                    ],
-                    typeSpeed: 50,
-                    backSpeed: 30,
-                    backDelay: 2000,
-                    loop: true,
-                    smartBackspace: true,
-                    onComplete: (self) => {
-                        document.querySelector('.typed-text').classList.add('typed-done');
-                    },
-                    preStringTyped: (arrayPos, self) => {
-                        document.querySelector('.typed-text').classList.remove('typed-done');
-                    }
-                });
-            }
-
-            // Inicializa as partículas no hero - igual à página sobre
+            // Inicializa as partículas no hero
             if (document.getElementById('particles-js')) {
                 particlesJS('particles-js', {
                     particles: {
@@ -1118,20 +1096,6 @@
                     retina_detect: true
                 });
             }
-        });
-    </script>
-
-    <!-- Google Analytics GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M12XYZ7P89"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-M12XYZ7P89', {
-            'page_title': 'Serviços Tecnológicos',
-            'page_path': '/pages/servicos/',
-            'site_section': 'serviços',
-            'update_date': '11/07/2025'
         });
     </script>
 </body>

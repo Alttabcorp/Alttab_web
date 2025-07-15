@@ -10,6 +10,103 @@ body {
     overflow-x: hidden;
 }
 
+/* Reset e variáveis específicas da página */
+:root {
+    color-scheme: light dark;
+}
+
+/* Temas específicos */
+[data-theme="light"] {
+    --sobre-bg: var(--light);
+    --sobre-text: var(--text-color);
+    --sobre-text-secondary: var(--text-secondary);
+    --sobre-card-bg: var(--card-background);
+    --sobre-border: var(--border-color);
+    --sobre-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] {
+    --sobre-bg: var(--dark);
+    --sobre-text: var(--light);
+    --sobre-text-secondary: var(--gray-400);
+    --sobre-card-bg: var(--gray-800);
+    --sobre-border: var(--gray-700);
+    --sobre-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Aplicação das variáveis de tema */
+.page-sobre {
+    background-color: var(--sobre-bg);
+    color: var(--sobre-text);
+}
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--light);
+}
+
+.values-section {
+    background-color: var(--sobre-bg);
+}
+
+.values-tabs {
+    background-color: var(--sobre-card-bg);
+    border-color: var(--sobre-border);
+}
+
+.values-feature {
+    background-color: var(--sobre-card-bg);
+    border-color: var(--sobre-border);
+}
+
+.values-feature:hover {
+    background-color: var(--primary-lightest);
+    border-color: var(--primary);
+}
+
+.values-feature-text h4 {
+    color: var(--primary);
+}
+
+.values-feature-text p {
+    color: var(--sobre-text-secondary);
+}
+
+.approach-card {
+    background-color: var(--sobre-card-bg);
+    border-color: var(--sobre-border);
+    box-shadow: var(--sobre-shadow);
+}
+
+.team-card {
+    background-color: var(--sobre-card-bg);
+    border-color: var(--sobre-border);
+    box-shadow: var(--sobre-shadow);
+}
+
+.team-info h3 {
+    color: var(--primary);
+}
+
+.team-role {
+    color: var(--secondary);
+}
+
+.team-bio {
+    color: var(--sobre-text-secondary);
+}
+
+.team-social-link {
+    background-color: var(--sobre-card-bg);
+    color: var(--primary);
+    border: 1px solid var(--sobre-border);
+}
+
+.team-social-link:hover {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
 /* Header da página */
 .page-header {
     background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -40,7 +137,6 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    pointer-events: none;
 }
 
 .page-header .hero-pattern {
@@ -210,7 +306,7 @@ body {
 .timeline-title {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
-    color: var(--text-color);
+    color: var(--primary);
     margin-bottom: 1rem;
 }
 
@@ -583,12 +679,12 @@ body {
 }
 
 .approach-card {
-    background-color: var(--card-background);
+    background-color: var(--sobre-card-bg);
+    border-color: var(--sobre-border);
+    box-shadow: var(--sobre-shadow);
     border-radius: var(--border-radius-lg);
     padding: 2rem;
-    box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
-    border: 1px solid var(--border-color);
     text-align: center;
     height: 100%;
 }
@@ -623,7 +719,7 @@ body {
 .approach-card h3 {
     font-size: var(--font-size-lg);
     font-weight: var(--font-weight-semibold);
-    color: var(--text-color);
+    color: var(--primary);
     margin-bottom: 1rem;
 }
 
@@ -719,10 +815,11 @@ body {
 }
 
 .team-card {
-    background-color: var(--card-background);
+    background-color: var(--sobre-card-bg);
+    border-color: var(--sobre-border);
+    box-shadow: var(--sobre-shadow);
     border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--border-color);
 }
@@ -765,13 +862,13 @@ body {
 }
 
 .team-role {
-    color: var(--primary);
+    color: var(--secondary);
     font-weight: var(--font-weight-medium);
     margin-bottom: 1rem;
 }
 
 .team-bio {
-    color: var(--text-secondary);
+    color: var(--sobre-text-secondary);
     font-size: var(--font-size-sm);
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -1607,5 +1704,426 @@ body {
     .btn {
         padding: 0.75rem 1.5rem;
         font-size: var(--font-size-sm);
+    }
+}
+
+/* Melhorias adicionais de responsividade para elementos específicos */
+
+/* Grid da equipe - melhor adaptação em diferentes tamanhos */
+@media (max-width: 992px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Valores e abordagem - melhor disposição */
+@media (max-width: 768px) {
+
+    .values-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .values-grid,
+    .approach-grid {
+        gap: 1rem;
+    }
+}
+
+/* Timeline - melhoria na responsividade */
+@media (max-width: 768px) {
+    .timeline-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        gap: 1rem;
+    }
+
+    .timeline-nav-item {
+        flex-shrink: 0;
+        white-space: nowrap;
+        min-width: max-content;
+    }
+}
+
+/* Melhorias gerais de responsividade */
+@media (max-width: 480px) {
+
+    /* Garantir que imagens não quebrem o layout */
+    .team-image,
+    .team-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* Evitar overflow horizontal */
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* Melhorar espaçamento em telas muito pequenas */
+    .section-header {
+        padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Cards da equipe - ajustes finos */
+    .team-card {
+        min-height: auto;
+        height: auto;
+    }
+
+    .team-content {
+        padding: 1rem;
+    }
+
+    /* Botões - melhor adaptação */
+    .btn-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Responsividade para seção de Valores/Princípios */
+@media (max-width: 768px) {
+    .values-tabs {
+        margin: 2rem auto 0;
+    }
+
+    .values-tabs-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .values-tab-btn {
+        justify-content: flex-start;
+        padding: 1rem;
+        text-align: left;
+        border-radius: var(--border-radius-md);
+    }
+
+    .values-tab-content {
+        padding: 1.5rem;
+    }
+
+    .values-content-grid {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .values-content-visual {
+        flex: none;
+        order: -1;
+    }
+
+    .values-illustration {
+        width: 140px;
+        height: 140px;
+        font-size: 3rem;
+    }
+
+    .values-content-title {
+        font-size: var(--font-size-xl);
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .values-content-title::before {
+        display: none;
+    }
+
+    .values-content-description {
+        font-size: var(--font-size-base);
+        text-align: center;
+    }
+
+    .values-content-features {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .values-feature {
+        padding: 0.75rem;
+    }
+
+    .values-pillars {
+        justify-content: center;
+        max-width: 400px;
+        margin: 1rem auto 0;
+    }
+
+    .value-pill {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* Responsividade para dispositivos pequenos - seção Valores/Princípios */
+    .values-tabs {
+        margin: 1.5rem auto 0;
+        border-radius: var(--border-radius-md);
+    }
+
+    .values-tabs-nav {
+        padding: 0.75rem;
+        gap: 0.25rem;
+    }
+
+    .values-tab-btn {
+        padding: 0.75rem;
+        font-size: var(--font-size-sm);
+        gap: 0.5rem;
+    }
+
+    .values-tab-icon {
+        font-size: 1rem;
+    }
+
+    .values-tab-content {
+        padding: 1rem;
+    }
+
+    .values-content-grid {
+        gap: 1.5rem;
+    }
+
+    .values-illustration {
+        width: 120px;
+        height: 120px;
+        font-size: 2.5rem;
+    }
+
+    .values-content-title {
+        font-size: var(--font-size-lg);
+        margin-bottom: 1rem;
+    }
+
+    .values-content-description {
+        font-size: var(--font-size-sm);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .values-content-features {
+        gap: 1rem;
+    }
+
+    .values-feature {
+        padding: 0.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .values-feature-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        align-self: center;
+    }
+
+    .values-feature-text h4 {
+        font-size: var(--font-size-sm);
+        margin-bottom: 0.15rem;
+    }
+
+    .values-feature-text p {
+        font-size: var(--font-size-xs);
+    }
+
+    .values-pillars {
+        gap: 0.5rem;
+        max-width: 100%;
+    }
+
+    .value-pill {
+        padding: 0.4rem 0.8rem;
+        font-size: var(--font-size-xs);
+        gap: 0.4rem;
+    }
+
+    .value-pill-icon {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header {
+        padding: 3rem 0;
+        min-height: 40vh;
+    }
+
+    .page-header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .page-header p {
+        font-size: var(--font-size-sm);
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section-header h2 {
+        font-size: calc(var(--font-size-2xl) * 0.85);
+    }
+
+    .section-header p {
+        font-size: var(--font-size-sm);
+    }
+
+    .value-card,
+    .approach-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .value-icon,
+    .approach-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+
+    .value-card h3,
+    .approach-card h3 {
+        font-size: var(--font-size-lg);
+    }
+
+    .value-card p,
+    .approach-card p {
+        font-size: var(--font-size-sm);
+    }
+
+    .stat-card {
+        padding: 1.25rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: var(--font-size-sm);
+    }
+
+    .team-card {
+        padding: 1.5rem;
+    }
+
+    .team-name {
+        font-size: var(--font-size-lg);
+    }
+
+    .team-role {
+        font-size: var(--font-size-sm);
+    }
+
+    .team-description {
+        font-size: var(--font-size-xs);
+        line-height: 1.4;
+    }
+
+    .timeline {
+        padding: 1rem 0;
+    }
+
+    .timeline-nav {
+        gap: 0.5rem;
+        padding: 0 1rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .timeline-nav-item {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-size-sm);
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .timeline-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .timeline-year {
+        font-size: var(--font-size-lg);
+    }
+
+    .timeline-title {
+        font-size: var(--font-size-base);
+    }
+
+    .timeline-description {
+        font-size: var(--font-size-sm);
+    }
+
+    .cta-section {
+        padding: 2rem 0;
+    }
+
+    .cta-content h2 {
+        font-size: calc(var(--font-size-2xl) * 0.8);
+    }
+
+    .cta-content p {
+        font-size: var(--font-size-sm);
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Ajustes para o modo escuro */
+@media (prefers-color-scheme: dark) {
+    .values-feature:hover {
+        background-color: var(--primary-darkest);
+    }
+
+    .timeline-slide-content {
+        background-color: var(--sobre-card-bg);
+        border-color: var(--sobre-border);
+    }
+
+    .timeline-nav-item {
+        color: var(--sobre-text-secondary);
+    }
+
+    .timeline-nav-item.active {
+        color: var(--primary);
     }
 }
