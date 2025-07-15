@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-     <!-- Google Tag Manager -->
+    <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
                 'gtm.start':
@@ -16,24 +16,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta Tags SEO -->
-    <meta name="description" content="Página em construção da Alt tab Corp. Em breve, novos conteúdos e recursos estarão disponíveis.">
-    <meta name="keywords" content="página em construção, em breve, site em desenvolvimento, Alt tab Corp">
+    <meta name="description" content="Em breve: A Alt tab Corp está preparando novidades! Nossa página está em construção e em breve traremos conteúdos e recursos inovadores em tecnologia, desenvolvimento web, consultoria em TI e muito mais.">
+    <meta name="keywords" content="em breve, lançamento, desenvolvimento web, tecnologia, Alt tab Corp, consultoria TI, inovação digital">
     <meta name="author" content="Alt tab Corp">
     <meta name="robots" content="noindex, follow">
     <meta name="theme-color" content="#1E293B">
     <meta name="language" content="pt-BR">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.alttabcorp.com.br/construcao">
 
-    <title>Em Construção - Novidades em Breve | Alt tab Corp</title>
+    <title>Em Breve - Novidades em Desenvolvimento | Alt tab Corp</title>
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Em Construção - Novidades em Breve | Alt tab Corp">
-    <meta property="og:description" content="Página em construção da Alt tab Corp. Em breve, novos conteúdos e recursos estarão disponíveis.">
-    <meta property="og:image" content="https://www.alttabcorp.com.br/assets/images/og-image.svg">
+    <meta property="og:title" content="Em Breve - Novidades em Desenvolvimento | Alt tab Corp">
+    <meta property="og:description" content="Em breve: A Alt tab Corp está preparando novidades! Nossa página está em construção e em breve traremos conteúdos e recursos inovadores em tecnologia.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.alttabcorp.com.br/construcao">
+    <meta property="og:image" content="https://www.alttabcorp.com.br/assets/images/og-image.svg">
     <meta property="og:site_name" content="Alt tab Corp">
-    
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:updated_time" content="2025-07-15T00:00:00-03:00">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Em Breve - Novidades em Desenvolvimento | Alt tab Corp">
+    <meta name="twitter:description" content="Em breve: A Alt tab Corp está preparando novidades! Nossa página está em construção e em breve traremos conteúdos e recursos inovadores em tecnologia.">
+    <meta name="twitter:image" content="https://www.alttabcorp.com.br/assets/images/og-image.svg">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../../manifest.json">
     
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,7 +83,7 @@
     <link rel="stylesheet" href="../../assets/css/responsive.css">
     <link rel="stylesheet" href="../../assets/css/fixes.css">
 </head>
-<body class="page-construcao">
+<body class="page-construcao" itemscope itemtype="http://schema.org/WebPage">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-XTXHKDRDTJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -101,19 +119,37 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main-content">
+    <main id="main-content" itemscope itemtype="http://schema.org/WebSite">
         <!-- Page Header -->
         <section class="page-header">
             <div class="hero-particles" id="particles-js"></div>
             <div class="hero-pattern parallax-bg" data-speed="0.1"></div>
             <div class="container">
                 <div class="page-header-content">
-                    <h1 class="animate-on-scroll" data-animation="fade-in-up">Página em <span class="gradient-text">Construção</span></h1>
-                    <p class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">Estamos trabalhando em novos conteúdos. Voltaremos em breve!</p>
+                    <h1 class="animate-on-scroll" data-animation="fade-in-up" itemprop="name">Página em <span class="gradient-text">Construção</span></h1>
+                    <p class="animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s" itemprop="description">Estamos trabalhando em novos conteúdos. Voltaremos em breve com novidades incríveis em tecnologia e inovação!</p>
+                    <div class="countdown" itemprop="potentialAction">
+                        <div class="countdown-item">
+                            <span id="countdown-days">00</span>
+                            <span class="countdown-label">Dias</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countdown-hours">00</span>
+                            <span class="countdown-label">Horas</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countdown-minutes">00</span>
+                            <span class="countdown-label">Minutos</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="countdown-seconds">00</span>
+                            <span class="countdown-label">Segundos</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="hero-wave">
-                <img src="../../assets/images/wave.svg" alt="Wave" class="wave">
+                <img src="../../assets/images/wave.svg" alt="Wave" class="wave" aria-hidden="true">
             </div>
         </section>
         
@@ -123,10 +159,14 @@
                 <div class="cta-content animate-on-scroll" data-animation="fade-in-up">
                     <div class="cta-badge">Fique por Dentro</div>
                     <h2 class="gradient-text light">Não Perca Nenhuma Novidade</h2>
-                    <p>Enquanto trabalhamos no lançamento de nosso novo conteúdo, siga-nos nas redes sociais para receber atualizações.</p>
+                    <p>Enquanto trabalhamos no lançamento de nosso novo conteúdo, siga-nos nas redes sociais para receber atualizações em primeira mão.</p>
                     <div class="cta-buttons">
-                        <a href="../contato/" class="btn btn-primary btn-ripple btn-lg">Entre em Contato <i class="fas fa-envelope"></i></a>
-                        <a href="../../" class="btn btn-outline-light btn-lg">Voltar ao Início <i class="fas fa-home"></i></a>
+                        <a href="../contato/" class="btn btn-primary btn-ripple btn-lg" itemprop="mainEntityOfPage">
+                            Entre em Contato <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="../../" class="btn btn-outline-light btn-lg">
+                            Voltar ao Início <i class="fas fa-home" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -370,11 +410,47 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-M12XYZ7P89', {
-            'page_title': 'Página em Construção',
-            'page_path': '/pages/construcao/',
-            'site_section': 'construção',
-            'update_date': '15/07/2025'
+            'page_title': 'Em Breve - Novidades em Desenvolvimento',
+            'page_path': '/construcao/',
+            'site_section': 'pre_launch',
+            'update_date': '2025-07-15',
+            'expected_launch': '2025-12-31',
+            'content_language': 'pt-BR'
+        });
+
+        // Evento de contagem regressiva
+        gtag('event', 'countdown_view', {
+            'launch_date': '2025-12-31',
+            'days_remaining': Math.ceil((new Date('2025-12-31').getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24))
         });
     </script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": "Alt tab Corp - Em Breve",
+        "description": "Em breve: A Alt tab Corp está preparando novidades! Nossa página está em construção e em breve traremos conteúdos e recursos inovadores em tecnologia.",
+        "url": "https://www.alttabcorp.com.br/construcao",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.alttabcorp.com.br/busca?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Alt tab Corp",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.alttabcorp.com.br/assets/images/logo/logo.png"
+            }
+        },
+        "inLanguage": "pt-BR",
+        "dateModified": "2025-07-15",
+        "datePublished": "2025-07-15",
+        "expectedDate": "2025-12-31"
+    }
+    </script>
 </body>
-</html> 
+</html>

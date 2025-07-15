@@ -16,14 +16,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta Tags SEO -->
-    <meta name="description" content="Página não encontrada - Error 404 | Alt tab Corp">
-    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Página não encontrada (404) - Alt tab Corp. Não encontrou o que procurava? Volte à página inicial ou entre em contato conosco para assistência.">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#1E293B">
+    <meta name="language" content="pt-BR">
+    <meta name="referrer" content="no-referrer-when-downgrade">
 
-    <title>Página Não Encontrada - Error 404 | Alt tab Corp</title>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.alttabcorp.com.br/404">
+
+    <title>404: Página Não Encontrada | Alt tab Corp</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="404: Página Não Encontrada | Alt tab Corp">
+    <meta property="og:description" content="Página não encontrada (404) - Alt tab Corp. Não encontrou o que procurava? Volte à página inicial ou entre em contato conosco para assistência.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.alttabcorp.com.br/404">
+    <meta property="og:image" content="https://www.alttabcorp.com.br/assets/images/og-image.svg">
+    <meta property="og:site_name" content="Alt tab Corp">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="404: Página Não Encontrada | Alt tab Corp">
+    <meta name="twitter:description" content="Página não encontrada (404) - Alt tab Corp. Não encontrou o que procurava? Volte à página inicial ou entre em contato conosco para assistência.">
+    <meta name="twitter:image" content="https://www.alttabcorp.com.br/assets/images/og-image.svg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../../assets/images/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/images/icons/apple-touch-icon.png">
+    <link rel="manifest" href="../../manifest.json">
     
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +76,7 @@
     <link rel="stylesheet" href="../../assets/css/pages/404.css">
     <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
-<body class="page-404">
+<body class="page-404" itemscope itemtype="http://schema.org/WebPage">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=G-XTXHKDRDTJ" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -61,11 +85,11 @@
     <main id="main-content" class="error-page">
         <div class="error-container">
             <div class="error-content animate-on-scroll" data-animation="fade-in-up">
-                <h1 class="error-code">404</h1>
+                <h1 class="error-code" itemprop="name">404</h1>
                 <h2 class="error-title">Página Não Encontrada</h2>
-                <p class="error-message">Ops! A página que você está procurando parece não existir.</p>
+                <p class="error-message" itemprop="description">Ops! A página que você está procurando parece não existir. Você pode voltar à página inicial ou entrar em contato conosco.</p>
                 <div class="error-actions">
-                    <a href="../../" class="btn btn-primary btn-lg">
+                    <a href="../../" class="btn btn-primary btn-lg" itemprop="mainEntityOfPage">
                         <i class="fas fa-home"></i> Voltar ao Início
                     </a>
                     <a href="../contato/" class="btn btn-outline btn-lg">
@@ -73,7 +97,7 @@
                     </a>
                 </div>
             </div>
-            <div class="error-illustration animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s">
+            <div class="error-illustration animate-on-scroll" data-animation="fade-in-up" data-delay="0.2s" role="presentation" aria-hidden="true">
                 <i class="fas fa-telescope"></i>
             </div>
         </div>
@@ -90,11 +114,45 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-M12XYZ7P89', {
-            'page_title': 'Página Não Encontrada - 404',
-            'page_path': '/pages/404/',
+            'page_title': '404: Página Não Encontrada',
+            'page_path': '/404/',
             'site_section': 'error',
-            'error_code': '404'
+            'error_code': '404',
+            'error_type': 'Page Not Found',
+            'content_language': 'pt-BR'
         });
+
+        // Relatório de erro 404 para o Analytics
+        gtag('event', 'page_error', {
+            'error_code': '404',
+            'error_path': window.location.pathname,
+            'error_referrer': document.referrer || 'direct',
+            'error_timestamp': new Date().toISOString()
+        });
+    </script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "404: Página Não Encontrada",
+        "description": "Página não encontrada (404) - Alt tab Corp. Não encontrou o que procurava? Volte à página inicial ou entre em contato conosco para assistência.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Alt tab Corp",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.alttabcorp.com.br/assets/images/logo/logo.png"
+            }
+        },
+        "url": "https://www.alttabcorp.com.br/404",
+        "inLanguage": "pt-BR",
+        "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.alttabcorp.com.br/assets/images/og-image.svg"
+        }
+    }
     </script>
 </body>
 </html>
