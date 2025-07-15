@@ -1,35 +1,88 @@
+# Configurações globais para todos os robôs
 User-agent: *
 Allow: /
 
 # Sitemap
 Sitemap: https://www.alttabcorp.com.br/sitemap.xml
 
-# Crawl-delay for better server performance
+# Crawl-delay para melhor performance do servidor
 Crawl-delay: 1
 
-# Disallow admin areas (if any)
+# Diretórios e arquivos bloqueados
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
 Disallow: /*.pdf$
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search?
+Disallow: /*?*query=
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /assets/js/analytics.js
 
-# Allow important files and directories
-Allow: /assets/
+# Diretórios e arquivos permitidos
+Allow: /assets/css/
+Allow: /assets/images/
+Allow: /assets/fonts/
 Allow: /pages/
 Allow: /manifest.json
 Allow: /favicon.ico
 Allow: /sitemap.xml
+Allow: /robots.txt
 
-# Specific bot configurations
+# Configurações específicas para Googlebot
 User-agent: Googlebot
+Allow: /
 Crawl-delay: 0
+Allow: /*.js$
+Allow: /*.css$
 
+# Configurações específicas para Googlebot-Image
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.png$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Configurações para Bingbot
 User-agent: Bingbot
+Allow: /
 Crawl-delay: 1
 
-# Block problematic bots
+# Bloqueio de bots específicos
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
-Disallow: / 
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Configurações para redes sociais
+User-agent: Facebookbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 1
+
+# Cache e configurações de arquivo
+User-agent: *
+Disallow: /*?*cache=
+Disallow: /*?*version=
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /*.sql$
+Disallow: /*.sql.gz$
+Disallow: /*.log$
+Disallow: /.git/ 
