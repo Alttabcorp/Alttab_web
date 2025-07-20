@@ -118,9 +118,11 @@
     0% {
         transform: translate(0, 0);
     }
+
     50% {
         transform: translate(15px, -15px);
     }
+
     100% {
         transform: translate(0, 0);
     }
@@ -266,7 +268,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('');  /*../images/pattern.svg */
+    background-image: url('');
+    /*../images/pattern.svg */
     background-size: cover;
     opacity: 0.03;
     z-index: 0;
@@ -381,7 +384,8 @@
 
 /* Controles móveis para navegação entre abas */
 .process-mobile-controls {
-    display: none; /* será exibido apenas em mobile via JavaScript */
+    display: none;
+    /* será exibido apenas em mobile via JavaScript */
     justify-content: center;
     gap: 1.5rem;
     margin-top: 1rem;
@@ -452,8 +456,15 @@
 }
 
 @keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .process-content-grid {
@@ -518,19 +529,26 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, 
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
     z-index: 1;
     animation: iconShine 3s infinite;
 }
 
 @keyframes iconShine {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: 100%; }
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 .process-icon i {
@@ -685,9 +703,17 @@
 }
 
 @keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 /* Seção de Tecnologias */
@@ -796,7 +822,7 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .tech-icon {
         width: calc(33.333% - 1rem);
     }
@@ -883,6 +909,7 @@
     position: relative;
     z-index: 1;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: var(--light)
 }
 
 .cta-content p {
@@ -958,7 +985,8 @@
     right: 0;
     width: 300px;
     height: 300px;
-    background-image: url('');  /*../images/pattern.svg */
+    background-image: url('');
+    /*../images/pattern.svg */
     background-size: cover;
     opacity: 0.05;
     z-index: 0;
@@ -1048,10 +1076,12 @@
         transform: scale(1);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
+
     50% {
         transform: scale(1.05);
         box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -1061,25 +1091,50 @@
 
 /* Animações personalizadas para a página de serviços */
 @keyframes floatIcon {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(var(--secondary-rgb), 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(var(--secondary-rgb), 0); }
-    100% { box-shadow: 0 0 0 0 rgba(var(--secondary-rgb), 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--secondary-rgb), 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(var(--secondary-rgb), 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--secondary-rgb), 0);
+    }
 }
 
 @keyframes borderPulse {
-    0% { border-color: var(--gray-200); }
-    50% { border-color: var(--secondary); }
-    100% { border-color: var(--gray-200); }
+    0% {
+        border-color: var(--gray-200);
+    }
+
+    50% {
+        border-color: var(--secondary);
+    }
+
+    100% {
+        border-color: var(--gray-200);
+    }
 }
 
 /* Aplicando animações a elementos específicos */
-.service-icon, .benefit-icon {
+.service-icon,
+.benefit-icon {
     animation: floatIcon 3s ease-in-out infinite;
 }
 
@@ -1109,18 +1164,25 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, 
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
     animation: shine 3s infinite;
 }
 
 @keyframes shine {
-    0% { left: -100%; }
-    50% { left: 100%; }
-    100% { left: 100%; }
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 /* Efeitos hover adicionais */
@@ -1245,7 +1307,7 @@
     .page-header h1 {
         font-size: var(--font-size-3xl);
     }
-    
+
     .cta-content h2 {
         font-size: var(--font-size-2xl);
     }
@@ -1260,22 +1322,23 @@
 }
 
 @media (max-width: 992px) {
+
     .services-grid,
     .benefits-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-    
+
     /* Melhorias na responsividade da seção de processos */
     .process-content-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .process-content-visual {
         min-height: 300px;
         order: -1;
         border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
     }
-    
+
     .process-tabs-nav {
         justify-content: center;
         flex-wrap: wrap;
@@ -1283,44 +1346,44 @@
         max-width: 800px;
         padding: 0 2rem;
     }
-    
+
     .process-tabs-nav::before {
         top: auto;
         bottom: 15px;
         height: 2px;
     }
-    
+
     .process-tab-btn {
         margin-bottom: 1.5rem;
         max-width: 120px;
     }
-    
+
     .process-tab-number {
         width: 60px;
         height: 60px;
         font-size: 1.25rem;
     }
-    
+
     .process-icon {
         width: 80px;
         height: 80px;
         font-size: 2rem;
     }
-    
+
     .process-content-text h3 {
         font-size: var(--font-size-xl);
     }
-    
+
     /* Exibe os controles móveis */
     .process-mobile-controls {
         display: flex;
         margin-bottom: 2rem;
     }
-    
+
     .tech-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .cta-features {
         flex-direction: column;
         align-items: center;
@@ -1332,15 +1395,15 @@
     .page-header {
         padding: 5rem 0 3rem;
     }
-    
+
     .page-header h1 {
         font-size: var(--font-size-2xl);
     }
-    
+
     .page-header p {
         font-size: var(--font-size-base);
     }
-    
+
     .services-section,
     .process-section,
     .benefits-section,
@@ -1348,28 +1411,28 @@
     .cta-section {
         padding: 4rem 0;
     }
-    
+
     .service-card,
     .benefit-card {
         padding: 2rem;
     }
-    
+
     .service-icon,
     .benefit-icon {
         width: 70px;
         height: 70px;
     }
-    
+
     .service-icon i,
     .benefit-icon i {
         font-size: 2rem;
     }
-    
+
     .service-card h3,
     .benefit-card h3 {
         font-size: var(--font-size-lg);
     }
-    
+
     /* Process Section Responsive - Melhorado */
     .process-tabs-nav {
         padding: 0 1rem;
@@ -1381,26 +1444,26 @@
         scrollbar-width: thin;
         margin-bottom: 2rem;
     }
-    
+
     .process-tabs-nav::-webkit-scrollbar {
         height: 4px;
     }
-    
+
     .process-tabs-nav::-webkit-scrollbar-thumb {
         background-color: var(--secondary);
         border-radius: 20px;
     }
-    
+
     .process-tab-content {
         box-shadow: var(--shadow-md);
         border-radius: var(--border-radius-lg);
     }
-    
+
     .process-tab-btn {
         min-width: 80px;
         margin: 0 0.3rem;
     }
-    
+
     .process-tab-number {
         width: 50px;
         height: 50px;
@@ -1408,94 +1471,94 @@
         margin-bottom: 0.5rem;
         border-width: 2px;
     }
-    
+
     .process-tab-text {
         font-size: var(--font-size-xs);
         max-width: 90px;
     }
-    
+
     .process-content-text {
         padding: 2rem 1.5rem;
     }
-    
+
     .process-content-text h3 {
         font-size: var(--font-size-xl);
     }
-    
+
     .process-content-text p {
         font-size: var(--font-size-sm);
         margin-bottom: 1.5rem;
     }
-    
+
     .process-icon-wrapper {
         margin-bottom: 1.5rem;
     }
-    
+
     .process-icon {
         width: 70px;
         height: 70px;
         font-size: 1.75rem;
     }
-    
+
     .process-features {
         gap: 1rem;
     }
-    
+
     .process-feature {
         gap: 0.75rem;
         padding: 0.75rem;
     }
-    
+
     .process-feature-icon {
         min-width: 40px;
         height: 40px;
         font-size: 1rem;
     }
-    
+
     .process-feature-text h4 {
         font-size: var(--font-size-sm);
     }
-    
+
     .process-feature-text p {
         font-size: var(--font-size-xs);
     }
-    
+
     .process-content-visual {
         min-height: 250px;
     }
-    
+
     .process-mobile-controls {
         margin-bottom: 1.5rem;
     }
-    
+
     .tech-category {
         padding: 1.5rem;
     }
-    
+
     .tech-category h3 {
         font-size: var(--font-size-base);
     }
-    
+
     .tech-icon {
         width: 70px;
     }
-    
+
     .tech-icon i {
         font-size: 2rem;
     }
-    
+
     .cta-content {
         padding: 3rem 1.5rem;
     }
-    
+
     .cta-content h2 {
         font-size: var(--font-size-xl);
     }
-    
+
     .cta-content p {
         font-size: var(--font-size-base);
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         gap: 1rem;
@@ -1518,11 +1581,11 @@
     .page-header h1 {
         font-size: var(--font-size-xl);
     }
-    
+
     .page-header p {
         font-size: var(--font-size-sm);
     }
-    
+
     .services-section,
     .process-section,
     .benefits-section,
@@ -1530,38 +1593,38 @@
     .cta-section {
         padding: 3rem 0;
     }
-    
+
     .services-grid,
     .benefits-grid {
         margin-top: 2rem;
         grid-template-columns: 1fr;
     }
-    
+
     .service-card,
     .benefit-card {
         padding: 1.5rem;
     }
-    
+
     .service-icon,
     .benefit-icon {
         width: 60px;
         height: 60px;
     }
-    
+
     .service-icon i,
     .benefit-icon i {
         font-size: 1.75rem;
     }
-    
+
     /* Process Section Small Devices - Melhorado */
     .process-tabs {
         margin-top: 1.5rem;
     }
-    
+
     .process-tab-content {
         border-radius: var(--border-radius-md);
     }
-    
+
     .process-tabs-nav {
         display: flex;
         justify-content: flex-start;
@@ -1574,23 +1637,23 @@
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
-    
+
     .process-tabs-nav::-webkit-scrollbar {
         display: none;
     }
-    
+
     .process-tabs-nav::after {
         content: '';
         padding-right: 1rem;
     }
-    
+
     .process-tab-btn {
         max-width: 80px;
         min-width: 80px;
         margin: 0 0.25rem;
         scroll-snap-align: start;
     }
-    
+
     .process-tab-number {
         width: 40px;
         height: 40px;
@@ -1598,7 +1661,7 @@
         margin-bottom: 0.5rem;
         border-width: 2px;
     }
-    
+
     .process-tab-text {
         font-size: var(--font-size-xs);
         white-space: nowrap;
@@ -1606,93 +1669,93 @@
         text-overflow: ellipsis;
         max-width: 80px;
     }
-    
+
     .process-content-text {
         padding: 1.25rem;
     }
-    
+
     .process-content-text h3 {
         font-size: var(--font-size-lg);
     }
-    
+
     .process-content-text p {
         font-size: var(--font-size-sm);
         max-width: 100%;
     }
-    
+
     .process-icon-wrapper {
         margin-bottom: 1rem;
     }
-    
+
     .process-icon-wrapper::after {
         width: 90%;
         height: 90%;
         top: 5px;
         left: 5px;
     }
-    
+
     .process-icon {
         width: 55px;
         height: 55px;
         font-size: 1.35rem;
     }
-    
+
     .process-content-visual {
         min-height: 180px;
     }
-    
+
     .process-feature {
         margin-bottom: 0.5rem;
         padding: 0.5rem;
     }
-    
+
     .process-feature-icon {
         min-width: 35px;
         height: 35px;
     }
-    
+
     .process-features {
         gap: 0.75rem;
     }
-    
+
     .process-mobile-controls {
         gap: 1rem;
     }
-    
+
     .process-mobile-prev,
     .process-mobile-next {
         width: 40px;
         height: 40px;
         font-size: 1rem;
     }
-    
+
     .tech-grid {
         margin-top: 2rem;
     }
-    
+
     .tech-icons {
         gap: 1rem;
     }
-    
+
     .tech-icon {
         width: 60px;
     }
-    
+
     .tech-icon i {
         font-size: 1.75rem;
     }
-    
+
     .cta-badge {
         font-size: var(--font-size-xs);
         padding: 0.4rem 0.8rem;
         margin-bottom: 1rem;
     }
-    
+
     .cta-content h2 {
         font-size: var(--font-size-lg);
         margin-bottom: 1rem;
     }
-    
+
     .cta-features {
         margin-bottom: 1.5rem;
     }
