@@ -91,15 +91,6 @@
     color: var(--secondary);
 }
 
-[data-theme="dark"] .cookie-btn-settings {
-    color: var(--light);
-    border-color: var(--gray-600);
-}
-
-[data-theme="dark"] .cookie-btn-settings:hover {
-    background-color: var(--gray-700);
-    border-color: var(--gray-500);
-}
 
 /* Responsividade */
 @media (max-width: 768px) {

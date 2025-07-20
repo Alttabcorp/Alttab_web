@@ -229,7 +229,7 @@ window.addEventListener('load', function() {
             if (cookieSettingsBtn) {
                 cookieSettingsBtn.addEventListener('click', function() {
                     // Redireciona para a página de política de cookies
-                    window.location.href = '/cookies/';
+                    window.location.href = '../pages/404/';
                 });
             }
         }
