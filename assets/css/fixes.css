@@ -252,7 +252,73 @@
 
 [data-theme="dark"] .value-card p {
     color: var(--gray-400) !important;
-} 
+}
+
+/* Correções para Values Section - Tema Dark */
+[data-theme="dark"] .values-section {
+    background-color: var(--dark) !important;
+}
+
+[data-theme="dark"] .values-tabs {
+    background-color: var(--gray-800) !important;
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .values-tab-content {
+    background-color: var(--gray-800) !important;
+}
+
+[data-theme="dark"] .values-content-title {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .values-content-description {
+    color: var(--gray-300) !important;
+}
+
+[data-theme="dark"] .values-feature {
+    background-color: var(--gray-700) !important;
+    border-left-color: var(--primary-light) !important;
+}
+
+[data-theme="dark"] .values-feature:hover {
+    background-color: var(--gray-600) !important;
+    border-left-color: var(--primary) !important;
+}
+
+[data-theme="dark"] .values-feature-icon {
+    background-color: var(--gray-800) !important;
+    border-color: var(--gray-600) !important;
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .values-feature-text h4 {
+    color: var(--light) !important;
+}
+
+[data-theme="dark"] .values-feature-text p {
+    color: var(--gray-300) !important;
+}
+
+[data-theme="dark"] .value-pill {
+    background-color: var(--gray-700) !important;
+    border-color: var(--light) !important;
+}
+
+[data-theme="dark"] .value-pill:hover {
+    background-color: var(--gray-600) !important;
+    border-color: var(--primary-light) !important;
+}
+
+[data-theme="dark"] .value-pill-text {
+    color: var(--light) !important;
+}
+
+/* Aplicar apenas se o elemento existir */
+[data-theme="dark"] .values-illustration {
+    background: radial-gradient(circle, rgba(72, 85, 99, 0.3), rgba(55, 65, 81, 0.5)) !important;
+    color: var(--light) !important;
+}
 
 /* Correções específicas para problemas no site */
 

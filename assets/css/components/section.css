@@ -68,7 +68,7 @@ section {
 }
 
 .section-dark .section-header p {
-    color: var(--gray-300);
+    color:var(--text-color);
 }
 
 .section-gray {
@@ -85,7 +85,7 @@ section {
 }
 
 .section-gradient .section-header p {
-    color: rgba(255, 255, 255, 0.9);
+    color:var(--text-color);
 }
 
 /* Seção com Padrão de Fundo */
@@ -654,7 +654,7 @@ section {
 }
 
 .section-dark .section-header p {
-    color: rgba(255, 255, 255, 0.9);
+    color:var(--text-color);
 }
 
 /* Seção com fundo claro */
@@ -721,7 +721,7 @@ section {
 }
 
 .section-bg-image .section-header p {
-    color: rgba(255, 255, 255, 0.9);
+    color:var(--text-color);
 }
 
 /* Badges para seções */
