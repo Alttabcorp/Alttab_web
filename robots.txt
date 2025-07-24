@@ -8,8 +8,24 @@ Sitemap: https://www.alttabcorp.com.br/sitemap.xml
 # Crawl-delay para melhor performance do servidor
 Crawl-delay: 1
 
-# Bloquear acesso ao GitHub Pages direto
-Disallow: https://alttabcorp.github.io/Alttab_web/
+# Páginas principais explicitamente permitidas
+Allow: /pages/sobre/
+Allow: /pages/servicos/
+Allow: /pages/contato/
+Allow: /pages/termos/
+Allow: /pages/privacidade/
+Allow: /pages/cookies/
+
+# Diretórios e arquivos permitidos
+Allow: /assets/css/
+Allow: /assets/images/
+Allow: /assets/js/main.js
+Allow: /assets/js/theme-toggle.js
+Allow: /assets/js/cookie-banner.js
+
+# Páginas de erro e construção - permitir mas não indexar (controlado por meta tags)
+Allow: /pages/404/
+Allow: /pages/construcao/
 
 # Diretórios e arquivos bloqueados
 Disallow: /admin/
@@ -24,10 +40,6 @@ Disallow: /*?*query=
 Disallow: /*?*sort=
 Disallow: /*?*filter=
 Disallow: /assets/js/analytics.js
-
-# Diretórios e arquivos permitidos
-Allow: /assets/css/
-Allow: /assets/images/
 Allow: /assets/fonts/
 Allow: /pages/
 Allow: /manifest.json
