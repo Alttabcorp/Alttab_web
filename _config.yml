@@ -11,11 +11,10 @@ baseurl: ""
 lang: pt-BR
 author: "Alt tab Corp"
 
-# Plugins
+# Plugins compatíveis com GitHub Pages
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-redirect-from
 
 # Configurações de compilação
 markdown: kramdown
@@ -26,7 +25,6 @@ permalink: pretty
 exclude:
   - README.md
   - LICENSE
-  - CNAME
   - Gemfile
   - Gemfile.lock
   - node_modules
@@ -34,16 +32,12 @@ exclude:
   - .sass-cache
   - .jekyll-cache
   - .jekyll-metadata
+  - github-redirect.html
 
-# Incluir arquivos
+# Incluir arquivos importantes
 include:
   - .htaccess
   - _redirects
-
-# Configurações de redirecionamento
-redirect_from:
-  - /Alttab_web/
-  - /Alttab_web/index.html
 
 # Configurações de segurança
 safe: true
