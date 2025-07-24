@@ -8,6 +8,9 @@ Sitemap: https://www.alttabcorp.com.br/sitemap.xml
 # Crawl-delay para melhor performance do servidor
 Crawl-delay: 1
 
+# Bloquear acesso ao GitHub Pages direto
+Disallow: https://alttabcorp.github.io/Alttab_web/
+
 # Diretórios e arquivos bloqueados
 Disallow: /admin/
 Disallow: /private/

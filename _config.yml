@@ -1,0 +1,50 @@
+# Configuração do Jekyll para GitHub Pages
+# Alt tab Corp - Configurações do site
+
+# Informações básicas do site
+title: "Alt tab Corp"
+description: "Empresa de tecnologia especializada em desenvolvimento web, consultoria em TI, impressão 3D e soluções para E-Sports"
+url: "https://www.alttabcorp.com.br"
+baseurl: ""
+
+# Configurações de SEO
+lang: pt-BR
+author: "Alt tab Corp"
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+# Configurações de compilação
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Excluir arquivos/pastas do build
+exclude:
+  - README.md
+  - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+
+# Incluir arquivos
+include:
+  - .htaccess
+  - _redirects
+
+# Configurações de redirecionamento
+redirect_from:
+  - /Alttab_web/
+  - /Alttab_web/index.html
+
+# Configurações de segurança
+safe: true
+incremental: false

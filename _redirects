@@ -1,0 +1,13 @@
+# Arquivo de redirecionamentos para GitHub Pages
+# Alt tab Corp - Redirecionamentos
+
+# Redirecionar do GitHub Pages para domínio personalizado
+https://alttabcorp.github.io/Alttab_web/* https://www.alttabcorp.com.br/:splat 301!
+http://alttabcorp.github.io/Alttab_web/* https://www.alttabcorp.com.br/:splat 301!
+
+# Redirecionar versões sem www para www
+https://alttabcorp.com.br/* https://www.alttabcorp.com.br/:splat 301!
+http://alttabcorp.com.br/* https://www.alttabcorp.com.br/:splat 301!
+
+# Redirecionar HTTP para HTTPS
+http://www.alttabcorp.com.br/* https://www.alttabcorp.com.br/:splat 301!
