@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cookieSettingsBtn) {
         cookieSettingsBtn.addEventListener('click', function() {
             // Redirecionar para a página de política de cookies
-            window.location.href = '/pages/cookies/';
+            window.location.href = '../../pages/cookies/';
         });
     }
     
