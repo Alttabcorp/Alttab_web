@@ -3,6 +3,11 @@
  * Script principal para funcionalidades do site
  */
 
+// Console easter egg
+console.log('%c🚀 AlttabCorp', 'color: #0066FF; font-size: 20px; font-weight: bold;');
+console.log('%cInteressado em fazer parte da nossa equipe?', 'color: #00C2FF; font-size: 14px;');
+console.log('%cEnvie um email para: alttabcorp@gmail.com', 'color: #A8B2D1; font-size: 12px;');
+
 window.addEventListener('load', function() {
     
     // Inicializa todas as animações
